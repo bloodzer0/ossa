@@ -8,7 +8,7 @@
 tar -xf jdk-8u171-linux-x64.tar.gz -C /usr/share/
 vim /etc/profile
 source /etc/profile
-ln -s /usr/share/jdk1.8.0_171/bin/java /usr/sbin/java # 为了解决logstash登录
+ln -s /usr/share/jdk1.8.0_171/bin/java /usr/sbin/java # 为了解决logstash安装
 
 # es安装
 rpm -ivh elasticsearch-6.3.0.rpm 
