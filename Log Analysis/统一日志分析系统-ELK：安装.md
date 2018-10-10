@@ -1,8 +1,9 @@
-官网地址：https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html
+[官网地址](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
 
 备注：操作系统Centos7
 
-1.使用yum直接安装
+# 1.使用yum直接安装
+```
 # 导入私钥
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
@@ -33,8 +34,10 @@ systemctl start logstash.service elasticsearch.service kibana.service
 
 # 查看状态
 systemctl status logstash.service elasticsearch.service kibana.service
+```
 
-2.使用rpm安装
+# 2.使用rpm安装
+```
 # 安装java并配置环境变量
 
 # 安装es
@@ -51,7 +54,9 @@ systemctl start elasticsearch.service
 # 安装kibana
 rpm -ivh kibana-6.2.4-x86_64.rpm
 
-# 安装logstash
 # 创建java软链接
 ln -s /usr/share/jdk1.8.0_171/bin/java /usr/bin/java
+
+# 安装logstash
 rpm -ivh logstash-6.2.4.rpm
+```
