@@ -37,6 +37,8 @@ http://192.168.199.5:8080
 # 配置Sonar
 系统配置--系统设置
 
+需要勾选Enable injection of SonarQube server configuration as build environment variables（图片中没有勾选是个错误）
+
 ![sonar-8](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Code%20Audit/img/sonar-8.png)
 
 ## token的生成
