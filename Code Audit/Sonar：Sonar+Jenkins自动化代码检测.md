@@ -48,5 +48,10 @@ http://192.168.199.5:8080
 
 生成以后填入Jenkins配置信息中
 
+系统配置--全局工具配置
+![sonar-10](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Code%20Audit/img/sonar-10.png)
+
 # 执行分析
 构建项目的时候选择：Execute SonarQube Scanner
+
+![sonar-11](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Code%20Audit/img/sonar-11.png)
