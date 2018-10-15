@@ -45,3 +45,6 @@ http://192.168.199.5:8080
 ![sonar-9](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Code%20Audit/img/sonar-9.png)
 
 生成以后填入Jenkins配置信息中
+
+# 执行分析
+构建项目的时候选择：Execute SonarQube Scanner
