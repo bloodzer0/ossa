@@ -21,6 +21,7 @@ yum install https://centos7.iuscommunity.org/ius-release.rpm -y
 yum install python36u.x86_64 python36u-pip.noarch -y
 
 # 解决模块
+git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git && cd Mobile-Security-Framework-MobSF
 pip3.6 install -r requirements.txt
 ```
 
