@@ -13,7 +13,7 @@
 ## 解决依赖环境
 ```
 # 安装java环境
-yum install java-1.8.0-openjdk.x86_64 -y
+yum install java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64 -y
 
 # 安装python3
 yum install https://centos7.iuscommunity.org/ius-release.rpm -y
