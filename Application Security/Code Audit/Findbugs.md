@@ -1,5 +1,5 @@
 # 概述
-静态分析工具
+静态分析工具、插件式
 
 [官网地址](http://findbugs.sourceforge.net/)
 
