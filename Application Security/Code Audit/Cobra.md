@@ -2,6 +2,8 @@
 
 [安装文档](http://cobra.feei.cn/installation)
 
+静态分析工具
+
 # 安装
 ## 解决依赖
 ```
