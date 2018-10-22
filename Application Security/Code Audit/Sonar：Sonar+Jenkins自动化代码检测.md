@@ -55,3 +55,6 @@ http://192.168.199.5:8080
 构建项目的时候选择：Execute SonarQube Scanner
 
 ![sonar-11](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Code%20Audit/img/sonar-11.png)
+
+# 参考资料
+[Sonar Scanner + Jenkins](https://www.cnblogs.com/nmap/p/6792148.html)
