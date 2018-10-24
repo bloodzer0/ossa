@@ -77,8 +77,66 @@ vim /usr/local/openresty/nginx/conf/nginx.conf
 
 ![waf-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Web%20Application%20Firewall/img/waf-4.png)
 
-## 规则学习
+## WAF的理解
+### 规则
 waf规则文件目录：/usr/local/openresty/nginx/conf/waf/rule-config
+
+规则文件说明：
+
+```
+args.rule：参数值规则
+blackip.rule：黑名单IP
+cookie.rule：Cookie值规则
+post.rule：Post数据规则
+url.rule：URL规则
+useragent.rule：User-Agent规则
+whiteip.rule：白名单IP
+whiteurl.rule：白名单URL
+```
+
+### 配置
+```
+# waf的状态，on为开启，off为关闭
+config_waf_enable = "on"
+
+# 日志文件路径
+config_log_dir = "/tmp/waf-log"
+
+# 规则文件路径
+config_rule_dir = "/usr/local/openresty/nginx/conf/waf/rule-config"
+
+# 是否启用白名单url检测
+config_white_url_check = "on"
+
+# 是否启用白名单ip检测
+config_white_ip_check = "on"
+
+# 是否启用黑名单ip检测
+config_black_ip_check = "on"
+
+# 是否启用url检测
+config_url_check = "on"
+
+# 是否启用参数检测
+config_url_args_check = "on"
+
+# 是否启用user-agent检测
+config_user_agent_check = "on"
+
+# 是否启用cookie检测
+config_cookie_check = "on"
+
+# 是否启用cc检测
+config_cc_check = "on"
+
+# CC检测频率设置，num/time
+config_cc_rate = "10/60"
+
+# 是否启用post数据检测
+config_post_check = "on"
+```
+
+根据配置可得，waf规则的优先级为：白名单--黑名单--规则检测（allow>deny）
 
 ## 开源waf
 [jx-sec 锦衣盾](https://github.com/jx-sec/jxwaf)
