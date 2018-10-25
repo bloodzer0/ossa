@@ -9,10 +9,10 @@
 # 解决依赖环境
 yum install gcc.x86_64 libxml2-devel.x86_64 httpd.x86_64 httpd-devel.x86_64 pcre2.x86_64 pcre2-devel.x86_64 -y
 
-# 按照mod_security
+# 安装mod_security
 yum install mod_security.x86_64 -y
 
-# 查看http 模块，结果见图一
+# 查看http模块，结果如图
 httpd -M
 ```
 
