@@ -24,3 +24,18 @@
 ```
 上线：API权限审核、防刷监控、漏洞/事件/补丁
 ```
+
+
+## 移动安全工具
+### 静态工具
+* Apktool：apk反编译工具
+* Dex2jar：dex反编译jar工具
+* Jd-gui：jar反编译java工具
+* ZjDroid：脱壳工具
+
+### 动态分析工具
+* ADB：Android debug工具
+* IDA：反汇编软件
+* Drozer：安全测试框架
+* IntentFuzzer：Intent Fuzz测试工具
+* Xposed：Android Hook框架
