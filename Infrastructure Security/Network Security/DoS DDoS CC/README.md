@@ -33,9 +33,13 @@ CC（Chanllenge Collapsar）
 	一个是建立UDP连接规则，要求所有去往该端口的UDP包，必须首先与TCP端口建立TCP连接，需要防火墙支撑。
 ```
 
+[测试工具：LOIC](https://sourceforge.net/projects/loic/)
+
 * TCP-Flood
 
 TCP攻击俗称SYN泛洪，利用TCP三次握手协议来攻击计算机，主要是通过伪造大量IP的半连接去攻击对方系统。
+
+[测试工具：hping3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/DDoS.md)
 
 * ICMP-Flood
 
@@ -75,21 +79,7 @@ TCP攻击俗称SYN泛洪，利用TCP三次握手协议来攻击计算机，主�
 
 参考资料：[超强DDoS工具SSL DoS攻击测试详解](http://www.jybase.net/wangzhananquan/20120320804_2.html)
 
-thc-ssl-dos 工具安装与使用：
-
-```
-# Kali自带
-
-# Centos7安装编译
-git clone git://git.kali.org/packages/thc-ssl-dos.git && cd thc-ssl-dos
-
-./configure
-
-make && make install
-
-# 使用
-thc-ssl-dos -l 500 IP PORT --accept
-```
+[测试工具：thc-ssl-dos](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/DDoS.md)
 
 防御技巧：
 
@@ -97,10 +87,8 @@ thc-ssl-dos -l 500 IP PORT --accept
 禁用Renegotiating机制来实现防御。
 ```
 
-
 ### 应用层攻击
-
-[工具参考连接](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/CC.md)
+[测试工具参考](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/CC.md)
 
 * Get-Flood
 
@@ -142,3 +130,6 @@ NTP包含一个monlist功能，也被称为MON_GETLIST，主要用于监控NTP�
 * SSDP反射
 
 * Chargen反射
+
+## 参考资料
+[DDoS攻击方式总结](https://www.secpulse.com/archives/64088.html)
