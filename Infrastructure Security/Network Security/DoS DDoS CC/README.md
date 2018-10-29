@@ -86,6 +86,9 @@ git clone git://git.kali.org/packages/thc-ssl-dos.git && cd thc-ssl-dos
 ./configure
 
 make && make install
+
+# 使用
+thc-ssl-dos -l 500 IP PORT --accept
 ```
 
 防御技巧：
