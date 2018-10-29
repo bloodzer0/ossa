@@ -96,6 +96,9 @@ make && make install
 
 
 ### 应用层攻击
+
+[工具参考连接](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/CC.md)
+
 * Get-Flood
 
 直接对较为消耗资源的URL进行大量的请求，也可以通过多个URL并发，单一URL并发请求，随机URL请求等。
