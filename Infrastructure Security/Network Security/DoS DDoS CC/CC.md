@@ -100,3 +100,11 @@ python slowloris.py IP # 攻击http 80端口
 
 python slowloris.py -p 443 --https IP # 攻击https 443端口
 ```
+
+## 防御
+* 判断UA字段（不可靠，可以随意构造绕过）；
+* 网页中嵌入JS代码（不可靠，爬虫可以携带浏览器引擎，或者加载JS）；
+* 针对IP+Cookie限制访问频率（不可靠，Cookie可以伪造，IP存在代理池问题）；
+* 关闭Apache最大连接数等，合理配置中间件，缓解DDoS攻击；
+* 页面中添加验证码；
+* 合理优化代码，合理使用缓存技术，减少数据库的读写操作；
