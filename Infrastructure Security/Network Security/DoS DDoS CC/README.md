@@ -10,7 +10,7 @@ DDoS（Distributed Denial of Service）：分布式拒绝服务
 通过很多"僵尸主机"向受害主机发送大量看似正常的网络包，从而造成网络阻塞或服务器资源耗尽而导致拒绝服务。
 ```
 
-CC（Chanllenge Collapsar）
+CC（Chanllenge Collapsar）：CC就是DDoS的一种
 
 ```
 通过控制某些主机补丁发送大量数据包给服务器造成服务器资源耗尽，一直到宕机崩溃，常用于攻击页面。
@@ -133,3 +133,7 @@ NTP包含一个monlist功能，也被称为MON_GETLIST，主要用于监控NTP�
 
 ## 参考资料
 [DDoS攻击方式总结](https://www.secpulse.com/archives/64088.html)
+
+来自网易-林伟壕的DDoS分类图：
+
+![DDoS攻击与防御](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/img/DDoS%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%BE%A1.png)
