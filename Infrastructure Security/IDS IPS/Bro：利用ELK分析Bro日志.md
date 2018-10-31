@@ -42,7 +42,7 @@ filter {
             match => ["ts","UNIX"] # 定义时间戳
         }
         geoip {
-            source => "id_orig_h" # 解析IP
+            source => "id.orig_h" # 解析IP
         }
     }
 }
