@@ -67,6 +67,12 @@ vim /opt/bro/etc/node.cfg
 ```
 # 查看日志，每个人可能看到的不一样
 ls -l /opt/bro/logs/current/
+
+# 会话日志：conn.log
+# 告警日志：
+	weird.log # 协议错误
+	notice.log # bro脚本产生的告警
+# 协议解析日志：dns.log、files.log、http.log、sip.log、snmp.log
 ```
 
 ![bro-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/bro-3.png)
@@ -74,9 +80,19 @@ ls -l /opt/bro/logs/current/
 * 简单测试：使用Bro Command-Line
 
 ```
-# 指定接口，此时日志在执行目录中
-bro -i ens33
+bro -i ens33 # 选择监听接口，此时日志在执行目录中
+bro -r *.pcap script_filename # 读取一个pacp进行分析
+bro -C # 禁用校验和
+bro -f # 捕获流量时进行过滤
 ```
+
+* Bro Scripts
+
+[Scripts Address](https://www.bro.org/sphinx/script-reference/scripts.html)
 
 ### 使用Bro
 * bro_cut：类似awk，提取指定的列
+
+* 案例：Bro+ELK
+
+[案例地址](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/Bro%EF%BC%9A%E5%88%A9%E7%94%A8ELK%E5%88%86%E6%9E%90Bro%E6%97%A5%E5%BF%97.md)
