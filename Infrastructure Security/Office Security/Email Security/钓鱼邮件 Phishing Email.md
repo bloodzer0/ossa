@@ -52,7 +52,9 @@
 
 ## 参考链接
 
-1. 收到“来自自己”的敲诈邮件，请不要惊慌<https://www.freebuf.com/articles/network/187522.html>
+1. 收到“来自自己”的敲诈邮件，请不要惊慌
+
+    <https://www.freebuf.com/articles/network/187522.html>
 
 1. 钓鱼邮件初探：黑客是如何进行邮件伪造的
 
