@@ -1,4 +1,7 @@
 ## 概述
+[官网地址](https://www.bro.org/)
+
+[学习平台](https://www.bro.org/documentation/index.html)
 
 ## 安装
 操作系统：Centos7
@@ -41,7 +44,16 @@ make && make install
 # 此时的安装路径为：/usr/local/bro
 ```
 
-## 配置与使用Bro
+### Bro目录说明
+* bin：二进制目录
+* etc：配置文件目录
+* include：
+* lib：
+* logs：
+* share：
+* spool：
+
+## 配置与测试Bro
 ### 配置Bro
 * 配置文件
 
@@ -77,22 +89,22 @@ ls -l /opt/bro/logs/current/
 
 ![bro-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/bro-3.png)
 
+### 测试Bro
 * 简单测试：使用Bro Command-Line
 
 ```
 bro -i ens33 # 选择监听接口，此时日志在执行目录中
-bro -r *.pcap script_filename # 读取一个pacp进行分析
+bro -r *.pcap # 读取一个pacp进行分析
 bro -C # 禁用校验和
 bro -f # 捕获流量时进行过滤
 ```
 
-* Bro Scripts
-
-[Scripts Address](https://www.bro.org/sphinx/script-reference/scripts.html)
-
-### 使用Bro
 * bro_cut：类似awk，提取指定的列
 
 * 案例：Bro+ELK
 
 [案例地址](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/Bro%EF%BC%9A%E5%88%A9%E7%94%A8ELK%E5%88%86%E6%9E%90Bro%E6%97%A5%E5%BF%97.md)
+
+* Bro Scripts
+
+[Scripts Address](https://www.bro.org/sphinx/script-reference/scripts.html)
