@@ -5,6 +5,8 @@
 
 [ELK安装指南](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/ELK%EF%BC%9A%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8.md)
 
+### 分析SSH登录日志
+
 查看Bro中SSH的日志：
 
 ```
@@ -58,3 +60,6 @@ output {
 启动对应的服务后
 
 ![bro-5](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/bro-5.png)
+
+### 分析HTTP日志
+方法与分析SSH日志一样，着重点是配置文件不一样。
