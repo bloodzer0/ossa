@@ -26,6 +26,9 @@ aide -C
 # 更新数据库，更新完成以后需要将新的数据库文件复制为数据库
 aide -u
 mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz
+
+# 检查配置文件
+aide -D --config-check 
 ```
 
 ## 配置
@@ -46,7 +49,7 @@ a:访问时间
 c:创建时间
 
 # 编译支持
-acl:
+acl:文件的acl访问控制列表
 selinux:
 xattrs:
 
@@ -61,4 +64,13 @@ crc32:
 whirlpool:
 haval:
 gost:
+```
+
+* 配置文件中条目之前的感叹号(!)，告诉aide忽略子目录或目录中的文件。
+
+## 使用
+* 每天执行一次aide，并将结果发送到邮箱
+
+```
+0 0 * * * /usr/sbin/aide --check | /usr/bin/mail -s "AIDE run for $HOSTNAME" your@email.com
 ```
