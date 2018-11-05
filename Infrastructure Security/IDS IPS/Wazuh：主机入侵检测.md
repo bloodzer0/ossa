@@ -4,13 +4,13 @@
 [官方文档](https://documentation.wazuh.com/current/index.html)
 
 ## 安装
-### Wazuh Server安装
+### 安装Wazuh Server
 ```
 rpm -ivh wazuh-manager-3.3.1-1.x86_64.rpm
 systemctl status wazuh-manager.service
 ```
 
-### Wazuh API安装
+### 安装Wazuh API
 * 安装nodejs
 
 ```
@@ -26,6 +26,28 @@ yum install nodejs.x86_64
 ```
 rpm -ivh wazuh-api-3.3.1-1.x86_64.rpm
 systemctl status wazuh-api.service
+```
+
+### 配置Wazuh API
+```
+cd /var/ossec/api/configuration/auth
+./htpasswd -c user bloodzer0
+
+#重启wazuh-api服务
+```
+
+### Wazuh 客户端安装
+```
+rpm -ivh wazuh-agent-3.3.1-1.x86_64.rpm
+
+# 修改配置文件
+vim /var/ossec/etc/ossec.conf
+
+# 导入密钥
+/var/ossec/bin/manage_agents
+
+# 启动服务
+/var/ossec/bin/ossec-control start
 ```
 
 ### 安装ELK
@@ -82,12 +104,66 @@ DeprecationWarning: os.tmpDir() is deprecated. Use os.tmpdir() instead.
 使用nodejs版本10
 ```
 
-### 配置Wazuh API
-```
-cd /var/ossec/api/configuration/auth
-./htpasswd -c user bloodzer0
-
-#重启wazuh-api服务
-```
-
 ## 使用
+### 配置filebeat
+一般情况下，我们的ELK统一日志平台都是专属的服务器，也不与Wazuh Server处于同一台服务器上，为了不影响Wazuh Server服务器的性能，所以一般情况下我们会使用filebeat来进行日志收集，所以filebeat与Logstash配置文件修改如下：
+
+vim /etc/filebeat/filebeat.yml
+
+```
+filebeat.inputs:
+- type: log
+  paths:
+    - "/var/ossec/logs/alerts/alerts.json"
+  document_type: json
+  json.message_key: log
+  json.keys_under_root: true
+  json.overwrite_keys: true
+
+output.logstash:
+  hosts: ["localhost:5044"]
+```
+
+vim /etc/logstash/conf.d/wazuh.conf
+
+```
+input {
+    beats {
+        port => 5044
+        codec => "json_lines"
+    }
+}
+filter {
+    if [data][srcip] {
+        mutate {
+            add_field => [ "@src_ip", "%{[data][srcip]}" ]
+        }
+    }
+    if [data][aws][sourceIPAddress] {
+        mutate {
+            add_field => [ "@src_ip", "%{[data][aws][sourceIPAddress]}" ]
+        }
+    }
+}
+filter {
+    geoip {
+        source => "@src_ip"
+        target => "GeoLocation"
+        fields => ["city_name", "country_name", "region_name", "location"]
+    }
+    date {
+        match => ["timestamp", "ISO8601"]
+        target => "@timestamp"
+    }
+    mutate {
+        remove_field => [ "timestamp", "beat", "input_type", "tags", "count", "@version", "log", "offset", "type", "@src_ip", "host"]
+    }
+}
+output {
+    elasticsearch {
+        hosts => ["localhost:9200"]
+        index => "wazuh-alerts-3.x-%{+YYYY.MM.dd}"
+        document_type => "wazuh"
+    }
+}
+```
