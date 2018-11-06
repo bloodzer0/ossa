@@ -78,3 +78,5 @@ tail -f /var/log/osquery/osqueryd.results.log
 [企业安全建设之主机资产管理与分析](http://www.freebuf.com/articles/security-management/127851.html)
 
 [Facebook开源的基于SQL的操作系统检测和监控框架:osquery daemon详解](https://www.cnblogs.com/xuxinkun/p/5640047.html)
+
+[Windows 常见配置文件编写](https://github.com/teoseller/osquery-attck)
