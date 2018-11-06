@@ -196,5 +196,45 @@ mv localhost.pem /var/osquery/server.pem
 ![osquery-9](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-9.png)
 
 ## 使用
+### 利用ELK收集日志进行处理展示
+* 创建一个查询
+
+![osquery-10](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-10.png)
+
+* 创建一个pack
+
+![osquery-11](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-11.png)
+
+* 查看日志
+
+```
+tail -f /var/log/kolide/osquery_result
+```
+
+![osquery-12](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-12.png)
+
+* 利用ELK解析并展示日志
+
+vim /etc/logstash/conf.d/fleet.conf
+
+```
+input {
+    file {
+        path => ["/var/log/kolide/osquery_result"]
+        codec => "json"
+    }
+}
+
+output {
+    elasticsearch {
+        hosts => ["127.0.0.1:9200"]
+        index => "logstash-fleet-%{+YYYY.MM.dd}"
+    }
+}
+```
+
+配置好ELK，查看展示图
+
+![osquery-13](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-13.png)
 
 ## 参考资料
