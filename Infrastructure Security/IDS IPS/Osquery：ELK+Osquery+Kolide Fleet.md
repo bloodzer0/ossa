@@ -1,4 +1,6 @@
 ## 概述
+[原文地址](https://jordanpotti.com/2018/02/16/elk-osquery-kolide-fleet-love/)
+
 * Osquery：基于SQL的主机管理工具；
 
 * Kolide Fleet：用于控制Osquery列表的灵活服务器，允许我们按需查询多个主机，以及创建查询包，构建查询计划与管理我们的主机；
@@ -137,3 +139,5 @@ cd linux/
 * 利用Osquery推送主机
 
 ## 使用
+
+## 参考资料
