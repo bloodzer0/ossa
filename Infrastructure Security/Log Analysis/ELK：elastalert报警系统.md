@@ -55,20 +55,20 @@ vim /etc/elastalert/config.yaml
 # 创建elastalert服务文件
 vim /etc/systemd/system/elastalert.service
 
-	[Unit]
-	Description=elastalert
-	After=elasticsearch.service
+[Unit]
+Description=elastalert
+After=elasticsearch.service
 	
-	[Service]
-	Type=simple
-	User=root
-	Group=root
-	Restart=on-failure
-	WorkingDirectory=/opt
-	ExecStart=/usr/bin/python -m elastalert.elastalert --config /etc/elastalert/config.yaml --rule /etc/elastalert/rules/rule.yaml
+[Service]
+Type=simple
+User=root
+Group=root
+Restart=on-failure
+WorkingDirectory=/opt
+ExecStart=/usr/bin/python -m elastalert.elastalert --config /etc/elastalert/config.yaml --rule /etc/elastalert/rules/rule.yaml
 	
-	[Install]
-	WantedBy=multi-user.target
+Install]
+WantedBy=multi-user.target
 	
 # 启动服务
 systemctl start elastalert.service
@@ -168,7 +168,7 @@ cp -r elastalert-dingtalk-plugin/elastalert_modules/ /etc/elastalert/
 * 编写rule文件：vim /etc/elastalert/rules/rule.yaml
 
 ```
-es_host: 172.16.64.171
+es_host: 127.0.0.1
 es_port: 9200
 name: security
 type: any
@@ -200,6 +200,28 @@ python -m elastalert.elastalert --verbose --config /etc/elastalert/config.yaml -
 效果如图：
 
 ![elk-12](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-12.png)
+
+
+* 以服务启动方式解决
+
+在配置好elastalert_modules目录为/etc/elastalert中是，修改服务启动文件：vim /etc/systemd/system/elastalert.service
+
+```
+[Unit]
+Description=elastalert
+After=elasticsearch.service
+	
+[Service]
+Type=simple
+User=root
+Group=root
+Restart=on-failure
+WorkingDirectory=/opt
+ExecStart=cd /etc/elastalert && /usr/bin/python -m elastalert.elastalert --config /etc/elastalert/config.yaml --rule /etc/elastalert/rules/rule.yaml
+	
+Install]
+WantedBy=multi-user.target
+```
 
 ## elasialert-kibana-plugin
 [github地址](https://github.com/bitsensor/elastalert-kibana-plugin)
