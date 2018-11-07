@@ -186,5 +186,25 @@ elasticsearch.url: "http://localhost:9200" # ElasticSearch地址
 ## 测试ELK
 ### 测试Logstash
 ```
+input {
+    file {
+        path => ["/var/log/httpd/access_log"]
+        type => "httpd"
+    }
+}
 
+filter {
+    grok {
+        match => { "message" => "%{COMBINEDAPACHELOG}" }
+    }
+}
+
+output {
+    elasticsearch {
+        hosts => ["127.0.0.1:9200"]
+        index => "logstash-httpd-%{+YYYY.MM.dd}"
+    }
+}
 ```
+
+![elk-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-2.png)
