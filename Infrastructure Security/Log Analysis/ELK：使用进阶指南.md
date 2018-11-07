@@ -16,36 +16,17 @@ import os
 import datetime
 
 week_ago = (datetime.datetime.now() - datetime.timedelta(days=3)).strftime("%Y.%m.%d")
-command = 'curl -XDELETE "http://host/index-%s"' % week_ago
+command = 'curl -XDELETE "http://hostname/index-%s"' % week_ago
 os.system(command)
 ```
 
-### ElasticSearch搜索总结
-* 查询需要的字段
-
-```
-
-```
-
-* 查询区间
-
-```
-
-```
-
-* 展示指定的字段
-
-```
-
-```
-
-* 正则查询
-
-```
-
-```
-
 ## Logstash
+### Logstash常用命令
+Command						| Note
+---								| ---
+--config.reload.automatic	| 自动重载被修改的配置文件
+-f								| 加载配置文件
+-t								| 测试配置文件
 ### Logstash配置详解
 * 解析IP
 
@@ -56,6 +37,82 @@ filter {
     }
 }
 ```
+
+![elk-7](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-7.png)
+
+### Logstash Patterns
+[官方文档](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html)
+
+常用Patterns如下表：
+
+Field				| Note
+---					| ---
+
+
+GrokDebugg：[在线地址](http://grokdebug.herokuapp.com/) 需要翻墙使用，否在js会加载不成功，为了解决这个问题，我们可以在本地搭建一个。
+
+* 本地安装grokdebug：[github地址](https://github.com/nickethier/grokdebug) 
+
+操作系统：Centos7
+
+```
+# 安装依赖
+yum install openssl-devel.x86_64 gcc.x86_64 -y
+
+# 下载ruby
+wget https://ruby.taobao.org/mirrors/ruby/2.1/ruby-2.1.7.tar.gz
+
+# 安装ruby
+tar -zxvf ruby-2.1.7.tar.gz && cd ruby-2.1.7/
+./configure --prefix=/usr/local/ruby2.1.7
+make && make install
+
+# 配置环境变量
+echo 'export PATH=/usr/local/ruby2.1.7/bin:$PATH'>>/etc/profile
+source /etc/profile
+
+# 安装rubygem
+wget http://rubygems.global.ssl.fastly.net/rubygems/rubygems-2.6.2.tgz
+tar -zxvf rubygems-2.6.2.tgz && cd rubygems-2.6.2/
+ruby setup.rb
+
+# 替换gem源
+gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
+gem sources -l
+
+# 创建安装目录与下载grokdebug
+mkdir /usr/local/grokdebug && cd /usr/local/grokdebug
+git clone https://github.com/nickethier/grokdebug.git
+mv grokdebug/* .
+rm -rf grokdebug/
+
+# 查看缺少的组件
+ruby config.ru
+
+# 安装组件
+gem install bundler
+gem install cabin -v=0.5.0
+gem install haml -v=3.1.7
+gem install jls-grok -v=0.10.10
+gem install json -v=1.7.5
+gem install kgio -v=2.8.0
+gem install rack -v=1.4.1
+gem install rack-protection -v=1.2.0
+gem install raindrops -v=0.11.0  
+gem install shotgun -v=0.9
+gem install tilt -v=1.3.3
+gem install sinatra -v=1.3.3
+gem install unicorn -v=4.6.3
+```
+
+* 启动与使用grokdebug
+
+```
+# 启动
+nohup bundle exec unicorn -p 8081 -c ./unicorn &
+```
+
+![elk-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-4.png)
 
 
 ## Kibana
