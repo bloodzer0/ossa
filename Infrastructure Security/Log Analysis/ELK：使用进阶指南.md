@@ -160,3 +160,6 @@ systemctl restart nginx.service
 ```
 
 ![elk-6](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-6.png)
+
+### 使用xpack进行认证
+[xpack破解地址](https://www.cnblogs.com/chengjiawei/p/8991859.html)
