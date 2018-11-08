@@ -39,7 +39,7 @@ Graylog
 ```
 ## 企业自建日志分析平台
 ### 日志分析平台架构
-在第一节中已经简单阐述过几种架构了，这里我说一下我自己用到的架构：
+这里我说一下我自己用到的架构：
 
 ![log-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/log-1.png)
 
