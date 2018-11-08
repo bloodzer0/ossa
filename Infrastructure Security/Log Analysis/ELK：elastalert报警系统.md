@@ -223,6 +223,26 @@ Install]
 WantedBy=multi-user.target
 ```
 
+## 报警优化
+### 报警格式优化
+注意上下字段对应
+
+```
+alert_text: |
+    kibana_url: "https://hostname:5601/app/kibana"
+    alarm_reason: "1分钟内login.php至少被访问10次"
+    alarm_name: {}
+    request_uri: {}
+    request_ip: {}
+    response_status: {}
+alert_text_args:
+    - name
+    - request
+    - clientip
+    - response
+alert_text_type: alert_text_only
+```
+
 ## elasialert-kibana-plugin
 [github地址](https://github.com/bitsensor/elastalert-kibana-plugin)
 
