@@ -1,6 +1,10 @@
 ## 概述
 
 ## Nginx日志解析
+数据流向
+
+Filebeat--Collector--Filebeat--Graylog Server
+
 ### 配置Graylog接受Nginx日志
 * 创建一个Beats类型的Inputs
 
