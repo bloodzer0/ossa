@@ -46,6 +46,30 @@ vim /etc/osquery/osquery.conf
 
 在osqueryi命令行下输入.table查看所有表。
 
+* 返回占用内存最大的10个进程
+
+```
+select pid, name, uid, resident_size from processes order by resident_size desc limit 10;
+```
+
+* 返回最活跃的10个进程
+
+```
+select count(pid) as total, name from processes group by name order by total desc limit 10;
+```
+
+* 查看网络端口的进程
+
+```
+SELECT DISTINCT process.name, listening.port, listening.address, process.pid FROM processes AS process JOIN listening_ports AS listening ON process.pid = listening.pid;
+```
+
+* 查看加载的内核模块
+
+```
+select name from kernel_modules;
+```
+
 
 ### 基础使用
 配置文件核心内容：
@@ -78,3 +102,5 @@ tail -f /var/log/osquery/osqueryd.results.log
 [企业安全建设之主机资产管理与分析](http://www.freebuf.com/articles/security-management/127851.html)
 
 [Facebook开源的基于SQL的操作系统检测和监控框架:osquery daemon详解](https://www.cnblogs.com/xuxinkun/p/5640047.html)
+
+[Windows 常见配置文件编写](https://github.com/teoseller/osquery-attck)
