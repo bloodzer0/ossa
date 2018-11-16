@@ -8,6 +8,6 @@
 
 
 ## 代码审计商业软件对比
-![代码审计商业软件对比](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Code%20Audit/img/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%95%86%E4%B8%9A%E8%BD%AF%E4%BB%B6%E5%AF%B9%E6%AF%94.png)
+![代码审计商业软件对比](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Code%20Audit/img/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%95%86%E4%B8%9A%E8%BD%AF%E4%BB%B6%E5%AF%B9%E6%AF%94.png)
 
 备注：如果图片有侵权行为，请联系我！
