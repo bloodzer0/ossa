@@ -24,4 +24,4 @@ server:7777
 ## 使用
 上传apk文件进行分析，会生成报告
 
-![StaCoAn-1.png](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Mobile%20Security/img/StaCoAn-1.png)
+![StaCoAn-1.png](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Mobile%20Security/img/StaCoAn-1.png)
