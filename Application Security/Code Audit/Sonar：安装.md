@@ -54,20 +54,20 @@ http://localhost:9000
 账号：admin	密码：admin
 ```
 
-![sonar-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Code%20Audit/img/sonar-1.png)
+![sonar-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Code%20Audit/img/sonar-1.png)
 
 ## 配置数据库
 ```
 vim ./sonarqube-7.3/conf/sonar.properties
 ```
 
-![sonar-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Code%20Audit/img/sonar-2.png)
+![sonar-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Code%20Audit/img/sonar-2.png)
 
 ## 汉化
 在Administration菜单栏，选择Marketplace标题，在搜索框输入chinese进行搜索，然后进行安装
 
-![sonar-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Code%20Audit/img/sonar-3.png)
+![sonar-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Code%20Audit/img/sonar-3.png)
 
 安装完成后重启
 
-![sonar-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Code%20Audit/img/sonar-4.png)
+![sonar-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Code%20Audit/img/sonar-4.png)
