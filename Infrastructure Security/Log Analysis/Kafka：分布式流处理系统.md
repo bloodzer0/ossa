@@ -29,7 +29,7 @@ kafka-server-start.sh -daemon /app/kafka_2.11-2.0.1/config/server.properties
 jps -m
 ```
 
-![kafka-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/kafka-1.png)
+![kafka-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/kafka-1.png)
 
 ### 集群版安装
 针对Kafka集群，就是多个broker，在kafka的配置文件中可以进行查看：
