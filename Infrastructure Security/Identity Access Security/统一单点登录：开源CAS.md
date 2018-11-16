@@ -65,11 +65,11 @@ cp /app/cas-gradle-overlay-template/cas/build/libs/cas.war /app/apache-tomcat-8.
 # 重启tomcat
 ```
 
-![cas-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-2.png)
+![cas-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-2.png)
 
 默认账号密码：casuser/Mellon，登录进入系统，但此账号并不具备任何功能
 
-![cas-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-3.png)
+![cas-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-3.png)
 
 * **Maven编译安装**
 
@@ -78,7 +78,7 @@ cp /app/cas-gradle-overlay-template/cas/build/libs/cas.war /app/apache-tomcat-8.
 # 直接下载zip文件，不要git clone 否则会下载的还是最新版本
 ```
 
-![cas-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-4.png)
+![cas-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-4.png)
 
 ```
 # 编译安装
@@ -92,3 +92,6 @@ mvn install # 漫长的过程
 
 ## 高级使用
 ### 配置数据库
+
+## 参考资料
+[CAS统一登录认证(1)：系统安装](https://blog.csdn.net/oLinBSoft/article/details/81910775)
