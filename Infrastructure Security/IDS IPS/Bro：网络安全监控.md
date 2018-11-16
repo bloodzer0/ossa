@@ -72,9 +72,9 @@ $PREFIX/etc/broctl.cfg 设置邮箱MailTo，并且设置LogRotationInterval改�
 vim /opt/bro/etc/node.cfg
 ```
 
-![bro-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/bro-1.png)
+![bro-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/bro-1.png)
 
-![bro-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/bro-2.png)
+![bro-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/bro-2.png)
 
 ```
 # 查看日志，每个人可能看到的不一样
@@ -87,7 +87,7 @@ ls -l /opt/bro/logs/current/
 # 协议解析日志：dns.log、files.log、http.log、sip.log、snmp.log
 ```
 
-![bro-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/bro-3.png)
+![bro-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/bro-3.png)
 
 ### 测试Bro
 * 简单测试：使用Bro Command-Line
@@ -108,3 +108,11 @@ bro -f # 捕获流量时进行过滤
 * Bro Scripts
 
 [Scripts Address](https://www.bro.org/sphinx/script-reference/scripts.html)
+
+
+## 参考资料
+[使用Bro IDS和Intel Critical Stack分析网络活动](https://bbs.pediy.com/thread-226565.htm)
+
+[Integrating Bro IDS with the ELK Stack - Part1](https://logz.io/blog/bro-elk-part-1/)
+
+[Integrating Bro IDS with the ELK Stack - Part2](https://logz.io/blog/bro-elk-part-2/)
