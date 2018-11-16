@@ -35,9 +35,9 @@ vim /usr/local/openresty/nginx/conf/nginx.conf
 # 访问测试文件，结果如图
 ```
 
-![waf-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Web%20Application%20Firewall/img/waf-1.png)
+![waf-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Web%20Application%20Firewall/img/waf-1.png)
 
-![waf-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Web%20Application%20Firewall/img/waf-2.png)
+![waf-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Web%20Application%20Firewall/img/waf-2.png)
 
 ### 安装unixhot waf
 
@@ -71,17 +71,17 @@ vim /usr/local/openresty/nginx/conf/nginx.conf
 /usr/local/openresty/nginx/sbin/nginx -s reload
 ```
 
-![waf-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Web%20Application%20Firewall/img/waf-3.png)
+![waf-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Web%20Application%20Firewall/img/waf-3.png)
 
 找一个测试页面，测试结果如下:
 
-![waf-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Web%20Application%20Firewall/img/waf-4.png)
+![waf-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Web%20Application%20Firewall/img/waf-4.png)
 
 ## WAF的理解
 ### 规则
 waf规则文件目录：/usr/local/openresty/nginx/conf/waf/rule-config
 
-规则文件说明：
+规则文件说明：可以在相应的规则中添加对应的值
 
 ```
 args.rule：参数值规则
