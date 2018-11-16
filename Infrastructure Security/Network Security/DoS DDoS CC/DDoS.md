@@ -21,21 +21,21 @@ tar -xf hping3-20051105.tar.gz && cd hping3-20051105
 # 报错如图
 ```
 
-![ddos-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/img/ddos-1.png)
+![ddos-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/img/ddos-1.png)
 
 ```
 # 修改文件，解决问题，修改如图
 vim bytesex.h
 ```
 
-![ddos-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/img/ddos-2.png)
+![ddos-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/img/ddos-2.png)
 
 ```
 # 编译，此时报错如图
 make
 ```
 
-![ddos-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/img/ddos-3.png)
+![ddos-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/img/ddos-3.png)
 
 ```
 # 解决问题
