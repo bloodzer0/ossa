@@ -5,9 +5,9 @@
 操作系统：Centos7
 
 ```
+# 安装php5.6yum源
 yum install epel-release -y
 
-# 安装php5.6yum源
 rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
 yum install httpd.x86_64 httpd-devel.x86_64 mariadb.x86_64 mariadb-server.x86_64 mariadb-devel.x86_64 -y
@@ -28,7 +28,7 @@ mv web /var/www/html/
 chown -R apache:apache web
 ```
 
-![iTop-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Asset%20Management/img/iTop-1.png)
+![iTop-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Asset%20Management/img/iTop-1.png)
 
 ## 使用
 
