@@ -96,7 +96,7 @@ select name from kernel_modules;
 tail -f /var/log/osquery/osqueryd.results.log
 ```
 
-![osquery-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-1.png)
+![osquery-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/osquery-1.png)
 
 ## 参考资料
 [企业安全建设之主机资产管理与分析](http://www.freebuf.com/articles/security-management/127851.html)
