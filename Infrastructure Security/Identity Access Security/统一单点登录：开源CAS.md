@@ -85,8 +85,10 @@ cp /app/cas-gradle-overlay-template/cas/build/libs/cas.war /app/apache-tomcat-8.
 mvn install # 漫长的过程
 
 # 编译完成后与Gradle后续步骤一致
+# 生成的文件在target目录中
 ```
 
 ### 配置SSL证书
 
-## 配置
+## 高级使用
+### 配置数据库
