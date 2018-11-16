@@ -33,7 +33,7 @@ tar -xf apache-tomcat-8.5.35.tar.gz -C /app/
 http://hostname:8080/
 ```
 
-![cas-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-1.png)
+![cas-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-1.png)
 
 * 配置环境变量
 
