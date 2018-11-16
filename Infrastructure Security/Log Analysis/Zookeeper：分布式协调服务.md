@@ -21,7 +21,7 @@ cp /app/zookeeper-3.4.13/conf/zoo_sample.cfg /app/zookeeper-3.4.13/conf/zoo.cfg
 zkServer.sh start
 ```
 
-![zookeeper-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/zookeeper-1.png)
+![zookeeper-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/zookeeper-1.png)
 
 ### Zookeeper配置文件
 vim /app/zookeeper-3.4.13/conf/zoo.cfg
@@ -38,7 +38,7 @@ clientPort=2181 #
 ### Zookeeper客户端使用
 zkCli.sh
 
-![zookeeper-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/zookeeper-2.png)
+![zookeeper-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/zookeeper-2.png)
 
 ## 踩坑记
 
