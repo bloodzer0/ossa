@@ -62,12 +62,12 @@ mongodb_uri = mongodb://localhost/graylog
 systemctl start graylog-server
 ```
 
-![graylog-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/graylog-1.png)
+![graylog-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/graylog-1.png)
 
 ### 配置输入
 Web界面：System -> Inputs
 
-![graylog-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/graylog-2.png)
+![graylog-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/graylog-2.png)
 
 配置rsyslog：vim /etc/rsyslog.d/graylog.conf
 
@@ -77,7 +77,7 @@ Web界面：System -> Inputs
 
 查看效果
 
-![graylog-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/graylog-3.png)
+![graylog-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/graylog-3.png)
 
 优化配置：vim /etc/rsyslog.d/graylog.conf
 
