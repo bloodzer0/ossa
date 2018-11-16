@@ -37,11 +37,27 @@ HBase
 Kibana
 Graylog
 ```
+
+### 日志分析的目标
+* Web日志分析的目标
+
+```
+返回状态码分布图：针对Java出现大量500的情况需要注意；
+PV趋势图：
+源IP分布图：
+来源国家排行：
+来源城市排行：
+独立IP访问趋势图：
+访问路径排行：
+访问来源排行：
+浏览器分布图：
+```
+
 ## 企业自建日志分析平台
 ### 日志分析平台架构
 这里我说一下我自己用到的架构：
 
-![log-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/log-1.png)
+![log-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/log-1.png)
 
 配置文件如下：
 
