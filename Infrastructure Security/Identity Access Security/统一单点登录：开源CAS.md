@@ -47,7 +47,10 @@ source /etc/profile
 ```
 
 ### CAS安装
-为了节约时间，减少安装编译过程，使用gradle overlay项目。
+
+* **Gradle编译安装**
+
+为了节约时间，减少安装编译过程，使用[gradle overlay](https://github.com/apereo/cas-gradle-overlay-template)项目。
 
 ```
 # 下载到指定文件夹
@@ -63,5 +66,27 @@ cp /app/cas-gradle-overlay-template/cas/build/libs/cas.war /app/apache-tomcat-8.
 ```
 
 ![cas-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-2.png)
+
+默认账号密码：casuser/Mellon，登录进入系统，但此账号并不具备任何功能
+
+![cas-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-3.png)
+
+* **Maven编译安装**
+
+```
+# 下载到指定文件夹：Branch版本选择5.3即可下载Maven版本
+# 直接下载zip文件，不要git clone 否则会下载的还是最新版本
+```
+
+![cas-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-4.png)
+
+```
+# 编译安装
+mvn install # 漫长的过程
+
+# 编译完成后与Gradle后续步骤一致
+```
+
+### 配置SSL证书
 
 ## 配置
