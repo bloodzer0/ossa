@@ -1,5 +1,5 @@
 ## 概述
-[官网](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
+[官网地址](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
 
 ## 安装
 操作系统：Centos7
@@ -46,9 +46,9 @@ systemctl start logstash.service elasticsearch.service kibana.service
 systemctl status logstash.service elasticsearch.service kibana.service
 ```
 
-![elk-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-1.png)
+![elk-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-1.png)
 
-![elk-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-2.png)
+![elk-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-2.png)
 
 ### 使用RPM安装
 ```
@@ -108,11 +108,11 @@ path.data: /var/lib/elasticsearch # 数据存储目录
 
 path.logs: /var/log/elasticsearch # 日志存储目录
 
-bootstrap.memory_lock: true # 内存锁定
+bootstrap.memory_lock: true # 内存锁定，禁用虚拟内存
 
-network.host: 0.0.0.0 # 允许访问的主机
+network.host: 0.0.0.0 # 绑定主机
 
-http.port: 9200 # 允许访问的端口
+http.port: 9200 # 绑定端口
 
 discovery.zen.ping.unicast.hosts: ["host1", "host2"] # 启动新节点时，传递初始主机列表用于发现主机
 
@@ -137,9 +137,9 @@ pipeline.id: main # pipeline ID
 
 pipeline.workers: 2 # 输出通道的worker数量，默认为CPU核数
 
-pipeline.batch.size: 125 # 每次input数量
+pipeline.batch.size: 125 # 设定批处理数据的大小
 
-pipeline.batch.delay: 50 # 
+pipeline.batch.delay: 50 # 设定批处理数据的延迟
 
 pipeline.unsafe_shutdown: false # 
 
@@ -207,4 +207,7 @@ output {
 }
 ```
 
-![elk-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-2.png)
+![elk-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-2.png)
+
+## 参考资料
+[搭建安全认证的ELK日志系统](https://www.freebuf.com/articles/security-management/179736.html)
