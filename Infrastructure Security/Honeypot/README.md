@@ -16,3 +16,7 @@
 [10 decisions you'll face when deploying a honeypot](https://www.csoonline.com/article/3128818/data-protection/10-decisions-youll-face-when-deploying-a-honeypot.html)
 
 [为什么这么多创业公司都在做“蜜罐”？也许这篇文章能告诉你](https://www.freebuf.com/articles/database/109322.html)
+
+[企业安全建设—模块化蜜罐平台的设计思路与想法](https://xz.aliyun.com/t/1885)
+
+[金融行业微蜜罐系统应用思考](http://blog.nsfocus.net/application-micro-honeypot-system-financial-industry/)
