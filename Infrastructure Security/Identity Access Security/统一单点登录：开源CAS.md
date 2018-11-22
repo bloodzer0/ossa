@@ -38,7 +38,7 @@ http://hostname:8080/
 * 配置环境变量
 
 ```
-# vim /etc/profile
+vim /etc/profile
 	export JAVA_HOME=/app/jdk1.8.0_191
 	export MAVEN_HOME=/app/apache-maven-3.6.0
 	export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
@@ -48,7 +48,7 @@ source /etc/profile
 
 ### CAS安装
 
-* **Gradle编译安装**
+* **Gradle编译安装（不推荐）**
 
 为了节约时间，减少安装编译过程，使用[gradle overlay](https://github.com/apereo/cas-gradle-overlay-template)项目。
 
@@ -58,6 +58,8 @@ cd /app && git clone https://github.com/apereo/cas-gradle-overlay-template.git
 
 # 进行编译
 cd cas-gradle-overlay-template && ./build.sh package # 需要很长时间
+# 或者使用
+cd cas-gradle-overlay-template && ./gradlew clean build
 
 # 编译完成后会在/app/cas-gradle-overlay-template/cas/build/libs目录中生成cas.war文件，将此文件复制到webapps文件中
 cp /app/cas-gradle-overlay-template/cas/build/libs/cas.war /app/apache-tomcat-8.5.35/webapps/
@@ -71,7 +73,7 @@ cp /app/cas-gradle-overlay-template/cas/build/libs/cas.war /app/apache-tomcat-8.
 
 ![cas-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-3.png)
 
-* **Maven编译安装**
+* **Maven编译安装（推荐）**
 
 ```
 # 下载到指定文件夹：Branch版本选择5.3即可下载Maven版本
@@ -89,6 +91,59 @@ mvn install # 漫长的过程
 ```
 
 ### 配置SSL证书
+* **配置证书**
+
+```
+# 生成server.keystore
+keytool -genkey -alias tomcat -keyalg RSA -keypass tomcat -storepass tomcat -keystore server.keystore -validity 3600
+
+# alias 别名
+# keyalg 证书算法
+# keystore 证书生成的目标路径和文件名
+# keypass 密钥保护密码
+# storepass 存储密码
+```
+
+![cas-5](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-5.png)
+
+```
+# 生成证书server.cer
+keytool -export -trustcacerts -alias tomcat -file server.cer -keystore server.keystore -storepass tomcat
+```
+
+![cas-6](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-6.png)
+
+```
+# 导入证书
+keytool -import -trustcacerts -alias tomcat -keystore "/app/jdk1.8.0_191/jre/lib/security/cacerts" -file "/root/server.cer" -storepass changeit
+
+# 备注：证书库默认密码changeit
+```
+
+![cas-7](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-7.png)
+
+```
+# 删除证书
+keytool -delete -alias tomcat -keystore "/app/jdk1.8.0_191/jre/lib/security/cacerts" -storepass changeit
+```
+
+* **tomcat配置https**
+
+```
+# 移动证书文件位置
+mv server.keystore /app/
+mv server.cer /app/
+
+# 修改server.xml文件
+vim /app/apache-tomcat-8.5.35/conf/server.xml
+
+# 在对应位置添加如下内容
+<Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol" maxThreads="150" SSLEnabled="true" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/app/server.keystore" keystorePass="tomcat" />
+
+# 重启tomcat
+```
+
+![cas-8](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-8.png)
 
 ## 高级使用
 ### 配置数据库
