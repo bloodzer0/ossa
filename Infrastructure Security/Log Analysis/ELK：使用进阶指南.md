@@ -29,7 +29,7 @@ Command						| Note
 -t								| 测试配置文件
 
 ### Logstash配置详解
-* 解析IP
+* **解析IP**
 
 ```
 filter {
@@ -40,6 +40,23 @@ filter {
 ```
 
 ![elk-7](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-7.png)
+
+* **多行合并**
+
+```
+input {
+    file {
+        path => ["log_path"]
+        codec => multiline {
+            pattern => "^%{TIMESTAMP_ISO8601}" # 不以标准时间格式开头的行合并为一行
+            negate => true
+            what => "previous"
+        }
+    }
+}
+```
+
+![elk-13](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-13.png)
 
 ### Logstash Patterns
 [官方文档](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html)
@@ -53,7 +70,7 @@ EMAILLOCALPART	| 邮箱用户名部分
 
 GrokDebugg：[在线地址](http://grokdebug.herokuapp.com/) 需要翻墙使用，否在js会加载不成功，为了解决这个问题，我们可以在本地搭建一个。
 
-* 本地安装grokdebug：[github地址](https://github.com/nickethier/grokdebug) 
+* **本地安装grokdebug**：[github地址](https://github.com/nickethier/grokdebug) 
 
 操作系统：Centos7
 
@@ -107,7 +124,7 @@ gem install sinatra -v=1.3.3
 gem install unicorn -v=4.6.3
 ```
 
-* 启动与使用grokdebug
+* **启动与使用grokdebug**
 
 ```
 # 启动
@@ -119,7 +136,7 @@ nohup bundle exec unicorn -p 8081 -c ./unicorn &
 
 ## Kibana
 ### Kibana登录鉴权
-* 利用nginx代理进行鉴权
+* **利用nginx代理进行鉴权**
 
 ```
 # 安装nginx与nginx认证模块
