@@ -114,6 +114,48 @@ ssh -p2222 admin@Jumpserver-Host # 密码：admin
 
 ![jumpserver-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Host%20Security/Fortress%20Machine/img/jumpserver-3.png)
 
+
+### 开机自启
+* jumpserver
+
+```
+sed -i "s/START_TIMEOUT = 15/START_TIMEOUT = 40/g" /opt/jumpserver/jms
+
+vim /usr/lib/systemd/system/jms.service
+	[Unit]
+	Description=jms
+	After=network.target mariadb.service redis.service
+	
+	[Service]
+	Type=forking
+	Environment="PATH=/opt/py3/bin"
+	ExecStart=/opt/jumpserver/jms start all -d
+	ExecReload=
+	ExecStop=/opt/jumpserver/jms stop
+	
+	[Install]
+	WantedBy=multi-user.target
+```
+
+* coco
+
+```
+vim /usr/lib/systemd/system/coco.service
+	[Unit]
+	Description=coco
+	After=network.target jms.service
+	
+	[Service]
+	Type=forking
+	Environment="PATH=/opt/py3/bin"
+	ExecStart=/opt/coco/cocod start -d
+	ExecReload=
+	ExecStop=/opt/coco/cocod stop
+	
+	[Install]
+	WantedBy=multi-user.target
+```
+
 ### 安装Web Terminal前端：Luna
 ```
 cd /opt
@@ -123,6 +165,18 @@ chown -R root:root luna
 ```
 
 ### 安装Nginx
+```
+yum install nginx.x86_64 -y
+
+vim /etc/nginx/nginx.conf # 安装官网文档进行配置
+
+nginx -t
+nginx -s reload
+```
+
+查看效果：
+
+![jumpserver-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Host%20Security/Fortress%20Machine/img/jumpserver-4.png)
 
 ## 添加资产
 ### 添加资产的流程
@@ -132,3 +186,5 @@ chown -R root:root luna
 * 创建一个系统用户：系统用户是 Jumpserver 跳转登录资产时使用的用户,可以理解为登录资产用户,如 web, sa, dba。（此用户需要在系统初始化的时候安装好）
 
 * 添加用户：此用户用于登录jumpserver
+
+
