@@ -85,6 +85,8 @@ cp /app/cas-gradle-overlay-template/cas/build/libs/cas.war /app/apache-tomcat-8.
 ```
 # 编译安装
 mvn install # 漫长的过程
+# 或者使用
+./build.sh package
 
 # 编译完成后与Gradle后续步骤一致
 # 生成的文件在target目录中
@@ -147,6 +149,75 @@ vim /app/apache-tomcat-8.5.35/conf/server.xml
 
 ## 高级使用
 ### 配置数据库
+* **重新编译cas**
+
+```
+# 删除原本编译好的文件
+./build.sh clean
+
+# 修改pom.xml文件
+vim pom.xml
+	<dependency>
+	    <groupId>org.apereo.cas</groupId>
+	    <artifactId>cas-server-support-jdbc</artifactId>
+	    <version>${cas.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apereo.cas</groupId>
+	    <artifactId>cas-server-support-jdbc-drivers</artifactId>
+	    <version>${cas.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>${mysql.driver.version}</version>
+	</dependency>
+	
+	# 在<properties>节增加
+	<mysql.driver.version>5.1.46</mysql.driver.version>
+```
+
+![cas-9](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-9.png)
+
+![cas-10](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-10.png)
+
+```
+# 重新编译
+./build.sh package
+
+# 删除原来的cas文件
+rm -fr /app/apache-tomcat-8.5.35/webapps/cas*
+
+# 复制新编译的文件到webapps目录
+
+```
+
+* **安装并配置数据库**
+
+```
+# 数据库名：cas
+# 数据库表名：cas
+# 数据库字段名：username password(这里先使用明文)
+```
+
+* **修改配置文件**
+
+```
+vim /app/apache-tomcat-8.5.35/webapps/cas/WEB-INF/classes/application.properties
+
+	# 注释cas.authn.accept.users=casuser::Mellon
+	cas.authn.jdbc.query[0].url=jdbc:mysql://localhost:3306/cas?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+	cas.authn.jdbc.query[0].user=root # 数据库用户
+	cas.authn.jdbc.query[0].password=BloodZer@0 # 数据库密码
+	cas.authn.jdbc.query[0].sql=select * from cas where username=? # sql语句
+	cas.authn.jdbc.query[0].fieldPassword=password # 密码标签
+	cas.authn.jdbc.query[0].driverClass=com.mysql.jdbc.Driver
+```
+
+![cas-11](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-11.png)
+
+### 配置LDAP
+
 
 ## 参考资料
 [CAS统一登录认证(1)：系统安装](https://blog.csdn.net/oLinBSoft/article/details/81910775)
