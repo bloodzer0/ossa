@@ -137,3 +137,18 @@ vim /etc/phpldapadmin/config.php
 ```
 
 ![ldap-8](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Miscellaneous/Operating%20System/img/ldap-8.png)
+
+### 配置用户
+* **创建新条目**
+
+```
+# 需要先创建一个Generic: Posix Group
+
+# 创建一个Generic: User Account
+```
+
+![ldap-9](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Miscellaneous/Operating%20System/img/ldap-9.png)
+
+
+### 踩坑
+* LDAP+phpldapadmin 是很麻烦的方式，推荐使用freeipa，下一篇文章将讲freeipa安装与使用。
