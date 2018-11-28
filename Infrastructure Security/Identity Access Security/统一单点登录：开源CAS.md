@@ -189,7 +189,7 @@ vim pom.xml
 rm -fr /app/apache-tomcat-8.5.35/webapps/cas*
 
 # 复制新编译的文件到webapps目录
-
+cp target/cas.war /app/apache-tomcat-8.5.35/webapps/
 ```
 
 * **安装并配置数据库**
@@ -217,7 +217,61 @@ vim /app/apache-tomcat-8.5.35/webapps/cas/WEB-INF/classes/application.properties
 ![cas-11](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-11.png)
 
 ### 配置LDAP
+```
+# 删除原本编译好的文件
+./build.sh clean
 
+# 修改pom.xml文件
+vim pom.xml
+	<dependency>
+	     <groupId>org.apereo.cas</groupId>
+	     <artifactId>cas-server-support-ldap</artifactId>
+	     <version>${cas.version}</version>
+	</dependency>
+```
+
+![cas-12](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-12.png)
+
+```
+# 重新编译
+./build.sh package
+
+# 删除原来的cas文件
+rm -fr /app/apache-tomcat-8.5.35/webapps/cas*
+
+# 复制新编译的文件到webapps目录
+cp target/cas.war /app/apache-tomcat-8.5.35/webapps/
+```
+
+[LDAP配置参考链接](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Identity%20Access%20Security/%E5%9F%BA%E4%BA%8ELinux%E5%BC%80%E6%BA%90%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E4%BD%93%E7%B3%BB%EF%BC%9AFreeIPA.md)
+
+```
+# 修改配置文件
+vim /app/apache-tomcat-8.5.35/webapps/cas/WEB-INF/classes/application.properties
+# 在文件最后添加，我这里是最简单的配置
+```
+
+[官方配置参考链接](https://apereo.github.io/2017/03/24/cas51-ldapauthnjasypt-tutorial/#configure-cas)
+
+```
+cas.authn.ldap[0].type=AUTHENTICATED
+cas.authn.ldap[0].ldapUrl=ldap://ipa.bloodzer0.com
+cas.authn.ldap[0].useSsl=false
+cas.authn.ldap[0].baseDn=cn=users,cn=accounts,dc=bloodzer0,dc=com
+cas.authn.ldap[0].searchFilter=uid={user}
+cas.authn.ldap[0].bindDn=uid=admin,cn=users,cn=accounts,dc=bloodzer0,dc=com
+cas.authn.ldap[0].bindCredential=bloodzer0
+```
+
+```
+# 配置完成后重启tomcat
+```
+
+![cas-13](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Identity%20Access%20Security/img/cas-13.png)
 
 ## 参考资料
 [CAS统一登录认证(1)：系统安装](https://blog.csdn.net/oLinBSoft/article/details/81910775)
+
+[CAS统一登录认证(2):与数据库的连接](https://blog.csdn.net/oLinBSoft/article/details/81912681)
+
+[CAS统一登录认证(5):与ldap连接](https://blog.csdn.net/oLinBSoft/article/details/82152302)
