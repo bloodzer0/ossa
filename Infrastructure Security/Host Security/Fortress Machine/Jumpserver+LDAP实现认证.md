@@ -11,4 +11,6 @@
 
 ![jumpserver-5](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Host%20Security/Fortress%20Machine/img/jumpserver-5.png)
 
+在IPA中新增一个用户，在Jumpserver中登录
+
 ![jumpserver-6](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Host%20Security/Fortress%20Machine/img/jumpserver-6.png)
