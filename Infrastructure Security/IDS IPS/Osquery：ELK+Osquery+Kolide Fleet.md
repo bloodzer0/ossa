@@ -66,7 +66,7 @@ cp fleet/linux/fleetctl /usr/bin/fleetctl
 # 成功如下图：Migrations completed
 ```
 
-![osquery-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-2.png)
+![osquery-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/osquery-2.png)
 
 * 配置证书
 
@@ -100,7 +100,7 @@ mkdir /var/log/kolide
 # 这个时候会再次报错如下图
 ```
 
-![osquery-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-3.png)
+![osquery-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/osquery-3.png)
 
 我们使用它推荐的--auth_jwt_key
 
@@ -121,15 +121,15 @@ mkdir /var/log/kolide
 # 成功如下图
 ```
 
-![osquery-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-4.png)
+![osquery-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/osquery-4.png)
 
 * 访问https://hostname:8080进行安装 
 
-![osquery-5](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-5.png)
+![osquery-5](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/osquery-5.png)
 
 安装成功，界面如图
 
-![osquery-6](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-6.png)
+![osquery-6](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/osquery-6.png)
 
 ### 推送主机到Fleet Server
 [官方文档](https://github.com/kolide/fleet/blob/master/docs/infrastructure/adding-hosts-to-fleet.md)
@@ -151,7 +151,7 @@ cd linux/
 
 ```
 
-![osquery-7](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-7.png)
+![osquery-7](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/osquery-7.png)
 
 关于Launcher的参数解释：
 
@@ -161,7 +161,7 @@ cd linux/
 --insecure:无效的CA证书需要使用此参数
 ```
 
-![osquery-8](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-8.png)
+![osquery-8](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/osquery-8.png)
 
 * 利用Osquery推送主机
 
@@ -193,17 +193,17 @@ mv localhost.pem /var/osquery/server.pem
     --logger_tls_period=10
 ```
 
-![osquery-9](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-9.png)
+![osquery-9](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/osquery-9.png)
 
 ## 使用
 ### 利用ELK收集日志进行处理展示
 * 创建一个查询
 
-![osquery-10](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-10.png)
+![osquery-10](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/osquery-10.png)
 
 * 创建一个pack
 
-![osquery-11](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-11.png)
+![osquery-11](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/osquery-11.png)
 
 * 查看日志
 
@@ -211,7 +211,7 @@ mv localhost.pem /var/osquery/server.pem
 tail -f /var/log/kolide/osquery_result
 ```
 
-![osquery-12](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-12.png)
+![osquery-12](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/osquery-12.png)
 
 * 利用ELK解析并展示日志
 
@@ -235,6 +235,6 @@ output {
 
 配置好ELK，查看展示图
 
-![osquery-13](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/osquery-13.png)
+![osquery-13](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/osquery-13.png)
 
 ## 参考资料

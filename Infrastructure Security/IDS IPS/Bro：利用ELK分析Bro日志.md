@@ -13,7 +13,7 @@
 cat /opt/bro/logs/current/ssh.log
 ```
 
-![bro-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/bro-4.png)
+![bro-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/bro-4.png)
 
 编辑Logstash配置文件：
 
@@ -59,7 +59,7 @@ output {
 
 启动对应的服务后
 
-![bro-5](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/bro-5.png)
+![bro-5](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/bro-5.png)
 
 ### 分析HTTP日志
 方法与分析SSH日志一样，着重点是配置文件不一样。

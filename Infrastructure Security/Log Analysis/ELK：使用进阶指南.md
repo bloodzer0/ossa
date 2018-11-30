@@ -27,8 +27,9 @@ Command						| Note
 --config.reload.automatic	| 自动重载被修改的配置文件
 -f								| 加载配置文件
 -t								| 测试配置文件
+
 ### Logstash配置详解
-* 解析IP
+* **解析IP**
 
 ```
 filter {
@@ -38,7 +39,24 @@ filter {
 }
 ```
 
-![elk-7](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-7.png)
+![elk-7](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-7.png)
+
+* **多行合并**
+
+```
+input {
+    file {
+        path => ["log_path"]
+        codec => multiline {
+            pattern => "^%{TIMESTAMP_ISO8601}" # 不以标准时间格式开头的行合并为一行
+            negate => true
+            what => "previous"
+        }
+    }
+}
+```
+
+![elk-13](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-13.png)
 
 ### Logstash Patterns
 [官方文档](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html)
@@ -47,11 +65,12 @@ filter {
 
 Field				| Note
 ---					| ---
-
+USERNAME或USER	| 数字、大小写字母、特殊字符(.-_)组成
+EMAILLOCALPART	| 邮箱用户名部分
 
 GrokDebugg：[在线地址](http://grokdebug.herokuapp.com/) 需要翻墙使用，否在js会加载不成功，为了解决这个问题，我们可以在本地搭建一个。
 
-* 本地安装grokdebug：[github地址](https://github.com/nickethier/grokdebug) 
+* **本地安装grokdebug**：[github地址](https://github.com/nickethier/grokdebug) 
 
 操作系统：Centos7
 
@@ -105,19 +124,19 @@ gem install sinatra -v=1.3.3
 gem install unicorn -v=4.6.3
 ```
 
-* 启动与使用grokdebug
+* **启动与使用grokdebug**
 
 ```
 # 启动
 nohup bundle exec unicorn -p 8081 -c ./unicorn &
 ```
 
-![elk-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-4.png)
+![elk-4](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-4.png)
 
 
 ## Kibana
 ### Kibana登录鉴权
-* 利用nginx代理进行鉴权
+* **利用nginx代理进行鉴权**
 
 ```
 # 安装nginx与nginx认证模块
@@ -129,7 +148,7 @@ vim /etc/nginx/nginx.conf
 # 注释掉server内的内容，并添加如下内容
 ```
 
-![elk-5](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-5.png)
+![elk-5](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-5.png)
 
 ```
 server {
@@ -159,7 +178,7 @@ htpasswd -cm /etc/nginx/kibana-user username
 systemctl restart nginx.service
 ```
 
-![elk-6](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-6.png)
+![elk-6](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-6.png)
 
 ### 使用xpack进行认证
 [xpack破解地址](https://www.cnblogs.com/chengjiawei/p/8991859.html)

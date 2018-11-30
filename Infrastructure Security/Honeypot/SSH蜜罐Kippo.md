@@ -38,13 +38,13 @@ cp kippo.cfg.dist kippo.cfg
 ./start.sh
 ```
 
-![kippo-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Honeypot/img/kippo-1.png)
+![kippo-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Honeypot/img/kippo-1.png)
 
 效果图
 
-![kippo-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Honeypot/img/kippo-2.png)
+![kippo-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Honeypot/img/kippo-2.png)
 
-![kippo-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Honeypot/img/kippo-3.png)
+![kippo-3](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Honeypot/img/kippo-3.png)
 
 ## 使用
 ### 让kippo转发到22端口

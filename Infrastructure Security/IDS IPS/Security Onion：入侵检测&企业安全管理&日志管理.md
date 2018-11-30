@@ -8,11 +8,11 @@
 
 使用虚拟机软件VMware、VirtualBox等进行安装。
 
-![securityonin-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/securityonin-1.png)
+![securityonin-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/securityonin-1.png)
 
 后续就是与Ubuntu系统一样的安装过程，安装完成后如图：
 
-![securityonin-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/IDS%20IPS/img/securityonin-2.png)
+![securityonin-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/IDS%20IPS/img/securityonin-2.png)
 
 ### 更新Security Onion
 

@@ -17,7 +17,7 @@ source /etc/profile
 sonar-scanner -v
 ```
 
-![sonar-5](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Code%20Audit/img/sonar-5.png)
+![sonar-5](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Code%20Audit/img/sonar-5.png)
 
 # 分析
 [官方文档](https://docs.sonarqube.org/display/SCAN)
@@ -84,4 +84,4 @@ sonar.sources=.
 # 测试
 我这里使用sqlmap的代码进行测试，执行完成以后，在web界面可以看到如图分析结果
 
-![sonar-6](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Code%20Audit/img/sonar-6.png)
+![sonar-6](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Code%20Audit/img/sonar-6.png)

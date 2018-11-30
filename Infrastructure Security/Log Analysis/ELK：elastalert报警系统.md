@@ -28,7 +28,7 @@ python setup.py install
 elastalert-create-index
 ```
 
-![elk-8](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-8.png)
+![elk-8](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-8.png)
 
 ```
 # 测试规则文件是否正确
@@ -140,11 +140,11 @@ password: "password"
 python -m elastalert.elastalert --verbose --rule /etc/elastalert/rules/rule.yaml --config /etc/elastalert/config.yaml
 ```
 
-![elk-9](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-9.png)
+![elk-9](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-9.png)
 
 查看报警：
 
-![elk-10](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-10.png)
+![elk-10](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-10.png)
 
 ### 钉钉报警
 [github地址](https://github.com/xuyaoqiang/elastalert-dingtalk-plugin)
@@ -195,11 +195,11 @@ dingtalk_msgtype: "text"
 python -m elastalert.elastalert --verbose --config /etc/elastalert/config.yaml --rule /etc/elastalert/rules/rule.yaml
 ```
 
-![elk-11](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-11.png)
+![elk-11](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-11.png)
 
 效果如图：
 
-![elk-12](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Log%20Analysis/img/elk-12.png)
+![elk-12](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Log%20Analysis/img/elk-12.png)
 
 
 * 以服务启动方式解决

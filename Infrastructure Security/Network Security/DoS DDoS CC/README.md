@@ -136,4 +136,4 @@ NTP包含一个monlist功能，也被称为MON_GETLIST，主要用于监控NTP�
 
 来自网易-林伟壕的DDoS分类图：
 
-![DDoS攻击与防御](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/img/DDoS%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%BE%A1.png)
+![DDoS攻击与防御](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Infrastructure%20Security/Network%20Security/DoS%20DDoS%20CC/img/DDoS%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%BE%A1.png)

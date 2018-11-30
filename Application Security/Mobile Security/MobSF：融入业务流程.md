@@ -29,7 +29,7 @@ MobSF运行分为两种类型：Docker运行、安装在服务器/PC上；
 [原文地址](https://mp.weixin.qq.com/s/5whLNkfSUpW6zQNxQf7HqQ)
 
 
-![MobSF-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Mobile%20Security/img/MobSF-1.png)
+![MobSF-1](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Mobile%20Security/img/MobSF-1.png)
 
 
 ## 排除误报项与易忽略项
@@ -38,7 +38,7 @@ MobSF运行分为两种类型：Docker运行、安装在服务器/PC上；
 ## 报警与漏洞管理
 对处理后的报告重新进行下一步：预警和漏洞管理并行进行；
 
-![MobSF-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Mobile%20Security/img/MobSF-2.png)
+![MobSF-2](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Mobile%20Security/img/MobSF-2.png)
 
 ## 总结
 代码审计与扫描都是一个需要人来进行运营的东西，如果在没有精力能够投入这个版块时，安安心心把MobSF作为一个漏洞挖掘工具就好了。

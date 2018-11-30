@@ -12,11 +12,11 @@ yum install gcc.x86_64 libxml2-devel.x86_64 httpd.x86_64 httpd-devel.x86_64 pcre
 # 安装mod_security
 yum install mod_security.x86_64 -y
 
-# 查看http模块，结果如图
+# 查看http 模块，结果如图
 httpd -M
 ```
 
-![waf-5](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Web%20Application%20Firewall/img/waf-5.png)
+![waf-5](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Web%20Application%20Firewall/img/waf-5.png)
 
 ```
 # 启动服务
@@ -34,7 +34,7 @@ yum -y install mod_security_crs
 # 查看规则
 ```
 
-![waf-6](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Web%20Application%20Firewall/img/waf-6.png)
+![waf-6](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Web%20Application%20Firewall/img/waf-6.png)
 
 访问测试，测试结果如图：
 
@@ -42,7 +42,7 @@ yum -y install mod_security_crs
 tail -f /etc/httpd/logs/error_log 
 ```
 
-![waf-7](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Web%20Application%20Firewall/img/waf-7.png)
+![waf-7](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Web%20Application%20Firewall/img/waf-7.png)
 
 
 再查看其他日志，测试结果如图：
@@ -51,7 +51,7 @@ tail -f /etc/httpd/logs/error_log
 tail -f /var/log/httpd/modsec_audit.log
 ```
 
-![waf-8](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/blob/master/Application%20Security/Web%20Application%20Firewall/img/waf-8.png)
+![waf-8](https://github.com/bloodzer0/Enterprise_Security_Build--Open_Source/raw/master/Application%20Security/Web%20Application%20Firewall/img/waf-8.png)
 
 ## 参考资料
 [owasp mod_security](https://github.com/SpiderLabs/owasp-modsecurity-crs)
