@@ -56,7 +56,37 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/api-testing/</loc>
+     <lastmod>2018-12-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/app-testing/</loc>
+     <lastmod>2018-12-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/browser-server-testing/</loc>
+     <lastmod>2018-12-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/client-server-testing/</loc>
+     <lastmod>2018-12-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/</loc>
+     <lastmod>2018-12-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/burpsuite/</loc>
+     <lastmod>2018-12-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/sqlmap/</loc>
      <lastmod>2018-12-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
