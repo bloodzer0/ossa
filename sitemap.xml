@@ -51,6 +51,16 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/owasp-testing-checklist/</loc>
+     <lastmod>2018-12-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/</loc>
+     <lastmod>2018-12-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/vulnerability-management/</loc>
      <lastmod>2018-12-13</lastmod>
      <changefreq>daily</changefreq>
