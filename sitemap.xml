@@ -56,17 +56,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/api-testing/</loc>
+     <lastmod>2018-12-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/dast-iast-sast/</loc>
      <lastmod>2018-12-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/owasp-testing-checklist/</loc>
-     <lastmod>2018-12-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/api-testing/</loc>
      <lastmod>2018-12-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
