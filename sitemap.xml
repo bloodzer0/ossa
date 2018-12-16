@@ -56,7 +56,22 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/api-testing/</loc>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/api-security-testing/</loc>
+     <lastmod>2018-12-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/app-security-testing/</loc>
+     <lastmod>2018-12-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/bs-security-testing/</loc>
+     <lastmod>2018-12-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/cs-security/</loc>
      <lastmod>2018-12-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -67,31 +82,6 @@
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/owasp-testing-checklist/</loc>
-     <lastmod>2018-12-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/app-testing/</loc>
-     <lastmod>2018-12-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/app-testing/android-security-testing/</loc>
-     <lastmod>2018-12-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/app-testing/ios-security-testing/</loc>
-     <lastmod>2018-12-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/browser-server-testing/</loc>
-     <lastmod>2018-12-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/client-server-testing/</loc>
      <lastmod>2018-12-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
