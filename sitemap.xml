@@ -46,6 +46,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-scan/web-scanner-comparison/</loc>
+     <lastmod>2018-12-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/</loc>
      <lastmod>2018-12-16</lastmod>
      <changefreq>daily</changefreq>
@@ -71,6 +76,16 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/app-testing/android-security-testing/</loc>
+     <lastmod>2018-12-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/app-testing/ios-security-testing/</loc>
+     <lastmod>2018-12-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/browser-server-testing/</loc>
      <lastmod>2018-12-16</lastmod>
      <changefreq>daily</changefreq>
@@ -91,6 +106,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/capture-https/</loc>
+     <lastmod>2018-12-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/sqlmap/</loc>
      <lastmod>2018-12-16</lastmod>
      <changefreq>daily</changefreq>
@@ -102,6 +122,11 @@
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/vulnerability-management/vm-tools-defectdojo/</loc>
+     <lastmod>2018-12-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/vulnerability-management/vm-tools-insight/</loc>
      <lastmod>2018-12-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
