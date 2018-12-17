@@ -41,16 +41,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-scan/</loc>
-     <lastmod>2018-12-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-scan/web-scanner-comparison/</loc>
-     <lastmod>2018-12-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/</loc>
      <lastmod>2018-12-17</lastmod>
      <changefreq>daily</changefreq>
@@ -122,6 +112,16 @@
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/vulnerability-management/vulnerability-fixes/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/web-security-scan/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/web-security-scan/web-scanner-comparison/</loc>
      <lastmod>2018-12-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
