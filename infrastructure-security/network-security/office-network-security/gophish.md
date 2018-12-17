@@ -1,4 +1,6 @@
 ## gophish概述
+开源钓鱼工具：支持配置钓鱼邮件模板、公司员工邮箱信息等等；
+
 [github地址](https://github.com/gophish/gophish)
 
 ## 安装与使用
@@ -94,8 +96,12 @@ unzip gophish-v0.7.1-linux-64bit.zip -d /app/gophish/ && cd /app/gophish/
 
 ## 使用心得
 ### 优点
-* 能够进行企业内部员工安全意识培训起到很好的辅助作用
+* 能够进行企业内部员工安全意识培训起到很好的辅助作用；
+* 如果条件允许的情况，可以结合MSF进行PC内网渗透；
 
 ### 缺点
 * 不支持员工邮箱导入，如果需要进行"海钓"需要一个一个添加，手工活，不过可以通过脚本来实现；
 * 获取的用户信息只包括操作系统版本、浏览器版本、以及用户提交的数据，不能精准定位到是哪个用户点击了钓鱼链接；
+
+## 参考资料
+[Automate Phishing Emails with GoPhish](https://www.youtube.com/watch?v=knc6Iq-hNcw)
