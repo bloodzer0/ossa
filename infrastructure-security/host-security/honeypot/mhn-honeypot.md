@@ -85,6 +85,11 @@ hydra -l root -P password.txt mssql://10.10.10.5
 ![mhn-5](https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/mhn-5.png)
 
 ## 心得体会
+* 蜜罐可以存在于各种场景之中（机房、内网、云环境）；
+* 蜜罐产品的思考应该是在防火墙、入侵检测之后，属于提高企业安全水平的辅助产品；
+* 蜜罐主要部署在企业内网，起到预警与了解攻击中入侵的情况的作用，如：发现员工PC中毒对内网的入侵、转移攻击者注意力等等；
+* 蜜罐不能设置的太过简单，也不能设置太过复杂；
+
 ### 优点
 * 内置集成大量的蜜罐系统，且提供一键部署蜜罐的方式；
 * 支持蜜罐攻击效果图展示，与ArcSight或Splunk集成友好；
