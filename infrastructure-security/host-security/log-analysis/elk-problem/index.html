@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/infrastructure-security/network-security/network-security-monitor/github-monitor/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk-problem/">
       
       
         <meta name="author" content="bloodzer0">
@@ -42,7 +42,7 @@
     
     
       
-        <title>GitHub信息泄漏监控 - ossa</title>
+        <title>ELK问题踩坑 - ossa</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#github" tabindex="1" class="md-skip">
+      <a href="#elk" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 ossa
               </span>
               <span class="md-header-nav__topic">
-                GitHub信息泄漏监控
+                ELK问题踩坑
               </span>
             
           
@@ -739,10 +739,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
     
     <label class="md-nav__link" for="nav-3-2">
       Host security
@@ -760,7 +762,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../host-security/" title="主机安全" class="md-nav__link">
+    <a href="../../" title="主机安全" class="md-nav__link">
       主机安全
     </a>
   </li>
@@ -791,7 +793,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../host-security/honeypot/" title="蜜罐技术" class="md-nav__link">
+    <a href="../../honeypot/" title="蜜罐技术" class="md-nav__link">
       蜜罐技术
     </a>
   </li>
@@ -803,7 +805,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../host-security/honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
+    <a href="../../honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
       MHN蜜罐
     </a>
   </li>
@@ -839,7 +841,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../host-security/host-security-scan/" title="主机安全扫描" class="md-nav__link">
+    <a href="../../host-security-scan/" title="主机安全扫描" class="md-nav__link">
       主机安全扫描
     </a>
   </li>
@@ -851,7 +853,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../host-security/host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
+    <a href="../../host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
       开源扫描器
     </a>
   </li>
@@ -866,10 +868,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2-4" type="checkbox" id="nav-3-2-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2-4" type="checkbox" id="nav-3-2-4" checked>
     
     <label class="md-nav__link" for="nav-3-2-4">
       Log analysis
@@ -887,7 +891,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../host-security/log-analysis/elk-advanced/" title="ELK高级使用" class="md-nav__link">
+    <a href="../elk-advanced/" title="ELK高级使用" class="md-nav__link">
       ELK高级使用
     </a>
   </li>
@@ -897,11 +901,76 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../../host-security/log-analysis/elk-problem/" title="ELK问题踩坑" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        ELK问题踩坑
+      </label>
+    
+    <a href="./" title="ELK问题踩坑" class="md-nav__link md-nav__link--active">
       ELK问题踩坑
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#es" title="ES脑裂" class="md-nav__link">
+    ES脑裂
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="脑裂可能的原因" class="md-nav__link">
+    脑裂可能的原因
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="解决脑裂" class="md-nav__link">
+    解决脑裂
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -911,7 +980,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../host-security/log-analysis/elk/" title="ELK日志分析系统" class="md-nav__link">
+    <a href="../elk/" title="ELK日志分析系统" class="md-nav__link">
       ELK日志分析系统
     </a>
   </li>
@@ -931,12 +1000,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
     <label class="md-nav__link" for="nav-3-3">
       Network security
@@ -954,7 +1021,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../" title="网络安全" class="md-nav__link">
+    <a href="../../../network-security/" title="网络安全" class="md-nav__link">
       网络安全
     </a>
   </li>
@@ -985,7 +1052,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
+    <a href="../../../network-security/cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
       应用层拒绝服务攻击
     </a>
   </li>
@@ -997,7 +1064,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
+    <a href="../../../network-security/cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
       拒绝服务攻击
     </a>
   </li>
@@ -1012,12 +1079,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-3" type="checkbox" id="nav-3-3-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-3" type="checkbox" id="nav-3-3-3">
     
     <label class="md-nav__link" for="nav-3-3-3">
       Network security monitor
@@ -1033,164 +1098,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        GitHub信息泄漏监控
-      </label>
-    
-    <a href="./" title="GitHub信息泄漏监控" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../../network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
       GitHub信息泄漏监控
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="监控模式" class="md-nav__link">
-    监控模式
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#api" title="通过API进行监控" class="md-nav__link">
-    通过API进行监控
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="通过爬虫进行监控" class="md-nav__link">
-    通过爬虫进行监控
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#github_1" title="GitHub监控规则" class="md-nav__link">
-    GitHub监控规则
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="关键字匹配模式" class="md-nav__link">
-    关键字匹配模式
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" title="优化匹配规则" class="md-nav__link">
-    优化匹配规则
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" title="加白操作" class="md-nav__link">
-    加白操作
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" title="前端展示" class="md-nav__link">
-    前端展示
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" title="几个思考" class="md-nav__link">
-    几个思考
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#github_2" title="确认的GitHub应该如何处理" class="md-nav__link">
-    确认的GitHub应该如何处理
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" title="如何构建分布式监控" class="md-nav__link">
-    如何构建分布式监控
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" title="科技型企业支撑集团如何考虑不同公司的用户权限控制" class="md-nav__link">
-    科技型企业支撑集团如何考虑不同公司的用户权限控制
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#github_3" title="开源GitHub监控" class="md-nav__link">
-    开源GitHub监控
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_10" title="开源优缺点对比" class="md-nav__link">
-    开源优缺点对比
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1224,7 +1136,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../office-network-security/" title="办公网网络安全" class="md-nav__link">
+    <a href="../../../network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
       办公网网络安全
     </a>
   </li>
@@ -1236,7 +1148,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../office-network-security/email-security/" title="邮件安全" class="md-nav__link">
+    <a href="../../../network-security/office-network-security/email-security/" title="邮件安全" class="md-nav__link">
       邮件安全
     </a>
   </li>
@@ -1248,7 +1160,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../office-network-security/gophish/" title="gophish" class="md-nav__link">
+    <a href="../../../network-security/office-network-security/gophish/" title="gophish" class="md-nav__link">
       gophish
     </a>
   </li>
@@ -1398,23 +1310,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="监控模式" class="md-nav__link">
-    监控模式
+  <a href="#es" title="ES脑裂" class="md-nav__link">
+    ES脑裂
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api" title="通过API进行监控" class="md-nav__link">
-    通过API进行监控
+  <a href="#_1" title="脑裂可能的原因" class="md-nav__link">
+    脑裂可能的原因
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="通过爬虫进行监控" class="md-nav__link">
-    通过爬虫进行监控
+  <a href="#_2" title="解决脑裂" class="md-nav__link">
+    解决脑裂
   </a>
   
 </li>
@@ -1425,97 +1337,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#github_1" title="GitHub监控规则" class="md-nav__link">
-    GitHub监控规则
+  <a href="#_3" title="参考资料" class="md-nav__link">
+    参考资料
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="关键字匹配模式" class="md-nav__link">
-    关键字匹配模式
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" title="优化匹配规则" class="md-nav__link">
-    优化匹配规则
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" title="加白操作" class="md-nav__link">
-    加白操作
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" title="前端展示" class="md-nav__link">
-    前端展示
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" title="几个思考" class="md-nav__link">
-    几个思考
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#github_2" title="确认的GitHub应该如何处理" class="md-nav__link">
-    确认的GitHub应该如何处理
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" title="如何构建分布式监控" class="md-nav__link">
-    如何构建分布式监控
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" title="科技型企业支撑集团如何考虑不同公司的用户权限控制" class="md-nav__link">
-    科技型企业支撑集团如何考虑不同公司的用户权限控制
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#github_3" title="开源GitHub监控" class="md-nav__link">
-    开源GitHub监控
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_10" title="开源优缺点对比" class="md-nav__link">
-    开源优缺点对比
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1536,89 +1360,31 @@
               
                 
                 
-                <h1 id="github">GitHub信息泄漏监控</h1>
-<p>为什么要监控GitHub，因为随着企业发展，各个团队信息安全意识不到位，可能导致涉及公司的敏感信息被上传到GitHub，主要包括：公司业务代码信息、服务器账号密码或私钥信息、内部核心资料（员工信息、项目文档）等等。</p>
-<p>GitHub监控只是一个辅助手段，不要过分依赖监控平台，因为GitHub监控需要人员参与处理，所以会存在漏报的情况。<strong>我们需要做到从制度管控到员工安全意识培训等多方面来提高整体安全水平。</strong></p>
-<h2 id="_1">监控模式</h2>
-<h3 id="api">通过API进行监控</h3>
-<p>token有查询频次限制。</p>
-<p><a href="https://developer.github.com/v3/search/#search-code">API文档</a></p>
-<h3 id="_2">通过爬虫进行监控</h3>
-<p>GitHub存在反爬机制，针对频次太快的IP与UA维度（这个是很早之前测试发现的，现在的策略可能发生了变化）。</p>
-<p>应对反爬机制：</p>
-<pre><code>降低请求的时间间隔：5s/请求基本就不会被拉黑；
-使用IP代理池，需要考虑代理池的稳定性与代理池IP能在被拉黑后快速切换；
+                <h1 id="elk">ELK问题踩坑</h1>
+<h2 id="es">ES脑裂</h2>
+<h3 id="_1">脑裂可能的原因</h3>
+<ul>
+<li>网络问题：集群间的网络延迟导致一些节点访问不到master，认为master挂掉了从而选举出新的master，并对master上的分片和副本标红，分配新的主分片。</li>
+<li>节点负载：主节点的角色既为master又为data，访问量较大时可能会导致ES停止响应造成大面积延迟，此时其他节点得不到主节点的响应认为主节点挂掉了，会重新选取主节点。</li>
+<li>内存回收：data节点上的ES进程占用的内存较大，引发JVM的大规模内存回收，造成ES进程失去响应。</li>
+</ul>
+<h3 id="_2">解决脑裂</h3>
+<ul>
+<li>减少误判：discovery.zen.ping_timeout节点状态的响应时间，默认为3s，可以适当调大，如果master在该响应时间的范围内没有做出响应应答，会判断该节点已经挂掉了。（调整参数为：6s，discovery.zen.ping_timeout:6，可适当减少误判。）</li>
+<li>选举触发：discovery.zen.minimum_master_nodes:1，当备选主节点的个数大于等于该参数的值，且备选主节点中有该参数个节点认为主节点挂了，进行选举。官方建议为(N/2)+1，N为主节点个数（即有资格成为主节点的节点个数）</li>
+<li>角色分离：即master节点与data节点分离，限制角色</li>
+</ul>
+<pre><code># 主节点
+node.master: true
+node.data: false
+
+# 从节点
+node.master: false
+node.data: true
 </code></pre>
 
-<h2 id="github_1">GitHub监控规则</h2>
-<h3 id="_3">关键字匹配模式</h3>
-<ul>
-<li>精准匹配："keyword"，使用双引号把关键字引起来；</li>
-<li>模糊匹配：keyword，常用于多个关键字联合搜索，如：domain password;</li>
-</ul>
-<p>备注：模糊匹配经常会出现匹配出海量结果的情况；</p>
-<h3 id="_4">优化匹配规则</h3>
-<ul>
-<li>是否应该选择排除不属于公司的开发语言：否，研发可能自己使用其它语言编写代码；</li>
-<li>文件后缀名排除：排除gif、png、jpg等类似的后缀名文件；</li>
-<li>commit内容爬取：调用API进行监控就可以获取信息；</li>
-</ul>
-<h3 id="_5">加白操作</h3>
-<ul>
-<li>加白某个用户：比如一些白帽子的项目中会有很多关于公司的关键字，可以考虑加白这个人；</li>
-<li>加白项目：加白项目的时候需要考虑如果项目被fork以后，我们如果标记那些被fork的项目；</li>
-</ul>
-<h3 id="_6">前端展示</h3>
-<p>我思考的最优方案：通过项目来展示，一个项目中有多少可疑的URL，每个URL展示命中关键字的部分，这样方便运营人员在处理是进行加白。</p>
-<h2 id="_7">几个思考</h2>
-<h3 id="github_2">确认的GitHub应该如何处理</h3>
-<ul>
-<li>GitHub可以追溯到人，直接联系到人进行删除；</li>
-<li>不能追溯到人，GitHub支持给官网发送邮件，联系GitHub进行删除；但是GitHub会公开他们处理的结果，所以如果真的由于不能追溯到人泄漏，赶紧想办法做其它处理吧；如：泄漏代码，通过能接触到这些代码的人进行查询；泄漏的是账号密码，可以反查能接触账号密码的人，也可以直接修改密码；（主要还是需要从制度与安全意识出发）</li>
-</ul>
-<p><a href="https://help.github.com/articles/dmca-takedown-policy">GitHub链接</a></p>
-<p><a href="https://github.com/github/dmca">GitHub公布处理结果</a></p>
-<h3 id="_8">如何构建分布式监控</h3>
-<h3 id="_9">科技型企业支撑集团如何考虑不同公司的用户权限控制</h3>
-<h2 id="github_3">开源GitHub监控</h2>
-<ul>
-<li><a href="https://github.com/FeeiCN/GSIL">gsil</a> 美联开源</li>
-<li><a href="https://github.com/MiSecurity/x-patrol">x-patrol</a> 小米开源</li>
-<li><a href="https://github.com/0xbug/Hawkeye">Hawkeye</a></li>
-<li><a href="https://github.com/VKSRC/Github-Monitor">Github-Monitor</a> VIPKID SRC开源</li>
-</ul>
-<h3 id="_10">开源优缺点对比</h3>
-<p>开源的产品都是基于两种监控模式重复造的轮子，每个人都有自己的习惯，所有对于每个人优缺点都不一样；</p>
-<table>
-<thead>
-<tr>
-<th>对比项</th>
-<th>gsil</th>
-<th>x-patrol</th>
-<th>GitHub-Monitr</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>监控模式</td>
-<td>API模式</td>
-<td>API模式</td>
-<td>API模式</td>
-</tr>
-<tr>
-<td>开发语言</td>
-<td>python</td>
-<td>go</td>
-<td>python</td>
-</tr>
-<tr>
-<td>docker支持</td>
-<td>不支持</td>
-<td>不支持</td>
-<td>支持</td>
-</tr>
-</tbody>
-</table>
+<h2 id="_3">参考资料</h2>
+<p><a href="https://blog.csdn.net/kakaluoteyy/article/details/81068387">ES脑裂问题分析及优化</a></p>
                 
                   
                 
@@ -1639,7 +1405,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../elk-advanced/" title="ELK高级使用" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1648,19 +1414,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                拒绝服务攻击
+                ELK高级使用
               </span>
             </div>
           </a>
         
         
-          <a href="../../office-network-security/" title="办公网网络安全" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../elk/" title="ELK日志分析系统" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                办公网网络安全
+                ELK日志分析系统
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
