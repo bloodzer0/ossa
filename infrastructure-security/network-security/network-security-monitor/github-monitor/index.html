@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/application-security/security-defense/waf/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/infrastructure-security/network-security/network-security-monitor/github-monitor/">
       
       
         <meta name="author" content="bloodzer0">
@@ -37,21 +37,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
-        <title>Web应用防火墙 - ossa</title>
+        <title>GitHub信息泄漏监控 - ossa</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.11e41852.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
@@ -60,7 +60,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
     
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#web" tabindex="1" class="md-skip">
+      <a href="#github" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 ossa
               </span>
               <span class="md-header-nav__topic">
-                Web应用防火墙
+                GitHub信息泄漏监控
               </span>
             
           
@@ -240,7 +240,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../.." title="ossa(open-source security architecture)" class="md-nav__link">
+    <a href="../../../.." title="ossa(open-source security architecture)" class="md-nav__link">
       ossa(open-source security architecture)
     </a>
   </li>
@@ -250,12 +250,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Application security
@@ -273,7 +271,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../" title="应用安全" class="md-nav__link">
+    <a href="../../../../application-security/" title="应用安全" class="md-nav__link">
       应用安全
     </a>
   </li>
@@ -304,7 +302,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../code-audit/" title="代码审计" class="md-nav__link">
+    <a href="../../../../application-security/code-audit/" title="代码审计" class="md-nav__link">
       代码审计
     </a>
   </li>
@@ -316,7 +314,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../code-audit/sonarqube/" title="SonarQube" class="md-nav__link">
+    <a href="../../../../application-security/code-audit/sonarqube/" title="SonarQube" class="md-nav__link">
       SonarQube
     </a>
   </li>
@@ -352,7 +350,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../mobile-security/" title="移动安全" class="md-nav__link">
+    <a href="../../../../application-security/mobile-security/" title="移动安全" class="md-nav__link">
       移动安全
     </a>
   </li>
@@ -364,7 +362,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
+    <a href="../../../../application-security/mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
       移动安全扫描
     </a>
   </li>
@@ -379,12 +377,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
     
     <label class="md-nav__link" for="nav-2-4">
       Security defense
@@ -402,7 +398,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="应用安全防御" class="md-nav__link">
+    <a href="../../../../application-security/security-defense/" title="应用安全防御" class="md-nav__link">
       应用安全防御
     </a>
   </li>
@@ -414,7 +410,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../iptables-waf/" title="iptables实现waf" class="md-nav__link">
+    <a href="../../../../application-security/security-defense/iptables-waf/" title="iptables实现waf" class="md-nav__link">
       iptables实现waf
     </a>
   </li>
@@ -426,7 +422,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../modsecurity-waf/" title="ModSecurity实现waf" class="md-nav__link">
+    <a href="../../../../application-security/security-defense/modsecurity-waf/" title="ModSecurity实现waf" class="md-nav__link">
       ModSecurity实现waf
     </a>
   </li>
@@ -438,7 +434,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../openresty-waf/" title="OpenResty实现waf" class="md-nav__link">
+    <a href="../../../../application-security/security-defense/openresty-waf/" title="OpenResty实现waf" class="md-nav__link">
       OpenResty实现waf
     </a>
   </li>
@@ -448,63 +444,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Web应用防火墙
-      </label>
-    
-    <a href="./" title="Web应用防火墙" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../../../application-security/security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
       Web应用防火墙
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#waf" title="waf的部署方式" class="md-nav__link">
-    waf的部署方式
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#waf_1" title="企业上waf时的思考" class="md-nav__link">
-    企业上waf时的思考
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="参考资料" class="md-nav__link">
-    参考资料
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -538,7 +482,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-testing/" title="安全测试" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/" title="安全测试" class="md-nav__link">
       安全测试
     </a>
   </li>
@@ -550,7 +494,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
       API安全测试
     </a>
   </li>
@@ -562,7 +506,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-testing/dast-iast-sast/" title="DAST vs SAST vs IAST" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/dast-iast-sast/" title="DAST vs SAST vs IAST" class="md-nav__link">
       DAST vs SAST vs IAST
     </a>
   </li>
@@ -574,7 +518,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-testing/owasp-testing-checklist/" title="OWASP安全测试checklist" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/owasp-testing-checklist/" title="OWASP安全测试checklist" class="md-nav__link">
       OWASP安全测试checklist
     </a>
   </li>
@@ -605,7 +549,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-testing/tools-skills/" title="工具与技巧" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/tools-skills/" title="工具与技巧" class="md-nav__link">
       工具与技巧
     </a>
   </li>
@@ -617,7 +561,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
       https抓包
     </a>
   </li>
@@ -629,7 +573,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-testing/tools-skills/mobsf/" title="MobSF" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/tools-skills/mobsf/" title="MobSF" class="md-nav__link">
       MobSF
     </a>
   </li>
@@ -641,7 +585,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-testing/tools-skills/sqlmap/" title="sqlmap" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/tools-skills/sqlmap/" title="sqlmap" class="md-nav__link">
       sqlmap
     </a>
   </li>
@@ -682,7 +626,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vulnerability-management/" title="漏洞管理" class="md-nav__link">
+    <a href="../../../../application-security/vulnerability-management/" title="漏洞管理" class="md-nav__link">
       漏洞管理
     </a>
   </li>
@@ -694,7 +638,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
+    <a href="../../../../application-security/vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
       defectdojo
     </a>
   </li>
@@ -730,7 +674,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../web-security-scan/" title="Web安全扫描" class="md-nav__link">
+    <a href="../../../../application-security/web-security-scan/" title="Web安全扫描" class="md-nav__link">
       Web安全扫描
     </a>
   </li>
@@ -750,10 +694,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Infrastructure security
@@ -771,7 +717,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../infrastructure-security/" title="基础设施安全" class="md-nav__link">
+    <a href="../../../" title="基础设施安全" class="md-nav__link">
       基础设施安全
     </a>
   </li>
@@ -802,7 +748,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../infrastructure-security/host-security/" title="主机安全" class="md-nav__link">
+    <a href="../../../host-security/" title="主机安全" class="md-nav__link">
       主机安全
     </a>
   </li>
@@ -833,7 +779,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../infrastructure-security/host-security/honeypot/" title="蜜罐技术" class="md-nav__link">
+    <a href="../../../host-security/honeypot/" title="蜜罐技术" class="md-nav__link">
       蜜罐技术
     </a>
   </li>
@@ -845,7 +791,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../infrastructure-security/host-security/honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
+    <a href="../../../host-security/honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
       MHN蜜罐
     </a>
   </li>
@@ -865,10 +811,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     
     <label class="md-nav__link" for="nav-3-3">
       Network security
@@ -886,7 +834,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../infrastructure-security/network-security/" title="网络安全" class="md-nav__link">
+    <a href="../../" title="网络安全" class="md-nav__link">
       网络安全
     </a>
   </li>
@@ -896,10 +844,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-2" type="checkbox" id="nav-3-3-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-2" type="checkbox" id="nav-3-3-2" checked>
     
     <label class="md-nav__link" for="nav-3-3-2">
       Network security monitor
@@ -915,11 +865,164 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../../infrastructure-security/network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        GitHub信息泄漏监控
+      </label>
+    
+    <a href="./" title="GitHub信息泄漏监控" class="md-nav__link md-nav__link--active">
       GitHub信息泄漏监控
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="监控模式" class="md-nav__link">
+    监控模式
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api" title="通过API进行监控" class="md-nav__link">
+    通过API进行监控
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="通过爬虫进行监控" class="md-nav__link">
+    通过爬虫进行监控
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github_1" title="GitHub监控规则" class="md-nav__link">
+    GitHub监控规则
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="关键字匹配模式" class="md-nav__link">
+    关键字匹配模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="优化匹配规则" class="md-nav__link">
+    优化匹配规则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="加白操作" class="md-nav__link">
+    加白操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="前端展示" class="md-nav__link">
+    前端展示
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="几个思考" class="md-nav__link">
+    几个思考
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github_2" title="确认的GitHub应该如何处理" class="md-nav__link">
+    确认的GitHub应该如何处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="如何构建分布式监控" class="md-nav__link">
+    如何构建分布式监控
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="科技型企业支撑集团如何考虑不同公司的用户权限控制" class="md-nav__link">
+    科技型企业支撑集团如何考虑不同公司的用户权限控制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github_3" title="开源GitHub监控" class="md-nav__link">
+    开源GitHub监控
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="开源优缺点对比" class="md-nav__link">
+    开源优缺点对比
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -953,7 +1056,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../infrastructure-security/network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
+    <a href="../../office-network-security/" title="办公网网络安全" class="md-nav__link">
       办公网网络安全
     </a>
   </li>
@@ -965,7 +1068,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../infrastructure-security/network-security/office-network-security/gophish/" title="gophish" class="md-nav__link">
+    <a href="../../office-network-security/gophish/" title="gophish" class="md-nav__link">
       gophish
     </a>
   </li>
@@ -1011,7 +1114,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../other-security-branch/" title="其它安全项目" class="md-nav__link">
+    <a href="../../../../other-security-branch/" title="其它安全项目" class="md-nav__link">
       其它安全项目
     </a>
   </li>
@@ -1042,7 +1145,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
+    <a href="../../../../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
       数据安全
     </a>
   </li>
@@ -1073,7 +1176,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
+    <a href="../../../../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
       大数据安全
     </a>
   </li>
@@ -1115,23 +1218,124 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#waf" title="waf的部署方式" class="md-nav__link">
-    waf的部署方式
+  <a href="#_1" title="监控模式" class="md-nav__link">
+    监控模式
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api" title="通过API进行监控" class="md-nav__link">
+    通过API进行监控
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="通过爬虫进行监控" class="md-nav__link">
+    通过爬虫进行监控
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#waf_1" title="企业上waf时的思考" class="md-nav__link">
-    企业上waf时的思考
+  <a href="#github_1" title="GitHub监控规则" class="md-nav__link">
+    GitHub监控规则
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="关键字匹配模式" class="md-nav__link">
+    关键字匹配模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="优化匹配规则" class="md-nav__link">
+    优化匹配规则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="加白操作" class="md-nav__link">
+    加白操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="前端展示" class="md-nav__link">
+    前端展示
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="参考资料" class="md-nav__link">
-    参考资料
+  <a href="#_7" title="几个思考" class="md-nav__link">
+    几个思考
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github_2" title="确认的GitHub应该如何处理" class="md-nav__link">
+    确认的GitHub应该如何处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="如何构建分布式监控" class="md-nav__link">
+    如何构建分布式监控
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="科技型企业支撑集团如何考虑不同公司的用户权限控制" class="md-nav__link">
+    科技型企业支撑集团如何考虑不同公司的用户权限控制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github_3" title="开源GitHub监控" class="md-nav__link">
+    开源GitHub监控
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="开源优缺点对比" class="md-nav__link">
+    开源优缺点对比
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1152,27 +1356,89 @@
               
                 
                 
-                <h1 id="web">Web应用防火墙</h1>
-<h3 id="waf">waf的部署方式</h3>
+                <h1 id="github">GitHub信息泄漏监控</h1>
+<p>为什么要监控GitHub，因为随着企业发展，各个团队信息安全意识不到位，可能导致涉及公司的敏感信息被上传到GitHub，主要包括：公司业务代码信息、服务器账号密码或私钥信息、内部核心资料（员工信息、项目文档）等等。</p>
+<p>GitHub监控只是一个辅助手段，不要过分依赖监控平台，因为GitHub监控需要人员参与处理，所以会存在漏报的情况。<strong>我们需要做到从制度管控到员工安全意识培训等多方面来提高整体安全水平。</strong></p>
+<h2 id="_1">监控模式</h2>
+<h3 id="api">通过API进行监控</h3>
+<p>token有查询频次限制。</p>
+<p><a href="https://developer.github.com/v3/search/#search-code">API文档</a></p>
+<h3 id="_2">通过爬虫进行监控</h3>
+<p>GitHub存在反爬机制，针对频次太快的IP与UA维度（这个是很早之前测试发现的，现在的策略可能发生了变化）。</p>
+<p>应对反爬机制：</p>
+<pre><code>降低请求的时间间隔：5s/请求基本就不会被拉黑；
+使用IP代理池，需要考虑代理池的稳定性与代理池IP能在被拉黑后快速切换；
+</code></pre>
+
+<h2 id="github_1">GitHub监控规则</h2>
+<h3 id="_3">关键字匹配模式</h3>
 <ul>
-<li><strong>根据部署逻辑</strong>
-主要分为串联与并联两种形式。</li>
+<li>精准匹配："keyword"，使用双引号把关键字引起来；</li>
+<li>模糊匹配：keyword，常用于多个关键字联合搜索，如：domain password;</li>
 </ul>
-<p>推荐选择：物理并联逻辑串联的部署方式，对业务的影响较低并容易做降级方案。</p>
+<p>备注：模糊匹配经常会出现匹配出海量结果的情况；</p>
+<h3 id="_4">优化匹配规则</h3>
 <ul>
-<li><strong>根据部署方式</strong>
-cname部署（代理模式）、module部署（主机模式）、网络层部署（网络模式）</li>
+<li>是否应该选择排除不属于公司的开发语言：否，研发可能自己使用其它语言编写代码；</li>
+<li>文件后缀名排除：排除gif、png、jpg等类似的后缀名文件；</li>
+<li>commit内容爬取：调用API进行监控就可以获取信息；</li>
 </ul>
-<h3 id="waf_1">企业上waf时的思考</h3>
+<h3 id="_5">加白操作</h3>
 <ul>
-<li>单台waf能承受的QPS上限是多少？</li>
-<li>部署waf对系统性能造成的影响是多少？</li>
-<li>waf的误报率与漏报率是否能达到预期的平衡值（平衡值：任何安全设备都保障不了低漏报、低误报，只能在误报与漏报之间均衡，达到心中的平衡就是最好的）？</li>
+<li>加白某个用户：比如一些白帽子的项目中会有很多关于公司的关键字，可以考虑加白这个人；</li>
+<li>加白项目：加白项目的时候需要考虑如果项目被fork以后，我们如果标记那些被fork的项目；</li>
 </ul>
-<h2 id="_1">参考资料</h2>
-<p><a href="https://www.freebuf.com/articles/network/128370.html">互联网公司WAF系统设计</a></p>
-<p><a href="https://www.jianshu.com/p/9526969b321e">使用OpenResty搭建WAF应用</a></p>
-<p><a href="https://www.cnblogs.com/reblue520/p/6814072.html">使用NGINX+Openresty实现WAF功能</a></p>
+<h3 id="_6">前端展示</h3>
+<p>我思考的最优方案：通过项目来展示，一个项目中有多少可疑的URL，每个URL展示命中关键字的部分，这样方便运营人员在处理是进行加白。</p>
+<h2 id="_7">几个思考</h2>
+<h3 id="github_2">确认的GitHub应该如何处理</h3>
+<ul>
+<li>GitHub可以追溯到人，直接联系到人进行删除；</li>
+<li>不能追溯到人，GitHub支持给官网发送邮件，联系GitHub进行删除；但是GitHub会公开他们处理的结果，所以如果真的由于不能追溯到人泄漏，赶紧想办法做其它处理吧；如：泄漏代码，通过能接触到这些代码的人进行查询；泄漏的是账号密码，可以反查能接触账号密码的人，也可以直接修改密码；（主要还是需要从制度与安全意识出发）</li>
+</ul>
+<p><a href="https://help.github.com/articles/dmca-takedown-policy">GitHub链接</a></p>
+<p><a href="https://github.com/github/dmca">GitHub公布处理结果</a></p>
+<h3 id="_8">如何构建分布式监控</h3>
+<h3 id="_9">科技型企业支撑集团如何考虑不同公司的用户权限控制</h3>
+<h2 id="github_3">开源GitHub监控</h2>
+<ul>
+<li><a href="https://github.com/FeeiCN/GSIL">gsil</a> 美联开源</li>
+<li><a href="https://github.com/MiSecurity/x-patrol">x-patrol</a> 小米开源</li>
+<li><a href="https://github.com/0xbug/Hawkeye">Hawkeye</a></li>
+<li><a href="https://github.com/VKSRC/Github-Monitor">Github-Monitor</a> VIPKID SRC开源</li>
+</ul>
+<h3 id="_10">开源优缺点对比</h3>
+<p>开源的产品都是基于两种监控模式重复造的轮子，每个人都有自己的习惯，所有对于每个人优缺点都不一样；</p>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>gsil</th>
+<th>x-patrol</th>
+<th>GitHub-Monitr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>监控模式</td>
+<td>API模式</td>
+<td>API模式</td>
+<td>API模式</td>
+</tr>
+<tr>
+<td>开发语言</td>
+<td>python</td>
+<td>go</td>
+<td>python</td>
+</tr>
+<tr>
+<td>docker支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
@@ -1193,7 +1459,7 @@ cname部署（代理模式）、module部署（主机模式）、网络层部署
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../openresty-waf/" title="OpenResty实现waf" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../" title="网络安全" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1202,19 +1468,19 @@ cname部署（代理模式）、module部署（主机模式）、网络层部署
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                OpenResty实现waf
+                网络安全
               </span>
             </div>
           </a>
         
         
-          <a href="../../security-testing/" title="安全测试" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../office-network-security/" title="办公网网络安全" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                安全测试
+                办公网网络安全
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1248,9 +1514,9 @@ cname部署（代理模式）、module部署（主机模式）、网络层部署
       
     </div>
     
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../../assets/javascripts/application.9e1f3b71.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
       
     
     
