@@ -993,6 +993,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#kibana_2" title="Kibana登录鉴权" class="md-nav__link">
+    Kibana登录鉴权
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1439,6 +1446,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#kibana_2" title="Kibana登录鉴权" class="md-nav__link">
+    Kibana登录鉴权
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1557,6 +1571,48 @@ os.system(command)
 <li><strong>汉化</strong></li>
 </ul>
 <p><a href="https://github.com/anbai-inc/Kibana_Hanization/">github地址</a></p>
+<h3 id="kibana_2">Kibana登录鉴权</h3>
+<ul>
+<li><strong>利用nginx代理进行访问认证</strong></li>
+</ul>
+<pre><code># 安装nginx与nginx认证模块
+yum install epel-release -y
+yum install nginx.x86_64 httpd-tools.x86_64 -y
+
+# 修改nginx配置文件
+vim /etc/nginx/nginx.conf
+# 注释掉server内的内容，并添加如下内容
+</code></pre>
+
+<pre><code>server {
+    listen 8080;
+    server_name kibana;
+    auth_basic &quot;Restricted Access&quot;;
+    auth_basic_user_file /etc/nginx/kibana-user;
+
+    location / {
+        proxy_pass http://hostname:5601;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+</code></pre>
+
+<p>配置账号密码</p>
+<pre><code># 设置账号密码
+htpasswd -cm /etc/nginx/kibana-user username
+
+# 重启nginx服务
+systemctl restart nginx.service
+</code></pre>
+
+<ul>
+<li><strong>利用xpack进行访问认证</strong></li>
+</ul>
+<p><a href="https://www.cnblogs.com/chengjiawei/p/8991859.html">xpack破解地址</a></p>
 <h2 id="_3">参考资料</h2>
 <p><a href="https://mp.weixin.qq.com/s/s2ema4tIXKcqTNUUhjGt1w">Elasticsearch史上最全最常用工具清单</a></p>
                 
