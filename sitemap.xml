@@ -26,11 +26,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/mobile-security/mobile-security-hardening/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/mobile-security/mobile-security-scanner/</loc>
      <lastmod>2018-12-18</lastmod>
      <changefreq>daily</changefreq>
@@ -61,32 +56,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-development-lifecycle/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/</loc>
      <lastmod>2018-12-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/api-security-testing/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/app-security-testing/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/bs-security-testing/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/cs-security-testing/</loc>
      <lastmod>2018-12-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -102,11 +77,6 @@
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/burpsuite/</loc>
      <lastmod>2018-12-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -136,57 +106,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/vulnerability-management/vm-tools-insight/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/vulnerability-management/vulnerability-fixes/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/web-security-scan/</loc>
      <lastmod>2018-12-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/web-security-scan/web-scanner-comparison/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/business-security/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/business-security/accout-security/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/business-security/risk-control-system/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/business-security/spider-and-antispider/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/business-security/transaction-security/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://bloodzer0.github.io/ossa/infrastructure-security/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/infrastructure-security/endpoint-security/</loc>
      <lastmod>2018-12-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -232,11 +157,6 @@
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/other-security-branch/data-security/big-data-security/</loc>
-     <lastmod>2018-12-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/security-management/</loc>
      <lastmod>2018-12-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
