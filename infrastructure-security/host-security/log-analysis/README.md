@@ -108,10 +108,12 @@ output {
 [官方文档](https://www.rsyslog.com/connecting-with-logstash-via-apache-kafka/)
 
 ### Beats
-* Filebeat：
-* Packetbeat：
-* Metricbeat：
-* Winlogbeat：
+```
+Filebeat：
+Packetbeat：
+Metricbeat：
+Winlogbeat：
+```
 
 * **Beats安装**
 
