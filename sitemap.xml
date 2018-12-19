@@ -146,22 +146,22 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk-advanced/</loc>
+     <loc>https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk1/</loc>
      <lastmod>2018-12-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk-grokdebug/</loc>
+     <loc>https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk2-advanced/</loc>
      <lastmod>2018-12-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk-problem/</loc>
+     <loc>https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk3-problem/</loc>
      <lastmod>2018-12-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk/</loc>
+     <loc>https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk4-grokdebug/</loc>
      <lastmod>2018-12-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
