@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/application-security/vulnerability-management/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/infrastructure-security/host-security/ids-ips/wazuh/">
       
       
         <meta name="author" content="bloodzer0">
@@ -37,21 +37,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
-        <title>漏洞管理 - Open-Source Security Architecture</title>
+        <title>wazuh 主机入侵检测系统 - Open-Source Security Architecture</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.11e41852.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
@@ -60,7 +60,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
     
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#wazuh" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                漏洞管理
+                wazuh 主机入侵检测系统
               </span>
             
           
@@ -240,7 +240,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="ossa" class="md-nav__link">
+    <a href="../../../.." title="ossa" class="md-nav__link">
       ossa
     </a>
   </li>
@@ -250,12 +250,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Application security
@@ -273,7 +271,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="应用安全" class="md-nav__link">
+    <a href="../../../../application-security/" title="应用安全" class="md-nav__link">
       应用安全
     </a>
   </li>
@@ -304,7 +302,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../code-audit/" title="代码审计" class="md-nav__link">
+    <a href="../../../../application-security/code-audit/" title="代码审计" class="md-nav__link">
       代码审计
     </a>
   </li>
@@ -316,7 +314,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../code-audit/sonarqube/" title="SonarQube" class="md-nav__link">
+    <a href="../../../../application-security/code-audit/sonarqube/" title="SonarQube" class="md-nav__link">
       SonarQube
     </a>
   </li>
@@ -352,7 +350,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../mobile-security/" title="移动安全" class="md-nav__link">
+    <a href="../../../../application-security/mobile-security/" title="移动安全" class="md-nav__link">
       移动安全
     </a>
   </li>
@@ -364,7 +362,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
+    <a href="../../../../application-security/mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
       移动安全扫描
     </a>
   </li>
@@ -400,7 +398,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-defense/" title="应用安全防御" class="md-nav__link">
+    <a href="../../../../application-security/security-defense/" title="应用安全防御" class="md-nav__link">
       应用安全防御
     </a>
   </li>
@@ -412,7 +410,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-defense/https/" title="全站https" class="md-nav__link">
+    <a href="../../../../application-security/security-defense/https/" title="全站https" class="md-nav__link">
       全站https
     </a>
   </li>
@@ -424,7 +422,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-defense/iptables-waf/" title="iptables实现waf" class="md-nav__link">
+    <a href="../../../../application-security/security-defense/iptables-waf/" title="iptables实现waf" class="md-nav__link">
       iptables实现waf
     </a>
   </li>
@@ -436,7 +434,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-defense/modsecurity-waf/" title="ModSecurity实现waf" class="md-nav__link">
+    <a href="../../../../application-security/security-defense/modsecurity-waf/" title="ModSecurity实现waf" class="md-nav__link">
       ModSecurity实现waf
     </a>
   </li>
@@ -448,7 +446,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-defense/openresty-waf/" title="OpenResty实现waf" class="md-nav__link">
+    <a href="../../../../application-security/security-defense/openresty-waf/" title="OpenResty实现waf" class="md-nav__link">
       OpenResty实现waf
     </a>
   </li>
@@ -460,7 +458,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
+    <a href="../../../../application-security/security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
       Web应用防火墙
     </a>
   </li>
@@ -496,7 +494,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/" title="安全测试" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/" title="安全测试" class="md-nav__link">
       安全测试
     </a>
   </li>
@@ -508,7 +506,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
       API安全测试
     </a>
   </li>
@@ -520,7 +518,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/dast-iast-sast/" title="DAST vs SAST vs IAST" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/dast-iast-sast/" title="DAST vs SAST vs IAST" class="md-nav__link">
       DAST vs SAST vs IAST
     </a>
   </li>
@@ -532,7 +530,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/owasp-testing-checklist/" title="OWASP安全测试checklist" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/owasp-testing-checklist/" title="OWASP安全测试checklist" class="md-nav__link">
       OWASP安全测试checklist
     </a>
   </li>
@@ -563,7 +561,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/tools-skills/" title="工具与技巧" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/tools-skills/" title="工具与技巧" class="md-nav__link">
       工具与技巧
     </a>
   </li>
@@ -575,7 +573,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
       https抓包
     </a>
   </li>
@@ -587,7 +585,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/tools-skills/mobsf/" title="MobSF" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/tools-skills/mobsf/" title="MobSF" class="md-nav__link">
       MobSF
     </a>
   </li>
@@ -599,7 +597,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/tools-skills/sqlmap/" title="sqlmap" class="md-nav__link">
+    <a href="../../../../application-security/security-testing/tools-skills/sqlmap/" title="sqlmap" class="md-nav__link">
       sqlmap
     </a>
   </li>
@@ -619,12 +617,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
     
     <label class="md-nav__link" for="nav-2-6">
       Vulnerability management
@@ -640,116 +636,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        漏洞管理
-      </label>
-    
-    <a href="./" title="漏洞管理" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../../../application-security/vulnerability-management/" title="漏洞管理" class="md-nav__link">
       漏洞管理
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="漏洞生命周期管理" class="md-nav__link">
-    漏洞生命周期管理
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="漏洞的来源" class="md-nav__link">
-    漏洞的来源
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" title="漏洞管理的问题" class="md-nav__link">
-    漏洞管理的问题
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" title="漏洞管理的思考" class="md-nav__link">
-    漏洞管理的思考
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" title="安全漏洞生命周期的理解" class="md-nav__link">
-    安全漏洞生命周期的理解
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" title="我的一些思考" class="md-nav__link">
-    我的一些思考
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" title="参考资料" class="md-nav__link">
-    参考资料
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" title="开源漏洞管理系统" class="md-nav__link">
-    开源漏洞管理系统
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -759,7 +650,7 @@
 
 
   <li class="md-nav__item">
-    <a href="vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
+    <a href="../../../../application-security/vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
       defectdojo
     </a>
   </li>
@@ -795,7 +686,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../web-security-scan/" title="Web安全扫描" class="md-nav__link">
+    <a href="../../../../application-security/web-security-scan/" title="Web安全扫描" class="md-nav__link">
       Web安全扫描
     </a>
   </li>
@@ -815,10 +706,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Infrastructure security
@@ -836,7 +729,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/" title="基础设施安全" class="md-nav__link">
+    <a href="../../../" title="基础设施安全" class="md-nav__link">
       基础设施安全
     </a>
   </li>
@@ -846,10 +739,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
     
     <label class="md-nav__link" for="nav-3-2">
       Host security
@@ -867,7 +762,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/" title="主机安全" class="md-nav__link">
+    <a href="../../" title="主机安全" class="md-nav__link">
       主机安全
     </a>
   </li>
@@ -898,7 +793,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/honeypot/" title="蜜罐技术" class="md-nav__link">
+    <a href="../../honeypot/" title="蜜罐技术" class="md-nav__link">
       蜜罐技术
     </a>
   </li>
@@ -910,7 +805,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
+    <a href="../../honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
       MHN蜜罐
     </a>
   </li>
@@ -946,7 +841,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/host-security-scan/" title="主机安全扫描" class="md-nav__link">
+    <a href="../../host-security-scan/" title="主机安全扫描" class="md-nav__link">
       主机安全扫描
     </a>
   </li>
@@ -958,7 +853,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
+    <a href="../../host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
       开源扫描器
     </a>
   </li>
@@ -973,10 +868,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2-4" type="checkbox" id="nav-3-2-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2-4" type="checkbox" id="nav-3-2-4" checked>
     
     <label class="md-nav__link" for="nav-3-2-4">
       Ids ips
@@ -994,7 +891,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/ids-ips/aide/" title="Aide 文件和目录完整性入群检测" class="md-nav__link">
+    <a href="../aide/" title="Aide 文件和目录完整性入群检测" class="md-nav__link">
       Aide 文件和目录完整性入群检测
     </a>
   </li>
@@ -1004,11 +901,130 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/ids-ips/wazuh/" title="wazuh 主机入侵检测系统" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        wazuh 主机入侵检测系统
+      </label>
+    
+    <a href="./" title="wazuh 主机入侵检测系统" class="md-nav__link md-nav__link--active">
       wazuh 主机入侵检测系统
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="安装与使用" class="md-nav__link">
+    安装与使用
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wazuh-server" title="wazuh server安装" class="md-nav__link">
+    wazuh server安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wazuh-api" title="wazuh api安装" class="md-nav__link">
+    wazuh api安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wazuh-client" title="wazuh client安装" class="md-nav__link">
+    wazuh client安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elk" title="ELK安装" class="md-nav__link">
+    ELK安装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wazuhelkfilebeat" title="wazuh+ELK+Filebeat" class="md-nav__link">
+    wazuh+ELK+Filebeat
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filebeat" title="配置filebeat" class="md-nav__link">
+    配置filebeat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logstash" title="配置logstash" class="md-nav__link">
+    配置logstash
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wazuh_1" title="wazuh客户端自动化部署" class="md-nav__link">
+    wazuh客户端自动化部署
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="代码实现" class="md-nav__link">
+    代码实现
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1042,7 +1058,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/log-analysis/" title="日志分析" class="md-nav__link">
+    <a href="../../log-analysis/" title="日志分析" class="md-nav__link">
       日志分析
     </a>
   </li>
@@ -1054,7 +1070,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/log-analysis/elk1/" title="ELK日志分析系统" class="md-nav__link">
+    <a href="../../log-analysis/elk1/" title="ELK日志分析系统" class="md-nav__link">
       ELK日志分析系统
     </a>
   </li>
@@ -1066,7 +1082,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/log-analysis/elk2-advanced/" title="ELK高级使用" class="md-nav__link">
+    <a href="../../log-analysis/elk2-advanced/" title="ELK高级使用" class="md-nav__link">
       ELK高级使用
     </a>
   </li>
@@ -1078,7 +1094,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/log-analysis/elk3-problem/" title="ELK问题踩坑" class="md-nav__link">
+    <a href="../../log-analysis/elk3-problem/" title="ELK问题踩坑" class="md-nav__link">
       ELK问题踩坑
     </a>
   </li>
@@ -1090,7 +1106,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/log-analysis/elk4-grokdebug/" title="Logstash Patterns" class="md-nav__link">
+    <a href="../../log-analysis/elk4-grokdebug/" title="Logstash Patterns" class="md-nav__link">
       Logstash Patterns
     </a>
   </li>
@@ -1102,7 +1118,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/log-analysis/elk5-elastalert/" title="ELK监控报警系统-elastalert" class="md-nav__link">
+    <a href="../../log-analysis/elk5-elastalert/" title="ELK监控报警系统-elastalert" class="md-nav__link">
       ELK监控报警系统-elastalert
     </a>
   </li>
@@ -1114,7 +1130,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/log-analysis/graylog1/" title="Graylog日志管理系统" class="md-nav__link">
+    <a href="../../log-analysis/graylog1/" title="Graylog日志管理系统" class="md-nav__link">
       Graylog日志管理系统
     </a>
   </li>
@@ -1126,7 +1142,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/host-security/log-analysis/graylog2-advanced/" title="Graylog高级使用" class="md-nav__link">
+    <a href="../../log-analysis/graylog2-advanced/" title="Graylog高级使用" class="md-nav__link">
       Graylog高级使用
     </a>
   </li>
@@ -1167,7 +1183,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/network-security/" title="网络安全" class="md-nav__link">
+    <a href="../../../network-security/" title="网络安全" class="md-nav__link">
       网络安全
     </a>
   </li>
@@ -1198,7 +1214,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/network-security/cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
+    <a href="../../../network-security/cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
       应用层拒绝服务攻击
     </a>
   </li>
@@ -1210,7 +1226,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/network-security/cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
+    <a href="../../../network-security/cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
       拒绝服务攻击
     </a>
   </li>
@@ -1246,7 +1262,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
+    <a href="../../../network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
       GitHub信息泄漏监控
     </a>
   </li>
@@ -1282,7 +1298,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
+    <a href="../../../network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
       办公网网络安全
     </a>
   </li>
@@ -1294,7 +1310,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/network-security/office-network-security/email-security/" title="邮件安全" class="md-nav__link">
+    <a href="../../../network-security/office-network-security/email-security/" title="邮件安全" class="md-nav__link">
       邮件安全
     </a>
   </li>
@@ -1306,7 +1322,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure-security/network-security/office-network-security/gophish/" title="gophish" class="md-nav__link">
+    <a href="../../../network-security/office-network-security/gophish/" title="gophish" class="md-nav__link">
       gophish
     </a>
   </li>
@@ -1352,7 +1368,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../other-security-branch/" title="其它安全项目" class="md-nav__link">
+    <a href="../../../../other-security-branch/" title="其它安全项目" class="md-nav__link">
       其它安全项目
     </a>
   </li>
@@ -1383,7 +1399,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
+    <a href="../../../../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
       数据安全
     </a>
   </li>
@@ -1414,7 +1430,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
+    <a href="../../../../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
       大数据安全
     </a>
   </li>
@@ -1456,23 +1472,37 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="漏洞生命周期管理" class="md-nav__link">
-    漏洞生命周期管理
+  <a href="#_1" title="安装与使用" class="md-nav__link">
+    安装与使用
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="漏洞的来源" class="md-nav__link">
-    漏洞的来源
+  <a href="#wazuh-server" title="wazuh server安装" class="md-nav__link">
+    wazuh server安装
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="漏洞管理的问题" class="md-nav__link">
-    漏洞管理的问题
+  <a href="#wazuh-api" title="wazuh api安装" class="md-nav__link">
+    wazuh api安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wazuh-client" title="wazuh client安装" class="md-nav__link">
+    wazuh client安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elk" title="ELK安装" class="md-nav__link">
+    ELK安装
   </a>
   
 </li>
@@ -1483,23 +1513,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="漏洞管理的思考" class="md-nav__link">
-    漏洞管理的思考
+  <a href="#wazuhelkfilebeat" title="wazuh+ELK+Filebeat" class="md-nav__link">
+    wazuh+ELK+Filebeat
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" title="安全漏洞生命周期的理解" class="md-nav__link">
-    安全漏洞生命周期的理解
+  <a href="#filebeat" title="配置filebeat" class="md-nav__link">
+    配置filebeat
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" title="我的一些思考" class="md-nav__link">
-    我的一些思考
+  <a href="#logstash" title="配置logstash" class="md-nav__link">
+    配置logstash
   </a>
   
 </li>
@@ -1510,16 +1540,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" title="参考资料" class="md-nav__link">
-    参考资料
+  <a href="#wazuh_1" title="wazuh客户端自动化部署" class="md-nav__link">
+    wazuh客户端自动化部署
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" title="开源漏洞管理系统" class="md-nav__link">
-    开源漏洞管理系统
+  <a href="#_2" title="代码实现" class="md-nav__link">
+    代码实现
   </a>
   
 </li>
@@ -1546,124 +1576,179 @@
               
                 
                 
-                <h1 id="_1">漏洞管理</h1>
-<p>计算机安全隐患(vulnerability)俗称漏洞(security hole)，指计算机系统安全方面的缺陷，使得系统或其它应用数据的保密性、完整性、可用性、访问控制和监测机制等面临威胁。</p>
-<p>漏洞管理就是领先漏洞一步，让修复更频繁更有效的一个过程。</p>
-<p>当公司业务较少时，一个表格就可以处理完漏洞管理的流程。但是当业务系统增多，安全报告增大时就需要一个好的漏洞管理工具来进行管理。</p>
-<p><strong>抛一个问题：安全测试团队到底应不应该为漏洞数量负责，如果需要负责，那么多好还是少好？</strong></p>
-<h2 id="_2">漏洞生命周期管理</h2>
-<p><img alt="vm-1" src="https://github.com/bloodzer0/ossa/raw/master/application-security/vulnerability-management/img/vm-1.png" /></p>
-<h3 id="_3">漏洞的来源</h3>
-<ul>
-<li>内部安全团队发现：通过安全扫描、安全测试等手段发现漏洞；</li>
-<li>内部非安全团队发现：工作过程中发现的安全问题；</li>
-<li>外部发现：众测平台、安全服务、个人提交；</li>
-</ul>
-<h3 id="_4">漏洞管理的问题</h3>
-<ul>
-<li><strong>漏洞如何与具体业务关联</strong></li>
-</ul>
-<p>当公司规模较小沟通靠嗓门的时候不用考虑这个问题，而且业务团队划分也没有很清晰所以这个时候可以直接丢给业务方让他们安排修复。当公司达到一定规模业务增多的时候，我们如果单纯依靠人力来找漏洞属于哪个业务是很费力的，这个时候我们其实很需要安全的资产管理来直接定位到业务方，再来找到关联的人，当然安全资产管理不是本篇的讨论，后面会有一篇专门来介绍。</p>
-<p>解决方案：漏洞管理系统与资产管理系统部分数据打通。</p>
-<ul>
-<li><strong>确保漏洞修复完成</strong></li>
-</ul>
-<p>在很多公司遇到过一个情况：严重高危的漏洞还好，但是经常出现中低危的漏洞提交一个月甚至半年没有修复。</p>
-<p>解决方案：安全语业务统一制定一个漏洞生命周期管理标准，不同等级的漏洞修复时间是多久。</p>
-<ul>
-<li><strong>漏洞报告的留存</strong></li>
-</ul>
-<p>企业内部需要对漏洞有一个清晰的整理归档来作为数据纬度展示公司安全发展的状态。安全测试人员发现漏洞需要邮件给业务方，并且需要使用Excel来总结，当测试人员很多时，还需要做一个汇总，这些都会造成更多的不便。</p>
-<p>解决方案：漏洞管理平台需要对不同时间段提交的不同漏洞等级进行数据量化。</p>
-<ul>
-<li><strong>同一个业务团队负责的产品中多次出现同样的漏洞</strong></li>
-</ul>
-<p>解决方案：业务团队自身的不断整理与总结，安全团队对业务团队进行安全培训（可以结合在SDL中进行）。</p>
-<ul>
-<li><strong>漏洞审核人力DoS</strong></li>
-</ul>
-<p>如果企业在一些类似SRC的平台，由于目前白帽子水平层次不齐，经常会提交一些bug作为漏洞，或者故意提高漏洞等级，SRC平台在处理这些时与白帽子发生争执产生的人力消耗。</p>
-<p>解决方案：待解决</p>
-<h2 id="_5">漏洞管理的思考</h2>
-<h3 id="_6">安全漏洞生命周期的理解</h3>
-<p><a href="https://mp.weixin.qq.com/s/OtnQJRr-zOCAXVrEqTqevA">原文地址</a></p>
-<p><strong>备注：本节内容引用自安全漏洞生命周期的理解，非原创</strong></p>
-<ul>
-<li><strong>从产品角度理解安全漏洞生命周期</strong></li>
-</ul>
-<pre><code>漏洞发现：通过人工或者自动化等方式分析、挖掘出漏洞的过程，并且该漏洞可以被验证和重现；
+                <h1 id="wazuh">wazuh 主机入侵检测系统</h1>
+<p><a href="http://wazuh.com/">官网地址</a></p>
+<p><a href="https://documentation.wazuh.com/current/index.html">官方文档</a></p>
+<h2 id="_1">安装与使用</h2>
+<h3 id="wazuh-server">wazuh server安装</h3>
+<pre><code>rpm -ivh wazuh-manager-3.3.1-1.x86_64.rpm
 
-漏洞利用：利用漏洞对计算机信息系统的保密性、完整性和可用性造成损害的过程；
-
-漏洞修复：通过补丁、升级版本或配置策略等对漏洞进行修补的过程，使得该漏洞不能够被恶意主题所利用；
-
-漏洞公开：通过公开渠道（如：网站、邮件列表等）；
+# 启动服务
+systemctl start wazuh-manager.service
+systemctl status wazuh-manager.service
 </code></pre>
 
+<h3 id="wazuh-api">wazuh api安装</h3>
 <ul>
-<li><strong>从信息系统角度理解安全漏洞生命周期</strong></li>
+<li><strong>安装nodejs</strong></li>
 </ul>
-<pre><code>漏洞识别：通过自身测试、监控、外部第三方通报、客户投诉等方式，获知漏洞的存在；
+<pre><code>wget -qO- https://rpm.nodesource.com/setup_8.x | bash - # 这里的版本会导致后面的报错
 
-漏洞评估：通过自身测试、监控、外部第三方通报、客户投诉等方式，获知漏洞的存在；
-
-漏洞通报：安全管理者将漏洞信息和修复建议内部通报给信息系统维护/应用/开发等相关人员；
-
-漏洞测试：信息系统相关人员对系统漏洞修补进行测试；
-
-漏洞修复：信息系统相关人员对系统漏洞进行修复；
-
-漏洞回退：漏洞的修复若影响业务，对修复进行回退，多方重新对漏洞进行评估，甚至接受该漏洞；
-</code></pre>
-
-<ul>
-<li><strong>从安全攻防角度理解安全漏洞生命周期</strong></li>
-</ul>
-<pre><code>漏洞研究与挖掘：利用源代码审核（白盒测试）、逆向工程（灰盒测试）、Fuzz测试（黑盒测试）、流量分析（黑盒测试）等方法；
-
-POC/EXP开发与测试：开发概念验证性渗透攻击代码（POC）或漏洞攻击利用代码（EXP），并测试漏洞是否可被利用；
-
-通报厂商或小规模流传：白帽子通知厂商进行修补，给出补丁后公布；黑帽子在封闭小规模团队共享流传；
-
-漏洞扩散：漏洞POC或EXP代码在互联网上公布，大众黑帽子快速掌握、应用和传播扩散；
-
-攻击工具/恶意程序传播：开发出自动化攻击工具/恶意程序，在互联网进行传播。厂商完成补丁程序开发和测试并进行发布；
-
-大规模传播：厂商发布补丁程序和安全警报，渗透代码/恶意程序大规模传播危害互联网；
-
-漏洞/攻击代码逐渐消亡：在厂商补丁程序广泛应用后，相应的漏洞渗透代码/恶意程序逐渐抛弃从而消亡；
-</code></pre>
-
-<h3 id="_7">我的一些思考</h3>
-<p>对于企业，我们应该关注与企业内部相关，甚至关注我们所使用的产品、服务相关的漏洞。从漏洞爆发、漏洞传播、漏洞利用工具传播到漏洞修复整个流程中，我们应该思考如下几个问题：</p>
-<pre><code>如何快速获取漏洞情报：爬虫、情报群、社区网站等；
-
-漏洞情报如何评估影响：公司内有多少业务受到影响；
-
-漏洞利用爆发时的解决方案：漏洞详情是否有给出临时解决方案；没有临时解决方案如何控制风险；
-
-漏洞修复时的风险评估：修复方案对业务影响是否可以接受；
-
-漏洞修复完成如何做到持续监控：防止漏洞的重复出现；
+yum install nodejs.x86_64
 </code></pre>
 
 <ul>
 <li>
-<p><strong>乙方产品的漏洞生命周期管理</strong></p>
+<p><strong>安装python2（Centos7默认python2）</strong></p>
 </li>
 <li>
-<p><strong>开源产品的漏洞生命周期管理</strong></p>
+<p><strong>安装wazuh api</strong></p>
 </li>
 </ul>
-<h2 id="_8">参考资料</h2>
-<p><a href="https://mp.weixin.qq.com/s/PbQKGiXRVFp9jmvFwDUrTA">甲方企业漏洞管理活动的50个痛点总结</a></p>
-<p><a href="https://www.aqniu.com/learn/39198.html">漏洞管理的定义与最佳实践</a></p>
-<p><a href="https://www.tripwire.com/state-of-security/vulnerability-management/the-five-stages-of-vulnerability-management/">The Five Stages of Vulnerability Management</a></p>
-<p><a href="https://mp.weixin.qq.com/s/-gHMhj1Qdl1N5rCne61m4Q">基于DREAD模型的漏洞等级计算</a></p>
-<h3 id="_9">开源漏洞管理系统</h3>
-<p><a href="https://github.com/martinzhou2015/SRCMS">SRCMS</a></p>
-<p><a href="https://github.com/creditease-sec/insight">洞察</a></p>
-<p><a href="https://github.com/DefectDojo/django-DefectDojo">defectdojo</a></p>
+<pre><code>rpm -ivh wazuh-api-3.3.1-1.x86_64.rpm
+
+systemctl start wazuh-api.service
+systemctl status wazuh-api.service
+</code></pre>
+
+<h3 id="wazuh-client">wazuh client安装</h3>
+<pre><code>rpm -ivh wazuh-agent-3.3.1-1.x86_64.rpm
+
+# 修改配置文件
+vim /var/ossec/etc/ossec.conf
+
+# 导入密钥
+/var/ossec/bin/manage_agents
+
+# 启动服务
+/var/ossec/bin/ossec-control start
+</code></pre>
+
+<h3 id="elk">ELK安装</h3>
+<ul>
+<li><strong>安装ElasticSearch</strong></li>
+</ul>
+<pre><code># 安装java
+yum install java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64 -y
+
+# 安装es
+rpm -ivh elasticsearch-6.3.0.rpm
+
+# 启动服务
+systemctl start elasticsearch.service
+
+# 创建template
+curl https://raw.githubusercontent.com/wazuh/wazuh/3.3/extensions/elasticsearch/wazuh-elastic6-template-alerts.json | curl -XPUT 'http://localhost:9200/_template/wazuh' -H 'Content-Type: application/json' -d @-
+</code></pre>
+
+<ul>
+<li><strong>安装Logstash</strong></li>
+</ul>
+<pre><code># 安装Logstash
+ln -s /usr/share/jdk1.8.0_171/bin/java /usr/sbin/java
+rpm -ivh logstash-6.3.0.rpm
+
+# Logstash配置文件
+wget https://raw.githubusercontent.com/wazuh/wazuh/3.3/extensions/logstash/01-wazuh-local.conf -O /etc/logstash/conf.d/01-wazuh.conf 
+
+# 启动服务
+systemctl start logstash.service
+</code></pre>
+
+<ul>
+<li><strong>安装Kibana</strong></li>
+</ul>
+<pre><code>rpm -ivh kibana-6.3.0-x86_64.rpm
+
+# 安装插件
+export NODE_OPTIONS=&quot;--max-old-space-size=3072&quot;
+/usr/share/kibana/bin/kibana-plugin install https://packages.wazuh.com/wazuhapp/wazuhapp-3.3.1_6.3.0.zip
+
+#卸载插件
+/usr/share/kibana/bin/kibana-plugin remove wazuh
+</code></pre>
+
+<p><strong>备注：安装Kibana插件会报错</strong></p>
+<pre><code>DeprecationWarning: os.tmpDir() is deprecated. Use os.tmpdir() instead.
+</code></pre>
+
+<p>解决方案：</p>
+<pre><code>使用nodejs版本10
+wget -qO- https://rpm.nodesource.com/setup_10.x | bash - # 配置nodejs源
+</code></pre>
+
+<h2 id="wazuhelkfilebeat">wazuh+ELK+Filebeat</h2>
+<h3 id="filebeat">配置filebeat</h3>
+<pre><code>vim /etc/filebeat/filebeat.yml
+</code></pre>
+
+<p>filebeat.yml文件内容：</p>
+<pre><code>filebeat.inputs:
+- type: log
+  paths:
+    - &quot;/var/ossec/logs/alerts/alerts.json&quot;
+  document_type: json
+  json.message_key: log
+  json.keys_under_root: true
+  json.overwrite_keys: true
+
+output.logstash:
+  hosts: [&quot;localhost:5044&quot;]
+</code></pre>
+
+<h3 id="logstash">配置logstash</h3>
+<pre><code>vim /etc/logstash/conf.d/wazuh.conf
+</code></pre>
+
+<p>wazuh.conf文件内容：</p>
+<pre><code>input {
+    beats {
+        port =&gt; 5044
+        codec =&gt; &quot;json_lines&quot;
+    }
+}
+filter {
+    if [data][srcip] {
+        mutate {
+            add_field =&gt; [ &quot;@src_ip&quot;, &quot;%{[data][srcip]}&quot; ]
+        }
+    }
+    if [data][aws][sourceIPAddress] {
+        mutate {
+            add_field =&gt; [ &quot;@src_ip&quot;, &quot;%{[data][aws][sourceIPAddress]}&quot; ]
+        }
+    }
+}
+filter {
+    geoip {
+        source =&gt; &quot;@src_ip&quot;
+        target =&gt; &quot;GeoLocation&quot;
+        fields =&gt; [&quot;city_name&quot;, &quot;country_name&quot;, &quot;region_name&quot;, &quot;location&quot;]
+    }
+    date {
+        match =&gt; [&quot;timestamp&quot;, &quot;ISO8601&quot;]
+        target =&gt; &quot;@timestamp&quot;
+    }
+    mutate {
+        remove_field =&gt; [ &quot;timestamp&quot;, &quot;beat&quot;, &quot;input_type&quot;, &quot;tags&quot;, &quot;count&quot;, &quot;@version&quot;, &quot;log&quot;, &quot;offset&quot;, &quot;type&quot;, &quot;@src_ip&quot;, &quot;host&quot;]
+    }
+}
+output {
+    elasticsearch {
+        hosts =&gt; [&quot;localhost:9200&quot;]
+        index =&gt; &quot;wazuh-alerts-3.x-%{+YYYY.MM.dd}&quot;
+        document_type =&gt; &quot;wazuh&quot;
+    }
+}
+</code></pre>
+
+<h2 id="wazuh_1">wazuh客户端自动化部署</h2>
+<p>对于互联网公司来说，企业服务器很多时候变化很频繁，所以我们需要做到自动化来部署agent，同样在服务器量级很大的时候我们也需要一键部署。</p>
+<p>对于agent比较重要的就是服务端先生成密钥，然后客户端获取密钥导入文件中。</p>
+<p><a href="https://documentation.wazuh.com/current/user-manual/agents/restful-api/register.html">参考地址</a></p>
+<h3 id="_2">代码实现</h3>
+<p><a href="https://raw.githubusercontent.com/wazuh/wazuh-api/3.5/examples/api-register-agent.sh">代码地址</a></p>
+<p>大家可以根据需求来进行修改，修改完成以后就可以与运维协调在系统初始化的时候加入客户端自动部署的代码。</p>
                 
                   
                 
@@ -1684,7 +1769,7 @@ POC/EXP开发与测试：开发概念验证性渗透攻击代码（POC）或漏�
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../security-testing/tools-skills/sqlmap/" title="sqlmap" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../aide/" title="Aide 文件和目录完整性入群检测" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1693,19 +1778,19 @@ POC/EXP开发与测试：开发概念验证性渗透攻击代码（POC）或漏�
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                sqlmap
+                Aide 文件和目录完整性入群检测
               </span>
             </div>
           </a>
         
         
-          <a href="vm-tools-defectdojo/" title="defectdojo" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../log-analysis/" title="日志分析" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                defectdojo
+                日志分析
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1739,9 +1824,9 @@ POC/EXP开发与测试：开发概念验证性渗透攻击代码（POC）或漏�
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../../assets/javascripts/application.9e1f3b71.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
       
     
     
