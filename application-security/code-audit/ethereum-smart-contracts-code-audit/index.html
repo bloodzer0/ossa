@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk2-advanced/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/application-security/code-audit/ethereum-smart-contracts-code-audit/">
       
       
         <meta name="author" content="bloodzer0">
@@ -37,21 +37,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
-        <title>ELK高级使用 - Open-Source Security Architecture</title>
+        <title>以太坊智能合约代码审计 - Open-Source Security Architecture</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
       
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
@@ -60,7 +60,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#elk" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                ELK高级使用
+                以太坊智能合约代码审计
               </span>
             
           
@@ -240,7 +240,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../.." title="ossa" class="md-nav__link">
+    <a href="../../.." title="ossa" class="md-nav__link">
       ossa
     </a>
   </li>
@@ -250,10 +250,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Application security
@@ -271,7 +273,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/" title="应用安全" class="md-nav__link">
+    <a href="../../" title="应用安全" class="md-nav__link">
       应用安全
     </a>
   </li>
@@ -281,10 +283,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
     
     <label class="md-nav__link" for="nav-2-2">
       Code audit
@@ -302,7 +306,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/" title="代码审计" class="md-nav__link">
+    <a href="../" title="代码审计" class="md-nav__link">
       代码审计
     </a>
   </li>
@@ -312,11 +316,76 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/ethereum-smart-contracts-code-audit/" title="以太坊智能合约代码审计" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        以太坊智能合约代码审计
+      </label>
+    
+    <a href="./" title="以太坊智能合约代码审计" class="md-nav__link md-nav__link--active">
       以太坊智能合约代码审计
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mythril" title="mythril安装与使用" class="md-nav__link">
+    mythril安装与使用
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solitity" title="安装solitity" class="md-nav__link">
+    安装solitity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mythril_1" title="安装mythril" class="md-nav__link">
+    安装mythril
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="使用" class="md-nav__link">
+    使用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -326,7 +395,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/sonarqube/" title="SonarQube" class="md-nav__link">
+    <a href="../sonarqube/" title="SonarQube" class="md-nav__link">
       SonarQube
     </a>
   </li>
@@ -362,7 +431,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/mobile-security/" title="移动安全" class="md-nav__link">
+    <a href="../../mobile-security/" title="移动安全" class="md-nav__link">
       移动安全
     </a>
   </li>
@@ -374,7 +443,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
+    <a href="../../mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
       移动安全扫描
     </a>
   </li>
@@ -410,7 +479,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/" title="应用安全防御" class="md-nav__link">
+    <a href="../../security-defense/" title="应用安全防御" class="md-nav__link">
       应用安全防御
     </a>
   </li>
@@ -422,7 +491,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/https/" title="全站https" class="md-nav__link">
+    <a href="../../security-defense/https/" title="全站https" class="md-nav__link">
       全站https
     </a>
   </li>
@@ -434,7 +503,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/iptables-waf/" title="iptables实现waf" class="md-nav__link">
+    <a href="../../security-defense/iptables-waf/" title="iptables实现waf" class="md-nav__link">
       iptables实现waf
     </a>
   </li>
@@ -446,7 +515,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/modsecurity-waf/" title="ModSecurity实现waf" class="md-nav__link">
+    <a href="../../security-defense/modsecurity-waf/" title="ModSecurity实现waf" class="md-nav__link">
       ModSecurity实现waf
     </a>
   </li>
@@ -458,7 +527,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/openresty-waf/" title="OpenResty实现waf" class="md-nav__link">
+    <a href="../../security-defense/openresty-waf/" title="OpenResty实现waf" class="md-nav__link">
       OpenResty实现waf
     </a>
   </li>
@@ -470,7 +539,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
+    <a href="../../security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
       Web应用防火墙
     </a>
   </li>
@@ -506,7 +575,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/" title="安全测试" class="md-nav__link">
+    <a href="../../security-testing/" title="安全测试" class="md-nav__link">
       安全测试
     </a>
   </li>
@@ -518,7 +587,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
+    <a href="../../security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
       API安全测试
     </a>
   </li>
@@ -530,7 +599,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/dast-iast-sast/" title="DAST vs SAST vs IAST" class="md-nav__link">
+    <a href="../../security-testing/dast-iast-sast/" title="DAST vs SAST vs IAST" class="md-nav__link">
       DAST vs SAST vs IAST
     </a>
   </li>
@@ -542,7 +611,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/owasp-testing-checklist/" title="OWASP安全测试checklist" class="md-nav__link">
+    <a href="../../security-testing/owasp-testing-checklist/" title="OWASP安全测试checklist" class="md-nav__link">
       OWASP安全测试checklist
     </a>
   </li>
@@ -573,7 +642,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/" title="工具与技巧" class="md-nav__link">
+    <a href="../../security-testing/tools-skills/" title="工具与技巧" class="md-nav__link">
       工具与技巧
     </a>
   </li>
@@ -585,7 +654,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
+    <a href="../../security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
       https抓包
     </a>
   </li>
@@ -597,7 +666,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/mobsf/" title="MobSF" class="md-nav__link">
+    <a href="../../security-testing/tools-skills/mobsf/" title="MobSF" class="md-nav__link">
       MobSF
     </a>
   </li>
@@ -609,7 +678,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/sqlmap/" title="sqlmap" class="md-nav__link">
+    <a href="../../security-testing/tools-skills/sqlmap/" title="sqlmap" class="md-nav__link">
       sqlmap
     </a>
   </li>
@@ -650,7 +719,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/vulnerability-management/" title="漏洞管理" class="md-nav__link">
+    <a href="../../vulnerability-management/" title="漏洞管理" class="md-nav__link">
       漏洞管理
     </a>
   </li>
@@ -662,7 +731,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
+    <a href="../../vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
       defectdojo
     </a>
   </li>
@@ -698,7 +767,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/web-security-scan/" title="Web安全扫描" class="md-nav__link">
+    <a href="../../web-security-scan/" title="Web安全扫描" class="md-nav__link">
       Web安全扫描
     </a>
   </li>
@@ -718,12 +787,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Infrastructure security
@@ -741,7 +808,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../" title="基础设施安全" class="md-nav__link">
+    <a href="../../../infrastructure-security/" title="基础设施安全" class="md-nav__link">
       基础设施安全
     </a>
   </li>
@@ -751,12 +818,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
     
     <label class="md-nav__link" for="nav-3-2">
       Host security
@@ -774,7 +839,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../" title="主机安全" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/" title="主机安全" class="md-nav__link">
       主机安全
     </a>
   </li>
@@ -805,7 +870,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../honeypot/" title="蜜罐技术" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/honeypot/" title="蜜罐技术" class="md-nav__link">
       蜜罐技术
     </a>
   </li>
@@ -817,7 +882,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
       MHN蜜罐
     </a>
   </li>
@@ -853,7 +918,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../host-security-scan/" title="主机安全扫描" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/host-security-scan/" title="主机安全扫描" class="md-nav__link">
       主机安全扫描
     </a>
   </li>
@@ -865,7 +930,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
       开源扫描器
     </a>
   </li>
@@ -901,7 +966,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ids-ips/" title="主机入侵检测&防御系统" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/ids-ips/" title="主机入侵检测&防御系统" class="md-nav__link">
       主机入侵检测&防御系统
     </a>
   </li>
@@ -913,7 +978,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ids-ips/aide/" title="Aide 文件和目录完整性入群检测" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/ids-ips/aide/" title="Aide 文件和目录完整性入群检测" class="md-nav__link">
       Aide 文件和目录完整性入群检测
     </a>
   </li>
@@ -925,7 +990,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ids-ips/chkrootkit/" title="chkrootkit Linux入侵检测" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/ids-ips/chkrootkit/" title="chkrootkit Linux入侵检测" class="md-nav__link">
       chkrootkit Linux入侵检测
     </a>
   </li>
@@ -937,7 +1002,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ids-ips/rkhunter/" title="rkhunter Linux入侵检测" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/ids-ips/rkhunter/" title="rkhunter Linux入侵检测" class="md-nav__link">
       rkhunter Linux入侵检测
     </a>
   </li>
@@ -949,7 +1014,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ids-ips/wazuh/" title="wazuh 主机入侵检测系统" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/ids-ips/wazuh/" title="wazuh 主机入侵检测系统" class="md-nav__link">
       wazuh 主机入侵检测系统
     </a>
   </li>
@@ -964,12 +1029,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2-5" type="checkbox" id="nav-3-2-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2-5" type="checkbox" id="nav-3-2-5">
     
     <label class="md-nav__link" for="nav-3-2-5">
       Log analysis
@@ -987,7 +1050,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="日志分析" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/log-analysis/" title="日志分析" class="md-nav__link">
       日志分析
     </a>
   </li>
@@ -999,7 +1062,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../elk1/" title="ELK日志分析系统" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/log-analysis/elk1/" title="ELK日志分析系统" class="md-nav__link">
       ELK日志分析系统
     </a>
   </li>
@@ -1009,137 +1072,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        ELK高级使用
-      </label>
-    
-    <a href="./" title="ELK高级使用" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/log-analysis/elk2-advanced/" title="ELK高级使用" class="md-nav__link">
       ELK高级使用
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#elasticsearch" title="ElasticSearch" class="md-nav__link">
-    ElasticSearch
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#es" title="ES插件" class="md-nav__link">
-    ES插件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#elasticsearchtemplate" title="ElasticSearch创建template" class="md-nav__link">
-    ElasticSearch创建template
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#elasticsearch_1" title="ElasticSearch定期清理索引" class="md-nav__link">
-    ElasticSearch定期清理索引
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logstash" title="Logstash" class="md-nav__link">
-    Logstash
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" title="常用命令" class="md-nav__link">
-    常用命令
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="配置文件" class="md-nav__link">
-    配置文件
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kibana" title="Kibana" class="md-nav__link">
-    Kibana
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kibana_1" title="Kibana插件" class="md-nav__link">
-    Kibana插件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kibana_2" title="Kibana登录鉴权" class="md-nav__link">
-    Kibana登录鉴权
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="参考资料" class="md-nav__link">
-    参考资料
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1149,7 +1086,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../elk3-problem/" title="ELK问题踩坑" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/log-analysis/elk3-problem/" title="ELK问题踩坑" class="md-nav__link">
       ELK问题踩坑
     </a>
   </li>
@@ -1161,7 +1098,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../elk4-grokdebug/" title="Logstash Patterns" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/log-analysis/elk4-grokdebug/" title="Logstash Patterns" class="md-nav__link">
       Logstash Patterns
     </a>
   </li>
@@ -1173,7 +1110,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../elk5-elastalert/" title="ELK监控报警系统-elastalert" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/log-analysis/elk5-elastalert/" title="ELK监控报警系统-elastalert" class="md-nav__link">
       ELK监控报警系统-elastalert
     </a>
   </li>
@@ -1185,7 +1122,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../graylog1/" title="Graylog日志管理系统" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/log-analysis/graylog1/" title="Graylog日志管理系统" class="md-nav__link">
       Graylog日志管理系统
     </a>
   </li>
@@ -1197,7 +1134,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../graylog2-advanced/" title="Graylog高级使用" class="md-nav__link">
+    <a href="../../../infrastructure-security/host-security/log-analysis/graylog2-advanced/" title="Graylog高级使用" class="md-nav__link">
       Graylog高级使用
     </a>
   </li>
@@ -1238,7 +1175,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/" title="网络安全" class="md-nav__link">
+    <a href="../../../infrastructure-security/network-security/" title="网络安全" class="md-nav__link">
       网络安全
     </a>
   </li>
@@ -1269,7 +1206,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
+    <a href="../../../infrastructure-security/network-security/cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
       应用层拒绝服务攻击
     </a>
   </li>
@@ -1281,7 +1218,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
+    <a href="../../../infrastructure-security/network-security/cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
       拒绝服务攻击
     </a>
   </li>
@@ -1317,7 +1254,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
+    <a href="../../../infrastructure-security/network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
       GitHub信息泄漏监控
     </a>
   </li>
@@ -1353,7 +1290,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
+    <a href="../../../infrastructure-security/network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
       办公网网络安全
     </a>
   </li>
@@ -1365,7 +1302,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/office-network-security/email-security/" title="邮件安全" class="md-nav__link">
+    <a href="../../../infrastructure-security/network-security/office-network-security/email-security/" title="邮件安全" class="md-nav__link">
       邮件安全
     </a>
   </li>
@@ -1377,7 +1314,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/office-network-security/gophish/" title="gophish" class="md-nav__link">
+    <a href="../../../infrastructure-security/network-security/office-network-security/gophish/" title="gophish" class="md-nav__link">
       gophish
     </a>
   </li>
@@ -1423,7 +1360,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/" title="其它安全项目" class="md-nav__link">
+    <a href="../../../other-security-branch/" title="其它安全项目" class="md-nav__link">
       其它安全项目
     </a>
   </li>
@@ -1454,7 +1391,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
+    <a href="../../../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
       数据安全
     </a>
   </li>
@@ -1485,7 +1422,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
+    <a href="../../../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
       大数据安全
     </a>
   </li>
@@ -1527,97 +1464,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#elasticsearch" title="ElasticSearch" class="md-nav__link">
-    ElasticSearch
+  <a href="#mythril" title="mythril安装与使用" class="md-nav__link">
+    mythril安装与使用
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#es" title="ES插件" class="md-nav__link">
-    ES插件
+  <a href="#solitity" title="安装solitity" class="md-nav__link">
+    安装solitity
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#elasticsearchtemplate" title="ElasticSearch创建template" class="md-nav__link">
-    ElasticSearch创建template
+  <a href="#mythril_1" title="安装mythril" class="md-nav__link">
+    安装mythril
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#elasticsearch_1" title="ElasticSearch定期清理索引" class="md-nav__link">
-    ElasticSearch定期清理索引
+  <a href="#_2" title="使用" class="md-nav__link">
+    使用
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logstash" title="Logstash" class="md-nav__link">
-    Logstash
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" title="常用命令" class="md-nav__link">
-    常用命令
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="配置文件" class="md-nav__link">
-    配置文件
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kibana" title="Kibana" class="md-nav__link">
-    Kibana
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kibana_1" title="Kibana插件" class="md-nav__link">
-    Kibana插件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kibana_2" title="Kibana登录鉴权" class="md-nav__link">
-    Kibana登录鉴权
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="参考资料" class="md-nav__link">
-    参考资料
-  </a>
   
 </li>
       
@@ -1638,139 +1514,37 @@
               
                 
                 
-                <h1 id="elk">ELK高级使用</h1>
-<h2 id="elasticsearch">ElasticSearch</h2>
-<h3 id="es">ES插件</h3>
+                <h1 id="_1">以太坊智能合约代码审计</h1>
+<h2 id="mythril">mythril安装与使用</h2>
+<p><a href="https://github.com/ConsenSys/mythril">github地址</a></p>
+<h3 id="solitity">安装solitity</h3>
+<p><a href="https://github.com/ethereum/solidity">github地址</a></p>
+<p><a href="https://solidity.readthedocs.io/en/v0.4.21/installing-solidity.html">官方安装文档</a></p>
 <ul>
-<li><strong>Head</strong></li>
+<li><strong>Ubuntu安装</strong></li>
 </ul>
-<p><a href="http://mobz.github.io/elasticsearch-head/">官网地址</a></p>
-<p><a href="https://chrome.google.com/webstore/search/elasticsearch">Chrome插件：ElasticSearch Head</a></p>
-<ul>
-<li><strong>ElasticHD</strong></li>
-</ul>
-<h3 id="elasticsearchtemplate">ElasticSearch创建template</h3>
-<pre><code>curl -XPUT 'http://host/_template/primeledger' \ 
-    -H &quot;Content-Type: application/json&quot; \ 
-    -d '{&quot;order&quot;: 0,&quot;template&quot;: &quot;template_name*&quot;,&quot;settings&quot;: \ 
-    {&quot;index.number_of_shards&quot;: 3,&quot;number_of_replicas&quot;: 1}}'
+<pre><code>sudo add-apt-repository ppa:ethereum/ethereum
+sudo apt-get update
+sudo apt-get install solc
 </code></pre>
 
-<h3 id="elasticsearch_1">ElasticSearch定期清理索引</h3>
-<pre><code>#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# Time    : 2018/6/8 上午11:20
-# Author  : bloodzer0
-# File    : delete_index.py
-
-import os
-import datetime
-
-week_ago = (datetime.datetime.now() - datetime.timedelta(days=3)).strftime(&quot;%Y.%m.%d&quot;)
-command = 'curl -XDELETE &quot;http://hostname/index-%s&quot;' % week_ago
-os.system(command)
+<h3 id="mythril_1">安装mythril</h3>
+<pre><code>sudo apt-get update
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository -y ppa:ethereum/ethereum
+sudo apt-get update
+sudo apt-get install -y solc
+sudo apt-get install libssl-dev
+sudo apt-get install -y python3-pip=9.0.1-2 python3-dev
+sudo ln -s /usr/bin/python3 /usr/local/bin/python
+sudo apt-get install -y pandoc
+sudo apt-get install -y git
+pip3 install mythril
 </code></pre>
 
-<h2 id="logstash">Logstash</h2>
-<h3 id="_1">常用命令</h3>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>--config.reload.automatic</td>
-<td>自动重载被修改的配置文件</td>
-</tr>
-<tr>
-<td>-f</td>
-<td>加载配置文件</td>
-</tr>
-<tr>
-<td>-t</td>
-<td>测试配置文件</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_2">配置文件</h3>
-<ul>
-<li><strong>解析IP</strong></li>
-</ul>
-<pre><code>filter {
-    geoip {
-        source =&gt; &quot;代表IP的字段名称&quot;
-    }
-}
+<h3 id="_2">使用</h3>
+<pre><code>myth -x *.sol:contract -o markdown
 </code></pre>
-
-<ul>
-<li><strong>多行合并</strong></li>
-</ul>
-<pre><code>input {
-    file {
-        path =&gt; [&quot;log_path&quot;]
-        codec =&gt; multiline {
-            pattern =&gt; &quot;^%{TIMESTAMP_ISO8601}&quot; # 不以标准时间格式开头的行合并为一行
-            negate =&gt; true
-            what =&gt; &quot;previous&quot;
-        }
-    }
-}
-</code></pre>
-
-<h2 id="kibana">Kibana</h2>
-<h3 id="kibana_1">Kibana插件</h3>
-<ul>
-<li><strong>汉化</strong></li>
-</ul>
-<p><a href="https://github.com/anbai-inc/Kibana_Hanization/">github地址</a></p>
-<h3 id="kibana_2">Kibana登录鉴权</h3>
-<ul>
-<li><strong>利用nginx代理进行访问认证</strong></li>
-</ul>
-<pre><code># 安装nginx与nginx认证模块
-yum install epel-release -y
-yum install nginx.x86_64 httpd-tools.x86_64 -y
-
-# 修改nginx配置文件
-vim /etc/nginx/nginx.conf
-# 注释掉server内的内容，并添加如下内容
-</code></pre>
-
-<pre><code>server {
-    listen 8080;
-    server_name kibana;
-    auth_basic &quot;Restricted Access&quot;;
-    auth_basic_user_file /etc/nginx/kibana-user;
-
-    location / {
-        proxy_pass http://hostname:5601;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-    }
-}
-</code></pre>
-
-<p>配置账号密码</p>
-<pre><code># 设置账号密码
-htpasswd -cm /etc/nginx/kibana-user username
-
-# 重启nginx服务
-systemctl restart nginx.service
-</code></pre>
-
-<ul>
-<li><strong>利用xpack进行访问认证</strong></li>
-</ul>
-<p><a href="https://www.cnblogs.com/chengjiawei/p/8991859.html">xpack破解地址</a></p>
-<h2 id="_3">参考资料</h2>
-<p><a href="https://mp.weixin.qq.com/s/s2ema4tIXKcqTNUUhjGt1w">Elasticsearch史上最全最常用工具清单</a></p>
                 
                   
                 
@@ -1791,7 +1565,7 @@ systemctl restart nginx.service
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../elk1/" title="ELK日志分析系统" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../" title="代码审计" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1800,19 +1574,19 @@ systemctl restart nginx.service
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                ELK日志分析系统
+                代码审计
               </span>
             </div>
           </a>
         
         
-          <a href="../elk3-problem/" title="ELK问题踩坑" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../sonarqube/" title="SonarQube" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                ELK问题踩坑
+                SonarQube
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1846,9 +1620,9 @@ systemctl restart nginx.service
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
     
     
