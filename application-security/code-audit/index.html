@@ -340,7 +340,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="代码审计商业软件对比" class="md-nav__link">
+  <a href="#_3" title="开源&amp;免费代码审计" class="md-nav__link">
+    开源&amp;免费代码审计
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cobra" title="cobra" class="md-nav__link">
+    cobra
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rats" title="rats" class="md-nav__link">
+    rats
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#findbugs" title="findbugs" class="md-nav__link">
+    findbugs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rips" title="rips" class="md-nav__link">
+    rips
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vcg" title="vcg" class="md-nav__link">
+    vcg
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="代码审计商业软件对比" class="md-nav__link">
     代码审计商业软件对比
   </a>
   
@@ -1451,7 +1499,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="代码审计商业软件对比" class="md-nav__link">
+  <a href="#_3" title="开源&amp;免费代码审计" class="md-nav__link">
+    开源&amp;免费代码审计
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cobra" title="cobra" class="md-nav__link">
+    cobra
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rats" title="rats" class="md-nav__link">
+    rats
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#findbugs" title="findbugs" class="md-nav__link">
+    findbugs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rips" title="rips" class="md-nav__link">
+    rips
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vcg" title="vcg" class="md-nav__link">
+    vcg
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="代码审计商业软件对比" class="md-nav__link">
     代码审计商业软件对比
   </a>
   
@@ -1475,7 +1571,7 @@
                 
                 
                 <h1 id="_1">代码审计</h1>
-<h2 id="_2">代码审计的几个问题</h2>
+<h3 id="_2">代码审计的几个问题</h3>
 <ul>
 <li>为什么要进行代码审计</li>
 <li>如何把代码审计融入整体的DevOps流程中</li>
@@ -1483,7 +1579,71 @@
 <li>如何处理代理审计中的误报、漏报</li>
 <li>谁来看代码审计报告、审计的问题如何推动修复</li>
 </ul>
-<h2 id="_3">代码审计商业软件对比</h2>
+<h2 id="_3">开源&amp;免费代码审计</h2>
+<h3 id="cobra">cobra</h3>
+<p>cobra：静态代码分析工具。</p>
+<p><a href="https://github.com/WhaleShark-Team/cobra">github地址</a></p>
+<p><a href="http://cobra.feei.cn/installation">安装文档</a></p>
+<ul>
+<li><strong>cobra安装</strong></li>
+</ul>
+<pre><code># 解决依赖
+yum install flex bison phantomjs -y
+
+# 安装
+git clone https://github.com/WhaleShark-Team/cobra.git &amp;&amp; cd cobra
+pip install -r requirements.txt
+python cobra.py --help
+</code></pre>
+
+<ul>
+<li><strong>cobra规则</strong></li>
+</ul>
+<pre><code>cobra/rules  # 默认自带规则
+</code></pre>
+
+<h3 id="rats">rats</h3>
+<p><a href="https://code.google.com/p/rough-auditing-tool-for-security/">官网地址</a></p>
+<h3 id="findbugs">findbugs</h3>
+<p>findbugs：插件式静态分析工具。</p>
+<p><a href="http://findbugs.sourceforge.net/">官网地址</a></p>
+<p><a href="http://findbugs.sourceforge.net/downloads.html">下载地址</a></p>
+<ul>
+<li><strong>findbugs安装</strong></li>
+</ul>
+<p>直接在开发工具的插件中进行安装，或者下载以后导入。</p>
+<h3 id="rips">rips</h3>
+<p>rips：静态深度分析源代码漏洞的工具，能自动化挖掘PHP代码漏洞。</p>
+<p><a href="https://sourceforge.net/projects/rips-scanner/files/">下载地址</a></p>
+<ul>
+<li><strong>安装与使用</strong></li>
+</ul>
+<pre><code>yum install php httpd.x86_64 -y
+systemctl start httpd.service
+
+wget https://nchc.dl.sourceforge.net/project/rips-scanner/rips-0.55.zip
+
+unzip rips-0.55.zip
+
+# 填写源代码路径就可以开始扫描了
+</code></pre>
+
+<ul>
+<li><strong>心得</strong></li>
+</ul>
+<pre><code>对PHP项目支持比较友好，其它语言审计效果一般；
+与seay法师的审计工具很类似；
+</code></pre>
+
+<ul>
+<li><strong>参考资料</strong></li>
+</ul>
+<p><a href="https://xz.aliyun.com/t/2502">RIPS源码精读：逻辑流程及lib文件夹大致说明</a></p>
+<p><a href="https://xz.aliyun.com/t/2605">RIPS源码精读：扫描对象的实例化及token信息的生成</a></p>
+<h3 id="vcg">vcg</h3>
+<p>VCG：简洁的风险函数扫描定位工具，基于字典实现扫描功能。</p>
+<p><a href="https://sourceforge.net/projects/visualcodegrepp/files/">下载地址</a></p>
+<h2 id="_4">代码审计商业软件对比</h2>
 <p><img alt="代码审计商业软件对比" src="https://github.com/bloodzer0/ossa/raw/master/application-security/code-audit/img/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%95%86%E4%B8%9A%E8%BD%AF%E4%BB%B6%E5%AF%B9%E6%AF%94.png" /></p>
 <p>备注：如果图片有侵权行为，请联系我！</p>
                 
