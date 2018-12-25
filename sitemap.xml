@@ -236,6 +236,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/infrastructure-security/network-security/ids-ips/bro/</loc>
+     <lastmod>2018-12-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/infrastructure-security/network-security/network-security-monitor/github-monitor/</loc>
      <lastmod>2018-12-25</lastmod>
      <changefreq>daily</changefreq>
