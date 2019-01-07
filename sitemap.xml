@@ -166,17 +166,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/infrastructure-security/host-security/ids-ips/chkrootkit/</loc>
-     <lastmod>2019-01-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://bloodzer0.github.io/ossa/infrastructure-security/host-security/ids-ips/osquery/</loc>
-     <lastmod>2019-01-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/infrastructure-security/host-security/ids-ips/rkhunter/</loc>
      <lastmod>2019-01-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -282,6 +272,16 @@
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/other-security-branch/data-security/big-data-security/</loc>
+     <lastmod>2019-01-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/other-security-branch/emergency-response/chkrootkit/</loc>
+     <lastmod>2019-01-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/other-security-branch/emergency-response/rkhunter/</loc>
      <lastmod>2019-01-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
