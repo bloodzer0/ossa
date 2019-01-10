@@ -1912,7 +1912,7 @@ yum --enablerepo=nux-misc install masscan
 </code></pre>
 
 <p>masscan 常用命令</p>
-<pre><code>masscan -sS -Pn -s --randomize-hosts --send-eth p0-65535 ip --rate=100
+<pre><code>masscan -sS -Pn --randomize-hosts --send-eth -p 1-65535 ip --rate=100
 
 masscan --rate=500 --wait 1 -pport1,port2 ip
 </code></pre>
