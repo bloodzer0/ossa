@@ -984,6 +984,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_9" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
       
       
       
@@ -1817,6 +1824,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_9" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
       
       
       
@@ -1859,8 +1873,8 @@
 <pre><code>yum install nmap.x86_64 -y
 </code></pre>
 
-<p>nmap常用命令</p>
-<pre><code>
+<p>nmap 常用命令</p>
+<pre><code>nmap -sS -sV -p1-65535 --max-scan-delay 10 --max-retries 2 -T4 --min-rate 300 --open
 </code></pre>
 
 <ul>
@@ -1897,6 +1911,12 @@ gpgkey=http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
 yum --enablerepo=nux-misc install masscan
 </code></pre>
 
+<p>masscan 常用命令</p>
+<pre><code>masscan -sS -Pn -s --randomize-hosts --send-eth p0-65535 ip --rate=100
+
+masscan --rate=500 --wait 1 -pport1,port2 ip
+</code></pre>
+
 <ul>
 <li><strong>zmap</strong></li>
 </ul>
@@ -1928,9 +1948,28 @@ systemctl start nessusd.service
 # 访问：https://localhost:8834
 </code></pre>
 
+<p>如果网络很差，也可以进行离线更新安装包：<a href="https://docs.tenable.com/nessus/Content/ManageNessusOffline.htm">官方文档</a></p>
+<pre><code># 生成licenses
+# https://plugins.nessus.org/v2/offline.php
+/opt/nessus/sbin/nessuscli fetch --challenge
+
+# 复制生成的code与注册码，进行生成会生成下载地址和licenses文件，进行注册
+/opt/nessus/sbin/nessuscli fetch --register-offline nessus.license
+
+# 重启nessus
+systemctl restart nessusd.service
+
+# 访问，使用账号密码登录
+
+# 更新插件
+/opt/nessus/sbin/nessuscli update all-2.0.tar.gz
+</code></pre>
+
 <ul>
 <li><strong>OpenVAS</strong></li>
 </ul>
+<p><a href="http://www.openvas.org/">官网地址</a></p>
+<p>不推荐使用。</p>
 <h2 id="_7">弱口令扫描</h2>
 <p>弱口令扫描也是漏洞扫描的一种，只不过弱口令扫描算是比较特殊的一类漏洞。</p>
 <h3 id="_8">弱口令扫描工具</h3>
@@ -1943,7 +1982,7 @@ yum install hydra.x86_64 -y
 </code></pre>
 
 <p>windows 安装 hydra：<a href="https://github.com/maaaaz/thc-hydra-windows">hydra Windows版本</a></p>
-<p>hydra使用</p>
+<p>hydra 常用命令</p>
 <pre><code>hydra -l user -P passlist.txt ftp://192.168.0.1
 hydra -L user.txt -P pass.txt protocol://ip
 </code></pre>
@@ -1961,6 +2000,7 @@ hydra -L user.txt -P pass.txt protocol://ip
 </li>
 </ul>
 <p><a href="https://sourceforge.net/projects/worawita/">下载地址</a></p>
+<h2 id="_9">参考资料</h2>
                 
                   
                 
