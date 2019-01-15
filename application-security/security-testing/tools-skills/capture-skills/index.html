@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/capture-h5/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/capture-skills/">
       
       
         <meta name="author" content="bloodzer0">
@@ -42,7 +42,7 @@
     
     
       
-        <title>微信公众号H5抓包 - Open-Source Security Architecture</title>
+        <title>抓包技巧 - Open-Source Security Architecture</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#h5" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                微信公众号H5抓包
+                抓包技巧
               </span>
             
           
@@ -577,6 +577,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../capture-https/" title="https抓包" class="md-nav__link">
+      https抓包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -588,11 +600,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        微信公众号H5抓包
+        抓包技巧
       </label>
     
-    <a href="./" title="微信公众号H5抓包" class="md-nav__link md-nav__link--active">
-      微信公众号H5抓包
+    <a href="./" title="抓包技巧" class="md-nav__link md-nav__link--active">
+      抓包技巧
     </a>
     
       
@@ -606,7 +618,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="参考资料" class="md-nav__link">
+  <a href="#h5" title="微信公众号H5抓包" class="md-nav__link">
+    微信公众号H5抓包
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="支付宝安全代理开关" class="md-nav__link">
+    支付宝安全代理开关
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="参考资料" class="md-nav__link">
     参考资料
   </a>
   
@@ -620,18 +646,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../capture-https/" title="https抓包" class="md-nav__link">
-      https抓包
-    </a>
   </li>
 
         
@@ -1691,7 +1705,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="参考资料" class="md-nav__link">
+  <a href="#h5" title="微信公众号H5抓包" class="md-nav__link">
+    微信公众号H5抓包
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="支付宝安全代理开关" class="md-nav__link">
+    支付宝安全代理开关
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="参考资料" class="md-nav__link">
     参考资料
   </a>
   
@@ -1714,7 +1742,8 @@
               
                 
                 
-                <h1 id="h5">微信公众号H5抓包</h1>
+                <h1 id="_1">抓包技巧</h1>
+<h2 id="h5">微信公众号H5抓包</h2>
 <p><strong>感谢CF_HB师傅</strong></p>
 <p>手机版本：Android版本 9</p>
 <p>微信版本：7.0</p>
@@ -1724,7 +1753,11 @@ http://debugx5.qq.com
 </code></pre>
 
 <p>spy-debugger经过测试发现不行；</p>
-<h2 id="_1">参考资料</h2>
+<h2 id="_2">支付宝安全代理开关</h2>
+<p><a href="https://ds.alipay.com/fd-ipddfamm/index.html">关闭安全代理</a></p>
+<p>将链接生成一个二维码，我这里生成好了，使用支付宝扫描后，关闭安全代理。理论上这个东西关了就变成正常的http请求了，然后就是绕过各种检测。</p>
+<p><img alt="alipay-1" src="https://github.com/bloodzer0/ossa/raw/master/application-security/security-testing/img/alipay-1.png" /></p>
+<h2 id="_3">参考资料</h2>
 <p><a href="http://www.coffeehb.cn/?id=104">微信公众号测试tip——Chrome调试微信公众号H5页面</a></p>
 <p><a href="https://github.com/wuchangming/spy-debugger">spy-debugger</a></p>
                 
@@ -1747,7 +1780,7 @@ http://debugx5.qq.com
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../owasp-testing-checklist/" title="owasp安全测试checklist" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../capture-https/" title="https抓包" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1756,19 +1789,19 @@ http://debugx5.qq.com
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                owasp安全测试checklist
+                https抓包
               </span>
             </div>
           </a>
         
         
-          <a href="../capture-https/" title="https抓包" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../mobsf/" title="mobsf" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                https抓包
+                mobsf
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
