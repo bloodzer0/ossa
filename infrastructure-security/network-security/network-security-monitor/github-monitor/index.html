@@ -1394,6 +1394,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#github-monitor" title="Github-Monitor安装与使用" class="md-nav__link">
+    Github-Monitor安装与使用
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1922,6 +1929,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#github-monitor" title="Github-Monitor安装与使用" class="md-nav__link">
+    Github-Monitor安装与使用
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2027,6 +2041,27 @@
 </tr>
 </tbody>
 </table>
+<h3 id="github-monitor">Github-Monitor安装与使用</h3>
+<pre><code># 官方的安装文档已经很好了，补充几个点
+
+# 安装npm需要安装高版本的
+wget -qO- https://rpm.nodesource.com/setup_10.x | bash
+yum install nodejs.x86_64 nodejs-npmlog.noarch -y
+
+# 进行npm安装的时候需要使用国内的源，否则容易报错
+npm config set registry https://registry.npm.taobao.org
+
+# 访问访问前端端口
+</code></pre>
+
+<p>报错信息如下：</p>
+<pre><code>npm ERR! code Z_BUF_ERROR
+npm ERR! errno -5
+npm ERR! zlib: unexpected end of file
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2019-01-15T04_46_18_284Z-debug.log
+</code></pre>
                 
                   
                 
