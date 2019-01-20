@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/other-security-branch/emergency-response/rkhunter/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/other-security-branch/asset-management/asset-acquisition/">
       
       
         <meta name="author" content="bloodzer0">
@@ -42,7 +42,7 @@
     
     
       
-        <title>rkhunter Linux入侵检测 - Open-Source Security Architecture</title>
+        <title>资产管理平台 - Open-Source Security Architecture</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#rkhunter-linux" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                rkhunter Linux入侵检测
+                资产管理平台
               </span>
             
           
@@ -1351,10 +1351,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1" checked>
     
     <label class="md-nav__link" for="nav-4-1">
       Asset management
@@ -1372,7 +1374,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../asset-management/" title="资产管理" class="md-nav__link">
+    <a href="../" title="资产管理" class="md-nav__link">
       资产管理
     </a>
   </li>
@@ -1382,11 +1384,131 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../asset-management/asset-acquisition/" title="资产管理平台" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        资产管理平台
+      </label>
+    
+    <a href="./" title="资产管理平台" class="md-nav__link md-nav__link--active">
       资产管理平台
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="资产分类" class="md-nav__link">
+    资产分类
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="资产管理分类" class="md-nav__link">
+    资产管理分类
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="黑盒资产管理" class="md-nav__link">
+    黑盒资产管理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="域名资产" class="md-nav__link">
+    域名资产
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iphost" title="IP&amp;Host资产" class="md-nav__link">
+    IP&amp;Host资产
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="其它资产" class="md-nav__link">
+    其它资产
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="白盒资产管理" class="md-nav__link">
+    白盒资产管理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="云资产管理" class="md-nav__link">
+    云资产管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmdb" title="通过CMDB系统进行获取" class="md-nav__link">
+    通过CMDB系统进行获取
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" title="资产进行关联" class="md-nav__link">
+    资产进行关联
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1471,12 +1593,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
     
     <label class="md-nav__link" for="nav-4-3">
       Emergency response
@@ -1494,7 +1614,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../chkrootkit/" title="chkrootkit Linux入侵检测" class="md-nav__link">
+    <a href="../../emergency-response/chkrootkit/" title="chkrootkit Linux入侵检测" class="md-nav__link">
       chkrootkit Linux入侵检测
     </a>
   </li>
@@ -1506,7 +1626,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../lynis/" title="lynis Linux安全审计工具" class="md-nav__link">
+    <a href="../../emergency-response/lynis/" title="lynis Linux安全审计工具" class="md-nav__link">
       lynis Linux安全审计工具
     </a>
   </li>
@@ -1516,69 +1636,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        rkhunter Linux入侵检测
-      </label>
-    
-    <a href="./" title="rkhunter Linux入侵检测" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../emergency-response/rkhunter/" title="rkhunter Linux入侵检测" class="md-nav__link">
       rkhunter Linux入侵检测
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="安装与使用" class="md-nav__link">
-    安装与使用
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#centos7rkhunter" title="centos7安装rkhunter" class="md-nav__link">
-    centos7安装rkhunter
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="使用" class="md-nav__link">
-    使用
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1721,29 +1783,91 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="安装与使用" class="md-nav__link">
-    安装与使用
+  <a href="#_2" title="资产分类" class="md-nav__link">
+    资产分类
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="资产管理分类" class="md-nav__link">
+    资产管理分类
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="黑盒资产管理" class="md-nav__link">
+    黑盒资产管理
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#centos7rkhunter" title="centos7安装rkhunter" class="md-nav__link">
-    centos7安装rkhunter
+  <a href="#_5" title="域名资产" class="md-nav__link">
+    域名资产
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="使用" class="md-nav__link">
-    使用
+  <a href="#iphost" title="IP&amp;Host资产" class="md-nav__link">
+    IP&amp;Host资产
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="其它资产" class="md-nav__link">
+    其它资产
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="白盒资产管理" class="md-nav__link">
+    白盒资产管理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="云资产管理" class="md-nav__link">
+    云资产管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmdb" title="通过CMDB系统进行获取" class="md-nav__link">
+    通过CMDB系统进行获取
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" title="资产进行关联" class="md-nav__link">
+    资产进行关联
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
   
 </li>
       
@@ -1764,27 +1888,157 @@
               
                 
                 
-                <h1 id="rkhunter-linux">rkhunter Linux入侵检测</h1>
-<p><a href="http://rkhunter.sourceforge.net/">官网地址</a></p>
-<p><a href="https://sourceforge.net/projects/rkhunter/files/rkhunter/">下载地址</a></p>
-<h2 id="_1">安装与使用</h2>
-<h3 id="centos7rkhunter">centos7安装rkhunter</h3>
-<pre><code>wget https://nchc.dl.sourceforge.net/project/rkhunter/rkhunter/1.4.6/rkhunter-1.4.6.tar.gz
+                <h1 id="_1">资产管理平台</h1>
+<p>资产管理关键点在于：准确性、实时性、完整性这3个特性（可能不全，欢迎补充）；</p>
+<p>资产并非单一维度，自身具备了业务属性和安全属性；-- 何艺</p>
+<h3 id="_2">资产分类</h3>
+<ul>
+<li>IP&amp;Host资产</li>
+<li>域名资产</li>
+<li>业务系统资产</li>
+<li>权限资产：用户（第三方用户、后台系统用户）、用户权限、……</li>
+<li>……</li>
+</ul>
+<h3 id="_3">资产管理分类</h3>
+<ul>
+<li>黑盒资产管理</li>
+<li>白盒资产管理</li>
+</ul>
+<h2 id="_4">黑盒资产管理</h2>
+<h3 id="_5">域名资产</h3>
+<ul>
+<li>了解主域名信息；</li>
+<li>从证书中获取域名信息；</li>
+<li>whois查询；</li>
+<li>字典获取子域名；</li>
+</ul>
+<pre><code>'''
+子域名存活性判断
+'''
+def domain_survivability(domain, tmp_file):
+    UA = {&quot;user-agent&quot;: &quot;Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&quot;}
+    try:
+        response = requests.get(domain, verify=True, timeout=3, headers=UA)
+        tmp_file.write(response.url + '\n')
+    except Exception as e:
+        return
 
-tar -xf rkhunter-1.4.6.tar.gz
-
-cd rkhunter-1.4.6
-
-./installer.sh --install
 </code></pre>
 
-<h3 id="_2">使用</h3>
-<pre><code># 检查
-rkhunter --check
-
-# 检查不需要用户执行enter进行确认
-rkhunter --check --skip-keypress
+<ul>
+<li>DNS区域传输漏洞；</li>
+<li>搜索引擎，搜索工具（shodan等）；</li>
+<li>ASN：</li>
+</ul>
+<pre><code>whois -h whois.radb.net -- '-i origin AS111111' | grep -Eo &quot;([0-9.]+){4}/[0-9]+&quot; | uniq
+nmap --script targets-asn --script-args targets-asn.asn=15169
 </code></pre>
+
+<h3 id="iphost">IP&amp;Host资产</h3>
+<ul>
+<li>直接获取</li>
+<li>绕过CDN获取真实IP</li>
+<li>
+<p>IP存活性扫描：shodan</p>
+</li>
+<li>
+<p><strong>通过域名获取IP</strong></p>
+</li>
+</ul>
+<pre><code>'''
+利用最简单的ping方式来获取，不能绕过CDN
+'''
+def exec_ping(domain,precision):
+    try:
+        result = os.popen(&quot;ping -c 1 %s -t 3 | grep -v PING&quot; % domain) # 排除不能ping通的domain
+        text = result.read()
+        result.close()
+        ip = re.findall(r'\d+.\d+.\d+.\d+',text)[0]
+        print domain,
+        if precision == &quot;yes&quot;:
+            precision_ip_attributes(ip)
+        else:
+            get_ip_attributes(ip)
+    except Exception as e:
+        pass
+</code></pre>
+
+<h3 id="_6">其它资产</h3>
+<ul>
+<li>基于扫描来进行；</li>
+<li>人工进行梳理，然后实现自动化；</li>
+<li>完整的用户权限管理系统；</li>
+</ul>
+<h2 id="_7">白盒资产管理</h2>
+<h3 id="_8">云资产管理</h3>
+<ul>
+<li><strong>阿里云资产管理</strong></li>
+</ul>
+<pre><code>'''
+从阿里云获取ECS信息
+'''
+def get_ip(result_file,clt):
+    result_file = open(result_file,'a')
+    for i in range(1,20):
+        request = DescribeInstancesRequest.DescribeInstancesRequest()
+        request.set_PageNumber(i)
+        request.set_PageSize(10)
+        request.set_accept_format('json')
+        result = json.loads(clt.do_action_with_exception(request)).get('Instances').get('Instance')
+
+        # 如果result不为空就写入result_file，为空证明已经获取了所有的实例
+        if result:
+            for key in result:
+                InstanceId = key['InstanceId'] # 获取实例ID
+                Status = key['Status'] # 获取当前状态
+                PrivateIP = key['VpcAttributes']['PrivateIpAddress']['IpAddress'][0] # 私有IP
+                PublicIP = key['EipAddress']['IpAddress'] # 公有IP
+                SecurityGroup = key['InstanceName'] # 安全组
+                RegionId = key['RegionId'] # 地区
+                # Area = 'aliyun'
+                try:
+                    result_file.writelines(InstanceId + '\t' + Status + '\t' + PrivateIP + '\t' +
+                                           PublicIP + '\t' + SecurityGroup + '\t' + RegionId + '\n')
+                except:
+                    result_file.writelines(InstanceId + '\t' + Status + '\t' + PrivateIP + '\t' +
+                                           PublicIP + '\t' + '' + '\t' + RegionId +
+                                           '\n')
+        else:
+            pass
+</code></pre>
+
+<ul>
+<li><strong>亚马逊云资产管理</strong></li>
+</ul>
+<pre><code>'''
+获取aws 云主机 ip
+'''
+def get_ip(result_file):
+    result_file = open(result_file,'a')
+    ec2 = boto3.resource('ec2','ap-southeast-1',aws_access_key_id = 'AK',
+                       aws_secret_access_key = 'SK')
+
+    instances = ec2.instances.all()
+    for instance in instances:
+        if instance.public_ip_address == None:
+            result_file.writelines(instance.id + '\t' + ' ' + '\t' + instance.private_ip_address + '\n')
+        else:
+            result_file.writelines(instance.id + '\t' + instance.public_ip_address + '\t' + instance.private_ip_address + '\n')
+
+</code></pre>
+
+<p>云资产管理基本都是通过API进行管理。</p>
+<h3 id="cmdb">通过CMDB系统进行获取</h3>
+<p>利用CMDB系统的API进行获取；</p>
+<h2 id="_9">资产进行关联</h2>
+<ul>
+<li>IP与域名资产的关联；</li>
+<li>IP与端口资产的关联；</li>
+<li>域名系统权限资产的管理；</li>
+<li>我们需要对安全的资产管理系统进行一个好的数据库设计方便数据关联查询；</li>
+</ul>
+<h2 id="_10">参考资料</h2>
+<p><a href="https://websec.readthedocs.io/zh/latest/info/domain.html">域名信息收集</a></p>
                 
                   
                 
@@ -1805,7 +2059,7 @@ rkhunter --check --skip-keypress
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../lynis/" title="lynis Linux安全审计工具" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../" title="资产管理" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1814,19 +2068,19 @@ rkhunter --check --skip-keypress
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                lynis Linux安全审计工具
+                资产管理
               </span>
             </div>
           </a>
         
         
-          <a href="../../identity-and-access-security/freeipa/" title="基于Linux开源身份认证体系FreeIPA" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../data-security/" title="数据安全" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                基于Linux开源身份认证体系FreeIPA
+                数据安全
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
