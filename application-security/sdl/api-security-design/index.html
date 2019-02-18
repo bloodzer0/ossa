@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/application-security/security-defense/openresty-waf/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/application-security/sdl/api-security-design/">
       
       
         <meta name="author" content="bloodzer0">
@@ -42,7 +42,7 @@
     
     
       
-        <title>openresty实现waf - Open-Source Security Architecture</title>
+        <title>API安全设计指南 - Open-Source Security Architecture</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#openrestywaf" tabindex="1" class="md-skip">
+      <a href="#api" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                openresty实现waf
+                API安全设计指南
               </span>
             
           
@@ -391,10 +391,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" checked>
     
     <label class="md-nav__link" for="nav-2-4">
       Sdl
@@ -410,11 +412,159 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../sdl/api-security-design/" title="API安全设计指南" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        API安全设计指南
+      </label>
+    
+    <a href="./" title="API安全设计指南" class="md-nav__link md-nav__link--active">
       API安全设计指南
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api_1" title="API安全设计需求" class="md-nav__link">
+    API安全设计需求
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="传输" class="md-nav__link">
+    传输
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="存储" class="md-nav__link">
+    存储
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="认证" class="md-nav__link">
+    认证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="授权" class="md-nav__link">
+    授权
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="输入" class="md-nav__link">
+    输入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="输出" class="md-nav__link">
+    输出
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_2" title="API接口调用方式" class="md-nav__link">
+    API接口调用方式
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http" title="HTTP+请求签名机制" class="md-nav__link">
+    HTTP+请求签名机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http_1" title="HTTP+参数签名机制" class="md-nav__link">
+    HTTP+参数签名机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#https" title="HTTPS+访问令牌机制" class="md-nav__link">
+    HTTPS+访问令牌机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="更好的方案" class="md-nav__link">
+    更好的方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt" title="关于JWT" class="md-nav__link">
+    关于JWT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth" title="关于OAuth" class="md-nav__link">
+    关于OAuth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -427,12 +577,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
     
     <label class="md-nav__link" for="nav-2-5">
       Security defense
@@ -450,7 +598,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="应用安全防御" class="md-nav__link">
+    <a href="../../security-defense/" title="应用安全防御" class="md-nav__link">
       应用安全防御
     </a>
   </li>
@@ -462,7 +610,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../https/" title="全站https" class="md-nav__link">
+    <a href="../../security-defense/https/" title="全站https" class="md-nav__link">
       全站https
     </a>
   </li>
@@ -474,7 +622,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../iptables-waf/" title="iptables实现waf" class="md-nav__link">
+    <a href="../../security-defense/iptables-waf/" title="iptables实现waf" class="md-nav__link">
       iptables实现waf
     </a>
   </li>
@@ -486,7 +634,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../modsecurity-waf/" title="modsecurity实现waf" class="md-nav__link">
+    <a href="../../security-defense/modsecurity-waf/" title="modsecurity实现waf" class="md-nav__link">
       modsecurity实现waf
     </a>
   </li>
@@ -496,116 +644,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        openresty实现waf
-      </label>
-    
-    <a href="./" title="openresty实现waf" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../security-defense/openresty-waf/" title="openresty实现waf" class="md-nav__link">
       openresty实现waf
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="安装与使用" class="md-nav__link">
-    安装与使用
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#waf" title="实现waf" class="md-nav__link">
-    实现waf
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#waf_1" title="配置waf" class="md-nav__link">
-    配置waf
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#waf_2" title="waf的说明" class="md-nav__link">
-    waf的说明
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="规则说明" class="md-nav__link">
-    规则说明
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="配置说明" class="md-nav__link">
-    配置说明
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="参考资料" class="md-nav__link">
-    参考资料
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#waf_3" title="其它开源waf" class="md-nav__link">
-    其它开源waf
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -615,7 +658,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../waf/" title="web应用防火墙" class="md-nav__link">
+    <a href="../../security-defense/waf/" title="web应用防火墙" class="md-nav__link">
       web应用防火墙
     </a>
   </li>
@@ -1804,23 +1847,51 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="安装与使用" class="md-nav__link">
-    安装与使用
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#waf" title="实现waf" class="md-nav__link">
-    实现waf
+  <a href="#api_1" title="API安全设计需求" class="md-nav__link">
+    API安全设计需求
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#waf_1" title="配置waf" class="md-nav__link">
-    配置waf
+  <a href="#_1" title="传输" class="md-nav__link">
+    传输
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="存储" class="md-nav__link">
+    存储
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="认证" class="md-nav__link">
+    认证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="授权" class="md-nav__link">
+    授权
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="输入" class="md-nav__link">
+    输入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="输出" class="md-nav__link">
+    输出
   </a>
   
 </li>
@@ -1831,23 +1902,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#waf_2" title="waf的说明" class="md-nav__link">
-    waf的说明
+  <a href="#api_2" title="API接口调用方式" class="md-nav__link">
+    API接口调用方式
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" title="规则说明" class="md-nav__link">
-    规则说明
+  <a href="#http" title="HTTP+请求签名机制" class="md-nav__link">
+    HTTP+请求签名机制
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="配置说明" class="md-nav__link">
-    配置说明
+  <a href="#http_1" title="HTTP+参数签名机制" class="md-nav__link">
+    HTTP+参数签名机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#https" title="HTTPS+访问令牌机制" class="md-nav__link">
+    HTTPS+访问令牌机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="更好的方案" class="md-nav__link">
+    更好的方案
   </a>
   
 </li>
@@ -1858,22 +1943,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="参考资料" class="md-nav__link">
+  <a href="#jwt" title="关于JWT" class="md-nav__link">
+    关于JWT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth" title="关于OAuth" class="md-nav__link">
+    关于OAuth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="参考资料" class="md-nav__link">
     参考资料
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#waf_3" title="其它开源waf" class="md-nav__link">
-    其它开源waf
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1894,137 +1980,99 @@
               
                 
                 
-                <h1 id="openrestywaf">openresty实现waf</h1>
-<h2 id="_1">安装与使用</h2>
-<pre><code># 操作系统：centos7
-# 解决依赖
-yum install gcc.x86_64 gcc-c++.x86_64 openssl-devel.x86_64 pcre-devel.x86_64 -y
-
-# 下载OpenResty
-wget https://openresty.org/download/openresty-1.13.6.2.tar.gz
-
-# 安装OpenResty
-tar -xf openresty-1.13.6.2.tar.gz &amp;&amp; cd openresty-1.13.6.2
-./configure
-gmake &amp;&amp; gmake install
-/usr/local/openresty/nginx/sbin/nginx # 启动服务
-
-# 测试OpenResty
-vim /usr/local/openresty/nginx/conf/nginx.conf
-</code></pre>
-
-<pre><code>location /hello {
-    default_type text/html;
-    content_by_lua_block {
-        ngx.say(&quot;hello world&quot;)
-    }
-}
-</code></pre>
-
-<p><img alt="openresty-waf-1" src="https://github.com/bloodzer0/ossa/raw/master/application-security/security-defense/img/openresty-waf-1.png" /></p>
-<pre><code># 重新载入配置文件    
-/usr/local/openresty/nginx/sbin/nginx -s reload
-
-# 访问页面：http://10.10.10.5/hello
-</code></pre>
-
-<p><img alt="openresty-waf-2" src="https://github.com/bloodzer0/ossa/raw/master/application-security/security-defense/img/openresty-waf-2.png" /></p>
-<h2 id="waf">实现waf</h2>
-<pre><code># 下载waf
-git clone https://github.com/unixhot/waf
-
-# 复制到对应目录
-mkdir /usr/local/openresty/nginx/conf/waf
-cp -r waf/waf/* /usr/local/openresty/nginx/conf/waf
-
-# 创建waf日志目录
-mkdir /tmp/waf-log &amp;&amp; chmod 777 /tmp/waf-log
-
-# 修改waf配置，修改日志目录
-vim /usr/local/openresty/nginx/conf/waf/config.lua
-</code></pre>
-
-<pre><code>config_log_dir = &quot;/tmp/waf-log&quot;
-</code></pre>
-
-<h3 id="waf_1">配置waf</h3>
-<pre><code>vim /usr/local/openresty/nginx/conf/nginx.conf
-</code></pre>
-
-<pre><code>lua_shared_dict limit 50m;
-lua_package_path &quot;/usr/local/openresty/nginx/conf/waf/?.lua&quot;;
-init_by_lua_file &quot;/usr/local/openresty/nginx/conf/waf/init.lua&quot;;
-access_by_lua_file &quot;/usr/local/openresty/nginx/conf/waf/access.lua&quot;;
-</code></pre>
-
-<p><img alt="openresty-waf-3" src="https://github.com/bloodzer0/ossa/raw/master/application-security/security-defense/img/openresty-waf-3.png" /></p>
-<pre><code># 重启服务
-# 访问测试页面：http://10.10.10.5/hello.sql
-</code></pre>
-
-<p><img alt="openresty-waf-4" src="https://github.com/bloodzer0/ossa/raw/master/application-security/security-defense/img/openresty-waf-4.png" /></p>
-<h2 id="waf_2">waf的说明</h2>
-<h3 id="_2">规则说明</h3>
-<p>waf规则文件目录：/usr/local/openresty/nginx/conf/waf/rule-config</p>
-<p>规则文件说明：可以在相应的规则中添加对应的值</p>
-<pre><code>args.rule：参数值规则
-blackip.rule：黑名单IP
-cookie.rule：Cookie值规则
-post.rule：Post数据规则
-url.rule：URL规则
-useragent.rule：User-Agent规则
-whiteip.rule：白名单IP
-whiteurl.rule：白名单URL
-</code></pre>
-
-<h3 id="_3">配置说明</h3>
-<pre><code># waf的状态，on为开启，off为关闭
-config_waf_enable = &quot;on&quot;
-
-# 日志文件路径
-config_log_dir = &quot;/tmp/waf-log&quot;
-
-# 规则文件路径
-config_rule_dir = &quot;/usr/local/openresty/nginx/conf/waf/rule-config&quot;
-
-# 是否启用白名单url检测
-config_white_url_check = &quot;on&quot;
-
-# 是否启用白名单ip检测
-config_white_ip_check = &quot;on&quot;
-
-# 是否启用黑名单ip检测
-config_black_ip_check = &quot;on&quot;
-
-# 是否启用url检测
-config_url_check = &quot;on&quot;
-
-# 是否启用参数检测
-config_url_args_check = &quot;on&quot;
-
-# 是否启用user-agent检测
-config_user_agent_check = &quot;on&quot;
-
-# 是否启用cookie检测
-config_cookie_check = &quot;on&quot;
-
-# 是否启用cc检测
-config_cc_check = &quot;on&quot;
-
-# CC检测频率设置，num/time
-config_cc_rate = &quot;10/60&quot;
-
-# 是否启用post数据检测
-config_post_check = &quot;on&quot;
-</code></pre>
-
-<p>根据配置可得，waf规则的优先级为：白名单--黑名单--规则检测（allow&gt;deny）</p>
-<h2 id="_4">参考资料</h2>
-<h3 id="waf_3">其它开源waf</h3>
+                <h1 id="api">API安全设计指南</h1>
+<p><strong>非原创</strong></p>
+<h2 id="api_1">API安全设计需求</h2>
+<h3 id="_1">传输</h3>
+<h3 id="_2">存储</h3>
+<h3 id="_3">认证</h3>
+<h3 id="_4">授权</h3>
+<h3 id="_5">输入</h3>
+<h3 id="_6">输出</h3>
+<h2 id="api_2">API接口调用方式</h2>
+<h3 id="http">HTTP+请求签名机制</h3>
 <ul>
-<li><a href="https://github.com/loveshell/ngx_lua_waf">loveshell&amp;nginx lua waf</a></li>
-<li><a href="https://github.com/jx-sec/jxwaf">jx-sec 锦衣盾</a></li>
+<li><strong>特点</strong></li>
 </ul>
+<blockquote>
+<p>所有携带接口信息的HTTP头内容都必须参与签名计算</p>
+<p>不同HTTP头内容也需要按照一定规则排序</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>优点</strong></p>
+</li>
+<li>
+<p><strong>缺点</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>签名算法太复杂，易用性贼差</p>
+<p>响应包可被窃听、伪造、需要防范Replay（重放）攻击</p>
+</blockquote>
+<h3 id="http_1">HTTP+参数签名机制</h3>
+<ul>
+<li><strong>特点</strong></li>
+</ul>
+<blockquote>
+<p>只有GET和POST参数的内容需要参与签名计算</p>
+</blockquote>
+<ul>
+<li><strong>优点</strong></li>
+</ul>
+<blockquote>
+<p>签名算法想对简单，易用性有较大提升</p>
+</blockquote>
+<ul>
+<li><strong>缺点</strong></li>
+</ul>
+<blockquote>
+<p>响应包可被窃听、伪造、需要防范Replay（重放）攻击</p>
+</blockquote>
+<h3 id="https">HTTPS+访问令牌机制</h3>
+<ul>
+<li><strong>特点</strong></li>
+</ul>
+<blockquote>
+<p>无需签名计算</p>
+<p>依靠传输层加密和访问令牌的不可伪造性保证安全</p>
+</blockquote>
+<ul>
+<li><strong>优点</strong></li>
+</ul>
+<blockquote>
+<p>相对安全，无法通过网络抓包方式窃听或伪造数据</p>
+<p>易用性高，无需再为签名头疼，无需考虑Replay攻击</p>
+</blockquote>
+<ul>
+<li><strong>缺点</strong></li>
+</ul>
+<blockquote>
+<p>安全性建立在用户不被中间人攻击和令牌不被泄漏的情况下</p>
+</blockquote>
+<h3 id="_7">更好的方案</h3>
+<ul>
+<li><strong>牺牲易用性换取安全性</strong></li>
+</ul>
+<blockquote>
+<p>HTTPS+内容签名机制</p>
+<p>HTTPS+内容加密机制</p>
+</blockquote>
+<ul>
+<li><strong>降低令牌泄漏带来的风险</strong></li>
+</ul>
+<blockquote>
+<p>为开发者提供绑定服务器IP列表、限制refer等支持</p>
+<p>针对不同应用场景颁发不同有效期等访问令牌</p>
+<p>针对不同安全级别的数据授权颁发不同有效期的访问令牌</p>
+<p>为开发者和用户提供令牌作废支持</p>
+</blockquote>
+<h2 id="jwt">关于JWT</h2>
+<h2 id="oauth">关于OAuth</h2>
+<h2 id="_8">参考资料</h2>
+<p><a href="http://blog.nsfocus.net/rest-api-design-safety/">REST API 安全设计指南</a></p>
+<p><a href="https://www.cnblogs.com/wintersun/p/6155255.html">HTTP API接口安全设计</a></p>
+<p><a href="https://github.com/shieldfy/API-Security-Checklist/blob/master/README-zh.md">开发安全的 API 所需要核对的清单</a></p>
                 
                   
                 
@@ -2045,7 +2093,7 @@ config_post_check = &quot;on&quot;
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../modsecurity-waf/" title="modsecurity实现waf" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2054,19 +2102,19 @@ config_post_check = &quot;on&quot;
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                modsecurity实现waf
+                移动安全扫描
               </span>
             </div>
           </a>
         
         
-          <a href="../waf/" title="web应用防火墙" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../security-defense/" title="应用安全防御" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                web应用防火墙
+                应用安全防御
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
