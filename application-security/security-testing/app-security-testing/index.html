@@ -693,6 +693,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_9" title="密码泄漏" class="md-nav__link">
+    密码泄漏
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#webview" title="WebView" class="md-nav__link">
     WebView
   </a>
@@ -700,7 +707,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" title="其它漏洞" class="md-nav__link">
+  <a href="#_10" title="其它漏洞" class="md-nav__link">
     其它漏洞
   </a>
   
@@ -712,7 +719,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" title="参考资料" class="md-nav__link">
+  <a href="#_11" title="参考资料" class="md-nav__link">
     参考资料
   </a>
   
@@ -2008,6 +2015,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_9" title="密码泄漏" class="md-nav__link">
+    密码泄漏
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#webview" title="WebView" class="md-nav__link">
     WebView
   </a>
@@ -2015,7 +2029,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" title="其它漏洞" class="md-nav__link">
+  <a href="#_10" title="其它漏洞" class="md-nav__link">
     其它漏洞
   </a>
   
@@ -2027,7 +2041,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" title="参考资料" class="md-nav__link">
+  <a href="#_11" title="参考资料" class="md-nav__link">
     参考资料
   </a>
   
@@ -2060,21 +2074,113 @@
 <h3 id="_1">任意用户登录</h3>
 <ul>
 <li>token生成算法可逆（token生成算法在本地，且app未加固导致可以反编译直接生成任意token）；</li>
+<li>在shared_prefs目录中，存在一个用户登录信息文件，里面有用户名密码，我们把用户名修改为一个其他的已知存在的用户名，密码任意。重新打开app，发现用户登录成功；</li>
 </ul>
 <h3 id="android-app-allowbackup">Android App AllowBackup</h3>
+<pre><code>&lt;application android:allowBackup=&quot;true&quot;&gt;
+
+# 备份语句
+adb backup -nosystem -noshared -apk -f com.*.ab(备份名字) com.package(你要备份的包)
+
+# 恢复语句
+adb restore com.*.ab
+</code></pre>
+
 <h3 id="_2">日志安全</h3>
+<ul>
+<li>日志泄漏账号密码；</li>
+<li>日志泄漏http请求（有的时候可以用此方法来绕过https不能抓包的问题）；</li>
+</ul>
 <h3 id="_3">支付绕过</h3>
+<ul>
+<li>通过逆向，绕过支付；</li>
+</ul>
+<p><a href="https://www.pd521.com/thread-129-1-1.html">一个新手的逆向之路，记录下我搞下</a></p>
 <h3 id="_4">信息泄漏</h3>
+<ul>
+<li>apk源码中存放邮箱账号密码、内网地址、接口信息等；</li>
+<li>本地数据库中存放用户信息；</li>
+<li>日志中显示登录信息；</li>
+</ul>
 <h3 id="_5">权限问题</h3>
+<ul>
+<li>正常的：文件权限rw-rw----，目录权限rwxrwx---</li>
+</ul>
 <h2 id="app_2">APP漏洞危害</h2>
 <h3 id="_6">组件泄漏</h3>
+<pre><code>漏洞：
+    组件在被调用时未做验证；
+    在调用其他组件时未做验证；
+
+利用：
+    调用暴露的组件，达到某种效果，获取某些信息，构造某些数据。（比如：调用暴露的组件发短信、微博等）；
+    监听暴露组件，读取数据；
+
+建议：
+    验证输入信息、验证组件调用等。android:exported设置为 false；
+    使用 android:protectionLevel=&quot;signature&quot; 验证调用来源；
+</code></pre>
+
 <h3 id="_7">反编译</h3>
+<pre><code>漏洞：APK包非常容易被反编译成可读文件，稍加修改就能重新打包成新的APK;
+
+利用：软件破解，内购破解，软件逻辑修改，插入恶意代码，替换广告商ID;
+
+建议：使用ProGuard等工具混淆代码，重要逻辑用NDK实现。
+
+例子：反编译重打包FlappyBird，把广告商ID换了，游戏改加插一段恶意代码等等。
+</code></pre>
+
 <h3 id="_8">数据的存储与传输</h3>
+<pre><code>漏洞：外部存储（SD卡）上的文件没有权限管理，所有应用都可读可写。开发者把敏感信息明文存在SD卡上，或者动态加载的payload放在SD卡上。
+
+利用：窃取敏感信息，篡改配置文件，修改payload逻辑并重打包；
+
+建议：不要把敏感信息放在外部存储上面；在动态加载外部资源的时候验证文件完整性；
+
+</code></pre>
+
+<pre><code>漏洞：使用全局可读写（MODE_WORLD_READABLE，MODE_WORLD_WRITEABLE）的内部存储方式，或明文存储敏感信息（用户账号密码等）；
+
+利用：全局读写敏感信息，或 root 后读取明文信息；
+
+建议：不适用全局可读写的内部存储方式，不明文存储用户账号密码；
+</code></pre>
+
+<h3 id="_9">密码泄漏</h3>
+<pre><code>漏洞：密码明文存储，传输；
+
+利用：
+    root 后可读写内部存储；
+    SD 卡全局可读写；
+    公共 WiFi 抓包获取账号密码；
+
+建议：实用成熟的加密方案。不要把密码明文存储在SD卡上；
+</code></pre>
+
 <h3 id="webview">WebView</h3>
-<h3 id="_9">其它漏洞</h3>
-<h2 id="_10">参考资料</h2>
+<pre><code>漏洞：
+    恶意APP可以注入JavaScript代码进入WebView中的网页，网页未作验证；
+    恶意网页可以执行JavaScript反过来调用App中注册过的方法，或者使用资源；
+
+利用：
+    恶意程序嵌入Web APP，然后窃取用户信息；
+    恶意网页远程调用APP代码。更有甚者，通过Java Reflection调用Runtime执行任意代码。
+
+建议：不使用 WebView 中的 setJavaScriptEnabled(true)，或者使用时对输入进行验证。
+</code></pre>
+
+<h3 id="_10">其它漏洞</h3>
+<ul>
+<li>ROOT后的手机可以修改APP的内购，或者安装外挂APP等；</li>
+<li>Logcat泄露用户敏感信息；</li>
+<li>恶意的广告包；</li>
+<li>利用 next Intent；</li>
+</ul>
+<h2 id="_11">参考资料</h2>
 <p><a href="https://security.tencent.com/index.php/blog/msg/109">移动APP漏洞自动化检测平台建设</a></p>
 <p><a href="https://mp.weixin.qq.com/s/PFiKJfFXVDPpd6gtLDrCIw">打造自己的Android安全测试环境</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/45591754">Android APK脱壳--腾讯乐固、360加固一键脱壳</a></p>
                 
                   
                 
