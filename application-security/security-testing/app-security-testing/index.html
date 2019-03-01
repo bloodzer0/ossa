@@ -719,6 +719,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#app_3" title="APP脱壳" class="md-nav__link">
+    APP脱壳
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fdex2360" title="利用FDex2脱360" class="md-nav__link">
+    利用FDex2脱360
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_11" title="参考资料" class="md-nav__link">
     参考资料
   </a>
@@ -2041,6 +2061,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#app_3" title="APP脱壳" class="md-nav__link">
+    APP脱壳
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fdex2360" title="利用FDex2脱360" class="md-nav__link">
+    利用FDex2脱360
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_11" title="参考资料" class="md-nav__link">
     参考资料
   </a>
@@ -2176,6 +2216,26 @@ adb restore com.*.ab
 <li>Logcat泄露用户敏感信息；</li>
 <li>恶意的广告包；</li>
 <li>利用 next Intent；</li>
+</ul>
+<h2 id="app_3">APP脱壳</h2>
+<h3 id="fdex2360">利用FDex2脱360</h3>
+<p>环境：Google Nesus 7（模拟器）Android 5.1</p>
+<ul>
+<li>安装VirtualXposed，<a href="https://vxposed.com/">下载地址</a></li>
+<li>下载FDex2并安装在模拟器上，<a href="https://pan.baidu.com/s/1smxtinr">下载地址</a> 密码：dk4v</li>
+<li>同时安装需要脱壳的应用在模拟器上</li>
+<li>启动VirtualXposed，点击Add APP安装FDex2，以及你需要破解的包</li>
+<li>激活FDex2，点击Manage Xposed Module，勾选FDex2</li>
+</ul>
+<pre><code>adb install VirtualXposed_0.16.0.apk
+
+adb install FDex2_1.1.apk
+
+adb install *.apk
+</code></pre>
+
+<ul>
+<li>然后在VirtualXposed打开FDex2，对需要脱壳的应用进行脱壳即可；</li>
 </ul>
 <h2 id="_11">参考资料</h2>
 <p><a href="https://security.tencent.com/index.php/blog/msg/109">移动APP漏洞自动化检测平台建设</a></p>
