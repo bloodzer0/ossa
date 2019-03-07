@@ -42,7 +42,7 @@
     
     
       
-        <title>API安全设计指南 - Open-Source Security Architecture</title>
+        <title>API网关设计 - Open-Source Security Architecture</title>
       
     
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                API安全设计指南
+                API网关设计
               </span>
             
           
@@ -328,8 +328,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../code-audit/sonarqube/" title="sonarqube 代码质量管理平台" class="md-nav__link">
-      sonarqube 代码质量管理平台
+    <a href="../../code-audit/sonarqube/" title="sonarqube：代码质量管理平台" class="md-nav__link">
+      sonarqube：代码质量管理平台
     </a>
   </li>
 
@@ -378,6 +378,18 @@
   <li class="md-nav__item">
     <a href="../../mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
       移动安全扫描
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mobile-security/mobile-tools/" title="移动安全工具" class="md-nav__link">
+      移动安全工具
     </a>
   </li>
 
@@ -435,11 +447,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        API安全设计指南
+        API网关设计
       </label>
     
-    <a href="./" title="API安全设计指南" class="md-nav__link md-nav__link--active">
-      API安全设计指南
+    <a href="./" title="API网关设计" class="md-nav__link md-nav__link--active">
+      API网关设计
     </a>
     
       
@@ -630,18 +642,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-defense/" title="应用安全防御" class="md-nav__link">
-      应用安全防御
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../security-defense/https/" title="全站https" class="md-nav__link">
       全站https
     </a>
@@ -654,8 +654,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-defense/iptables-waf/" title="iptables实现waf" class="md-nav__link">
-      iptables实现waf
+    <a href="../../security-defense/iptables-waf/" title="iptables-waf" class="md-nav__link">
+      iptables-waf
     </a>
   </li>
 
@@ -666,8 +666,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-defense/modsecurity-waf/" title="modsecurity实现waf" class="md-nav__link">
-      modsecurity实现waf
+    <a href="../../security-defense/modsecurity-waf/" title="modsecurity-waf" class="md-nav__link">
+      modsecurity-waf
     </a>
   </li>
 
@@ -678,8 +678,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-defense/openresty-waf/" title="openresty实现waf" class="md-nav__link">
-      openresty实现waf
+    <a href="../../security-defense/openresty-waf/" title="openresty-waf" class="md-nav__link">
+      openresty-waf
     </a>
   </li>
 
@@ -690,8 +690,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-defense/waf/" title="web应用防火墙" class="md-nav__link">
-      web应用防火墙
+    <a href="../../security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
+      Web应用防火墙
     </a>
   </li>
 
@@ -774,8 +774,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-testing/dast-iast-sast/" title="dast vs sast vs iast" class="md-nav__link">
-      dast vs sast vs iast
+    <a href="../../security-testing/dast-iast-sast/" title="DAST&SAST&IAST" class="md-nav__link">
+      DAST&SAST&IAST
     </a>
   </li>
 
@@ -798,6 +798,18 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-testing/tools-skills/app/" title="APP脱壳技巧" class="md-nav__link">
+      APP脱壳技巧
+    </a>
+  </li>
+
         
           
           
@@ -831,18 +843,6 @@
   <li class="md-nav__item">
     <a href="../../security-testing/tools-skills/information-leakage/" title="信息泄漏漏洞利用" class="md-nav__link">
       信息泄漏漏洞利用
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../security-testing/tools-skills/mobile-tools/" title="移动安全工具" class="md-nav__link">
-      移动安全工具
     </a>
   </li>
 
@@ -2104,7 +2104,7 @@
               
                 
                 
-                <h1 id="api">API安全设计指南</h1>
+                <h1 id="api">API网关设计</h1>
 <p><strong>非原创</strong></p>
 <h2 id="api_1">API所需安全功能</h2>
 <h3 id="_1">身份和访问控制</h3>
@@ -2326,13 +2326,13 @@ JWT本身包含了认证信息，一旦泄漏，任何人都可以获得该令�
           </a>
         
         
-          <a href="../../security-defense/" title="应用安全防御" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../security-defense/https/" title="全站https" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                应用安全防御
+                全站https
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

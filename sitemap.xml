@@ -36,17 +36,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/mobile-security/mobile-tools/</loc>
+     <lastmod>2019-03-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/sdl/api-gateway/</loc>
      <lastmod>2019-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/sdl/api-security-design/</loc>
-     <lastmod>2019-03-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-defense/</loc>
      <lastmod>2019-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -101,6 +101,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/app/</loc>
+     <lastmod>2019-03-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/capture-https/</loc>
      <lastmod>2019-03-06</lastmod>
      <changefreq>daily</changefreq>
@@ -112,11 +117,6 @@
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/information-leakage/</loc>
-     <lastmod>2019-03-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/application-security/security-testing/tools-skills/mobile-tools/</loc>
      <lastmod>2019-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
