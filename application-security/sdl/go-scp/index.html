@@ -3500,7 +3500,7 @@ func main() {
 }
 </code></pre>
 
-<p>使<code>param1</code>等于“<h1>”将导致内容类型作为text/html发送，这使您容易受到XSS的攻击。</p>
+<p>使<code>param1</code>等于<code>&lt;h1&gt;</code>将导致内容类型作为text/html发送，这使您容易受到XSS的攻击。</p>
 <p><img alt="text-template-xss.png" src="https://checkmarx.gitbooks.io/go-scp/content/output-encoding/images/text-template-xss.png" /></p>
 <p>将text/template包替换为html/template包，您就可以安全地继续了。</p>
 <pre><code class="go">package main
@@ -3523,7 +3523,7 @@ func main() {
 
 </code></pre>
 
-<p>当param1等于"<h1>"时，不仅<code>Content-Type</code>HTTP响应头将以text/plain格式发送。</p>
+<p>当<code>param1</code>等于<code>&lt;h1&gt;</code>时，不仅<code>Content-Type</code>HTTP响应头将以text/plain格式发送。</p>
 <p><img alt="html-template-plain-text.png" src="https://checkmarx.gitbooks.io/go-scp/content/output-encoding/images/html-template-plain-text.png" /></p>
 <p>但是，<code>param1也</code>被正确编码到输出媒体：浏览器。</p>
 <p><img alt="html-template-text-plain-noxss.png" src="https://checkmarx.gitbooks.io/go-scp/content/output-encoding/images/html-template-text-plain-noxss.png" /></p>
