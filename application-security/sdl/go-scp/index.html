@@ -3466,7 +3466,7 @@ func main () {
 <p>由于<code>Content-Type</code>HTTP响应头，将使用go http.detectcontenttype默认值，该值遵循<a href="https://mimesniff.spec.whatwg.org/#rules-for-identifying-an-unknown-mime-typ">WhatWG规范</a>。</p>
 <p>因此，使<code>param1</code>等于"test"，将导致<code>Content-Type</code>HTTP响应头以text/plain格式发送。</p>
 <p><img alt="text-plain.png" src="https://checkmarx.gitbooks.io/go-scp/content/output-encoding/images/text-plain.png" /></p>
-<p>但如果<code>param1</code>的第一个字符是“<h1>”，则<code>Content-Type</code>将是text/html。</p>
+<p>但如果<code>param1</code>的第一个字符是<code>&lt;h1&gt;</code>，则<code>Content-Type</code>将是text/html。</p>
 <p><img alt="text-html.png" src="https://checkmarx.gitbooks.io/go-scp/content/output-encoding/images/text-html.png" /></p>
 <p>您可能认为，使<code>param1</code>等于任何HTML标记都会导致相同的行为，但它不会：使<code>param1</code>等于"<h2>"、<span>"或"<form>"将使<code>Content-Type</code>以plain/text形式发送，而不是以预期的text/html形式发送。</p>
 <p>现在，让我们使<code>param1</code>等于</p>
