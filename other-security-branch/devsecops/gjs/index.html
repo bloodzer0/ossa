@@ -2204,6 +2204,15 @@ sast:
 
 <p>效果图</p>
 <p><img alt="sonarqube-2" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/sonarqube-2.png" /></p>
+<p>如果你需要阻断，那么可以进行这么操作：</p>
+<ul>
+<li>配置sonar质量阈；</li>
+<li>gitlab ci 判断 sonar的执行状态</li>
+</ul>
+<p><img alt="sonarqube-3" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/sonarqube-3.png" /></p>
+<pre><code class="shell">if curl http://10.10.10.5:9000/api/qualitygates/project_status?projectKey=go-language: | grep 'ERROR'; then echo &quot;error&quot; exit 1; fi
+</code></pre>
+
 <h3 id="_2">踩坑</h3>
 <ul>
 <li><strong>连接阿里云RDS</strong></li>
