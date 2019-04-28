@@ -2213,6 +2213,7 @@ sast:
 <pre><code class="shell">if curl http://10.10.10.5:9000/api/qualitygates/project_status?projectKey=go-language: | grep 'ERROR'; then echo &quot;error&quot; exit 1; fi
 </code></pre>
 
+<p>这条命令加入到gitlab ci pipelines中，就可以实现阻断（不建议，sonar规则需要优化后再慢慢上线阻断功能）。</p>
 <h3 id="_2">踩坑</h3>
 <ul>
 <li><strong>连接阿里云RDS</strong></li>
