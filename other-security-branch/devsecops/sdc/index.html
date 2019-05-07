@@ -2055,10 +2055,13 @@ SonarScanner：3.10.0
 </code></pre>
 
 <p><a href="https://github.com/SonarSecurityCommunity/dependency-check-sonar-plugin/">SonarQube Dependency-Check插件项目地址</a></p>
-<p>下载要注意版本，目前Github上支持6.x版本与7.x版本我这里下载的是：sonar-dependency-check-plugin-1.2.3.jar</p>
+<p>下载要注意版本，目前Github上支持6.x版本与7.x，版本我这里下载的是：</p>
+<pre><code>sonar-dependency-check-plugin-1.2.3.jar
+</code></pre>
+
 <p>下载好后放置在SonarQube的插件目录，再重启即可。</p>
 <p><img alt="sonarqube-5" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/sonarqube-5.png" /></p>
-<p>网上有几篇文章都提到了这里需要配置Paths，但是实际上可以不用配置，我们使用SonarScanner给SonarQube传输即可。（参考资料见文末）</p>
+<p><strong>网上有几篇文章都提到了这里需要配置Paths，但是实际上可以不用配置，我们使用SonarScanner给SonarQube传输即可。（参考资料见文末）</strong></p>
 <h2 id="1">踩坑1：找不到报告文件</h2>
 <pre><code>INFO: Dependency-Check HTML report does not exists
 </code></pre>
@@ -2097,7 +2100,7 @@ sast:
 <p>SonarQube 结果：</p>
 <p><img alt="sonarqube-8" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/sonarqube-8.png" /></p>
 <p><img alt="sonarqube-9" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/sonarqube-9.png" /></p>
-<p>一定要灵活变通，遇到错误多Google吧！或者去给作者提ISSUE，并且我这里列了踩坑1，未来还有2，3，4。</p>
+<p><strong>一定要灵活变通，遇到错误多Google吧！或者去给作者提ISSUE，并且我这里列了踩坑1，未来还有2，3，4。</strong></p>
 <h2 id="_2">思考</h2>
 <h3 id="_3">在什么环节执行第三方依赖扫描</h3>
 <p>由于扫描第三方依赖的工具是扫描jar包，所以需要在项目编译之后才能进行扫描，否则会没有效果。测试方法如下：</p>
@@ -2106,12 +2109,12 @@ sast:
 </code></pre>
 
 <p><img alt="sonarqube-10" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/sonarqube-10.png" /></p>
-<p>所以如果在代码提交阶段（本文中的形式）将会形成效率平衡的问题，因为项目在发版的时候也会编译，就形成了重复编译。所以建议操作是放在Jenkins打包的时候触发pipelines动作。这个时候代码打包一般都是发布到测试环境（QA）我们发现安全问题，可以安排进行修复。</p>
+<p>所以如果在代码提交阶段（本文中的形式）将会形成资源重复使用的问题，因为项目在发版的时候也会编译，就形成了重复编译。所以建议操作是放在Jenkins打包的时候触发pipelines动作。这个时候代码打包一般都是发布到测试环境（QA）我们发现安全问题，可以安排进行修复。</p>
 <h3 id="_4">扫描发现的漏洞如何形成闭环</h3>
 <p>依赖包可能会扫描出很多漏洞，如何对这些漏洞形成闭环，要思考几个方面的问题：</p>
 <ul>
-<li>漏洞是否都需要修复？：严重、高危需要修复。</li>
-<li>需要修复的漏洞如何形成自动化的跟踪流程？：手动建卡，或者使用SonarQube API写脚本自动生成。</li>
+<li>漏洞是否都需要修复？：<strong>严重、高危需要修复。</strong></li>
+<li>需要修复的漏洞如何形成自动化的跟踪流程？：<strong>手动提交到漏洞管理平台，或者使用SonarQube API写脚本自动提交。关于<a href="https://bloodzer0.github.io/ossa/application-security/vulnerability-management/">漏洞生命周期管理</a></strong></li>
 </ul>
 <h3 id="_5">漏洞的准确性</h3>
 <p>扫描出来的漏洞可能存在很多误报，或者漏洞并不能利用成功这个时候我们再去手工验证漏洞耗时。所以思考如何来解决漏洞准确性就成了下一个要解决的问题。</p>
