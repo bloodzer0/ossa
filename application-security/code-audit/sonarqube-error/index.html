@@ -408,6 +408,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" title="不允许直接从数据库删除规则" class="md-nav__link">
+    不允许直接从数据库删除规则
+  </a>
+  
+</li>
+      
       
       
       
@@ -2001,6 +2008,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" title="不允许直接从数据库删除规则" class="md-nav__link">
+    不允许直接从数据库删除规则
+  </a>
+  
+</li>
+      
       
       
       
@@ -2043,6 +2057,12 @@ ERROR: Re-run SonarQube Scanner using the -X switch to enable full debug logging
 
 <p>这是因为findbugs检查的是classes文件，所以必须先对项目执行</p>
 <pre><code>mvn compile # 生成classes文件
+</code></pre>
+
+<h2 id="_2">不允许直接从数据库删除规则</h2>
+<p>报错如下：</p>
+<pre><code>ERROR: Unable to load component class org.sonar.scanner.report.MetadataPublisher
+ERROR: Caused by: Unable to load component class org.sonar.scanner.rule.QualityProfiles
 </code></pre>
 
 <p>持续更新</p>
