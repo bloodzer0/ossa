@@ -26,6 +26,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/application-security/code-audit/findsecbugs/</loc>
+     <lastmod>2019-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/code-audit/sonarqube-error/</loc>
      <lastmod>2019-05-23</lastmod>
      <changefreq>daily</changefreq>
