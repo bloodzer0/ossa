@@ -450,6 +450,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gitlab-ci" title="集成Gitlab-CI做自动化扫描" class="md-nav__link">
+    集成Gitlab-CI做自动化扫描
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sonarqubepipelines" title="根据SonarQube结果执行pipelines" class="md-nav__link">
+    根据SonarQube结果执行pipelines
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
       
       
       
@@ -2085,6 +2112,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gitlab-ci" title="集成Gitlab-CI做自动化扫描" class="md-nav__link">
+    集成Gitlab-CI做自动化扫描
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sonarqubepipelines" title="根据SonarQube结果执行pipelines" class="md-nav__link">
+    根据SonarQube结果执行pipelines
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
       
       
       
@@ -2105,7 +2159,7 @@
                 <h1 id="sonarqube">SonarQube安装与使用</h1>
 <h2 id="_1">安装过程</h2>
 <p><strong>备注：数据库不要使用MariaDB；不要使用root用户安装，es会启动失败</strong></p>
-<pre><code># 安装java环境
+<pre><code class="shell"># 安装java环境
 yum install java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64 -y
 
 # 安装数据库
@@ -2140,6 +2194,9 @@ sonar.jdbc.password=password
 
 sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance&amp;useSSL=false
 
+
+# 如果java环境是配置安装的，需要指定java环境：vim sonarqube-7.7/conf/wrapper.conf
+
 # 启动sonarqube
 ./bin/linux-x86-64/sonar.sh start
 
@@ -2159,7 +2216,7 @@ sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEn
 <p>完成后会提示重启服务</p>
 <p><img alt="sonarqube-4" src="https://github.com/bloodzer0/ossa/raw/master/application-security/code-audit/img/sonar-4.png" /></p>
 <h3 id="sonar-scanner">Sonar Scanner</h3>
-<pre><code># 任意用户均可
+<pre><code class="shell"># 任意用户均可
 wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
 
 # 解压
@@ -2183,7 +2240,7 @@ sonar-scanner -v
 <p>点击项目--分析新项目</p>
 <p><img alt="sonarqube-6" src="https://github.com/bloodzer0/ossa/raw/master/application-security/code-audit/img/sonar-6.png" /></p>
 <h4 id="jspythonphp">JS、Python、PHP</h4>
-<pre><code>sonar-scanner \
+<pre><code class="shell">sonar-scanner \
   -Dsonar.projectKey=security-test \
   -Dsonar.sources=. \
   -Dsonar.host.url=http://10.10.10.12:9000 \
@@ -2191,7 +2248,7 @@ sonar-scanner -v
 </code></pre>
 
 <p>测试sqlmap项目：</p>
-<pre><code>git clone https://github.com/sqlmapproject/sqlmap.git
+<pre><code class="shell">git clone https://github.com/sqlmapproject/sqlmap.git
 cd sqlmap
 
 # 执行上面的代码
@@ -2218,7 +2275,7 @@ plugins {
 </code></pre>
 
 <h4 id="cvbnet">C#或VB.NET</h4>
-<pre><code>SonarScanner.MSBuild.exe begin /k:&quot;test&quot; /d:sonar.host.url=&quot;http://10.10.10.12:9000&quot; /d:sonar.login=&quot;token&quot;
+<pre><code class="shell">SonarScanner.MSBuild.exe begin /k:&quot;test&quot; /d:sonar.host.url=&quot;http://10.10.10.12:9000&quot; /d:sonar.login=&quot;token&quot;
 
 MsBuild.exe /t:Rebuild
 
@@ -2227,7 +2284,7 @@ SonarScanner.MSBuild.exe end /d:sonar.login=&quot;token&quot;
 
 <h4 id="_4">使用配置文件进行扫描</h4>
 <p>在项目目录新建sonar-project.properties文件</p>
-<pre><code># must be unique in a given SonarQube instance
+<pre><code class="properties"># must be unique in a given SonarQube instance
 sonar.projectKey=my:project
 # this is the name and version displayed in the SonarQube UI. Was mandatory prior to SonarQube 6.1.
 sonar.projectName=My project
@@ -2240,6 +2297,31 @@ sonar.sources=.
 # Encoding of the source code. Default is default system encoding
 #sonar.sourceEncoding=UTF-8
 </code></pre>
+
+<h2 id="gitlab-ci">集成Gitlab-CI做自动化扫描</h2>
+<p>gitlab-ci.yml文件内容</p>
+<pre><code class="yml">sast:
+  stage: test
+  script:
+    - sonar-scanner -Dsonar.host.url=http://10.10.10.12:9000 -Dsonar.login=token -Dsonar.issuesReport.console.enable=True -Dsonar.projectKey=$CI_PROJECT_NAME -Dsonar.java.binaries=$PWD
+  tags:
+    - sec
+  only:
+    - master
+</code></pre>
+
+<p><img alt="sonarqube-2" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/sonarqube-2.png" /></p>
+<h3 id="sonarqubepipelines">根据SonarQube结果执行pipelines</h3>
+<ul>
+<li>配置sonar质量阈；</li>
+<li>gitlab ci 判断 sonar的执行状态；</li>
+</ul>
+<p><img alt="sonarqube-3" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/sonarqube-3.png" /></p>
+<pre><code class="shell">if curl http://10.10.10.5:9000/api/qualitygates/project_status?projectKey=go-language: | grep 'ERROR'; then echo &quot;error&quot; exit 1; fi
+</code></pre>
+
+<h2 id="_5">参考资料</h2>
+<p><a href="https://blog.csdn.net/aixiaoyang168/article/details/78115646">SonarQube之gitlab-plugin配合gitlab-ci完成每次commit代码检测</a></p>
                 
                   
                 
