@@ -42,7 +42,7 @@
     
     
       
-        <title>SonarQube+DependencyCheck实现第三方依赖安全扫描 - Open-Source Security Architecture</title>
+        <title>SonarQube集成DependencyCheck - Open-Source Security Architecture</title>
       
     
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                SonarQube+DependencyCheck实现第三方依赖安全扫描
+                SonarQube集成DependencyCheck
               </span>
             
           
@@ -1719,11 +1719,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        SonarQube+DependencyCheck实现第三方依赖安全扫描
+        SonarQube集成DependencyCheck
       </label>
     
-    <a href="./" title="SonarQube+DependencyCheck实现第三方依赖安全扫描" class="md-nav__link md-nav__link--active">
-      SonarQube+DependencyCheck实现第三方依赖安全扫描
+    <a href="./" title="SonarQube集成DependencyCheck" class="md-nav__link md-nav__link--active">
+      SonarQube集成DependencyCheck
     </a>
     
       
@@ -1737,22 +1737,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" title="踩坑1：找不到报告文件" class="md-nav__link">
-    踩坑1：找不到报告文件
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" title="解决方案" class="md-nav__link">
-    解决方案
+  <a href="#_1" title="安装插件" class="md-nav__link">
+    安装插件
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#sonarqube" title="执行扫描：解决SonarQube找不到报告" class="md-nav__link">
+    执行扫描：解决SonarQube找不到报告
+  </a>
   
 </li>
       
@@ -2007,22 +2001,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" title="踩坑1：找不到报告文件" class="md-nav__link">
-    踩坑1：找不到报告文件
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" title="解决方案" class="md-nav__link">
-    解决方案
+  <a href="#_1" title="安装插件" class="md-nav__link">
+    安装插件
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#sonarqube" title="执行扫描：解决SonarQube找不到报告" class="md-nav__link">
+    执行扫描：解决SonarQube找不到报告
+  </a>
   
 </li>
       
@@ -2084,12 +2072,13 @@
               
                 
                 
-                <h1 id="sonarqubedependencycheck">SonarQube+DependencyCheck实现第三方依赖安全扫描</h1>
+                <h1 id="sonarqubedependencycheck">SonarQube集成DependencyCheck</h1>
 <p>环境概述：</p>
 <pre><code>SonarQube：7.7
 SonarScanner：3.10.0
 </code></pre>
 
+<h2 id="_1">安装插件</h2>
 <p><a href="https://github.com/SonarSecurityCommunity/dependency-check-sonar-plugin/">SonarQube Dependency-Check插件项目地址</a></p>
 <p>下载要注意版本，目前Github上支持6.x版本与7.x，版本我这里下载的是：</p>
 <pre><code>sonar-dependency-check-plugin-1.2.3.jar
@@ -2098,45 +2087,38 @@ SonarScanner：3.10.0
 <p>下载好后放置在SonarQube的插件目录，再重启即可。</p>
 <p><img alt="sonarqube-5" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/sonarqube-5.png" /></p>
 <p><strong>网上有几篇文章都提到了这里需要配置Paths，但是实际上可以不用配置，我们使用SonarScanner给SonarQube传输即可。（参考资料见文末）</strong></p>
-<h2 id="1">踩坑1：找不到报告文件</h2>
+<h2 id="sonarqube">执行扫描：解决SonarQube找不到报告</h2>
 <pre><code>INFO: Dependency-Check HTML report does not exists
 </code></pre>
 
-<h3 id="_1">解决方案</h3>
 <p>这个坑真的是踩了很久，后来也与GitHub作者进行了<a href="https://github.com/SonarSecurityCommunity/dependency-check-sonar-plugin/issues/58">沟通</a>，对方提醒我需要先生成报告。</p>
-<ul>
-<li>SonarQube + DependencyCheck需要先生成报告</li>
-<li>生成报告工具 <a href="https://github.com/jeremylong/DependencyCheck">DependencyCheck</a></li>
-</ul>
+<p>生成报告工具：<a href="https://github.com/jeremylong/DependencyCheck">DependencyCheck</a></p>
 <pre><code># 下载工具
 bash bin/dependency-check.sh -h
-
 
 # 测试，我这里是结合SonarScanner + Gitlab-CI进行分析
 # 配置Gitlab-CI文件
 </code></pre>
 
-<pre><code>stages:
+<pre><code class="yml">stages:
   - sast
 sast:
   stage: sast
   script:
-    - /home/gitlab-runner/apache-maven-3.6.1/bin/mvn package -DskipTests # 编译项目
+    - mvn package -DskipTests # 编译项目
     - mkdir $PWD/reports # 创建报告目录
     - /home/gitlab-runner/dependency-check/bin/dependency-check.sh -s $PWD/ -f XML -o $PWD/reports/dependency-check-report.xml # 生成报告
     - /home/gitlab-runner/dependency-check/bin/dependency-check.sh -s $PWD/ -f HTML -o $PWD/reports/dependency-check-report.html # 生成报告
-    - /home/gitlab-runner/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -Dsonar.host.url=http://10.10.10.5:9000 -Dsonar.login=179d2c335f0e5f3bf5c7bd285a3dc8132ec6ddf2 -Dsonar.projectKey=$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME -Dsonar.java.binaries=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64/jre/bin/ -Dsonar.java.libraries=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64/jre/lib/ -Dsonar.dependencyCheck.reportPath=$PWD/reports/dependency-check-report.xml -Dsonar.dependencyCheck.htmlReportPath=$PWD/reports/dependency-check-report.html # 执行SonarScanner扫描，并将DependencyCheck的结果传输给SonarQube
+    - sonar-scanner -Dsonar.host.url=http://10.10.10.12:9000 -Dsonar.login=token -Dsonar.projectKey=$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME -Dsonar.java.binaries=$PWD -Dsonar.dependencyCheck.reportPath=$PWD/reports/dependency-check-report.xml -Dsonar.dependencyCheck.htmlReportPath=$PWD/reports/dependency-check-report.html # 执行SonarScanner扫描，并将DependencyCheck的结果传输给SonarQube
   tags:
     - sec1
 </code></pre>
 
-<p>Gitlab-CI Pipelines：</p>
 <p><img alt="sonarqube-6" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/sonarqube-6.png" /></p>
 <p><img alt="sonarqube-7" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/sonarqube-7.png" /></p>
 <p>SonarQube 结果：</p>
 <p><img alt="sonarqube-8" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/sonarqube-8.png" /></p>
 <p><img alt="sonarqube-9" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/sonarqube-9.png" /></p>
-<p><strong>一定要灵活变通，遇到错误多Google吧！或者去给作者提ISSUE，并且我这里列了踩坑1，未来还有2，3，4。</strong></p>
 <h2 id="_2">思考</h2>
 <h3 id="_3">在什么环节执行第三方依赖扫描</h3>
 <p>由于扫描第三方依赖的工具是扫描jar包，所以需要在项目编译之后才能进行扫描，否则会没有效果。测试方法如下：</p>
@@ -2149,14 +2131,13 @@ sast:
 <h3 id="_4">扫描发现的漏洞如何形成闭环</h3>
 <p>依赖包可能会扫描出很多漏洞，如何对这些漏洞形成闭环，要思考几个方面的问题：</p>
 <ul>
-<li>漏洞是否都需要修复？：<strong>严重、高危需要修复。</strong></li>
+<li>漏洞是否都需要修复？：<strong>严重、高危需要修复。漏洞的修复成本</strong></li>
 <li>需要修复的漏洞如何形成自动化的跟踪流程？：<strong>手动提交到漏洞管理平台，或者使用SonarQube API写脚本自动提交。关于<a href="https://bloodzer0.github.io/ossa/application-security/vulnerability-management/">漏洞生命周期管理</a></strong></li>
 </ul>
 <h3 id="_5">漏洞的准确性</h3>
 <p>扫描出来的漏洞可能存在很多误报，或者漏洞并不能利用成功这个时候我们再去手工验证漏洞耗时。所以思考如何来解决漏洞准确性就成了下一个要解决的问题。</p>
 <h2 id="_6">参考资料</h2>
 <p><a href="https://www.linuxea.com/1837.html">linuxea:gitlab-ci/cd Dependency依赖扫描两种方式 (五)</a></p>
-<p><a href="https://yq.aliyun.com/articles/696079">Jenkins Pipeline集成Sonar进行代码质量检测</a></p>
                 
                   
                 
