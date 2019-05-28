@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/infrastructure-security/host-security/ids-ips/osquery/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/infrastructure-security/container/">
       
       
         <meta name="author" content="bloodzer0">
@@ -37,21 +37,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
-        <title>osquery 操作系统检测与分析 - Open-Source Security Architecture</title>
+        <title>容器安全建设 - Open-Source Security Architecture</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
       
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
@@ -60,7 +60,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#osquery" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                osquery 操作系统检测与分析
+                容器安全建设
               </span>
             
           
@@ -240,7 +240,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../.." title="ossa" class="md-nav__link">
+    <a href="../.." title="ossa" class="md-nav__link">
       ossa
     </a>
   </li>
@@ -271,7 +271,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/" title="应用安全" class="md-nav__link">
+    <a href="../../application-security/" title="应用安全" class="md-nav__link">
       应用安全
     </a>
   </li>
@@ -302,7 +302,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/" title="代码审计" class="md-nav__link">
+    <a href="../../application-security/code-audit/" title="代码审计" class="md-nav__link">
       代码审计
     </a>
   </li>
@@ -314,7 +314,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/cobra/" title="Cobra安装与使用" class="md-nav__link">
+    <a href="../../application-security/code-audit/cobra/" title="Cobra安装与使用" class="md-nav__link">
       Cobra安装与使用
     </a>
   </li>
@@ -326,7 +326,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/ethereum-smart-contracts-code-audit/" title="智能合约代码审计" class="md-nav__link">
+    <a href="../../application-security/code-audit/ethereum-smart-contracts-code-audit/" title="智能合约代码审计" class="md-nav__link">
       智能合约代码审计
     </a>
   </li>
@@ -338,7 +338,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/findsecbugs/" title="FindSecBugs安装与使用" class="md-nav__link">
+    <a href="../../application-security/code-audit/findsecbugs/" title="FindSecBugs安装与使用" class="md-nav__link">
       FindSecBugs安装与使用
     </a>
   </li>
@@ -350,7 +350,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/sonarqube-error/" title="SonarQube踩坑记" class="md-nav__link">
+    <a href="../../application-security/code-audit/sonarqube-error/" title="SonarQube踩坑记" class="md-nav__link">
       SonarQube踩坑记
     </a>
   </li>
@@ -362,7 +362,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/sonarqube/" title="SonarQube安装与使用" class="md-nav__link">
+    <a href="../../application-security/code-audit/sonarqube/" title="SonarQube安装与使用" class="md-nav__link">
       SonarQube安装与使用
     </a>
   </li>
@@ -398,7 +398,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/mobile-security/" title="移动安全" class="md-nav__link">
+    <a href="../../application-security/mobile-security/" title="移动安全" class="md-nav__link">
       移动安全
     </a>
   </li>
@@ -410,7 +410,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
+    <a href="../../application-security/mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
       移动安全扫描
     </a>
   </li>
@@ -422,7 +422,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/mobile-security/mobile-tools/" title="移动安全工具" class="md-nav__link">
+    <a href="../../application-security/mobile-security/mobile-tools/" title="移动安全工具" class="md-nav__link">
       移动安全工具
     </a>
   </li>
@@ -458,7 +458,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/sdl/api-gateway/" title="API网关" class="md-nav__link">
+    <a href="../../application-security/sdl/api-gateway/" title="API网关" class="md-nav__link">
       API网关
     </a>
   </li>
@@ -470,7 +470,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/sdl/api-security-design/" title="API网关设计" class="md-nav__link">
+    <a href="../../application-security/sdl/api-security-design/" title="API网关设计" class="md-nav__link">
       API网关设计
     </a>
   </li>
@@ -482,7 +482,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/sdl/go-scp/" title="Go语言安全编码规范-翻译" class="md-nav__link">
+    <a href="../../application-security/sdl/go-scp/" title="Go语言安全编码规范-翻译" class="md-nav__link">
       Go语言安全编码规范-翻译
     </a>
   </li>
@@ -518,7 +518,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/https/" title="全站https" class="md-nav__link">
+    <a href="../../application-security/security-defense/https/" title="全站https" class="md-nav__link">
       全站https
     </a>
   </li>
@@ -530,7 +530,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/iptables-waf/" title="iptables-waf" class="md-nav__link">
+    <a href="../../application-security/security-defense/iptables-waf/" title="iptables-waf" class="md-nav__link">
       iptables-waf
     </a>
   </li>
@@ -542,7 +542,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/modsecurity-waf/" title="modsecurity-waf" class="md-nav__link">
+    <a href="../../application-security/security-defense/modsecurity-waf/" title="modsecurity-waf" class="md-nav__link">
       modsecurity-waf
     </a>
   </li>
@@ -554,7 +554,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/openresty-waf/" title="openresty-waf" class="md-nav__link">
+    <a href="../../application-security/security-defense/openresty-waf/" title="openresty-waf" class="md-nav__link">
       openresty-waf
     </a>
   </li>
@@ -566,7 +566,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
+    <a href="../../application-security/security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
       Web应用防火墙
     </a>
   </li>
@@ -602,7 +602,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/" title="安全测试" class="md-nav__link">
+    <a href="../../application-security/security-testing/" title="安全测试" class="md-nav__link">
       安全测试
     </a>
   </li>
@@ -614,7 +614,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
+    <a href="../../application-security/security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
       API安全测试
     </a>
   </li>
@@ -626,7 +626,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/app-security-testing/" title="APP安全测试" class="md-nav__link">
+    <a href="../../application-security/security-testing/app-security-testing/" title="APP安全测试" class="md-nav__link">
       APP安全测试
     </a>
   </li>
@@ -638,7 +638,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/checklist/" title="安全测试checklist" class="md-nav__link">
+    <a href="../../application-security/security-testing/checklist/" title="安全测试checklist" class="md-nav__link">
       安全测试checklist
     </a>
   </li>
@@ -650,7 +650,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/dast-iast-sast/" title="DAST&SAST&IAST" class="md-nav__link">
+    <a href="../../application-security/security-testing/dast-iast-sast/" title="DAST&SAST&IAST" class="md-nav__link">
       DAST&SAST&IAST
     </a>
   </li>
@@ -681,7 +681,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/app/" title="APP脱壳技巧" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/app/" title="APP脱壳技巧" class="md-nav__link">
       APP脱壳技巧
     </a>
   </li>
@@ -693,7 +693,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
       https抓包
     </a>
   </li>
@@ -705,7 +705,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/capture-skills/" title="抓包技巧" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/capture-skills/" title="抓包技巧" class="md-nav__link">
       抓包技巧
     </a>
   </li>
@@ -717,7 +717,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/information-leakage/" title="信息泄漏漏洞利用" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/information-leakage/" title="信息泄漏漏洞利用" class="md-nav__link">
       信息泄漏漏洞利用
     </a>
   </li>
@@ -729,7 +729,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/web-tools/" title="Web安全工具" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/web-tools/" title="Web安全工具" class="md-nav__link">
       Web安全工具
     </a>
   </li>
@@ -770,7 +770,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/vulnerability-management/" title="漏洞管理" class="md-nav__link">
+    <a href="../../application-security/vulnerability-management/" title="漏洞管理" class="md-nav__link">
       漏洞管理
     </a>
   </li>
@@ -782,7 +782,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
+    <a href="../../application-security/vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
       defectdojo
     </a>
   </li>
@@ -818,7 +818,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/web-security-scan/" title="Web安全扫描" class="md-nav__link">
+    <a href="../../application-security/web-security-scan/" title="Web安全扫描" class="md-nav__link">
       Web安全扫描
     </a>
   </li>
@@ -859,7 +859,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../business/captcha/" title="验证码安全" class="md-nav__link">
+    <a href="../../business/captcha/" title="验证码安全" class="md-nav__link">
       验证码安全
     </a>
   </li>
@@ -897,7 +897,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../" title="基础设施安全" class="md-nav__link">
+    <a href="../" title="基础设施安全" class="md-nav__link">
       基础设施安全
     </a>
   </li>
@@ -907,10 +907,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" checked>
     
     <label class="md-nav__link" for="nav-4-2">
       Container
@@ -926,11 +928,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../../container/" title="容器安全建设" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        容器安全建设
+      </label>
+    
+    <a href="./" title="容器安全建设" class="md-nav__link md-nav__link--active">
       容器安全建设
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="容器安全内容" class="md-nav__link">
+    容器安全内容
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -940,7 +987,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../container/tools/" title="容器安全工具" class="md-nav__link">
+    <a href="tools/" title="容器安全工具" class="md-nav__link">
       容器安全工具
     </a>
   </li>
@@ -955,12 +1002,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
     
     <label class="md-nav__link" for="nav-4-3">
       Host security
@@ -978,7 +1023,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../" title="主机安全" class="md-nav__link">
+    <a href="../host-security/" title="主机安全" class="md-nav__link">
       主机安全
     </a>
   </li>
@@ -1009,7 +1054,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../fortress-machine/jumpserver/" title="jumpserver 开源堡垒机" class="md-nav__link">
+    <a href="../host-security/fortress-machine/jumpserver/" title="jumpserver 开源堡垒机" class="md-nav__link">
       jumpserver 开源堡垒机
     </a>
   </li>
@@ -1045,7 +1090,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../honeypot/" title="蜜罐技术" class="md-nav__link">
+    <a href="../host-security/honeypot/" title="蜜罐技术" class="md-nav__link">
       蜜罐技术
     </a>
   </li>
@@ -1057,7 +1102,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
+    <a href="../host-security/honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
       MHN蜜罐
     </a>
   </li>
@@ -1093,7 +1138,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../host-security-scan/" title="主机安全扫描" class="md-nav__link">
+    <a href="../host-security/host-security-scan/" title="主机安全扫描" class="md-nav__link">
       主机安全扫描
     </a>
   </li>
@@ -1105,7 +1150,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
+    <a href="../host-security/host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
       开源扫描器
     </a>
   </li>
@@ -1117,7 +1162,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../host-security-scan/port/" title="端口安全" class="md-nav__link">
+    <a href="../host-security/host-security-scan/port/" title="端口安全" class="md-nav__link">
       端口安全
     </a>
   </li>
@@ -1132,12 +1177,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3-5" type="checkbox" id="nav-4-3-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3-5" type="checkbox" id="nav-4-3-5">
     
     <label class="md-nav__link" for="nav-4-3-5">
       Ids ips
@@ -1155,7 +1198,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="主机入侵检测&防御系统" class="md-nav__link">
+    <a href="../host-security/ids-ips/" title="主机入侵检测&防御系统" class="md-nav__link">
       主机入侵检测&防御系统
     </a>
   </li>
@@ -1167,7 +1210,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../aide/" title="aide 文件和目录完整性入群检测" class="md-nav__link">
+    <a href="../host-security/ids-ips/aide/" title="aide 文件和目录完整性入群检测" class="md-nav__link">
       aide 文件和目录完整性入群检测
     </a>
   </li>
@@ -1177,131 +1220,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        osquery 操作系统检测与分析
-      </label>
-    
-    <a href="./" title="osquery 操作系统检测与分析" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../host-security/ids-ips/osquery/" title="osquery 操作系统检测与分析" class="md-nav__link">
       osquery 操作系统检测与分析
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="安装与使用" class="md-nav__link">
-    安装与使用
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#centos7osquery" title="Centos7安装osquery" class="md-nav__link">
-    Centos7安装osquery
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="配置文件" class="md-nav__link">
-    配置文件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#osquery_1" title="osquery表" class="md-nav__link">
-    osquery表
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="基础案例" class="md-nav__link">
-    基础案例
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#osquerypython" title="osquery+python" class="md-nav__link">
-    osquery+python
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#osqueryelkkolide-fleet" title="osquery+ELK+Kolide Fleet" class="md-nav__link">
-    osquery+ELK+Kolide Fleet
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#centos7" title="基于Centos7搭建环境" class="md-nav__link">
-    基于Centos7搭建环境
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fleet-server" title="推送主机到Fleet Server" class="md-nav__link">
-    推送主机到Fleet Server
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#elk" title="ELK展示日志" class="md-nav__link">
-    ELK展示日志
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="参考资料" class="md-nav__link">
-    参考资料
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1311,7 +1234,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../wazuh/" title="wazuh 主机入侵检测系统" class="md-nav__link">
+    <a href="../host-security/ids-ips/wazuh/" title="wazuh 主机入侵检测系统" class="md-nav__link">
       wazuh 主机入侵检测系统
     </a>
   </li>
@@ -1347,7 +1270,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../log-analysis/" title="日志分析" class="md-nav__link">
+    <a href="../host-security/log-analysis/" title="日志分析" class="md-nav__link">
       日志分析
     </a>
   </li>
@@ -1359,7 +1282,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../log-analysis/elk1/" title="ELK日志分析系统" class="md-nav__link">
+    <a href="../host-security/log-analysis/elk1/" title="ELK日志分析系统" class="md-nav__link">
       ELK日志分析系统
     </a>
   </li>
@@ -1371,7 +1294,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../log-analysis/elk2-advanced/" title="ELK高级使用" class="md-nav__link">
+    <a href="../host-security/log-analysis/elk2-advanced/" title="ELK高级使用" class="md-nav__link">
       ELK高级使用
     </a>
   </li>
@@ -1383,7 +1306,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../log-analysis/elk3-problem/" title="ELK问题踩坑" class="md-nav__link">
+    <a href="../host-security/log-analysis/elk3-problem/" title="ELK问题踩坑" class="md-nav__link">
       ELK问题踩坑
     </a>
   </li>
@@ -1395,7 +1318,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../log-analysis/elk4-grokdebug/" title="Logstash Patterns" class="md-nav__link">
+    <a href="../host-security/log-analysis/elk4-grokdebug/" title="Logstash Patterns" class="md-nav__link">
       Logstash Patterns
     </a>
   </li>
@@ -1407,7 +1330,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../log-analysis/elk5-elastalert/" title="ELK监控报警系统-elastalert" class="md-nav__link">
+    <a href="../host-security/log-analysis/elk5-elastalert/" title="ELK监控报警系统-elastalert" class="md-nav__link">
       ELK监控报警系统-elastalert
     </a>
   </li>
@@ -1419,7 +1342,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../log-analysis/graylog1/" title="Graylog日志管理系统" class="md-nav__link">
+    <a href="../host-security/log-analysis/graylog1/" title="Graylog日志管理系统" class="md-nav__link">
       Graylog日志管理系统
     </a>
   </li>
@@ -1431,7 +1354,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../log-analysis/graylog2-advanced/" title="Graylog高级使用" class="md-nav__link">
+    <a href="../host-security/log-analysis/graylog2-advanced/" title="Graylog高级使用" class="md-nav__link">
       Graylog高级使用
     </a>
   </li>
@@ -1472,7 +1395,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/" title="网络安全" class="md-nav__link">
+    <a href="../network-security/" title="网络安全" class="md-nav__link">
       网络安全
     </a>
   </li>
@@ -1503,7 +1426,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
+    <a href="../network-security/cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
       应用层拒绝服务攻击
     </a>
   </li>
@@ -1515,7 +1438,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
+    <a href="../network-security/cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
       拒绝服务攻击
     </a>
   </li>
@@ -1551,7 +1474,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/ids-ips/bro/" title="bro 网络安全监控" class="md-nav__link">
+    <a href="../network-security/ids-ips/bro/" title="bro 网络安全监控" class="md-nav__link">
       bro 网络安全监控
     </a>
   </li>
@@ -1587,7 +1510,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
+    <a href="../network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
       GitHub信息泄漏监控
     </a>
   </li>
@@ -1623,7 +1546,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
+    <a href="../network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
       办公网网络安全
     </a>
   </li>
@@ -1635,7 +1558,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/office-network-security/email-security/" title="邮件安全" class="md-nav__link">
+    <a href="../network-security/office-network-security/email-security/" title="邮件安全" class="md-nav__link">
       邮件安全
     </a>
   </li>
@@ -1647,7 +1570,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/office-network-security/gophish/" title="gophish 开源钓鱼工具" class="md-nav__link">
+    <a href="../network-security/office-network-security/gophish/" title="gophish 开源钓鱼工具" class="md-nav__link">
       gophish 开源钓鱼工具
     </a>
   </li>
@@ -1693,7 +1616,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../miscellaneous/jsrc-1/" title="白帽子转型甲方杂绪" class="md-nav__link">
+    <a href="../../miscellaneous/jsrc-1/" title="白帽子转型甲方杂绪" class="md-nav__link">
       白帽子转型甲方杂绪
     </a>
   </li>
@@ -1748,7 +1671,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/asset-management/" title="资产管理" class="md-nav__link">
+    <a href="../../other-security-branch/asset-management/" title="资产管理" class="md-nav__link">
       资产管理
     </a>
   </li>
@@ -1760,7 +1683,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/asset-management/asset-acquisition/" title="资产管理平台" class="md-nav__link">
+    <a href="../../other-security-branch/asset-management/asset-acquisition/" title="资产管理平台" class="md-nav__link">
       资产管理平台
     </a>
   </li>
@@ -1796,7 +1719,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
+    <a href="../../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
       数据安全
     </a>
   </li>
@@ -1827,7 +1750,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
+    <a href="../../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
       大数据安全
     </a>
   </li>
@@ -1868,7 +1791,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/devsecops/gjs/" title="Gitlab+Jenkins+SonarQube 实现代码审计指南" class="md-nav__link">
+    <a href="../../other-security-branch/devsecops/gjs/" title="Gitlab+Jenkins+SonarQube 实现代码审计指南" class="md-nav__link">
       Gitlab+Jenkins+SonarQube 实现代码审计指南
     </a>
   </li>
@@ -1880,7 +1803,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/devsecops/sdc/" title="SonarQube集成DependencyCheck" class="md-nav__link">
+    <a href="../../other-security-branch/devsecops/sdc/" title="SonarQube集成DependencyCheck" class="md-nav__link">
       SonarQube集成DependencyCheck
     </a>
   </li>
@@ -1916,7 +1839,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/emergency-response/chkrootkit/" title="chkrootkit Linux入侵检测" class="md-nav__link">
+    <a href="../../other-security-branch/emergency-response/chkrootkit/" title="chkrootkit Linux入侵检测" class="md-nav__link">
       chkrootkit Linux入侵检测
     </a>
   </li>
@@ -1928,7 +1851,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/emergency-response/lynis/" title="lynis Linux安全审计工具" class="md-nav__link">
+    <a href="../../other-security-branch/emergency-response/lynis/" title="lynis Linux安全审计工具" class="md-nav__link">
       lynis Linux安全审计工具
     </a>
   </li>
@@ -1940,7 +1863,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/emergency-response/rkhunter/" title="rkhunter Linux入侵检测" class="md-nav__link">
+    <a href="../../other-security-branch/emergency-response/rkhunter/" title="rkhunter Linux入侵检测" class="md-nav__link">
       rkhunter Linux入侵检测
     </a>
   </li>
@@ -1976,7 +1899,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/identity-and-access-security/freeipa/" title="基于Linux开源身份认证体系FreeIPA" class="md-nav__link">
+    <a href="../../other-security-branch/identity-and-access-security/freeipa/" title="基于Linux开源身份认证体系FreeIPA" class="md-nav__link">
       基于Linux开源身份认证体系FreeIPA
     </a>
   </li>
@@ -2012,7 +1935,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/security-operation/security-platform/" title="中小型企业自建安全平台" class="md-nav__link">
+    <a href="../../other-security-branch/security-operation/security-platform/" title="中小型企业自建安全平台" class="md-nav__link">
       中小型企业自建安全平台
     </a>
   </li>
@@ -2048,7 +1971,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/virtualization-security/docker-security/" title="Docker安全总结" class="md-nav__link">
+    <a href="../../other-security-branch/virtualization-security/docker-security/" title="Docker安全总结" class="md-nav__link">
       Docker安全总结
     </a>
   </li>
@@ -2085,89 +2008,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="安装与使用" class="md-nav__link">
-    安装与使用
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#centos7osquery" title="Centos7安装osquery" class="md-nav__link">
-    Centos7安装osquery
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="配置文件" class="md-nav__link">
-    配置文件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#osquery_1" title="osquery表" class="md-nav__link">
-    osquery表
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="基础案例" class="md-nav__link">
-    基础案例
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#osquerypython" title="osquery+python" class="md-nav__link">
-    osquery+python
+  <a href="#_2" title="容器安全内容" class="md-nav__link">
+    容器安全内容
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#osqueryelkkolide-fleet" title="osquery+ELK+Kolide Fleet" class="md-nav__link">
-    osquery+ELK+Kolide Fleet
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#centos7" title="基于Centos7搭建环境" class="md-nav__link">
-    基于Centos7搭建环境
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fleet-server" title="推送主机到Fleet Server" class="md-nav__link">
-    推送主机到Fleet Server
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#elk" title="ELK展示日志" class="md-nav__link">
-    ELK展示日志
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="参考资料" class="md-nav__link">
+  <a href="#_3" title="参考资料" class="md-nav__link">
     参考资料
   </a>
   
@@ -2190,305 +2038,23 @@
               
                 
                 
-                <h1 id="osquery">osquery 操作系统检测与分析</h1>
-<p><a href="https://osquery.io/">官网地址</a></p>
-<h2 id="_1">安装与使用</h2>
-<p><a href="https://osquery.readthedocs.io/en/stable/installation/install-linux/">官方安装文档</a></p>
-<h3 id="centos7osquery">Centos7安装osquery</h3>
-<pre><code># 安装yum源
-rpm -ivh https://osquery-packages.s3.amazonaws.com/centos7/noarch/osquery-s3-centos7-repo-1-0.0.noarch.rpm
-
-# 安装
-yum install osquery.x86_64 -y
-
-# 配置
-cp /usr/share/osquery/osquery.example.conf /etc/osquery/osquery.conf
-
-# 启动
-systemctl start osqueryd
-
-# 执行
-osqueryi
-</code></pre>
-
-<h3 id="_2">配置文件</h3>
-<p><a href="https://osquery.readthedocs.io/en/stable/deployment/configuration/">配置文件官方文档</a></p>
-<pre><code>vim /etc/osquery/osquery.conf
-</code></pre>
-
-<ul>
-<li>
-<p><strong>options：包含osquery daemon的一些配置</strong></p>
-</li>
-<li>
-<p><strong>schedule：定时执行的任务</strong></p>
-</li>
-<li>
-<p><strong>decorators：记录result的时候，添加额外的信息到decorations中</strong></p>
-</li>
-<li>
-<p><strong>packs：等价于一系列schedule的集合</strong></p>
-</li>
-</ul>
-<h3 id="osquery_1">osquery表</h3>
-<p><a href="https://osquery.io/schema/3.3.0">schema官方文档</a></p>
-<p>在osqueryi命令行下输入.table查看所有表。</p>
-<ul>
-<li>返回占用内存最大的10个进程</li>
-</ul>
-<pre><code>select pid, name, uid, resident_size from processes order by resident_size desc limit 10;
-</code></pre>
-
-<ul>
-<li>返回最活跃的10个进程</li>
-</ul>
-<pre><code>select count(pid) as total, name from processes group by name order by total desc limit 10;
-</code></pre>
-
-<ul>
-<li>查看网络端口的进程</li>
-</ul>
-<pre><code>SELECT DISTINCT process.name, listening.port, listening.address, process.pid FROM processes AS process JOIN listening_ports AS listening ON process.pid = listening.pid;
-</code></pre>
-
-<ul>
-<li>查看加载的内核模块</li>
-</ul>
-<pre><code>select name from kernel_modules;
-</code></pre>
-
-<h3 id="_3">基础案例</h3>
-<pre><code>vim /etc/osquery/osquery.conf
-</code></pre>
-
-<pre><code>{
-    &quot;options&quot;: {
-        &quot;config_plugin&quot;: &quot;filesystem&quot;,
-        &quot;logger_plugin&quot;: &quot;filesystem&quot;,
-        &quot;logger_path&quot;: &quot;/var/log/osquery&quot;
-    },
-    &quot;schedule&quot;: {
-        &quot;cpu_time&quot;: {
-            &quot;query&quot;: &quot;SELECT * FROM cpu_time;&quot;,
-            &quot;interval&quot;: 60
-        }
-    }
-}
-</code></pre>
-
-<p>查看日志文件：</p>
-<pre><code>tail -f /var/log/osquery/osqueryd.results.log
-</code></pre>
-
-<p><img alt="osquery-1" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-1.png" /></p>
-<h2 id="osquerypython">osquery+python</h2>
-<p><a href="https://pypi.org/project/osquery/">官网地址</a></p>
-<h2 id="osqueryelkkolide-fleet">osquery+ELK+Kolide Fleet</h2>
-<p><a href="https://jordanpotti.com/2018/02/16/elk-osquery-kolide-fleet-love/">原文地址</a></p>
-<p>Osquery：基于SQL的主机管理工具；</p>
-<p>Kolide Fleet：用于控制Osquery列表的灵活服务器，允许我们按需查询多个主机，以及创建查询包，构建查询计划与管理我们的主机；</p>
-<p>Elastic Stack：ELK允许收集、处理和可视化日志的工具；</p>
-<h3 id="centos7">基于Centos7搭建环境</h3>
-<ul>
-<li><strong>默认Osquery与ELK已经安装完成，本篇中不赘述它们的安装过程</strong></li>
-</ul>
-<p><a href="https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk1/">ELK安装</a></p>
-<ul>
-<li><strong>安装Kolide Fleet</strong></li>
-</ul>
-<p><a href="https://github.com/kolide/fleet/blob/master/docs/infrastructure/fleet-on-ubuntu.md">官方安装地址</a></p>
-<pre><code># 安装mysql
-# 下载yum源
-wget https://repo.mysql.com//mysql80-community-release-el7-1.noarch.rpm
-
-# 安装yum源
-rpm -ivh mysql80-community-release-el7-1.noarch.rpm
-
-# 安装数据库
-yum install mysql-community-server.x86_64 mysql-community-client.x86_64 -y
-
-# 创建数据库
-create database kolide;
-
-# 安装redis
-# 安装源
-yum install epel-release -y
-
-# 安装redis
-yum install redis.x86_64 -y
-
-# 启动服务
-systemctl start redis.service
-
-# 安装Fleet
-# 下载
-wget https://dl.kolide.co/bin/fleet_latest.zip
-
-# 解压
-unzip fleet_latest.zip 'linux/*' -d fleet
-
-# 拷贝执行命令到bin目录
-cp fleet/linux/fleet /usr/bin/fleet
-cp fleet/linux/fleetctl /usr/bin/fleetctl
-
-# 连接数据库
-/usr/bin/fleet prepare db --mysql_address=127.0.0.1:3306 --mysql_database=kolide --mysql_username=root --mysql_password=password
-</code></pre>
-
-<p><img alt="osquery-2" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-2.png" /></p>
-<pre><code># 配置证书
-openssl genrsa -out /etc/pki/tls/private/server.key 4096
-
-openssl req -new -key /etc/pki/tls/private/server.key -out /etc/pki/tls/certs/server.csr
-
-openssl x509 -req -days 366 -in /etc/pki/tls/certs/server.csr -signkey /etc/pki/tls/private/server.key -out /etc/pki/tls/certs/server.cert
-</code></pre>
-
-<p><img alt="osquery-3" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-3.png" /></p>
-<pre><code># 启动Fleet Server
-# 创建日志目录
-mkdir /var/log/kolide
-
-# 启动服务
-/usr/bin/fleet serve \
-    --mysql_address=127.0.0.1:3306 \
-    --mysql_database=kolide \
-    --mysql_username=root \
-    --mysql_password=password \
-    --redis_address=127.0.0.1:6379 \
-    --server_cert=/etc/pki/tls/certs/server.cert \
-    --server_key=/etc/pki/tls/private/server.key \
-    --logging_json \
-    --osquery_result_log_file=/var/log/kolide/osquery_result \
-    --osquery_status_log_file=/var/log/kolide/osquery_status
-
-# 这个时候会再次报错如下图
-</code></pre>
-
-<p><img alt="osquery-4" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-4.png" /></p>
-<p>我们使用它推荐的--auth_jwt_key</p>
-<pre><code>/usr/bin/fleet serve \
-    --mysql_address=127.0.0.1:3306 \
-    --mysql_database=kolide \
-    --mysql_username=root \
-    --mysql_password==password \
-    --redis_address=127.0.0.1:6379 \
-    --server_cert=/etc/pki/tls/certs/server.cert \
-    --server_key=/etc/pki/tls/private/server.key \
-    --logging_json \
-    --osquery_result_log_file=/var/log/kolide/osquery_result \
-    --osquery_status_log_file=/var/log/kolide/osquery_status \
-    --auth_jwt_key=zJ+TKjgtGqCFX6XcF5SmDDsy4BCSReLH
-
-# 成功如下图
-</code></pre>
-
-<p><img alt="osquery-5" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-5.png" /></p>
-<pre><code># 访问Web界面进行安装
-# https://10.10.10.5:8080/
-</code></pre>
-
-<p><img alt="osquery-6" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-6.png" /></p>
-<h3 id="fleet-server">推送主机到Fleet Server</h3>
-<ul>
-<li><strong>利用Fleet Launcher推送主机</strong></li>
-</ul>
-<p><a href="https://github.com/kolide/fleet/blob/master/docs/infrastructure/adding-hosts-to-fleet.md">官方文档</a></p>
-<p>以下操作在客户端机器上完成，我这里客户端与服务端是同一台机器</p>
-<pre><code># 下载
-wget https://github.com/kolide/launcher/releases/download/0.5.0/launcher_0.5.0.zip
-
-# 解压
-unzip launcher_0.5.0.zip
-
-# 执行，最简单的模式
-cd linux/
-./launcher --hostname=localhost:8080 --enroll_secret=OB+ltcnAmEqykZXNthWNRv4qQMh9Rp0b --insecure
-
-# 执行完成以后，在Web界面能看到新增的主机
-</code></pre>
-
-<p><img alt="osquery-7" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-7.png" /></p>
-<p>参数解释：</p>
-<pre><code>--hostname:Fleet Server主机的地址
---enroll_secret:Fleet Server的密钥，密钥地址如图
---insecure:无效的CA证书需要使用此参数
-</code></pre>
-
-<p><img alt="osquery-8" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-8.png" /></p>
-<p>总结：</p>
-<pre><code>Launcher推送进程不能终止，会导致Fleet接受不到客户端信息；
-</code></pre>
-
-<ul>
-<li><strong>利用osquery推送主机</strong></li>
-</ul>
-<p>这里另外开一台client，执行如下操作：</p>
-<pre><code># 创建密钥
-echo 'OB+ltcnAmEqykZXNthWNRv4qQMh9Rp0b' &gt; /var/osquery/enroll_secret
-
-# 配置证书，证书下载位置如图，下载完成后进行改名
-mv 10.10.10.5_8080.pem /var/osquery/server.pem
-
-# 执行osqueryd
-/usr/bin/osqueryd \
-    --enroll_secret_path=/var/osquery/enroll_secret \
-    --tls_server_certs=/var/osquery/server.pem \
-    --tls_hostname=10.10.10.5:8080 \
-    --host_identifier=hostname \
-    --enroll_tls_endpoint=/api/v1/osquery/enroll \
-    --config_plugin=tls \
-    --config_tls_endpoint=/api/v1/osquery/config \
-    --config_tls_refresh=10 \
-    --disable_distributed=false \
-    --distributed_plugin=tls \
-    --distributed_interval=3 \
-    --distributed_tls_max_attempts=3 \
-    --distributed_tls_read_endpoint=/api/v1/osquery/distributed/read \
-    --distributed_tls_write_endpoint=/api/v1/osquery/distributed/write \
-    --logger_plugin=tls \
-    --logger_tls_endpoint=/api/v1/osquery/log \
-    --logger_tls_period=10
-</code></pre>
-
-<p><img alt="osquery-9" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-9.png" /></p>
-<p><img alt="osquery-10" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-10.png" /></p>
-<h3 id="elk">ELK展示日志</h3>
-<ul>
-<li><strong>创建一个查询</strong></li>
-</ul>
-<p><img alt="osquery-11" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-11.png" /></p>
-<ul>
-<li><strong>创建一个pack</strong></li>
-</ul>
-<p><img alt="osquery-12" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-12.png" /></p>
-<p><img alt="osquery-13" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-13.png" /></p>
-<ul>
-<li><strong>利用ELK解析并展示日志</strong></li>
-</ul>
-<pre><code>vim /etc/logstash/conf.d/fleet.conf
-</code></pre>
-
-<pre><code>input {
-    file {
-        path =&gt; [&quot;/var/log/kolide/osquery_result&quot;]
-        codec =&gt; &quot;json&quot;
-    }
-}
-
-output {
-    elasticsearch {
-        hosts =&gt; [&quot;127.0.0.1:9200&quot;]
-        index =&gt; &quot;logstash-fleet-%{+YYYY.MM.dd}&quot;
-    }
-}
-</code></pre>
-
-<p><img alt="osquery-14" src="https://github.com/bloodzer0/ossa/raw/master/infrastructure-security/host-security/img/osquery-14.png" /></p>
-<h2 id="_4">参考资料</h2>
-<p><a href="http://www.freebuf.com/articles/security-management/127851.html">企业安全建设之主机资产管理与分析</a></p>
-<p><a href="https://www.cnblogs.com/xuxinkun/p/5640047.html">Facebook开源的基于SQL的操作系统检测和监控框架:osquery daemon详解</a></p>
-<p><a href="https://github.com/teoseller/osquery-attck">Windows 常见配置文件编写</a></p>
+                <h1 id="_1">容器安全建设</h1>
+<p><a href="https://docs.docker.com/engine/security/security/">官网地址</a></p>
+<p><a href="https://www.katacoda.com/">Docker安全技术学习</a></p>
+<p>思考了半天，放个图贴一些参考链接大家自行阅读吧，好东西不多说。</p>
+<h2 id="_2">容器安全内容</h2>
+<p>思维导图持续更新</p>
+<p><img alt="容器安全" src="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/docker-security.png" /></p>
+<h2 id="_3">参考资料</h2>
+<p><a href="http://dockone.io/article/5515">探索容器安全性：概述</a></p>
+<p><a href="http://www.nsfocus.com.cn/upload/contents/2018/11/20181109100414_79051.pdf">2018 绿盟科技容器安全技术报告</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/43586159">Docker安全入门与实战（一）</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/43671129">Docker安全入门与实战（二）</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/43671511">Docker安全入门与实战（三）</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/43673419">Docker安全入门与实战（四）</a></p>
+<p><a href="https://github.com/bloodzer0/ossa/raw/master/other-security-branch/devsecops/img/baipishu.pdf">Docker容器最佳安全实践白皮书</a></p>
+<p><a href="https://dbaplus.cn/news-160-2275-1.html">76%都存在漏洞？！Docker镜像安全扫描应该这样做</a></p>
+<p>[<a href="https://www.4hou.com/web/10659.html">Docker容器构建过程的安全性分析</a>]</p>
                 
                   
                 
@@ -2509,7 +2075,7 @@ output {
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../aide/" title="aide 文件和目录完整性入群检测" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../" title="基础设施安全" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2518,19 +2084,19 @@ output {
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                aide 文件和目录完整性入群检测
+                基础设施安全
               </span>
             </div>
           </a>
         
         
-          <a href="../wazuh/" title="wazuh 主机入侵检测系统" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="tools/" title="容器安全工具" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                wazuh 主机入侵检测系统
+                容器安全工具
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -2564,9 +2130,9 @@ output {
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
     
