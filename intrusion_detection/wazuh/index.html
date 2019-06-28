@@ -1664,9 +1664,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#wazuh-client" title="wazuh client安装与" class="md-nav__link">
-    wazuh client安装与
+  <a href="#wazuh-client" title="wazuh client安装与配置" class="md-nav__link">
+    wazuh client安装与配置
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="客户端自动化部署" class="md-nav__link">
+    客户端自动化部署
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1676,7 +1689,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="规则学习" class="md-nav__link">
+  <a href="#_3" title="规则学习" class="md-nav__link">
     规则学习
   </a>
   
@@ -1684,7 +1697,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="规则文件解读" class="md-nav__link">
+  <a href="#_4" title="规则文件解读" class="md-nav__link">
     规则文件解读
   </a>
   
@@ -2244,9 +2257,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#wazuh-client" title="wazuh client安装与" class="md-nav__link">
-    wazuh client安装与
+  <a href="#wazuh-client" title="wazuh client安装与配置" class="md-nav__link">
+    wazuh client安装与配置
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="客户端自动化部署" class="md-nav__link">
+    客户端自动化部署
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2256,7 +2282,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="规则学习" class="md-nav__link">
+  <a href="#_3" title="规则学习" class="md-nav__link">
     规则学习
   </a>
   
@@ -2264,7 +2290,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="规则文件解读" class="md-nav__link">
+  <a href="#_4" title="规则文件解读" class="md-nav__link">
     规则文件解读
   </a>
   
@@ -2357,7 +2383,7 @@ output.elasticsearch:
 </code></pre>
 
 <p><img alt="wazuh-kibana-app-3" src="https://github.com/bloodzer0/ossa/raw/master/intrusion_detection/wazuh-kibana-app-3.png" /></p>
-<h3 id="wazuh-client">wazuh client安装与</h3>
+<h3 id="wazuh-client">wazuh client安装与配置</h3>
 <pre><code class="shell"># 主机：10.10.10.25
 rpm -ivh wazuh-agent-3.9.2-1.x86_64.rpm
 
@@ -2382,8 +2408,12 @@ rpm -ivh wazuh-agent-3.9.2-1.x86_64.rpm
 </code></pre>
 
 <p><img alt="wazuh-kibana-app-4" src="https://github.com/bloodzer0/ossa/raw/master/intrusion_detection/wazuh-kibana-app-4.png" /></p>
-<h2 id="_2">规则学习</h2>
-<h3 id="_3">规则文件解读</h3>
+<h4 id="_2">客户端自动化部署</h4>
+<p><a href="https://documentation.wazuh.com/current/user-manual/api/reference.html#agents">官网地址</a></p>
+<p><a href="https://raw.githubusercontent.com/wazuh/wazuh-api/3.9/examples/api-register-agent.sh">官方脚本实现</a></p>
+<p>在系统初始化的时候把wazuh的脚本串到系统初始化的脚本中。</p>
+<h2 id="_3">规则学习</h2>
+<h3 id="_4">规则文件解读</h3>
 <p>更新时间待定</p>
 <pre><code class="shell">vim /var/ossec/etc/ossec.conf 
 </code></pre>
