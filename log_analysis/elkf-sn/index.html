@@ -1622,6 +1622,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#filebeat_2" title="去掉部分filebeat的默认字段" class="md-nav__link">
+    去掉部分filebeat的默认字段
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1665,8 +1672,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#web" title="分析Web日志" class="md-nav__link">
-    分析Web日志
+  <a href="#logstashweb" title="logstash分析web日志" class="md-nav__link">
+    logstash分析web日志
   </a>
   
 </li>
@@ -2152,6 +2159,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#filebeat_2" title="去掉部分filebeat的默认字段" class="md-nav__link">
+    去掉部分filebeat的默认字段
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2195,8 +2209,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#web" title="分析Web日志" class="md-nav__link">
-    分析Web日志
+  <a href="#logstashweb" title="logstash分析web日志" class="md-nav__link">
+    logstash分析web日志
   </a>
   
 </li>
@@ -2247,6 +2261,13 @@ output.logstash:
   hosts: [&quot;10.10.10.15:5044&quot;]
 </code></pre>
 
+<h3 id="filebeat_2">去掉部分filebeat的默认字段</h3>
+<pre><code class="yaml">processors:
+- drop_fields:
+  fields: [&quot;field&quot;]
+</code></pre>
+
+<p>在filebeat7.X的版本中，默认的@timestamp、type、host、agent、ecs这些字段是不能删除的</p>
 <h2 id="elk-server">配置elk-server</h2>
 <pre><code class="shell">rpm -ivh elasticsearch-7.2.0-x86_64.rpm
 rpm -ivh kibana-7.2.0-x86_64.rpm
@@ -2319,8 +2340,9 @@ output {
 </code></pre>
 
 <p><img alt="效果图" src="https://github.com/bloodzer0/ossa/raw/master/log_analysis/elk-syslog-1.png" /></p>
-<h4 id="web">分析Web日志</h4>
+<h4 id="logstashweb">logstash分析web日志</h4>
 <p>日志原文：日志格式是json，所以上面的filebeat配置时需要配置json。</p>
+<p><strong>备注：response_body不能全部获取，会超出长度</strong></p>
 <pre><code>{ &quot;@timestamp&quot;: &quot;27/Jun/2019:01:18:05 -0400&quot;, &quot;remote_addr&quot;: &quot;10.10.10.1&quot;,&quot;remote_port&quot;: &quot;54794&quot;,&quot;scheme&quot;: &quot;http&quot;,&quot;request_uri&quot;: &quot;/robots.txt&quot;,&quot;request_method&quot;: &quot;GET&quot;,&quot;request_time&quot;: &quot;0.000&quot;,&quot;request_length&quot;: &quot;510&quot;,&quot;response_status&quot;: &quot;200&quot;,&quot;body_bytes_sent&quot;: &quot;26&quot;,&quot;http_referer&quot;: &quot;&quot;,&quot;http_user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36&quot;,&quot;http_x_forwarded_for&quot;: &quot;&quot;,&quot;upstream_addr&quot;: &quot;&quot;,&quot;upstream_response_time&quot;: &quot;&quot;,&quot;request_body&quot;: &quot;&quot;, &quot;response_body&quot;: &quot;User-agent: *\r\nDisallow: /&quot; }
 </code></pre>
 
