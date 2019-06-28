@@ -321,6 +321,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/intrusion_detection/wazuh/</loc>
+     <lastmod>2019-06-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/log_analysis/elkf-sn/</loc>
      <lastmod>2019-06-28</lastmod>
      <changefreq>daily</changefreq>
