@@ -1683,12 +1683,38 @@
     配置elasticsearch
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch-template" title="elasticsearch template" class="md-nav__link">
+    elasticsearch template
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#kibana" title="配置kibana" class="md-nav__link">
     配置kibana
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kibana_1" title="Kibana图表用例" class="md-nav__link">
+    Kibana图表用例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1710,6 +1736,13 @@
           <li class="md-nav__item">
   <a href="#logstashweb" title="logstash分析web日志" class="md-nav__link">
     logstash分析web日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip" title="解析IP地址" class="md-nav__link">
+    解析IP地址
   </a>
   
 </li>
@@ -2220,12 +2253,38 @@
     配置elasticsearch
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch-template" title="elasticsearch template" class="md-nav__link">
+    elasticsearch template
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#kibana" title="配置kibana" class="md-nav__link">
     配置kibana
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kibana_1" title="Kibana图表用例" class="md-nav__link">
+    Kibana图表用例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2247,6 +2306,13 @@
           <li class="md-nav__item">
   <a href="#logstashweb" title="logstash分析web日志" class="md-nav__link">
     logstash分析web日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip" title="解析IP地址" class="md-nav__link">
+    解析IP地址
   </a>
   
 </li>
@@ -2324,12 +2390,40 @@ discovery.seed_hosts: [&quot;elk-server&quot;] # 发现主机
 cluster.initial_master_nodes: [&quot;node-1&quot;] # 主节点
 </code></pre>
 
+<h4 id="elasticsearch-template">elasticsearch template</h4>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-templates.html">官网地址</a></p>
+<ul>
+<li>查看template</li>
+</ul>
+<pre><code class="shell">curl -XGET &quot;http://10.10.10.15:9200/_template&quot;
+</code></pre>
+
+<ul>
+<li>创建与修改template</li>
+</ul>
+<pre><code class="shell">curl -XPUT 'http://10.10.10.15:9200/_template/template_name' -H &quot;Content-Type: application/json&quot; -d '{&quot;index_patterns&quot;: [&quot;template_name*&quot;],&quot;settings&quot;: {&quot;index.number_of_shards&quot;: 3,&quot;number_of_replicas&quot;: 1}, &quot;mappings&quot;: {&quot;properties&quot;: {&quot;field_name&quot;: {&quot;type&quot;: &quot;keyword&quot;}}}}'
+</code></pre>
+
+<ul>
+<li>删除template</li>
+</ul>
+<pre><code class="shell">curl -XDELETE &quot;http://10.10.10.15:9200/_template/template-test&quot;
+</code></pre>
+
 <h3 id="kibana">配置kibana</h3>
 <pre><code class="yaml">server.port: 5601 # 绑定端口
 server.host: &quot;0.0.0.0&quot; # 绑定主机
 elasticsearch.hosts: [&quot;http://10.10.10.15:9200&quot;] # ElasticSearch地址
 </code></pre>
 
+<h4 id="kibana_1">Kibana图表用例</h4>
+<ul>
+<li>展示来源的城市：柱状图--X轴展示时间，分段使用geoip.city_name进行展示</li>
+</ul>
+<p><img alt="elk-kibana-1" src="https://github.com/bloodzer0/ossa/raw/master/log_analysis/elk-kibana-1.png" /></p>
+<ul>
+<li>访问top10的IP与这些IP访问的接口</li>
+</ul>
 <h3 id="logstash">配置logstash</h3>
 <pre><code class="shell"># logstash pattern目录
 /usr/share/logstash/vendor/bundle/jruby/2.5.0/gems/logstash-patterns-core-4.1.2/patterns/
@@ -2409,6 +2503,37 @@ output {
 </code></pre>
 
 <p><img alt="elk-nginx-1" src="https://github.com/bloodzer0/ossa/raw/master/log_analysis/elk-nginx-1.png" /></p>
+<h4 id="ip">解析IP地址</h4>
+<p>logstash配置文件，注意output中的index命名，添加logstash是因为logstash命名开头的template已经被定义好了很多字段的类型。</p>
+<pre><code class="conf">input {
+    beats {
+        port =&gt; 5044
+        type =&gt; &quot;nginx&quot;
+    }
+}
+
+filter {
+    if [type] == &quot;nginx&quot; {
+        geoip {
+            source =&gt; &quot;remote_addr&quot;
+        }
+        mutate {
+            remove_field =&gt; [&quot;message&quot;]
+        }
+    }
+}
+
+output {
+    if [type] == &quot;nginx&quot; {
+        elasticsearch {
+            hosts =&gt; [&quot;10.10.10.15:9200&quot;]
+            index =&gt; &quot;logstash-nginx-%{+YYYY.MM}&quot;
+        }
+    }
+}
+</code></pre>
+
+<p><img alt="elk-logstash-1" src="https://github.com/bloodzer0/ossa/raw/master/log_analysis/elk-logstash-1.png" /></p>
                 
                   
                 
