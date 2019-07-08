@@ -1748,10 +1748,23 @@
     完整的nginx日志配置
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="注意事项" class="md-nav__link">
+    注意事项
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="参考资料" class="md-nav__link">
+  <a href="#_4" title="参考资料" class="md-nav__link">
     参考资料
   </a>
   
@@ -2294,10 +2307,23 @@
     完整的nginx日志配置
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="注意事项" class="md-nav__link">
+    注意事项
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="参考资料" class="md-nav__link">
+  <a href="#_4" title="参考资料" class="md-nav__link">
     参考资料
   </a>
   
@@ -2667,8 +2693,7 @@ location ~ \.php$ {
 </code></pre>
 
 <p>此时的日志样例</p>
-<pre><code>
-{ &quot;@timestamp&quot;: &quot;27/Jun/2019:01:18:05 -0400&quot;, &quot;remote_addr&quot;: &quot;10.10.10.1&quot;,&quot;remote_port&quot;: &quot;54794&quot;,&quot;scheme&quot;: &quot;http&quot;,&quot;request_uri&quot;: &quot;/robots.txt&quot;,&quot;request_method&quot;: &quot;GET&quot;,&quot;request_time&quot;: &quot;0.000&quot;,&quot;request_length&quot;: &quot;510&quot;,&quot;response_status&quot;: &quot;200&quot;,&quot;body_bytes_sent&quot;: &quot;26&quot;,&quot;http_referer&quot;: &quot;&quot;,&quot;http_user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36&quot;,&quot;http_x_forwarded_for&quot;: &quot;&quot;,&quot;upstream_addr&quot;: &quot;&quot;,&quot;upstream_response_time&quot;: &quot;&quot;,&quot;request_body&quot;: &quot;&quot;, &quot;response_body&quot;: &quot;User-agent: *\r\nDisallow: /&quot; }
+<pre><code>{ &quot;@timestamp&quot;: &quot;27/Jun/2019:01:18:05 -0400&quot;, &quot;remote_addr&quot;: &quot;10.10.10.1&quot;,&quot;remote_port&quot;: &quot;54794&quot;,&quot;scheme&quot;: &quot;http&quot;,&quot;request_uri&quot;: &quot;/robots.txt&quot;,&quot;request_method&quot;: &quot;GET&quot;,&quot;request_time&quot;: &quot;0.000&quot;,&quot;request_length&quot;: &quot;510&quot;,&quot;response_status&quot;: &quot;200&quot;,&quot;body_bytes_sent&quot;: &quot;26&quot;,&quot;http_referer&quot;: &quot;&quot;,&quot;http_user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36&quot;,&quot;http_x_forwarded_for&quot;: &quot;&quot;,&quot;upstream_addr&quot;: &quot;&quot;,&quot;upstream_response_time&quot;: &quot;&quot;,&quot;request_body&quot;: &quot;&quot;, &quot;response_body&quot;: &quot;User-agent: *\r\nDisallow: /&quot; }
 </code></pre>
 
 <h2 id="nginx_1">完整的nginx日志配置</h2>
@@ -2695,7 +2720,13 @@ location ~ \.php$ {
 <pre><code>{ &quot;@timestamp&quot;: &quot;26/Jun/2019:22:39:07 -0400&quot;, &quot;remote_addr&quot;: &quot;10.10.10.1&quot;,&quot;remote_port&quot;: &quot;52235&quot;,&quot;scheme&quot;: &quot;http&quot;,&quot;request_uri&quot;: &quot;/login.php&quot;,&quot;request_method&quot;: &quot;POST&quot;,&quot;request_time&quot;: &quot;0.003&quot;,&quot;request_length&quot;: &quot;767&quot;,&quot;response_status&quot;: &quot;302&quot;,&quot;body_bytes_sent&quot;: &quot;5&quot;,&quot;http_referer&quot;: &quot;http://10.10.10.14/login.php&quot;,&quot;http_user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36&quot;,&quot;http_x_forwarded_for&quot;: &quot;&quot;,&quot;upstream_addr&quot;: &quot;127.0.0.1:9000&quot;,&quot;upstream_response_time&quot;: &quot;0.004&quot;,&quot;request_body&quot;: &quot;username=admin&amp;password=password&amp;Login=Login&amp;user_token=29ebbb65a40421194fd12d0fc9a98d77&quot; }
 </code></pre>
 
-<h2 id="_3">参考资料</h2>
+<h3 id="_3">注意事项</h3>
+<ul>
+<li>request_body 与 response_body 如果在上传文件或者下载文件时，body内容会很大，需要考虑对性能和存储的影响。</li>
+<li>对于timestamp参数，可以不实用time_local而使用time_iso8601。</li>
+<li>如果运维对于网络的性能有要求，可以考虑使用$tcpinfo_rtt, $tcpinfo_rttvar, $tcpinfo_snd_cwnd, $tcpinfo_rcv_space。</li>
+</ul>
+<h2 id="_4">参考资料</h2>
 <p><a href="https://www.cnblogs.com/tea-melon/p/10977516.html">Nginx多级反向代理下的IP透传</a></p>
 <p><a href="https://juejin.im/entry/5bbb6e90f265da0a89304a43">Nginx 之 X-Forwarded-For 中首个IP一定真实吗？</a></p>
                 
