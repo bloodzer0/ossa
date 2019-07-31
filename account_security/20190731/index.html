@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk5-elastalert/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/account_security/20190731/">
       
       
         <meta name="author" content="bloodzer0">
@@ -37,21 +37,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
-        <title>ELK监控报警系统-elastalert - Open-Source Security Architecture</title>
+        <title>账户安全防护手段 - Open-Source Security Architecture</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
       
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
@@ -60,7 +60,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#elk-elastalert" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                ELK监控报警系统-elastalert
+                账户安全防护手段
               </span>
             
           
@@ -240,7 +240,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../.." title="ossa" class="md-nav__link">
+    <a href="../.." title="ossa" class="md-nav__link">
       ossa
     </a>
   </li>
@@ -250,10 +250,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Account security
@@ -269,11 +271,232 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../../../account_security/20190731/" title="账户安全防护手段" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        账户安全防护手段
+      </label>
+    
+    <a href="./" title="账户安全防护手段" class="md-nav__link md-nav__link--active">
       账户安全防护手段
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ip" title="IP纬度防御" class="md-nav__link">
+    IP纬度防御
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ip_1" title="代理IP" class="md-nav__link">
+    代理IP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip_2" title="恶意IP" class="md-nav__link">
+    恶意IP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip_3" title="IP的其它属性" class="md-nav__link">
+    IP的其它属性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="验证码纬度防护" class="md-nav__link">
+    验证码纬度防护
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="应对小号与接码平台" class="md-nav__link">
+    应对小号与接码平台
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="通过获取手机权限进行二次验证" class="md-nav__link">
+    通过获取手机权限进行二次验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="合作数据验证" class="md-nav__link">
+    合作数据验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="语音验证码" class="md-nav__link">
+    语音验证码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="人机识别纬度防护" class="md-nav__link">
+    人机识别纬度防护
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="手机模拟器检测" class="md-nav__link">
+    手机模拟器检测
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="虚拟机特征" class="md-nav__link">
+    虚拟机特征
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="数据分析纬度防护" class="md-nav__link">
+    数据分析纬度防护
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="异常分析" class="md-nav__link">
+    异常分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="坏账户识别" class="md-nav__link">
+    坏账户识别
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="账户信息是否被标记过" class="md-nav__link">
+    账户信息是否被标记过
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="账户信息是否有特殊含义" class="md-nav__link">
+    账户信息是否有特殊含义
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="用户行为分析" class="md-nav__link">
+    用户行为分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" title="场景分析" class="md-nav__link">
+    场景分析
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="撞库" class="md-nav__link">
+    撞库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="坏账户本身行为分析" class="md-nav__link">
+    坏账户本身行为分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -307,7 +530,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/" title="应用安全" class="md-nav__link">
+    <a href="../../application-security/" title="应用安全" class="md-nav__link">
       应用安全
     </a>
   </li>
@@ -338,7 +561,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/" title="代码审计" class="md-nav__link">
+    <a href="../../application-security/code-audit/" title="代码审计" class="md-nav__link">
       代码审计
     </a>
   </li>
@@ -350,7 +573,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/cobra/" title="Cobra安装与使用" class="md-nav__link">
+    <a href="../../application-security/code-audit/cobra/" title="Cobra安装与使用" class="md-nav__link">
       Cobra安装与使用
     </a>
   </li>
@@ -362,7 +585,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/ethereum-smart-contracts-code-audit/" title="智能合约代码审计" class="md-nav__link">
+    <a href="../../application-security/code-audit/ethereum-smart-contracts-code-audit/" title="智能合约代码审计" class="md-nav__link">
       智能合约代码审计
     </a>
   </li>
@@ -374,7 +597,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/findsecbugs/" title="FindSecBugs安装与使用" class="md-nav__link">
+    <a href="../../application-security/code-audit/findsecbugs/" title="FindSecBugs安装与使用" class="md-nav__link">
       FindSecBugs安装与使用
     </a>
   </li>
@@ -386,7 +609,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/sonarqube-error/" title="SonarQube踩坑记" class="md-nav__link">
+    <a href="../../application-security/code-audit/sonarqube-error/" title="SonarQube踩坑记" class="md-nav__link">
       SonarQube踩坑记
     </a>
   </li>
@@ -398,7 +621,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/code-audit/sonarqube/" title="SonarQube安装与使用" class="md-nav__link">
+    <a href="../../application-security/code-audit/sonarqube/" title="SonarQube安装与使用" class="md-nav__link">
       SonarQube安装与使用
     </a>
   </li>
@@ -434,7 +657,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/mobile-security/" title="移动安全" class="md-nav__link">
+    <a href="../../application-security/mobile-security/" title="移动安全" class="md-nav__link">
       移动安全
     </a>
   </li>
@@ -446,7 +669,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
+    <a href="../../application-security/mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
       移动安全扫描
     </a>
   </li>
@@ -458,7 +681,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/mobile-security/mobile-tools/" title="移动安全工具" class="md-nav__link">
+    <a href="../../application-security/mobile-security/mobile-tools/" title="移动安全工具" class="md-nav__link">
       移动安全工具
     </a>
   </li>
@@ -494,7 +717,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/sdl/api-gateway/" title="API网关" class="md-nav__link">
+    <a href="../../application-security/sdl/api-gateway/" title="API网关" class="md-nav__link">
       API网关
     </a>
   </li>
@@ -506,7 +729,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/sdl/api-security-design/" title="API网关设计" class="md-nav__link">
+    <a href="../../application-security/sdl/api-security-design/" title="API网关设计" class="md-nav__link">
       API网关设计
     </a>
   </li>
@@ -518,7 +741,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/sdl/go-scp/" title="Go语言安全编码规范-翻译" class="md-nav__link">
+    <a href="../../application-security/sdl/go-scp/" title="Go语言安全编码规范-翻译" class="md-nav__link">
       Go语言安全编码规范-翻译
     </a>
   </li>
@@ -554,7 +777,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/https/" title="全站https" class="md-nav__link">
+    <a href="../../application-security/security-defense/https/" title="全站https" class="md-nav__link">
       全站https
     </a>
   </li>
@@ -566,7 +789,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/iptables-waf/" title="iptables-waf" class="md-nav__link">
+    <a href="../../application-security/security-defense/iptables-waf/" title="iptables-waf" class="md-nav__link">
       iptables-waf
     </a>
   </li>
@@ -578,7 +801,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/modsecurity-waf/" title="modsecurity-waf" class="md-nav__link">
+    <a href="../../application-security/security-defense/modsecurity-waf/" title="modsecurity-waf" class="md-nav__link">
       modsecurity-waf
     </a>
   </li>
@@ -590,7 +813,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/openresty-waf/" title="openresty-waf" class="md-nav__link">
+    <a href="../../application-security/security-defense/openresty-waf/" title="openresty-waf" class="md-nav__link">
       openresty-waf
     </a>
   </li>
@@ -602,7 +825,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
+    <a href="../../application-security/security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
       Web应用防火墙
     </a>
   </li>
@@ -638,7 +861,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/" title="安全测试" class="md-nav__link">
+    <a href="../../application-security/security-testing/" title="安全测试" class="md-nav__link">
       安全测试
     </a>
   </li>
@@ -650,7 +873,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
+    <a href="../../application-security/security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
       API安全测试
     </a>
   </li>
@@ -662,7 +885,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/app-security-testing/" title="APP安全测试" class="md-nav__link">
+    <a href="../../application-security/security-testing/app-security-testing/" title="APP安全测试" class="md-nav__link">
       APP安全测试
     </a>
   </li>
@@ -674,7 +897,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/checklist/" title="安全测试checklist" class="md-nav__link">
+    <a href="../../application-security/security-testing/checklist/" title="安全测试checklist" class="md-nav__link">
       安全测试checklist
     </a>
   </li>
@@ -686,7 +909,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/dast-iast-sast/" title="DAST&SAST&IAST" class="md-nav__link">
+    <a href="../../application-security/security-testing/dast-iast-sast/" title="DAST&SAST&IAST" class="md-nav__link">
       DAST&SAST&IAST
     </a>
   </li>
@@ -717,7 +940,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/app/" title="APP脱壳技巧" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/app/" title="APP脱壳技巧" class="md-nav__link">
       APP脱壳技巧
     </a>
   </li>
@@ -729,7 +952,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
       https抓包
     </a>
   </li>
@@ -741,7 +964,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/capture-skills/" title="抓包技巧" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/capture-skills/" title="抓包技巧" class="md-nav__link">
       抓包技巧
     </a>
   </li>
@@ -753,7 +976,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/information-leakage/" title="信息泄漏漏洞利用" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/information-leakage/" title="信息泄漏漏洞利用" class="md-nav__link">
       信息泄漏漏洞利用
     </a>
   </li>
@@ -765,7 +988,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/security-testing/tools-skills/web-tools/" title="Web安全工具" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/web-tools/" title="Web安全工具" class="md-nav__link">
       Web安全工具
     </a>
   </li>
@@ -806,7 +1029,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/vulnerability-management/" title="漏洞管理" class="md-nav__link">
+    <a href="../../application-security/vulnerability-management/" title="漏洞管理" class="md-nav__link">
       漏洞管理
     </a>
   </li>
@@ -818,7 +1041,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
+    <a href="../../application-security/vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
       defectdojo
     </a>
   </li>
@@ -854,7 +1077,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../application-security/web-security-scan/" title="Web安全扫描" class="md-nav__link">
+    <a href="../../application-security/web-security-scan/" title="Web安全扫描" class="md-nav__link">
       Web安全扫描
     </a>
   </li>
@@ -895,7 +1118,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../business/account/" title="账户安全" class="md-nav__link">
+    <a href="../../business/account/" title="账户安全" class="md-nav__link">
       账户安全
     </a>
   </li>
@@ -907,7 +1130,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../business/captcha/" title="验证码安全" class="md-nav__link">
+    <a href="../../business/captcha/" title="验证码安全" class="md-nav__link">
       验证码安全
     </a>
   </li>
@@ -922,12 +1145,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Infrastructure security
@@ -945,7 +1166,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../" title="基础设施安全" class="md-nav__link">
+    <a href="../../infrastructure-security/" title="基础设施安全" class="md-nav__link">
       基础设施安全
     </a>
   </li>
@@ -976,7 +1197,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../container/" title="容器安全建设" class="md-nav__link">
+    <a href="../../infrastructure-security/container/" title="容器安全建设" class="md-nav__link">
       容器安全建设
     </a>
   </li>
@@ -988,7 +1209,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../container/tools/" title="容器安全工具" class="md-nav__link">
+    <a href="../../infrastructure-security/container/tools/" title="容器安全工具" class="md-nav__link">
       容器安全工具
     </a>
   </li>
@@ -1003,12 +1224,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
     
     <label class="md-nav__link" for="nav-5-3">
       Host security
@@ -1026,7 +1245,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../" title="主机安全" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/" title="主机安全" class="md-nav__link">
       主机安全
     </a>
   </li>
@@ -1057,7 +1276,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../fortress-machine/jumpserver/" title="jumpserver 开源堡垒机" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/fortress-machine/jumpserver/" title="jumpserver 开源堡垒机" class="md-nav__link">
       jumpserver 开源堡垒机
     </a>
   </li>
@@ -1093,7 +1312,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../honeypot/" title="蜜罐技术" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/honeypot/" title="蜜罐技术" class="md-nav__link">
       蜜罐技术
     </a>
   </li>
@@ -1105,7 +1324,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
       MHN蜜罐
     </a>
   </li>
@@ -1141,7 +1360,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../host-security-scan/" title="主机安全扫描" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/host-security-scan/" title="主机安全扫描" class="md-nav__link">
       主机安全扫描
     </a>
   </li>
@@ -1153,7 +1372,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
       开源扫描器
     </a>
   </li>
@@ -1165,7 +1384,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../host-security-scan/port/" title="端口安全" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/host-security-scan/port/" title="端口安全" class="md-nav__link">
       端口安全
     </a>
   </li>
@@ -1201,7 +1420,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ids-ips/" title="主机入侵检测&防御系统" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/ids-ips/" title="主机入侵检测&防御系统" class="md-nav__link">
       主机入侵检测&防御系统
     </a>
   </li>
@@ -1213,7 +1432,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ids-ips/aide/" title="aide 文件和目录完整性入群检测" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/ids-ips/aide/" title="aide 文件和目录完整性入群检测" class="md-nav__link">
       aide 文件和目录完整性入群检测
     </a>
   </li>
@@ -1225,7 +1444,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ids-ips/osquery/" title="osquery 操作系统检测与分析" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/ids-ips/osquery/" title="osquery 操作系统检测与分析" class="md-nav__link">
       osquery 操作系统检测与分析
     </a>
   </li>
@@ -1237,7 +1456,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ids-ips/wazuh/" title="wazuh 主机入侵检测系统" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/ids-ips/wazuh/" title="wazuh 主机入侵检测系统" class="md-nav__link">
       wazuh 主机入侵检测系统
     </a>
   </li>
@@ -1252,12 +1471,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-6" type="checkbox" id="nav-5-3-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-6" type="checkbox" id="nav-5-3-6">
     
     <label class="md-nav__link" for="nav-5-3-6">
       Log analysis
@@ -1275,7 +1492,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="日志分析" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/" title="日志分析" class="md-nav__link">
       日志分析
     </a>
   </li>
@@ -1287,7 +1504,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../elk1/" title="ELK日志分析系统" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/elk1/" title="ELK日志分析系统" class="md-nav__link">
       ELK日志分析系统
     </a>
   </li>
@@ -1299,7 +1516,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../elk2-advanced/" title="ELK高级使用" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/elk2-advanced/" title="ELK高级使用" class="md-nav__link">
       ELK高级使用
     </a>
   </li>
@@ -1311,7 +1528,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../elk3-problem/" title="ELK问题踩坑" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/elk3-problem/" title="ELK问题踩坑" class="md-nav__link">
       ELK问题踩坑
     </a>
   </li>
@@ -1323,7 +1540,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../elk4-grokdebug/" title="Logstash Patterns" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/elk4-grokdebug/" title="Logstash Patterns" class="md-nav__link">
       Logstash Patterns
     </a>
   </li>
@@ -1333,104 +1550,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        ELK监控报警系统-elastalert
-      </label>
-    
-    <a href="./" title="ELK监控报警系统-elastalert" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/log-analysis/elk5-elastalert/" title="ELK监控报警系统-elastalert" class="md-nav__link">
       ELK监控报警系统-elastalert
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#elastalert" title="elastalert安装" class="md-nav__link">
-    elastalert安装
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="使用" class="md-nav__link">
-    使用
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#elastalert_1" title="以服务启动elastalert" class="md-nav__link">
-    以服务启动elastalert
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configyaml" title="config.yaml配置文件说明" class="md-nav__link">
-    config.yaml配置文件说明
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="邮箱报警" class="md-nav__link">
-    邮箱报警
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="钉钉报警" class="md-nav__link">
-    钉钉报警
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#elastalert-kibana-plugin" title="elastalert-kibana-plugin" class="md-nav__link">
-    elastalert-kibana-plugin
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="参考资料" class="md-nav__link">
-    参考资料
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1440,7 +1564,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../graylog1/" title="Graylog日志管理系统" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/graylog1/" title="Graylog日志管理系统" class="md-nav__link">
       Graylog日志管理系统
     </a>
   </li>
@@ -1452,7 +1576,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../graylog2-advanced/" title="Graylog高级使用" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/graylog2-advanced/" title="Graylog高级使用" class="md-nav__link">
       Graylog高级使用
     </a>
   </li>
@@ -1493,7 +1617,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/" title="网络安全" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/" title="网络安全" class="md-nav__link">
       网络安全
     </a>
   </li>
@@ -1524,7 +1648,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
       应用层拒绝服务攻击
     </a>
   </li>
@@ -1536,7 +1660,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
       拒绝服务攻击
     </a>
   </li>
@@ -1572,7 +1696,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/ids-ips/bro/" title="bro 网络安全监控" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/ids-ips/bro/" title="bro 网络安全监控" class="md-nav__link">
       bro 网络安全监控
     </a>
   </li>
@@ -1608,7 +1732,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
       GitHub信息泄漏监控
     </a>
   </li>
@@ -1644,7 +1768,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
       办公网网络安全
     </a>
   </li>
@@ -1656,7 +1780,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/office-network-security/email-security/" title="邮件安全" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/office-network-security/email-security/" title="邮件安全" class="md-nav__link">
       邮件安全
     </a>
   </li>
@@ -1668,7 +1792,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../network-security/office-network-security/gophish/" title="gophish 开源钓鱼工具" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/office-network-security/gophish/" title="gophish 开源钓鱼工具" class="md-nav__link">
       gophish 开源钓鱼工具
     </a>
   </li>
@@ -1714,7 +1838,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../intrusion_detection/wazuh/" title="Centos7 安装与配置wazuh3.9" class="md-nav__link">
+    <a href="../../intrusion_detection/wazuh/" title="Centos7 安装与配置wazuh3.9" class="md-nav__link">
       Centos7 安装与配置wazuh3.9
     </a>
   </li>
@@ -1750,7 +1874,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../log_analysis/elkf-sn/" title="Centos7 安装与配置ELK7.2+filebeat采集日志" class="md-nav__link">
+    <a href="../../log_analysis/elkf-sn/" title="Centos7 安装与配置ELK7.2+filebeat采集日志" class="md-nav__link">
       Centos7 安装与配置ELK7.2+filebeat采集日志
     </a>
   </li>
@@ -1762,7 +1886,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../log_analysis/weblog/" title="Web日志字段解析" class="md-nav__link">
+    <a href="../../log_analysis/weblog/" title="Web日志字段解析" class="md-nav__link">
       Web日志字段解析
     </a>
   </li>
@@ -1798,7 +1922,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../miscellaneous/jsrc-1/" title="白帽子转型甲方杂绪" class="md-nav__link">
+    <a href="../../miscellaneous/jsrc-1/" title="白帽子转型甲方杂绪" class="md-nav__link">
       白帽子转型甲方杂绪
     </a>
   </li>
@@ -1853,7 +1977,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/asset-management/" title="资产管理" class="md-nav__link">
+    <a href="../../other-security-branch/asset-management/" title="资产管理" class="md-nav__link">
       资产管理
     </a>
   </li>
@@ -1865,7 +1989,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/asset-management/asset-acquisition/" title="资产管理平台" class="md-nav__link">
+    <a href="../../other-security-branch/asset-management/asset-acquisition/" title="资产管理平台" class="md-nav__link">
       资产管理平台
     </a>
   </li>
@@ -1901,7 +2025,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
+    <a href="../../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
       数据安全
     </a>
   </li>
@@ -1932,7 +2056,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
+    <a href="../../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
       大数据安全
     </a>
   </li>
@@ -1973,7 +2097,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/devsecops/gjs/" title="Gitlab+Jenkins+SonarQube 实现代码审计指南" class="md-nav__link">
+    <a href="../../other-security-branch/devsecops/gjs/" title="Gitlab+Jenkins+SonarQube 实现代码审计指南" class="md-nav__link">
       Gitlab+Jenkins+SonarQube 实现代码审计指南
     </a>
   </li>
@@ -1985,7 +2109,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/devsecops/sdc/" title="SonarQube集成DependencyCheck" class="md-nav__link">
+    <a href="../../other-security-branch/devsecops/sdc/" title="SonarQube集成DependencyCheck" class="md-nav__link">
       SonarQube集成DependencyCheck
     </a>
   </li>
@@ -2021,7 +2145,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/emergency-response/chkrootkit/" title="chkrootkit Linux入侵检测" class="md-nav__link">
+    <a href="../../other-security-branch/emergency-response/chkrootkit/" title="chkrootkit Linux入侵检测" class="md-nav__link">
       chkrootkit Linux入侵检测
     </a>
   </li>
@@ -2033,7 +2157,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/emergency-response/lynis/" title="lynis Linux安全审计工具" class="md-nav__link">
+    <a href="../../other-security-branch/emergency-response/lynis/" title="lynis Linux安全审计工具" class="md-nav__link">
       lynis Linux安全审计工具
     </a>
   </li>
@@ -2045,7 +2169,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/emergency-response/rkhunter/" title="rkhunter Linux入侵检测" class="md-nav__link">
+    <a href="../../other-security-branch/emergency-response/rkhunter/" title="rkhunter Linux入侵检测" class="md-nav__link">
       rkhunter Linux入侵检测
     </a>
   </li>
@@ -2081,7 +2205,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/identity-and-access-security/freeipa/" title="基于Linux开源身份认证体系FreeIPA" class="md-nav__link">
+    <a href="../../other-security-branch/identity-and-access-security/freeipa/" title="基于Linux开源身份认证体系FreeIPA" class="md-nav__link">
       基于Linux开源身份认证体系FreeIPA
     </a>
   </li>
@@ -2117,7 +2241,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/security-operation/pst/" title="产品安全设计Checklist" class="md-nav__link">
+    <a href="../../other-security-branch/security-operation/pst/" title="产品安全设计Checklist" class="md-nav__link">
       产品安全设计Checklist
     </a>
   </li>
@@ -2129,7 +2253,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/security-operation/security-platform/" title="中小型企业自建安全平台" class="md-nav__link">
+    <a href="../../other-security-branch/security-operation/security-platform/" title="中小型企业自建安全平台" class="md-nav__link">
       中小型企业自建安全平台
     </a>
   </li>
@@ -2165,7 +2289,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../other-security-branch/virtualization-security/docker-security/" title="Docker安全总结" class="md-nav__link">
+    <a href="../../other-security-branch/virtualization-security/docker-security/" title="Docker安全总结" class="md-nav__link">
       Docker安全总结
     </a>
   </li>
@@ -2202,51 +2326,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#elastalert" title="elastalert安装" class="md-nav__link">
-    elastalert安装
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="使用" class="md-nav__link">
-    使用
+  <a href="#ip" title="IP纬度防御" class="md-nav__link">
+    IP纬度防御
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#elastalert_1" title="以服务启动elastalert" class="md-nav__link">
-    以服务启动elastalert
+  <a href="#ip_1" title="代理IP" class="md-nav__link">
+    代理IP
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configyaml" title="config.yaml配置文件说明" class="md-nav__link">
-    config.yaml配置文件说明
+  <a href="#ip_2" title="恶意IP" class="md-nav__link">
+    恶意IP
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="邮箱报警" class="md-nav__link">
-    邮箱报警
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="钉钉报警" class="md-nav__link">
-    钉钉报警
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#elastalert-kibana-plugin" title="elastalert-kibana-plugin" class="md-nav__link">
-    elastalert-kibana-plugin
+  <a href="#ip_3" title="IP的其它属性" class="md-nav__link">
+    IP的其它属性
   </a>
   
 </li>
@@ -2257,7 +2360,156 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="参考资料" class="md-nav__link">
+  <a href="#_2" title="验证码纬度防护" class="md-nav__link">
+    验证码纬度防护
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="应对小号与接码平台" class="md-nav__link">
+    应对小号与接码平台
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="通过获取手机权限进行二次验证" class="md-nav__link">
+    通过获取手机权限进行二次验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="合作数据验证" class="md-nav__link">
+    合作数据验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="语音验证码" class="md-nav__link">
+    语音验证码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="人机识别纬度防护" class="md-nav__link">
+    人机识别纬度防护
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="手机模拟器检测" class="md-nav__link">
+    手机模拟器检测
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="虚拟机特征" class="md-nav__link">
+    虚拟机特征
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="数据分析纬度防护" class="md-nav__link">
+    数据分析纬度防护
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="异常分析" class="md-nav__link">
+    异常分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="坏账户识别" class="md-nav__link">
+    坏账户识别
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="账户信息是否被标记过" class="md-nav__link">
+    账户信息是否被标记过
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="账户信息是否有特殊含义" class="md-nav__link">
+    账户信息是否有特殊含义
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="用户行为分析" class="md-nav__link">
+    用户行为分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" title="场景分析" class="md-nav__link">
+    场景分析
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="撞库" class="md-nav__link">
+    撞库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="坏账户本身行为分析" class="md-nav__link">
+    坏账户本身行为分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" title="参考资料" class="md-nav__link">
     参考资料
   </a>
   
@@ -2280,243 +2532,96 @@
               
                 
                 
-                <h1 id="elk-elastalert">ELK监控报警系统-elastalert</h1>
-<p><a href="https://github.com/Yelp/elastalert/">github地址</a></p>
-<h2 id="elastalert">elastalert安装</h2>
-<pre><code># 操作系统：Centos7
-# 解决python依赖
-yum install epel-release -y
-
-yum install python2-pip.noarch gcc.x86_64 python-devel.x86_64 libffi-devel.x86_64 git.x86_64 -y
-
-pip install --upgrade pip
-
-pip install &quot;setuptools&gt;=11.3&quot;
-pip install &quot;elasticsearch&gt;=5.0.0&quot;
-
-# 安装
-git clone https://github.com/Yelp/elastalert.git
-cd elastalert/ &amp;&amp; pip install -r requirements.txt
-python setup.py install
-</code></pre>
-
-<h2 id="_1">使用</h2>
+                <h1 id="_1">账户安全防护手段</h1>
+<h2 id="ip">IP纬度防御</h2>
+<h3 id="ip_1">代理IP</h3>
 <ul>
-<li><strong>创建索引</strong></li>
+<li>利用爬虫获取互联网上的代理IP，形成黑名单库；规则非常有效、精准率高、系统消耗低。</li>
+<li>反向探测IP的端口开放情况，代理的常用端口是80和8080，如果对应IP开启了这些端口，可能是不正常的，一个家用IP地址普通情况下是不会开放这些端口的。</li>
+<li>看HTTP的XFF，这个字段只有在使用了HTTP代理时才会添加。</li>
+<li>查看源端口，通过经验判断，大于10000的源端口只有两种情况，不是代理就是大型机构。</li>
+<li>看keep-alive，带有<code>Proxy-Connection;Keep-Alive</code>的报文，毫无疑问是代理。</li>
 </ul>
-<pre><code>elastalert-create-index
-</code></pre>
-
+<h3 id="ip_2">恶意IP</h3>
 <ul>
-<li><strong>测试规则文件</strong></li>
+<li>来自于业务产生，如果某IP曾经作恶，那么安全有理由认为它下次还可能继续作恶，这种IP要带标签观察。</li>
+<li>高危区域，根据历史和行业数据来看，安溪、龙岩、莆田、泉州、电白、宾阳等，这些地方的IP先打上标签。</li>
+<li>威胁情报，通过购买获得，知道IP最近是否有木马病毒，黑客攻击行为。这部分恶意IP需要数据新鲜，因为IP变化非常快。</li>
 </ul>
-<pre><code>elastalert-test-rule rule.yaml
-</code></pre>
-
+<h3 id="ip_3">IP的其它属性</h3>
 <ul>
-<li><strong>启动监控报警</strong></li>
+<li>一个to c的业务，访问IP来自IDC或者云服务器，这是不正常的。</li>
 </ul>
-<pre><code>python -m elastalert.elastalert --verbose --rule /root/elastalert/example_rules/rule.yaml
-</code></pre>
-
-<h3 id="elastalert_1">以服务启动elastalert</h3>
-<pre><code>mkdir /etc/elastalert
-cp /root/elastalert/config.yaml.example /etc/elastalert/config.yaml
-
-# 创建规则目录
-mkdir /etc/elastalert/rules
-cp /root/elastalert/example_rules/example_frequency.yaml /etc/elastalert/rules/
-cp /root/elastalert/example_rules/example_frequency.yaml /etc/elastalert/rules/rule.yaml
-
-# 修改配置文件
-vim /etc/elastalert/config.yaml
-    rules_folder: /etc/elastalert/rules
-
-# 创建elastalert服务文件
-vim /etc/systemd/system/elastalert.service
-</code></pre>
-
-<p>elastalert.service文件内容：</p>
-<pre><code>[Unit]
-Description=elastalert
-After=elasticsearch.service
-
-[Service]
-Type=simple
-User=root
-Group=root
-Restart=on-failure
-WorkingDirectory=/opt
-ExecStart=/usr/bin/python -m elastalert.elastalert --config /etc/elastalert/config.yaml --rule /etc/elastalert/rules/rule.yaml
-
-Install]
-WantedBy=multi-user.target
-</code></pre>
-
-<p>启动服务：</p>
-<pre><code>systemctl start elastalert.service
-</code></pre>
-
-<h3 id="configyaml">config.yaml配置文件说明</h3>
-<pre><code>rules_folder: /etc/elastalert/rules # 规则目录
-
-run_every: # 多久从ES中查询一次
-    minutes: 1
-
-es_host: 172.16.64.171
-es_port: 9200
-
-writeback_index: elastalert_status # elastalert索引名称
-
-alert_time_limit: # 失败重试限制
-    days: 2
-</code></pre>
-
-<h3 id="_2">邮箱报警</h3>
-<pre><code>vim /etc/elastalert/rules/rule.yaml
-</code></pre>
-
-<p>rule.yaml文件内容：</p>
-<pre><code>es_host: 127.0.0.1
-es_port: 9200
-
-# 规则名字，唯一值
-name: security test
-
-# 报警类型，参考印象笔记
-type: any
-
-# es索引
-index: logstash-*
-
-# 过滤
-filter:
-- query:
-        query_string:
-                query: &quot;message:test&quot;
-
-# 报警类型
-alert:
-- &quot;email&quot;
-smtp_host: smtp.126.com
-smtp_port: 25
-smtp_auth_file: smtp_auth_file.yaml
-email_reply_to: email1_address
-from_addr: email1_address
-
-# 接受邮箱
-email:
-- &quot;email2_address&quot;
-</code></pre>
-
-<p>创建邮箱密码文件:</p>
-<pre><code>vim /etc/elastalert/rules/smtp_auth_file.yaml
-</code></pre>
-
-<p>smtp_auth_file.yaml文件内容：</p>
-<pre><code>user: &quot;username&quot;
-password: &quot;password&quot;
-</code></pre>
-
-<h3 id="_3">钉钉报警</h3>
-<p><a href="https://github.com/xuyaoqiang/elastalert-dingtalk-plugin">github地址</a></p>
+<p>持续更新～～～</p>
+<h2 id="_2">验证码纬度防护</h2>
+<h3 id="_3">应对小号与接码平台</h3>
 <ul>
-<li><strong>钉钉测试</strong></li>
+<li>接码平台手机号库：通过爬虫爬取各大接码平台的手机号码，形成黑名单库，凡是命中，一律加标签。</li>
 </ul>
-<pre><code>curl 'https://oapi.dingtalk.com/robot/send?access_token=token值' \ 
-    -d '{&quot;msgtype&quot;:&quot;text&quot;,&quot;text&quot;:{&quot;content&quot;:&quot;test&quot;}}' \ 
-    -H 'Content-Type:application/json'
-</code></pre>
-
+<p><strong>备注：爬不全，而且接码平台也会有很多对抗爬虫的技术。</strong></p>
+<h3 id="_4">通过获取手机权限进行二次验证</h3>
 <ul>
-<li><strong>安装插件</strong></li>
+<li>针对金融行业，可以爬取你的运营商网上营业厅信息，如：爬取通话记录。</li>
 </ul>
-<pre><code># 下载
-git clone https://github.com/xuyaoqiang/elastalert-dingtalk-plugin.git
-
-# 复制插件到elastalert中
-cp -r elastalert-dingtalk-plugin/elastalert_modules/ /etc/elastalert/
-</code></pre>
-
+<p><strong>备注：合规调整；运营商也具有反爬措施；影响用户体验。</strong></p>
+<h3 id="_5">合作数据验证</h3>
 <ul>
-<li><strong>配置规则</strong></li>
+<li>与运营商合作，难度很大。</li>
+<li>第三方购买。</li>
 </ul>
-<pre><code>vim /etc/elastalert/rules/rule.yaml
-</code></pre>
-
-<p>rule.yaml文件内容：</p>
-<pre><code>es_host: 127.0.0.1
-es_port: 9200
-name: security
-type: any
-index: logstash
-
-# 查询模式
-filter:
-- query:
-        query_string:
-                query: &quot;message:test&quot;
-
-# 报警模式
-alert:
-- &quot;elastalert_modules.dingtalk_alert.DingTalkAlerter&quot;
-
-# 钉钉的webhook接口
-dingtalk_webhook: &quot;&quot;
-dingtalk_msgtype: &quot;text&quot;
-</code></pre>
-
-<p>启动监控报警:</p>
-<pre><code>python -m elastalert.elastalert --verbose --config /etc/elastalert/config.yaml --rule /etc/elastalert/rules/rule.yaml
-</code></pre>
-
+<h3 id="_6">语音验证码</h3>
 <ul>
-<li><strong>配置服务启动</strong></li>
+<li>一定程度避免了验证码泄漏，但是大规模的语音通告会形成昂贵的费用。</li>
 </ul>
-<pre><code>vim /etc/systemd/system/elastalert.service
-</code></pre>
-
-<p>elastalert.service文件内容：</p>
-<pre><code>[Unit]
-Description=elastalert
-After=elasticsearch.service
-
-[Service]
-Type=simple
-User=root
-Group=root
-Restart=on-failure
-WorkingDirectory=/opt
-ExecStart=cd /etc/elastalert &amp;&amp; /usr/bin/python -m elastalert.elastalert --config /etc/elastalert/config.yaml --rule /etc/elastalert/rules/rule.yaml
-
-Install]
-WantedBy=multi-user.target
-</code></pre>
-
+<h2 id="_7">人机识别纬度防护</h2>
+<p>进行人机识别更多是为了防止批量行为，一般这种批量行为都是由特殊接口、特定工具进行的。所以我们需要对工具的运行模式进行分析，才能不断对抗。</p>
+<h3 id="_8">手机模拟器检测</h3>
 <ul>
-<li><strong>优化报警格式</strong></li>
+<li>设备MAC、型号。</li>
 </ul>
-<pre><code># 注意上下字段对应
-alert_text: |
-    kibana_url: &quot;https://hostname:5601/app/kibana&quot;
-    alarm_reason: &quot;1分钟内login.php至少被访问10次&quot;
-    alarm_name: {}
-    request_uri: {}
-    request_ip: {}
-    response_status: {}
-alert_text_args:
-    - name
-    - request
-    - clientip
-    - response
-alert_text_type: alert_text_only
-</code></pre>
-
-<h3 id="elastalert-kibana-plugin">elastalert-kibana-plugin</h3>
-<p><a href="https://github.com/bitsensor/elastalert-kibana-plugin">github地址</a></p>
-<h2 id="_4">参考资料</h2>
-<p><a href="https://www.freebuf.com/articles/others-articles/161905.html">一个人的安全部之ELK接收Paloalto日志并用钉钉告警</a></p>
-<p><a href="https://www.freebuf.com/sectool/164591.html">基于Elastalert的安全告警剖析</a></p>
+<h3 id="_9">虚拟机特征</h3>
+<ul>
+<li>虚拟机网卡一般以000569、000c29、005056开头。</li>
+<li>USB和声卡特征。</li>
+<li>内存、进程、服务、注册表等。</li>
+</ul>
+<h2 id="_10">数据分析纬度防护</h2>
+<h3 id="_11">异常分析</h3>
+<ul>
+<li>两次登录时间和距离的异常。</li>
+<li>无法正常获取设备信息。</li>
+</ul>
+<h3 id="_12">坏账户识别</h3>
+<p>这里的账户一般由：手机号、邮箱、QQ等所代表。</p>
+<h4 id="_13">账户信息是否被标记过</h4>
+<ul>
+<li>类似手机号被举报次数过多、第三方平台标记。</li>
+</ul>
+<h4 id="_14">账户信息是否有特殊含义</h4>
+<ul>
+<li>test、hacker、admin0、pentest、attack、杂乱无序的随机字符、有规则的随机字符等。</li>
+</ul>
+<h3 id="_15">用户行为分析</h3>
+<ul>
+<li>键盘敲击频率</li>
+<li>鼠标移动速度与轨迹：针对Web</li>
+<li>HTTP Referer</li>
+<li>屏幕触摸对压力：针对APP</li>
+<li>点击位置</li>
+</ul>
+<p>持续补充～～～</p>
+<h2 id="_16">场景分析</h2>
+<h3 id="_17">撞库</h3>
+<p>最简单的方法是看IP和账号的频率，但是黑客也会利用代理IP池或降低撞库的频率，所以单单从IP与账号频率，只能启到一定的作用。</p>
+<p>想要更好的防护，需要通过更多的行为来判断，行为分析取决于你能够获得的行为数据有多少。比如设备指纹在这里就大有用武之地，通过抓取用户设备信息，形成一个画像作为基线。当环境产生变化而不可信时，推出二次校验等挑战，另外也可以通过页面点击流、击键行为来做判断。</p>
+<p>目前来看，通过行为判断的防盗号，或者说对可信环境判断的防盗号，是一个比较综合的手段。</p>
+<h3 id="_18">坏账户本身行为分析</h3>
+<ul>
+<li>账户信息是否完整：在金融体系中，账户是需要实名的，如果实名认证未通过，则代表可能存在信息虚假。</li>
+<li>账户的活动情况：注册以后是否有登录过，是否有过正常操作，如果注册后从而登录过，某一天（这天搞活动）突然登录可能是异常的。</li>
+</ul>
+<h2 id="_19">参考资料</h2>
+<p><a href="http://blog.nsfocus.net/discussion-web-security-authentication-code/">浅谈Web安全验证码</a></p>
                 
                   
                 
@@ -2537,7 +2642,7 @@ alert_text_type: alert_text_only
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../elk4-grokdebug/" title="Logstash Patterns" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../.." title="ossa" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2546,19 +2651,19 @@ alert_text_type: alert_text_only
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Logstash Patterns
+                ossa
               </span>
             </div>
           </a>
         
         
-          <a href="../graylog1/" title="Graylog日志管理系统" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../application-security/" title="应用安全" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Graylog日志管理系统
+                应用安全
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -2592,9 +2697,9 @@ alert_text_type: alert_text_only
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
     
