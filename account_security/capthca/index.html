@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/infrastructure-security/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/account_security/capthca/">
       
       
         <meta name="author" content="bloodzer0">
@@ -37,21 +37,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
-        <title>基础设施安全 - Open-Source Security Architecture</title>
+        <title>验证码安全 - Open-Source Security Architecture</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
@@ -60,7 +60,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                基础设施安全
+                验证码安全
               </span>
             
           
@@ -240,7 +240,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="ossa" class="md-nav__link">
+    <a href="../.." title="ossa" class="md-nav__link">
       ossa
     </a>
   </li>
@@ -250,10 +250,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Account security
@@ -271,7 +273,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../account_security/20190731/" title="账户安全防护手段" class="md-nav__link">
+    <a href="../20190731/" title="账户安全防护手段" class="md-nav__link">
       账户安全防护手段
     </a>
   </li>
@@ -281,11 +283,211 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../account_security/capthca/" title="验证码安全" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        验证码安全
+      </label>
+    
+    <a href="./" title="验证码安全" class="md-nav__link md-nav__link--active">
       验证码安全
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="曾经的验证码" class="md-nav__link">
+    曾经的验证码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="文本验证码" class="md-nav__link">
+    文本验证码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="图片拼接验证码" class="md-nav__link">
+    图片拼接验证码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="题型库验证码" class="md-nav__link">
+    题型库验证码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="图形验证码" class="md-nav__link">
+    图形验证码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="图形验证码风险分析" class="md-nav__link">
+    图形验证码风险分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="安全的图形验证码" class="md-nav__link">
+    安全的图形验证码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="验证码自动识别技术" class="md-nav__link">
+    验证码自动识别技术
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="短信验证码" class="md-nav__link">
+    短信验证码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="短信验证码风险分析" class="md-nav__link">
+    短信验证码风险分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="安全的短信验证码" class="md-nav__link">
+    安全的短信验证码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" title="语音验证码" class="md-nav__link">
+    语音验证码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="语音验证码风险分析" class="md-nav__link">
+    语音验证码风险分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" title="新一代验证码" class="md-nav__link">
+    新一代验证码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" title="新一代验证码风险分析" class="md-nav__link">
+    新一代验证码风险分析
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="接码平台" class="md-nav__link">
+    接码平台
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="滑动验证码模拟" class="md-nav__link">
+    滑动验证码模拟
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" title="验证码厂商" class="md-nav__link">
+    验证码厂商
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -319,7 +521,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/" title="应用安全" class="md-nav__link">
+    <a href="../../application-security/" title="应用安全" class="md-nav__link">
       应用安全
     </a>
   </li>
@@ -350,7 +552,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/code-audit/" title="代码审计" class="md-nav__link">
+    <a href="../../application-security/code-audit/" title="代码审计" class="md-nav__link">
       代码审计
     </a>
   </li>
@@ -362,7 +564,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/code-audit/cobra/" title="Cobra安装与使用" class="md-nav__link">
+    <a href="../../application-security/code-audit/cobra/" title="Cobra安装与使用" class="md-nav__link">
       Cobra安装与使用
     </a>
   </li>
@@ -374,7 +576,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/code-audit/ethereum-smart-contracts-code-audit/" title="智能合约代码审计" class="md-nav__link">
+    <a href="../../application-security/code-audit/ethereum-smart-contracts-code-audit/" title="智能合约代码审计" class="md-nav__link">
       智能合约代码审计
     </a>
   </li>
@@ -386,7 +588,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/code-audit/findsecbugs/" title="FindSecBugs安装与使用" class="md-nav__link">
+    <a href="../../application-security/code-audit/findsecbugs/" title="FindSecBugs安装与使用" class="md-nav__link">
       FindSecBugs安装与使用
     </a>
   </li>
@@ -398,7 +600,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/code-audit/sonarqube-error/" title="SonarQube踩坑记" class="md-nav__link">
+    <a href="../../application-security/code-audit/sonarqube-error/" title="SonarQube踩坑记" class="md-nav__link">
       SonarQube踩坑记
     </a>
   </li>
@@ -410,7 +612,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/code-audit/sonarqube/" title="SonarQube安装与使用" class="md-nav__link">
+    <a href="../../application-security/code-audit/sonarqube/" title="SonarQube安装与使用" class="md-nav__link">
       SonarQube安装与使用
     </a>
   </li>
@@ -446,7 +648,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/mobile-security/" title="移动安全" class="md-nav__link">
+    <a href="../../application-security/mobile-security/" title="移动安全" class="md-nav__link">
       移动安全
     </a>
   </li>
@@ -458,7 +660,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
+    <a href="../../application-security/mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
       移动安全扫描
     </a>
   </li>
@@ -470,7 +672,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/mobile-security/mobile-tools/" title="移动安全工具" class="md-nav__link">
+    <a href="../../application-security/mobile-security/mobile-tools/" title="移动安全工具" class="md-nav__link">
       移动安全工具
     </a>
   </li>
@@ -506,7 +708,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/sdl/api-gateway/" title="API网关" class="md-nav__link">
+    <a href="../../application-security/sdl/api-gateway/" title="API网关" class="md-nav__link">
       API网关
     </a>
   </li>
@@ -518,7 +720,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/sdl/api-security-design/" title="API网关设计" class="md-nav__link">
+    <a href="../../application-security/sdl/api-security-design/" title="API网关设计" class="md-nav__link">
       API网关设计
     </a>
   </li>
@@ -530,7 +732,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/sdl/go-scp/" title="Go语言安全编码规范-翻译" class="md-nav__link">
+    <a href="../../application-security/sdl/go-scp/" title="Go语言安全编码规范-翻译" class="md-nav__link">
       Go语言安全编码规范-翻译
     </a>
   </li>
@@ -566,7 +768,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-defense/https/" title="全站https" class="md-nav__link">
+    <a href="../../application-security/security-defense/https/" title="全站https" class="md-nav__link">
       全站https
     </a>
   </li>
@@ -578,7 +780,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-defense/iptables-waf/" title="iptables-waf" class="md-nav__link">
+    <a href="../../application-security/security-defense/iptables-waf/" title="iptables-waf" class="md-nav__link">
       iptables-waf
     </a>
   </li>
@@ -590,7 +792,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-defense/modsecurity-waf/" title="modsecurity-waf" class="md-nav__link">
+    <a href="../../application-security/security-defense/modsecurity-waf/" title="modsecurity-waf" class="md-nav__link">
       modsecurity-waf
     </a>
   </li>
@@ -602,7 +804,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-defense/openresty-waf/" title="openresty-waf" class="md-nav__link">
+    <a href="../../application-security/security-defense/openresty-waf/" title="openresty-waf" class="md-nav__link">
       openresty-waf
     </a>
   </li>
@@ -614,7 +816,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
+    <a href="../../application-security/security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
       Web应用防火墙
     </a>
   </li>
@@ -650,7 +852,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-testing/" title="安全测试" class="md-nav__link">
+    <a href="../../application-security/security-testing/" title="安全测试" class="md-nav__link">
       安全测试
     </a>
   </li>
@@ -662,7 +864,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
+    <a href="../../application-security/security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
       API安全测试
     </a>
   </li>
@@ -674,7 +876,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-testing/app-security-testing/" title="APP安全测试" class="md-nav__link">
+    <a href="../../application-security/security-testing/app-security-testing/" title="APP安全测试" class="md-nav__link">
       APP安全测试
     </a>
   </li>
@@ -686,7 +888,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-testing/checklist/" title="安全测试checklist" class="md-nav__link">
+    <a href="../../application-security/security-testing/checklist/" title="安全测试checklist" class="md-nav__link">
       安全测试checklist
     </a>
   </li>
@@ -698,7 +900,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-testing/dast-iast-sast/" title="DAST&SAST&IAST" class="md-nav__link">
+    <a href="../../application-security/security-testing/dast-iast-sast/" title="DAST&SAST&IAST" class="md-nav__link">
       DAST&SAST&IAST
     </a>
   </li>
@@ -729,7 +931,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-testing/tools-skills/app/" title="APP脱壳技巧" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/app/" title="APP脱壳技巧" class="md-nav__link">
       APP脱壳技巧
     </a>
   </li>
@@ -741,7 +943,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
       https抓包
     </a>
   </li>
@@ -753,7 +955,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-testing/tools-skills/capture-skills/" title="抓包技巧" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/capture-skills/" title="抓包技巧" class="md-nav__link">
       抓包技巧
     </a>
   </li>
@@ -765,7 +967,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-testing/tools-skills/information-leakage/" title="信息泄漏漏洞利用" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/information-leakage/" title="信息泄漏漏洞利用" class="md-nav__link">
       信息泄漏漏洞利用
     </a>
   </li>
@@ -777,7 +979,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/security-testing/tools-skills/web-tools/" title="Web安全工具" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/web-tools/" title="Web安全工具" class="md-nav__link">
       Web安全工具
     </a>
   </li>
@@ -818,7 +1020,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/vulnerability-management/" title="漏洞管理" class="md-nav__link">
+    <a href="../../application-security/vulnerability-management/" title="漏洞管理" class="md-nav__link">
       漏洞管理
     </a>
   </li>
@@ -830,7 +1032,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
+    <a href="../../application-security/vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
       defectdojo
     </a>
   </li>
@@ -866,7 +1068,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../application-security/web-security-scan/" title="Web安全扫描" class="md-nav__link">
+    <a href="../../application-security/web-security-scan/" title="Web安全扫描" class="md-nav__link">
       Web安全扫描
     </a>
   </li>
@@ -907,7 +1109,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../business/account/" title="账户安全" class="md-nav__link">
+    <a href="../../business/account/" title="账户安全" class="md-nav__link">
       账户安全
     </a>
   </li>
@@ -919,7 +1121,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../business/captcha/" title="验证码安全" class="md-nav__link">
+    <a href="../../business/captcha/" title="验证码安全" class="md-nav__link">
       验证码安全
     </a>
   </li>
@@ -934,12 +1136,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Infrastructure security
@@ -955,49 +1155,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        基础设施安全
-      </label>
-    
-    <a href="./" title="基础设施安全" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/" title="基础设施安全" class="md-nav__link">
       基础设施安全
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="参考资料" class="md-nav__link">
-    参考资料
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1026,7 +1188,7 @@
 
 
   <li class="md-nav__item">
-    <a href="container/" title="容器安全建设" class="md-nav__link">
+    <a href="../../infrastructure-security/container/" title="容器安全建设" class="md-nav__link">
       容器安全建设
     </a>
   </li>
@@ -1038,7 +1200,7 @@
 
 
   <li class="md-nav__item">
-    <a href="container/tools/" title="容器安全工具" class="md-nav__link">
+    <a href="../../infrastructure-security/container/tools/" title="容器安全工具" class="md-nav__link">
       容器安全工具
     </a>
   </li>
@@ -1074,7 +1236,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/" title="主机安全" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/" title="主机安全" class="md-nav__link">
       主机安全
     </a>
   </li>
@@ -1105,7 +1267,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/fortress-machine/jumpserver/" title="jumpserver 开源堡垒机" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/fortress-machine/jumpserver/" title="jumpserver 开源堡垒机" class="md-nav__link">
       jumpserver 开源堡垒机
     </a>
   </li>
@@ -1141,7 +1303,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/honeypot/" title="蜜罐技术" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/honeypot/" title="蜜罐技术" class="md-nav__link">
       蜜罐技术
     </a>
   </li>
@@ -1153,7 +1315,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
       MHN蜜罐
     </a>
   </li>
@@ -1189,7 +1351,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/host-security-scan/" title="主机安全扫描" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/host-security-scan/" title="主机安全扫描" class="md-nav__link">
       主机安全扫描
     </a>
   </li>
@@ -1201,7 +1363,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
       开源扫描器
     </a>
   </li>
@@ -1213,7 +1375,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/host-security-scan/port/" title="端口安全" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/host-security-scan/port/" title="端口安全" class="md-nav__link">
       端口安全
     </a>
   </li>
@@ -1249,7 +1411,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/ids-ips/" title="主机入侵检测&防御系统" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/ids-ips/" title="主机入侵检测&防御系统" class="md-nav__link">
       主机入侵检测&防御系统
     </a>
   </li>
@@ -1261,7 +1423,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/ids-ips/aide/" title="aide 文件和目录完整性入群检测" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/ids-ips/aide/" title="aide 文件和目录完整性入群检测" class="md-nav__link">
       aide 文件和目录完整性入群检测
     </a>
   </li>
@@ -1273,7 +1435,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/ids-ips/osquery/" title="osquery 操作系统检测与分析" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/ids-ips/osquery/" title="osquery 操作系统检测与分析" class="md-nav__link">
       osquery 操作系统检测与分析
     </a>
   </li>
@@ -1285,7 +1447,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/ids-ips/wazuh/" title="wazuh 主机入侵检测系统" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/ids-ips/wazuh/" title="wazuh 主机入侵检测系统" class="md-nav__link">
       wazuh 主机入侵检测系统
     </a>
   </li>
@@ -1321,7 +1483,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/log-analysis/" title="日志分析" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/" title="日志分析" class="md-nav__link">
       日志分析
     </a>
   </li>
@@ -1333,7 +1495,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/log-analysis/elk1/" title="ELK日志分析系统" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/elk1/" title="ELK日志分析系统" class="md-nav__link">
       ELK日志分析系统
     </a>
   </li>
@@ -1345,7 +1507,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/log-analysis/elk2-advanced/" title="ELK高级使用" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/elk2-advanced/" title="ELK高级使用" class="md-nav__link">
       ELK高级使用
     </a>
   </li>
@@ -1357,7 +1519,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/log-analysis/elk3-problem/" title="ELK问题踩坑" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/elk3-problem/" title="ELK问题踩坑" class="md-nav__link">
       ELK问题踩坑
     </a>
   </li>
@@ -1369,7 +1531,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/log-analysis/elk4-grokdebug/" title="Logstash Patterns" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/elk4-grokdebug/" title="Logstash Patterns" class="md-nav__link">
       Logstash Patterns
     </a>
   </li>
@@ -1381,7 +1543,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/log-analysis/elk5-elastalert/" title="ELK监控报警系统-elastalert" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/elk5-elastalert/" title="ELK监控报警系统-elastalert" class="md-nav__link">
       ELK监控报警系统-elastalert
     </a>
   </li>
@@ -1393,7 +1555,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/log-analysis/graylog1/" title="Graylog日志管理系统" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/graylog1/" title="Graylog日志管理系统" class="md-nav__link">
       Graylog日志管理系统
     </a>
   </li>
@@ -1405,7 +1567,7 @@
 
 
   <li class="md-nav__item">
-    <a href="host-security/log-analysis/graylog2-advanced/" title="Graylog高级使用" class="md-nav__link">
+    <a href="../../infrastructure-security/host-security/log-analysis/graylog2-advanced/" title="Graylog高级使用" class="md-nav__link">
       Graylog高级使用
     </a>
   </li>
@@ -1446,7 +1608,7 @@
 
 
   <li class="md-nav__item">
-    <a href="network-security/" title="网络安全" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/" title="网络安全" class="md-nav__link">
       网络安全
     </a>
   </li>
@@ -1477,7 +1639,7 @@
 
 
   <li class="md-nav__item">
-    <a href="network-security/cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
       应用层拒绝服务攻击
     </a>
   </li>
@@ -1489,7 +1651,7 @@
 
 
   <li class="md-nav__item">
-    <a href="network-security/cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
       拒绝服务攻击
     </a>
   </li>
@@ -1525,7 +1687,7 @@
 
 
   <li class="md-nav__item">
-    <a href="network-security/ids-ips/bro/" title="bro 网络安全监控" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/ids-ips/bro/" title="bro 网络安全监控" class="md-nav__link">
       bro 网络安全监控
     </a>
   </li>
@@ -1561,7 +1723,7 @@
 
 
   <li class="md-nav__item">
-    <a href="network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
       GitHub信息泄漏监控
     </a>
   </li>
@@ -1597,7 +1759,7 @@
 
 
   <li class="md-nav__item">
-    <a href="network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
       办公网网络安全
     </a>
   </li>
@@ -1609,7 +1771,7 @@
 
 
   <li class="md-nav__item">
-    <a href="network-security/office-network-security/email-security/" title="邮件安全" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/office-network-security/email-security/" title="邮件安全" class="md-nav__link">
       邮件安全
     </a>
   </li>
@@ -1621,7 +1783,7 @@
 
 
   <li class="md-nav__item">
-    <a href="network-security/office-network-security/gophish/" title="gophish 开源钓鱼工具" class="md-nav__link">
+    <a href="../../infrastructure-security/network-security/office-network-security/gophish/" title="gophish 开源钓鱼工具" class="md-nav__link">
       gophish 开源钓鱼工具
     </a>
   </li>
@@ -1667,7 +1829,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../intrusion_detection/wazuh/" title="Centos7 安装与配置wazuh3.9" class="md-nav__link">
+    <a href="../../intrusion_detection/wazuh/" title="Centos7 安装与配置wazuh3.9" class="md-nav__link">
       Centos7 安装与配置wazuh3.9
     </a>
   </li>
@@ -1703,7 +1865,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../log_analysis/elkf-sn/" title="Centos7 安装与配置ELK7.2+filebeat采集日志" class="md-nav__link">
+    <a href="../../log_analysis/elkf-sn/" title="Centos7 安装与配置ELK7.2+filebeat采集日志" class="md-nav__link">
       Centos7 安装与配置ELK7.2+filebeat采集日志
     </a>
   </li>
@@ -1715,7 +1877,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../log_analysis/weblog/" title="Web日志字段解析" class="md-nav__link">
+    <a href="../../log_analysis/weblog/" title="Web日志字段解析" class="md-nav__link">
       Web日志字段解析
     </a>
   </li>
@@ -1751,7 +1913,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../miscellaneous/jsrc-1/" title="白帽子转型甲方杂绪" class="md-nav__link">
+    <a href="../../miscellaneous/jsrc-1/" title="白帽子转型甲方杂绪" class="md-nav__link">
       白帽子转型甲方杂绪
     </a>
   </li>
@@ -1806,7 +1968,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other-security-branch/asset-management/" title="资产管理" class="md-nav__link">
+    <a href="../../other-security-branch/asset-management/" title="资产管理" class="md-nav__link">
       资产管理
     </a>
   </li>
@@ -1818,7 +1980,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other-security-branch/asset-management/asset-acquisition/" title="资产管理平台" class="md-nav__link">
+    <a href="../../other-security-branch/asset-management/asset-acquisition/" title="资产管理平台" class="md-nav__link">
       资产管理平台
     </a>
   </li>
@@ -1854,7 +2016,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
+    <a href="../../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
       数据安全
     </a>
   </li>
@@ -1885,7 +2047,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
+    <a href="../../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
       大数据安全
     </a>
   </li>
@@ -1926,7 +2088,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other-security-branch/devsecops/gjs/" title="Gitlab+Jenkins+SonarQube 实现代码审计指南" class="md-nav__link">
+    <a href="../../other-security-branch/devsecops/gjs/" title="Gitlab+Jenkins+SonarQube 实现代码审计指南" class="md-nav__link">
       Gitlab+Jenkins+SonarQube 实现代码审计指南
     </a>
   </li>
@@ -1938,7 +2100,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other-security-branch/devsecops/sdc/" title="SonarQube集成DependencyCheck" class="md-nav__link">
+    <a href="../../other-security-branch/devsecops/sdc/" title="SonarQube集成DependencyCheck" class="md-nav__link">
       SonarQube集成DependencyCheck
     </a>
   </li>
@@ -1974,7 +2136,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other-security-branch/emergency-response/chkrootkit/" title="chkrootkit Linux入侵检测" class="md-nav__link">
+    <a href="../../other-security-branch/emergency-response/chkrootkit/" title="chkrootkit Linux入侵检测" class="md-nav__link">
       chkrootkit Linux入侵检测
     </a>
   </li>
@@ -1986,7 +2148,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other-security-branch/emergency-response/lynis/" title="lynis Linux安全审计工具" class="md-nav__link">
+    <a href="../../other-security-branch/emergency-response/lynis/" title="lynis Linux安全审计工具" class="md-nav__link">
       lynis Linux安全审计工具
     </a>
   </li>
@@ -1998,7 +2160,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other-security-branch/emergency-response/rkhunter/" title="rkhunter Linux入侵检测" class="md-nav__link">
+    <a href="../../other-security-branch/emergency-response/rkhunter/" title="rkhunter Linux入侵检测" class="md-nav__link">
       rkhunter Linux入侵检测
     </a>
   </li>
@@ -2034,7 +2196,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other-security-branch/identity-and-access-security/freeipa/" title="基于Linux开源身份认证体系FreeIPA" class="md-nav__link">
+    <a href="../../other-security-branch/identity-and-access-security/freeipa/" title="基于Linux开源身份认证体系FreeIPA" class="md-nav__link">
       基于Linux开源身份认证体系FreeIPA
     </a>
   </li>
@@ -2070,7 +2232,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other-security-branch/security-operation/pst/" title="产品安全设计Checklist" class="md-nav__link">
+    <a href="../../other-security-branch/security-operation/pst/" title="产品安全设计Checklist" class="md-nav__link">
       产品安全设计Checklist
     </a>
   </li>
@@ -2082,7 +2244,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other-security-branch/security-operation/security-platform/" title="中小型企业自建安全平台" class="md-nav__link">
+    <a href="../../other-security-branch/security-operation/security-platform/" title="中小型企业自建安全平台" class="md-nav__link">
       中小型企业自建安全平台
     </a>
   </li>
@@ -2118,7 +2280,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other-security-branch/virtualization-security/docker-security/" title="Docker安全总结" class="md-nav__link">
+    <a href="../../other-security-branch/virtualization-security/docker-security/" title="Docker安全总结" class="md-nav__link">
       Docker安全总结
     </a>
   </li>
@@ -2159,7 +2321,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../vulnerability/20190731/" title="逻辑漏洞" class="md-nav__link">
+    <a href="../../vulnerability/20190731/" title="逻辑漏洞" class="md-nav__link">
       逻辑漏洞
     </a>
   </li>
@@ -2191,7 +2353,169 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="参考资料" class="md-nav__link">
+  <a href="#_2" title="曾经的验证码" class="md-nav__link">
+    曾经的验证码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="文本验证码" class="md-nav__link">
+    文本验证码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="图片拼接验证码" class="md-nav__link">
+    图片拼接验证码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="题型库验证码" class="md-nav__link">
+    题型库验证码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="图形验证码" class="md-nav__link">
+    图形验证码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="图形验证码风险分析" class="md-nav__link">
+    图形验证码风险分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="安全的图形验证码" class="md-nav__link">
+    安全的图形验证码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="验证码自动识别技术" class="md-nav__link">
+    验证码自动识别技术
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="短信验证码" class="md-nav__link">
+    短信验证码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="短信验证码风险分析" class="md-nav__link">
+    短信验证码风险分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="安全的短信验证码" class="md-nav__link">
+    安全的短信验证码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" title="语音验证码" class="md-nav__link">
+    语音验证码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="语音验证码风险分析" class="md-nav__link">
+    语音验证码风险分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" title="新一代验证码" class="md-nav__link">
+    新一代验证码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" title="新一代验证码风险分析" class="md-nav__link">
+    新一代验证码风险分析
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="接码平台" class="md-nav__link">
+    接码平台
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="滑动验证码模拟" class="md-nav__link">
+    滑动验证码模拟
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" title="验证码厂商" class="md-nav__link">
+    验证码厂商
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" title="参考资料" class="md-nav__link">
     参考资料
   </a>
   
@@ -2214,9 +2538,85 @@
               
                 
                 
-                <h1 id="_1">基础设施安全</h1>
-<h2 id="_2">参考资料</h2>
-<p><a href="https://www.freebuf.com/articles/neopoints/127508.html">企业安全建设之基础安全建设</a></p>
+                <h1 id="_1">验证码安全</h1>
+<p>Captcha：区分计算机和人的区别的公共自动程序。</p>
+<p>作用：防止恶意暴力破解、刷票、论坛灌水、爬虫等。</p>
+<h2 id="_2">曾经的验证码</h2>
+<h3 id="_3">文本验证码</h3>
+<p>验证码以文字的形式出现，通常可以在html源代码中找到。</p>
+<h3 id="_4">图片拼接验证码</h3>
+<p>由N张独立的图片拼接成为一个验证码。</p>
+<h3 id="_5">题型库验证码</h3>
+<p>大量的计算题组成的验证码库，此种方式最大的危害就是题库是有限的，可以被穷举。</p>
+<h2 id="_6">图形验证码</h2>
+<h3 id="_7">图形验证码风险分析</h3>
+<ul>
+<li>前端生成验证码：前端生存或者前端校验都会存在绕过问题。</li>
+<li>验证码不过期：验证码一直不过期，可以重复有效使用，或者长时间有效使用。</li>
+<li>验证码返回在response数据包中。</li>
+<li>验证码可识别：OCR技术。</li>
+</ul>
+<h3 id="_8">安全的图形验证码</h3>
+<ul>
+<li>验证码后端随机生成，且验证码内容不能出现在客户端的网页源代码以及response数据包中。</li>
+<li>验证码要有背景干扰，干扰元素包括：颜色、位置、数量且元素需要随机变化。</li>
+<li>验证码后端校验，且使用一次后要求立即失效。</li>
+<li>验证码在不同场景下需要与请求的参数一起提交给后端进行校验，且优先校验验证码。</li>
+</ul>
+<h3 id="_9">验证码自动识别技术</h3>
+<ul>
+<li>去噪处理：去掉图像里的干扰信息，如：背景的点、线等。</li>
+<li>图像二值化：将图像上的像素点灰度值设置为0或255，也就是将整个图像呈现出黑白效果。目的是为了将图像与空白区分开来，方便后续步骤点进行。</li>
+<li>切片处理：将每个字符所在区域分离成一个个点图片，确保一个图片内仅有一个文字。</li>
+<li>文字图片标准化：对切片后的每个字符图片，还需要进行变形修复处理，比如：旋转、缩放等操作尽量将每一个字符图片都调整到标准格式，减少随机度。</li>
+<li>字符模版识别：通过模版对比的方法识别。</li>
+</ul>
+<h2 id="_10">短信验证码</h2>
+<h3 id="_11">短信验证码风险分析</h3>
+<ul>
+<li>短信验证码太简单、短信验证码时效风险：一般4位的短信验证码可以在10分钟内暴力破解成功。</li>
+<li>短信验证码不与手机号绑定。</li>
+<li>短信验证码内容返回在response数据包中。</li>
+<li>万能短信验证码：111111、000000、666666、888888。</li>
+<li>短信炸弹攻击：由于发送短信接口没有设置频次上限导致。</li>
+<li>短信内容自定义：常出现在一些发送短信的后端管理系统中，容易出现类似钓鱼等类型的攻击。</li>
+<li>短信平台自身问题：被入侵。</li>
+<li>监听：运营商上行与下行可能出现的监听、伪基站、GSM。</li>
+<li>手机木马、APP Content Provider设计缺陷、短信同步到云平台导致泄漏。</li>
+</ul>
+<h3 id="_12">安全的短信验证码</h3>
+<ul>
+<li>请求获取短信接口添加图形验证码。</li>
+<li>单位时间内：单个IP、单个手机号设置请求限制，具体需要根据场景而定。</li>
+<li>单个手机号每日短信验证码获取上限。</li>
+<li>发送短信接口地址白名单。</li>
+</ul>
+<h2 id="_13">语音验证码</h2>
+<h3 id="_14">语音验证码风险分析</h3>
+<ul>
+<li>呼叫转移。</li>
+<li>语音验证码成本太高。</li>
+</ul>
+<h2 id="_15">新一代验证码</h2>
+<ul>
+<li>Google reCaptcha：目前已经更新到<a href="https://www.google.com/recaptcha/intro/v3.html">第三代</a></li>
+<li>滑动验证码</li>
+<li>点选验证码</li>
+</ul>
+<h3 id="_16">新一代验证码风险分析</h3>
+<h4 id="_17">接码平台</h4>
+<p><a href="https://www.becmd.com/">在线接受短信</a></p>
+<p><a href="http://www.51ym.me/">易码平台</a></p>
+<h4 id="_18">滑动验证码模拟</h4>
+<ul>
+<li>Python Selenium</li>
+</ul>
+<h2 id="_19">验证码厂商</h2>
+<p><a href="https://www.aqniu.com/tools-tech/29545.html">验证码哪家强？六大验证平台评测</a></p>
+<h2 id="_20">参考资料</h2>
+<p><a href="https://www.freebuf.com/articles/rookie/131542.html">验证码安全那些事</a></p>
+<p><a href="http://blog.nsfocus.net/discussion-web-security-authentication-code/">浅谈Web安全验证码</a></p>
+<p><a href="https://mp.weixin.qq.com/s/jA9c4d5HlFp0vGINWc8xWw">如何设计相对安全的图形验证码？</a></p>
                 
                   
                 
@@ -2237,7 +2637,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../business/captcha/" title="验证码安全" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../20190731/" title="账户安全防护手段" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2246,19 +2646,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                验证码安全
+                账户安全防护手段
               </span>
             </div>
           </a>
         
         
-          <a href="container/" title="容器安全建设" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../application-security/" title="应用安全" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                容器安全建设
+                应用安全
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -2292,9 +2692,9 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
     
