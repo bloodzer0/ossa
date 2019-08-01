@@ -246,11 +246,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk4-grokdebug/</loc>
-     <lastmod>2019-08-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://bloodzer0.github.io/ossa/infrastructure-security/host-security/log-analysis/elk5-elastalert/</loc>
      <lastmod>2019-08-01</lastmod>
      <changefreq>daily</changefreq>
@@ -307,6 +302,11 @@
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/intrusion_detection/wazuh/</loc>
+     <lastmod>2019-08-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/log_analysis/grokdebugger/</loc>
      <lastmod>2019-08-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
