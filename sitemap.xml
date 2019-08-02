@@ -306,6 +306,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/log_analysis/elastic-example/</loc>
+     <lastmod>2019-08-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/log_analysis/grokdebugger/</loc>
      <lastmod>2019-08-01</lastmod>
      <changefreq>daily</changefreq>
