@@ -2447,7 +2447,7 @@ wget -qO- https://rpm.nodesource.com/setup_10.x | bash
 yum install nodejs.x86_64 nodejs-devel.x86_64 -y
 
 # 安装wazuh api
-rpm -ivh wazuh-api-3.9.2-1.x86_64.rpm 
+rpm -ivh wazuh-api-3.9.2-1.x86_64.rpm
 
 # 安装完成后默认设置为开机自启并且已经启动该服务
 systemctl status wazuh-api.service
@@ -2463,10 +2463,10 @@ systemctl status wazuh-api.service
 systemctl restart kibana.service
 </code></pre>
 
-<p><img alt="wazuh-kibana-app-1" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-kibana-app-1.png" /></p>
+<p><img alt="wazuh-kibana-app-1" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh_kibana_app_1.png" /></p>
 <h3 id="kibana-wazuhwazuh-api">Kibana Wazuh插件配置Wazuh API账号密码</h3>
 <p>默认的账号密码是：foo/bar，ip地址就是你服务器的地址，端口是55000。<a href="https://documentation.wazuh.com/current/installation-guide/installing-wazuh-server/securing_api.html">官方链接</a></p>
-<p><img alt="wazuh-kibana-app-2" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-kibana-app-2.png" /></p>
+<p><img alt="wazuh-kibana-app-2" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh_kibana_app_2.png" /></p>
 <p>此时，在Kibana的Wazuh插件是没有数据的，因为还没有配置日志解析。</p>
 <h3 id="_1">配置采集日志模版</h3>
 <ul>
@@ -2493,7 +2493,7 @@ output.elasticsearch:
 </code></pre>
 
 <p>配置完成以后，重启服务，就可以在Kibana Wazuh插件中看到数据了。</p>
-<p><img alt="wazuh-kibana-app-3" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-kibana-app-3.png" /></p>
+<p><img alt="wazuh-kibana-app-3" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh_kibana_app_3.png" /></p>
 <h3 id="wazuh-client">wazuh client安装与配置</h3>
 <pre><code class="bash"># Client IP：10.10.10.25
 
@@ -2506,12 +2506,12 @@ rpm -ivh wazuh-agent-3.9.2-1.x86_64.rpm
 <ul>
 <li>首先在服务端生成密钥</li>
 </ul>
-<p><img alt="wazuh-add-agent-1" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-add-agent-1.png" /></p>
-<p><img alt="wazuh-add-agent-2" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-add-agent-2.png" /></p>
+<p><img alt="wazuh-add-agent-1" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh_add_agent_1.png" /></p>
+<p><img alt="wazuh-add-agent-2" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh_add_agent_2.png" /></p>
 <ul>
 <li>客户端导入文件</li>
 </ul>
-<p><img alt="wazuh-add-agent-3" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-add-agent-3.png" /></p>
+<p><img alt="wazuh-add-agent-3" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh_add_agent_3.png" /></p>
 <ul>
 <li>客户端修改配置文件：vim /var/ossec/etc/ossec.conf </li>
 </ul>
@@ -2529,7 +2529,7 @@ rpm -ivh wazuh-agent-3.9.2-1.x86_64.rpm
 <pre><code class="bash">/var/ossec/bin/ossec-control restart
 </code></pre>
 
-<p><img alt="wazuh-kibana-app-4" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-kibana-app-4.png" /></p>
+<p><img alt="wazuh-kibana-app-4" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh_kibana_app_4.png" /></p>
 <h3 id="_2">客户端自动化部署</h3>
 <p>主要是为了在系统初始化的时候就做好客户端安装。</p>
 <p><a href="https://documentation.wazuh.com/current/user-manual/api/reference.html#agents">官网地址</a></p>
