@@ -171,6 +171,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/ids_ips/wazuh/</loc>
+     <lastmod>2019-08-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/infrastructure-security/</loc>
      <lastmod>2019-08-01</lastmod>
      <changefreq>daily</changefreq>
@@ -297,11 +302,6 @@
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/infrastructure-security/network-security/office-network-security/gophish/</loc>
-     <lastmod>2019-08-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/intrusion_detection/wazuh/</loc>
      <lastmod>2019-08-01</lastmod>
      <changefreq>daily</changefreq>
     </url>

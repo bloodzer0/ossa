@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/intrusion_detection/wazuh/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/ids_ips/wazuh/">
       
       
         <meta name="author" content="bloodzer0">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Centos7 安装与配置wazuh3.9 - Open-Source Security Architecture</title>
+        <title>Wazuh知识体系 - Open-Source Security Architecture</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#centos7-wazuh39" tabindex="1" class="md-skip">
+      <a href="#wazuh" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                Centos7 安装与配置wazuh3.9
+                Wazuh知识体系
               </span>
             
           
@@ -886,16 +886,174 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
-      Infrastructure security
+      Ids ips
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
+        Ids ips
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Wazuh知识体系
+      </label>
+    
+    <a href="./" title="Wazuh知识体系" class="md-nav__link md-nav__link--active">
+      Wazuh知识体系
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#centos7wazuh" title="Centos7安装与配置Wazuh" class="md-nav__link">
+    Centos7安装与配置Wazuh
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wazuh-manager" title="Wazuh Manager安装" class="md-nav__link">
+    Wazuh Manager安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wazuh-api" title="Wazuh API安装" class="md-nav__link">
+    Wazuh API安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elkfilebeat" title="ELK+Filebeat安装" class="md-nav__link">
+    ELK+Filebeat安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibanawazuh" title="Kibana安装Wazuh插件" class="md-nav__link">
+    Kibana安装Wazuh插件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibana-wazuhwazuh-api" title="Kibana Wazuh插件配置Wazuh API账号密码" class="md-nav__link">
+    Kibana Wazuh插件配置Wazuh API账号密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="配置采集日志模版" class="md-nav__link">
+    配置采集日志模版
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wazuh-client" title="wazuh client安装与配置" class="md-nav__link">
+    wazuh client安装与配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="客户端自动化部署" class="md-nav__link">
+    客户端自动化部署
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wazuh_1" title="wazuh规则学习" class="md-nav__link">
+    wazuh规则学习
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="规则文件解读" class="md-nav__link">
+    规则文件解读
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Infrastructure security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
         Infrastructure security
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -920,13 +1078,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
     
-    <label class="md-nav__link" for="nav-4-2">
+    <label class="md-nav__link" for="nav-5-2">
       Container
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-2">
+      <label class="md-nav__title" for="nav-5-2">
         Container
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -968,13 +1126,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
     
-    <label class="md-nav__link" for="nav-4-3">
+    <label class="md-nav__link" for="nav-5-3">
       Host security
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-3">
+      <label class="md-nav__title" for="nav-5-3">
         Host security
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -999,13 +1157,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3-2" type="checkbox" id="nav-4-3-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-2" type="checkbox" id="nav-5-3-2">
     
-    <label class="md-nav__link" for="nav-4-3-2">
+    <label class="md-nav__link" for="nav-5-3-2">
       Fortress machine
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-3-2">
+      <label class="md-nav__title" for="nav-5-3-2">
         Fortress machine
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1035,13 +1193,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3-3" type="checkbox" id="nav-4-3-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-3" type="checkbox" id="nav-5-3-3">
     
-    <label class="md-nav__link" for="nav-4-3-3">
+    <label class="md-nav__link" for="nav-5-3-3">
       Honeypot
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-3-3">
+      <label class="md-nav__title" for="nav-5-3-3">
         Honeypot
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1083,13 +1241,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3-4" type="checkbox" id="nav-4-3-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-4" type="checkbox" id="nav-5-3-4">
     
-    <label class="md-nav__link" for="nav-4-3-4">
+    <label class="md-nav__link" for="nav-5-3-4">
       Host security scan
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-3-4">
+      <label class="md-nav__title" for="nav-5-3-4">
         Host security scan
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1143,13 +1301,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3-5" type="checkbox" id="nav-4-3-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-5" type="checkbox" id="nav-5-3-5">
     
-    <label class="md-nav__link" for="nav-4-3-5">
+    <label class="md-nav__link" for="nav-5-3-5">
       Ids ips
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-3-5">
+      <label class="md-nav__title" for="nav-5-3-5">
         Ids ips
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1215,13 +1373,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3-6" type="checkbox" id="nav-4-3-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-6" type="checkbox" id="nav-5-3-6">
     
-    <label class="md-nav__link" for="nav-4-3-6">
+    <label class="md-nav__link" for="nav-5-3-6">
       Log analysis
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-3-6">
+      <label class="md-nav__title" for="nav-5-3-6">
         Log analysis
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1292,13 +1450,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
     
-    <label class="md-nav__link" for="nav-4-4">
+    <label class="md-nav__link" for="nav-5-4">
       Network security
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-4">
+      <label class="md-nav__title" for="nav-5-4">
         Network security
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1323,13 +1481,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4-2" type="checkbox" id="nav-4-4-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4-2" type="checkbox" id="nav-5-4-2">
     
-    <label class="md-nav__link" for="nav-4-4-2">
+    <label class="md-nav__link" for="nav-5-4-2">
       Cc dos ddos
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-4-2">
+      <label class="md-nav__title" for="nav-5-4-2">
         Cc dos ddos
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1371,13 +1529,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4-3" type="checkbox" id="nav-4-4-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4-3" type="checkbox" id="nav-5-4-3">
     
-    <label class="md-nav__link" for="nav-4-4-3">
+    <label class="md-nav__link" for="nav-5-4-3">
       Ids ips
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-4-3">
+      <label class="md-nav__title" for="nav-5-4-3">
         Ids ips
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1407,13 +1565,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4-4" type="checkbox" id="nav-4-4-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4-4" type="checkbox" id="nav-5-4-4">
     
-    <label class="md-nav__link" for="nav-4-4-4">
+    <label class="md-nav__link" for="nav-5-4-4">
       Network security monitor
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-4-4">
+      <label class="md-nav__title" for="nav-5-4-4">
         Network security monitor
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1443,13 +1601,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4-5" type="checkbox" id="nav-4-4-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4-5" type="checkbox" id="nav-5-4-5">
     
-    <label class="md-nav__link" for="nav-4-4-5">
+    <label class="md-nav__link" for="nav-5-4-5">
       Office network security
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-4-5">
+      <label class="md-nav__title" for="nav-5-4-5">
         Office network security
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1498,176 +1656,6 @@
         
       </ul>
     </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
-    
-    <label class="md-nav__link" for="nav-5">
-      Intrusion detection
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Intrusion detection
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Centos7 安装与配置wazuh3.9
-      </label>
-    
-    <a href="./" title="Centos7 安装与配置wazuh3.9" class="md-nav__link md-nav__link--active">
-      Centos7 安装与配置wazuh3.9
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="安装过程" class="md-nav__link">
-    安装过程
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#manager" title="manager安装" class="md-nav__link">
-    manager安装
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wazuh-api" title="wazuh api安装" class="md-nav__link">
-    wazuh api安装
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#elasticsearchkibanafilebeat" title="elasticsearch+kibana+filebeat安装" class="md-nav__link">
-    elasticsearch+kibana+filebeat安装
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kibanawazuh" title="kibana安装wazuh插件" class="md-nav__link">
-    kibana安装wazuh插件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wazuh-kibanawazuh-api" title="wazuh-kibana配置wazuh api" class="md-nav__link">
-    wazuh-kibana配置wazuh api
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filebeat" title="filebeat配置" class="md-nav__link">
-    filebeat配置
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wazuh-client" title="wazuh client安装与配置" class="md-nav__link">
-    wazuh client安装与配置
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="客户端自动化部署" class="md-nav__link">
-    客户端自动化部署
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="规则学习" class="md-nav__link">
-    规则学习
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" title="规则文件解读" class="md-nav__link">
-    规则文件解读
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2261,58 +2249,52 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="安装过程" class="md-nav__link">
-    安装过程
+  <a href="#centos7wazuh" title="Centos7安装与配置Wazuh" class="md-nav__link">
+    Centos7安装与配置Wazuh
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#manager" title="manager安装" class="md-nav__link">
-    manager安装
+  <a href="#wazuh-manager" title="Wazuh Manager安装" class="md-nav__link">
+    Wazuh Manager安装
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#wazuh-api" title="wazuh api安装" class="md-nav__link">
-    wazuh api安装
+  <a href="#wazuh-api" title="Wazuh API安装" class="md-nav__link">
+    Wazuh API安装
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#elasticsearchkibanafilebeat" title="elasticsearch+kibana+filebeat安装" class="md-nav__link">
-    elasticsearch+kibana+filebeat安装
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kibanawazuh" title="kibana安装wazuh插件" class="md-nav__link">
-    kibana安装wazuh插件
+  <a href="#elkfilebeat" title="ELK+Filebeat安装" class="md-nav__link">
+    ELK+Filebeat安装
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#wazuh-kibanawazuh-api" title="wazuh-kibana配置wazuh api" class="md-nav__link">
-    wazuh-kibana配置wazuh api
+  <a href="#kibanawazuh" title="Kibana安装Wazuh插件" class="md-nav__link">
+    Kibana安装Wazuh插件
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#filebeat" title="filebeat配置" class="md-nav__link">
-    filebeat配置
+  <a href="#kibana-wazuhwazuh-api" title="Kibana Wazuh插件配置Wazuh API账号密码" class="md-nav__link">
+    Kibana Wazuh插件配置Wazuh API账号密码
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#_1" title="配置采集日志模版" class="md-nav__link">
+    配置采集日志模版
+  </a>
   
 </li>
         
@@ -2321,8 +2303,7 @@
     wazuh client安装与配置
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#_2" title="客户端自动化部署" class="md-nav__link">
@@ -2335,22 +2316,17 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="规则学习" class="md-nav__link">
-    规则学习
+  <a href="#wazuh_1" title="wazuh规则学习" class="md-nav__link">
+    wazuh规则学习
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" title="规则文件解读" class="md-nav__link">
+  <a href="#_3" title="规则文件解读" class="md-nav__link">
     规则文件解读
   </a>
   
@@ -2378,19 +2354,22 @@
               
                 
                 
-                <h1 id="centos7-wazuh39">Centos7 安装与配置wazuh3.9</h1>
-<p><a href="https://documentation.wazuh.com/current/installation-guide/packages-list/linux/linux-centos-6-greater.html">下载地址</a></p>
-<h2 id="_1">安装过程</h2>
-<h3 id="manager">manager安装</h3>
-<pre><code class="shell"># 主机：10.10.10.24
+                <h1 id="wazuh">Wazuh知识体系</h1>
+<h2 id="centos7wazuh">Centos7安装与配置Wazuh</h2>
+<p><a href="https://documentation.wazuh.com/current/installation-guide/packages-list/linux/linux-centos-6-greater.html">Wazuh下载地址</a></p>
+<h3 id="wazuh-manager">Wazuh Manager安装</h3>
+<pre><code class="bash"># Server IP：10.10.10.24
+
+# 安装manager
 rpm -ivh wazuh-manager-3.9.2-1.x86_64.rpm
 
-# 安装完成后默认设置为开机自启
+# 安装完成后默认设置为开机自启并且已经启动该服务
 systemctl status wazuh-manager.service
 </code></pre>
 
-<h3 id="wazuh-api">wazuh api安装</h3>
-<pre><code class="shell"># 主机：10.10.10.24
+<h3 id="wazuh-api">Wazuh API安装</h3>
+<pre><code class="bash"># Server IP：10.10.10.24
+
 # 安装nodejs10
 wget -qO- https://rpm.nodesource.com/setup_10.x | bash
 yum install nodejs.x86_64 nodejs-devel.x86_64 -y
@@ -2398,33 +2377,30 @@ yum install nodejs.x86_64 nodejs-devel.x86_64 -y
 # 安装wazuh api
 rpm -ivh wazuh-api-3.9.2-1.x86_64.rpm 
 
-# 安装完成后默认设置为开机自启
+# 安装完成后默认设置为开机自启并且已经启动该服务
 systemctl status wazuh-api.service
 </code></pre>
 
-<h3 id="elasticsearchkibanafilebeat">elasticsearch+kibana+filebeat安装</h3>
-<pre><code class="shell"># 主机：10.10.10.24
-# 参考：log_analysis &gt;&gt; Centos7 安装与配置ELK7.2+filebeat采集日志
-</code></pre>
-
-<h4 id="kibanawazuh">kibana安装wazuh插件</h4>
-<pre><code class="shell"># 这里是使用的root，真实环境最好不用，截止2019年06月28日，wazuh还不支持kibana7.2所以，我们要使用kibana7.1
+<h3 id="elkfilebeat">ELK+Filebeat安装</h3>
+<p>超链接</p>
+<h3 id="kibanawazuh">Kibana安装Wazuh插件</h3>
+<pre><code class="bash"># 这里是使用的root，真实环境最好不用，截止2019年06月28日，wazuh还不支持kibana7.2所以，我们要使用kibana7.1
 /usr/share/kibana/bin/kibana-plugin install https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.2_7.1.1.zip
 
 # 重启kibana，重启会花费较长的时间
 systemctl restart kibana.service
 </code></pre>
 
-<p><img alt="wazuh-kibana-app-1" src="https://github.com/bloodzer0/ossa/raw/master/intrusion_detection/wazuh-kibana-app-1.png" /></p>
-<h4 id="wazuh-kibanawazuh-api">wazuh-kibana配置wazuh api</h4>
+<p><img alt="wazuh-kibana-app-1" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-kibana-app-1.png" /></p>
+<h3 id="kibana-wazuhwazuh-api">Kibana Wazuh插件配置Wazuh API账号密码</h3>
 <p>默认的账号密码是：foo/bar，ip地址就是你服务器的地址，端口是55000。<a href="https://documentation.wazuh.com/current/installation-guide/installing-wazuh-server/securing_api.html">官方链接</a></p>
-<p><img alt="wazuh-kibana-app-2" src="https://github.com/bloodzer0/ossa/raw/master/intrusion_detection/wazuh-kibana-app-2.png" /></p>
-<p>此时，wazuh是无法查看信息的，因为还没有配置日志解析。</p>
-<h4 id="filebeat">filebeat配置</h4>
-<pre><code class="shell"># 安装filebeat
-rpm -ivh filebeat-7.1.1-x86_64.rpm
-
-# 下载filebeat配置文件
+<p><img alt="wazuh-kibana-app-2" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-kibana-app-2.png" /></p>
+<p>此时，在Kibana的Wazuh插件是没有数据的，因为还没有配置日志解析。</p>
+<h3 id="_1">配置采集日志模版</h3>
+<ul>
+<li>下载模版文件</li>
+</ul>
+<pre><code class="bash"># 下载filebeat配置文件
 curl -so /etc/filebeat/filebeat.yml https://raw.githubusercontent.com/wazuh/wazuh/v3.9.2/extensions/filebeat/7.x/filebeat.yml
 chmod go+r /etc/filebeat/filebeat.yml
 
@@ -2433,8 +2409,10 @@ curl -so /etc/filebeat/wazuh-template.json https://raw.githubusercontent.com/waz
 chmod go+r /etc/filebeat/wazuh-template.json
 </code></pre>
 
-<p>filebeat配置文件</p>
-<pre><code class="conf">output.elasticsearch:
+<ul>
+<li>配置Filebeat</li>
+</ul>
+<pre><code class="yaml">output.elasticsearch:
   hosts: ['http://YOUR_ELASTIC_SERVER_IP:9200']
 
 # 修改为
@@ -2442,38 +2420,51 @@ output.elasticsearch:
   hosts: ['http://10.10.10.24:9200']
 </code></pre>
 
-<p><img alt="wazuh-kibana-app-3" src="https://github.com/bloodzer0/ossa/raw/master/intrusion_detection/wazuh-kibana-app-3.png" /></p>
+<p>配置完成以后，重启服务，就可以在Kibana Wazuh插件中看到数据了。</p>
+<p><img alt="wazuh-kibana-app-3" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-kibana-app-3.png" /></p>
 <h3 id="wazuh-client">wazuh client安装与配置</h3>
-<pre><code class="shell"># 主机：10.10.10.25
+<pre><code class="bash"># Client IP：10.10.10.25
+
+# 安装agent
 rpm -ivh wazuh-agent-3.9.2-1.x86_64.rpm
 
 # 此时wazuh-agent的服务是启动失败的，因为没有认证文件
 </code></pre>
 
-<p>首先在服务端生成密钥</p>
-<p><img alt="wazuh-add-agent-1" src="https://github.com/bloodzer0/ossa/raw/master/intrusion_detection/wazuh-add-agent-1.png" /></p>
-<p><img alt="wazuh-add-agent-2" src="https://github.com/bloodzer0/ossa/raw/master/intrusion_detection/wazuh-add-agent-2.png" /></p>
-<p>客户端导入文件</p>
-<p><img alt="wazuh-add-agent-3" src="https://github.com/bloodzer0/ossa/raw/master/intrusion_detection/wazuh-add-agent-3.png" /></p>
-<p>客户端修改配置文件：vim /var/ossec/etc/ossec.conf </p>
-<pre><code class="conf">&lt;server&gt;
+<ul>
+<li>首先在服务端生成密钥</li>
+</ul>
+<p><img alt="wazuh-add-agent-1" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-add-agent-1.png" /></p>
+<p><img alt="wazuh-add-agent-2" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-add-agent-2.png" /></p>
+<ul>
+<li>客户端导入文件</li>
+</ul>
+<p><img alt="wazuh-add-agent-3" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-add-agent-3.png" /></p>
+<ul>
+<li>客户端修改配置文件：vim /var/ossec/etc/ossec.conf </li>
+</ul>
+<pre><code class="yaml"># 配置服务端IP地址与端口
+&lt;server&gt;
     &lt;address&gt;10.10.10.24&lt;/address&gt;
     &lt;port&gt;1514&lt;/port&gt;
     &lt;protocol&gt;udp&lt;/protocol&gt;
 &lt;/server&gt;
 </code></pre>
 
-<p>重新启动wazuh-agent，看板上查看文件</p>
-<pre><code class="shell">/var/ossec/bin/ossec-control restart
+<ul>
+<li>重启wazuh-agent，在Kibana上查看数据</li>
+</ul>
+<pre><code class="bash">/var/ossec/bin/ossec-control restart
 </code></pre>
 
-<p><img alt="wazuh-kibana-app-4" src="https://github.com/bloodzer0/ossa/raw/master/intrusion_detection/wazuh-kibana-app-4.png" /></p>
-<h4 id="_2">客户端自动化部署</h4>
+<p><img alt="wazuh-kibana-app-4" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh-add-agent-4.png" /></p>
+<h3 id="_2">客户端自动化部署</h3>
+<p>主要是为了在系统初始化的时候就做好客户端安装。</p>
 <p><a href="https://documentation.wazuh.com/current/user-manual/api/reference.html#agents">官网地址</a></p>
 <p><a href="https://raw.githubusercontent.com/wazuh/wazuh-api/3.9/examples/api-register-agent.sh">官方脚本实现</a></p>
 <p>在系统初始化的时候把wazuh的脚本串到系统初始化的脚本中。</p>
-<h2 id="_3">规则学习</h2>
-<h3 id="_4">规则文件解读</h3>
+<h2 id="wazuh_1">wazuh规则学习</h2>
+<h3 id="_3">规则文件解读</h3>
 <p>更新时间待定</p>
 <pre><code class="shell">vim /var/ossec/etc/ossec.conf 
 </code></pre>
@@ -2497,7 +2488,7 @@ rpm -ivh wazuh-agent-3.9.2-1.x86_64.rpm
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../infrastructure-security/network-security/office-network-security/gophish/" title="gophish 开源钓鱼工具" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../application-security/web-security-scan/" title="Web安全扫描" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2506,19 +2497,19 @@ rpm -ivh wazuh-agent-3.9.2-1.x86_64.rpm
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                gophish 开源钓鱼工具
+                Web安全扫描
               </span>
             </div>
           </a>
         
         
-          <a href="../../log_analysis/grokdebugger/" title="本地搭建GrokDebug" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../infrastructure-security/" title="基础设施安全" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                本地搭建GrokDebug
+                基础设施安全
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
