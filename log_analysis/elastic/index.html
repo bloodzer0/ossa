@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/log_analysis/weblog/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/log_analysis/elastic/">
       
       
         <meta name="author" content="bloodzer0">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Web日志字段解析 - Open-Source Security Architecture</title>
+        <title>Elastic知识体系 - Open-Source Security Architecture</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#web" tabindex="1" class="md-skip">
+      <a href="#elastic" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                Web日志字段解析
+                Elastic知识体系
               </span>
             
           
@@ -1591,11 +1591,301 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../elastic/" title="Elastic知识体系" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Elastic知识体系
+      </label>
+    
+    <a href="./" title="Elastic知识体系" class="md-nav__link md-nav__link--active">
       Elastic知识体系
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#elk" title="ELK系列" class="md-nav__link">
+    ELK系列
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#centos7elk72" title="Centos7安装与配置ELK7.2" class="md-nav__link">
+    Centos7安装与配置ELK7.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch" title="配置ElasticSearch" class="md-nav__link">
+    配置ElasticSearch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch_1" title="查看ElasticSearch集群" class="md-nav__link">
+    查看ElasticSearch集群
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch-template" title="配置ElasticSearch Template" class="md-nav__link">
+    配置ElasticSearch Template
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch-mapping" title="配置ElasticSearch Mapping" class="md-nav__link">
+    配置ElasticSearch Mapping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch_2" title="配置ElasticSearch索引" class="md-nav__link">
+    配置ElasticSearch索引
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch_3" title="ElasticSearch常用插件" class="md-nav__link">
+    ElasticSearch常用插件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibana" title="配置Kibana" class="md-nav__link">
+    配置Kibana
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibana_1" title="配置Kibana图表" class="md-nav__link">
+    配置Kibana图表
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timelion" title="Timelion" class="md-nav__link">
+    Timelion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibanagrok-debugger" title="Kibana中的Grok Debugger" class="md-nav__link">
+    Kibana中的Grok Debugger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logstash" title="配置Logstash" class="md-nav__link">
+    配置Logstash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logstash_1" title="测试Logstash" class="md-nav__link">
+    测试Logstash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logstash-filter" title="Logstash Filter" class="md-nav__link">
+    Logstash Filter
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logstash-patterns" title="配置Logstash Patterns" class="md-nav__link">
+    配置Logstash Patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geoipip" title="使用geoip解析IP地址" class="md-nav__link">
+    使用geoip解析IP地址
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codecmultiline" title="使用codec/multiline合并多行数据" class="md-nav__link">
+    使用codec/multiline合并多行数据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elk_1" title="ELK认证体系" class="md-nav__link">
+    ELK认证体系
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nginx-http-auth-basic" title="Nginx HTTP Auth Basic" class="md-nav__link">
+    Nginx HTTP Auth Basic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx-lua" title="Nginx Lua" class="md-nav__link">
+    Nginx Lua
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searchguard" title="SearchGuard" class="md-nav__link">
+    SearchGuard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shield" title="Shield" class="md-nav__link">
+    Shield
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xpack" title="XPack" class="md-nav__link">
+    XPack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beats" title="Beats系列" class="md-nav__link">
+    Beats系列
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#centos7filebeat" title="Centos7安装与配置Filebeat" class="md-nav__link">
+    Centos7安装与配置Filebeat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filebeat" title="配置Filebeat" class="md-nav__link">
+    配置Filebeat
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filebeat_1" title="Filebeat实现多行合并" class="md-nav__link">
+    Filebeat实现多行合并
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elk_2" title="解决ELK常见问题" class="md-nav__link">
+    解决ELK常见问题
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch_4" title="ElasticSearch脑裂" class="md-nav__link">
+    ElasticSearch脑裂
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1627,157 +1917,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Web日志字段解析
-      </label>
-    
-    <a href="./" title="Web日志字段解析" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../weblog/" title="Web日志字段解析" class="md-nav__link">
       Web日志字段解析
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#nginx" title="nginx日志字段" class="md-nav__link">
-    nginx日志字段
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" title="默认日志字段" class="md-nav__link">
-    默认日志字段
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="其它可使用字段" class="md-nav__link">
-    其它可使用字段
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nginxip" title="nginx透传客户端真实IP" class="md-nav__link">
-    nginx透传客户端真实IP
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#x-forwarded-for-realip" title="使用X-Forwarded-For + realip模块" class="md-nav__link">
-    使用X-Forwarded-For + realip模块
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#x-forwarded-for" title="使用X-Forwarded-For + 安全设置" class="md-nav__link">
-    使用X-Forwarded-For + 安全设置
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#x-real-ip" title="使用X-Real-IP" class="md-nav__link">
-    使用X-Real-IP
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nginxrequest_body-response_body" title="nginx打印request_body 与 response_body" class="md-nav__link">
-    nginx打印request_body 与 response_body
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#request_body" title="打印request_body" class="md-nav__link">
-    打印request_body
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#response_body" title="打印response_body" class="md-nav__link">
-    打印response_body
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nginx_1" title="完整的nginx日志配置" class="md-nav__link">
-    完整的nginx日志配置
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="注意事项" class="md-nav__link">
-    注意事项
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="参考资料" class="md-nav__link">
-    参考资料
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2359,23 +2503,188 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nginx" title="nginx日志字段" class="md-nav__link">
-    nginx日志字段
+  <a href="#elk" title="ELK系列" class="md-nav__link">
+    ELK系列
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="默认日志字段" class="md-nav__link">
-    默认日志字段
+  <a href="#centos7elk72" title="Centos7安装与配置ELK7.2" class="md-nav__link">
+    Centos7安装与配置ELK7.2
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="其它可使用字段" class="md-nav__link">
-    其它可使用字段
+  <a href="#elasticsearch" title="配置ElasticSearch" class="md-nav__link">
+    配置ElasticSearch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch_1" title="查看ElasticSearch集群" class="md-nav__link">
+    查看ElasticSearch集群
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch-template" title="配置ElasticSearch Template" class="md-nav__link">
+    配置ElasticSearch Template
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch-mapping" title="配置ElasticSearch Mapping" class="md-nav__link">
+    配置ElasticSearch Mapping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch_2" title="配置ElasticSearch索引" class="md-nav__link">
+    配置ElasticSearch索引
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch_3" title="ElasticSearch常用插件" class="md-nav__link">
+    ElasticSearch常用插件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibana" title="配置Kibana" class="md-nav__link">
+    配置Kibana
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibana_1" title="配置Kibana图表" class="md-nav__link">
+    配置Kibana图表
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timelion" title="Timelion" class="md-nav__link">
+    Timelion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibanagrok-debugger" title="Kibana中的Grok Debugger" class="md-nav__link">
+    Kibana中的Grok Debugger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logstash" title="配置Logstash" class="md-nav__link">
+    配置Logstash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logstash_1" title="测试Logstash" class="md-nav__link">
+    测试Logstash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logstash-filter" title="Logstash Filter" class="md-nav__link">
+    Logstash Filter
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logstash-patterns" title="配置Logstash Patterns" class="md-nav__link">
+    配置Logstash Patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geoipip" title="使用geoip解析IP地址" class="md-nav__link">
+    使用geoip解析IP地址
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codecmultiline" title="使用codec/multiline合并多行数据" class="md-nav__link">
+    使用codec/multiline合并多行数据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elk_1" title="ELK认证体系" class="md-nav__link">
+    ELK认证体系
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nginx-http-auth-basic" title="Nginx HTTP Auth Basic" class="md-nav__link">
+    Nginx HTTP Auth Basic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx-lua" title="Nginx Lua" class="md-nav__link">
+    Nginx Lua
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searchguard" title="SearchGuard" class="md-nav__link">
+    SearchGuard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shield" title="Shield" class="md-nav__link">
+    Shield
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xpack" title="XPack" class="md-nav__link">
+    XPack
   </a>
   
 </li>
@@ -2386,30 +2695,56 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nginxip" title="nginx透传客户端真实IP" class="md-nav__link">
-    nginx透传客户端真实IP
+  <a href="#beats" title="Beats系列" class="md-nav__link">
+    Beats系列
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#x-forwarded-for-realip" title="使用X-Forwarded-For + realip模块" class="md-nav__link">
-    使用X-Forwarded-For + realip模块
+  <a href="#centos7filebeat" title="Centos7安装与配置Filebeat" class="md-nav__link">
+    Centos7安装与配置Filebeat
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#x-forwarded-for" title="使用X-Forwarded-For + 安全设置" class="md-nav__link">
-    使用X-Forwarded-For + 安全设置
+  <a href="#filebeat" title="配置Filebeat" class="md-nav__link">
+    配置Filebeat
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filebeat_1" title="Filebeat实现多行合并" class="md-nav__link">
+    Filebeat实现多行合并
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elk_2" title="解决ELK常见问题" class="md-nav__link">
+    解决ELK常见问题
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
-  <a href="#x-real-ip" title="使用X-Real-IP" class="md-nav__link">
-    使用X-Real-IP
+  <a href="#elasticsearch_4" title="ElasticSearch脑裂" class="md-nav__link">
+    ElasticSearch脑裂
   </a>
   
 </li>
@@ -2420,54 +2755,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nginxrequest_body-response_body" title="nginx打印request_body 与 response_body" class="md-nav__link">
-    nginx打印request_body 与 response_body
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#request_body" title="打印request_body" class="md-nav__link">
-    打印request_body
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#response_body" title="打印response_body" class="md-nav__link">
-    打印response_body
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nginx_1" title="完整的nginx日志配置" class="md-nav__link">
-    完整的nginx日志配置
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="注意事项" class="md-nav__link">
-    注意事项
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="参考资料" class="md-nav__link">
+  <a href="#_1" title="参考资料" class="md-nav__link">
     参考资料
   </a>
   
@@ -2490,389 +2778,301 @@
               
                 
                 
-                <h1 id="web">Web日志字段解析</h1>
-<p>本文以以主流的nginx为例</p>
-<h2 id="nginx">nginx日志字段</h2>
-<p><a href="https://docs.nginx.com/nginx/admin-guide/monitoring/logging/#setting-up-the-access-log">配置access log</a></p>
-<p><a href="http://nginx.org/en/docs/http/ngx_http_log_module.html">http_log_module文档</a></p>
-<p><a href="http://nginx.org/en/docs/http/ngx_http_upstream_module.html">upstream_module文档</a></p>
-<h3 id="_1">默认日志字段</h3>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>含义</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>remote_addr</td>
-<td>客户端地址</td>
-<td>10.10.10.1</td>
-</tr>
-<tr>
-<td>remote_user</td>
-<td>客户端用户名</td>
-<td></td>
-</tr>
-<tr>
-<td>time_local</td>
-<td>时间戳</td>
-<td>16/Jun/2019:23:29:50 -0400</td>
-</tr>
-<tr>
-<td>request</td>
-<td>请求的URI和协议</td>
-<td>GET /favicon.ico HTTP/1.1</td>
-</tr>
-<tr>
-<td>status</td>
-<td>返回状态码</td>
-<td>404</td>
-</tr>
-<tr>
-<td>body_bytes_sent</td>
-<td>响应body字节数</td>
-<td>3650</td>
-</tr>
-<tr>
-<td>http_referer</td>
-<td>referer信息</td>
-<td>http://10.10.10.14/</td>
-</tr>
-<tr>
-<td>http_user_agent</td>
-<td>UA信息</td>
-<td>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36</td>
-</tr>
-<tr>
-<td>http_x_forwarded_for</td>
-<td>客户端IP</td>
-<td>192.168.1.1</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_2">其它可使用字段</h3>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>含义</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-</td>
-<td>占位符</td>
-<td>-</td>
-</tr>
-<tr>
-<td>scheme</td>
-<td>请求协议</td>
-<td>http</td>
-</tr>
-<tr>
-<td>request_method</td>
-<td>http请求方法</td>
-<td>GET</td>
-</tr>
-<tr>
-<td>request_time</td>
-<td>请求处理时间</td>
-<td>0.000</td>
-</tr>
-<tr>
-<td>request_length</td>
-<td>请求的长度</td>
-<td>571</td>
-</tr>
-<tr>
-<td>bytes_sent</td>
-<td>响应总字节数</td>
-<td>175</td>
-</tr>
-<tr>
-<td>server_name</td>
-<td>虚拟主机名称</td>
-<td></td>
-</tr>
-<tr>
-<td>http_host</td>
-<td>IP或域名(包括端口)</td>
-<td>10.10.10.14:81</td>
-</tr>
-<tr>
-<td>host</td>
-<td>IP或域名(不包括端口)</td>
-<td>10.10.10.14</td>
-</tr>
-<tr>
-<td>request_body</td>
-<td>请求的body</td>
-<td></td>
-</tr>
-<tr>
-<td>upstream_status</td>
-<td>upstream状态</td>
-<td>200</td>
-</tr>
-<tr>
-<td>upstream_addr</td>
-<td>回源IP</td>
-<td></td>
-</tr>
-<tr>
-<td>upstream_connect_time</td>
-<td>与服务器连接所花费的时间</td>
-<td></td>
-</tr>
-<tr>
-<td>upstream_response_time</td>
-<td>后端处理时间</td>
-<td></td>
-</tr>
-<tr>
-<td>ssl_protocol</td>
-<td>SSL协议版本</td>
-<td>TLSv1</td>
-</tr>
-<tr>
-<td>ssl_cipher</td>
-<td>交换数据中的算法</td>
-<td>RC4-SHA</td>
-</tr>
-</tbody>
-</table>
-<h2 id="nginxip">nginx透传客户端真实IP</h2>
-<p>当经过N个nginx代理时，Server端如何拿到Client端端真实IP？</p>
-<pre><code class="shell"># 环境
+                <h1 id="elastic">Elastic知识体系</h1>
+<h2 id="elk">ELK系列</h2>
+<h3 id="centos7elk72">Centos7安装与配置ELK7.2</h3>
+<pre><code class="bash"># 导入私钥
+rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
-client_ip：10.10.10.1
+# ElasticSearch
+rpm -ivh elasticsearch-7.2.0-x86_64.rpm
+systemctl enable elasticsearch.service
+systemctl start elasticsearch.service
 
-proxy_server_1：10.10.10.16
-proxy_server_2：10.10.10.17
+# Kibana
+rpm -ivh kibana-7.2.0-x86_64.rpm
+systemctl enable kibana.service
+systemctl start kibana.service
 
-web_server：10.10.10.18
+# Logstash
+rpm -ivh logstash-7.2.0.rpm
+# 可以以服务启动logstash，但是不建议这么做
 </code></pre>
 
-<h3 id="x-forwarded-for-realip">使用X-Forwarded-For + realip模块</h3>
-<p>使用realip模块可以解决该问题。</p>
-<p>查看nginx的编译参数：nginx -V（默认是安装了realip模块的）</p>
-<pre><code class="shell"># set_real_ip_from：表示从何处获取真实IP，只认可自己信赖的IP，可以是网段，也可以设置多个。
-# real_ip_header：表示从哪个header属性中获取真实IP。
-# real_ip_recursive：递归检索真实IP，如果从X-Forwarded-For中获取，则需要递归检索；如果中X-Real-IP中获取，无需递归。
-</code></pre>
-
-<p>配置nginx</p>
-<pre><code class="conf"># proxy_server_1的nginx配置
-location / {
-    proxy_pass http://10.10.10.17;
-    proxy_set_header Host $http_host;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-}
-
-# proxy_server_2的nginx配置
-location / {
-    proxy_pass http://10.10.10.18;
-    proxy_set_header Host $http_host;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-}
-
-# web_server的nginx配置，在server中新增
-set_real_ip_from 10.10.10.16;
-set_real_ip_from 10.10.10.17;
-real_ip_header X-Forwarded-For;
-real_ip_recursive on;
-</code></pre>
-
-<p>使用浏览器正常访问，默认不改变日志格式的情况下，我们来看3台server的日志情况。</p>
-<pre><code># proxy_server_1的日志
-10.10.10.1 - - [25/Jun/2019:20:49:03 -0400] &quot;GET / HTTP/1.1&quot; 304 0 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;-&quot;
-
-# proxy_server_2的日志
-10.10.10.16 - - [25/Jun/2019:20:49:03 -0400] &quot;GET / HTTP/1.0&quot; 304 0 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;10.10.10.1&quot;
-
-# web_server的日志
-10.10.10.1 - - [25/Jun/2019:20:49:03 -0400] &quot;GET / HTTP/1.0&quot; 304 0 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;10.10.10.1, 10.10.10.16&quot;
-</code></pre>
-
-<p>这个时候的remote_addr就是用户的真实IP，添加XFF头访问，我们来看3台server的日志情况。</p>
-<pre><code># proxy_server_1的日志
-10.10.10.1 - - [25/Jun/2019:20:59:10 -0400] &quot;GET / HTTP/1.1&quot; 200 15 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;192.168.1.1&quot;
-
-# proxy_server_2的日志
-10.10.10.16 - - [25/Jun/2019:20:59:10 -0400] &quot;GET / HTTP/1.0&quot; 200 15 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;192.168.1.1, 10.10.10.1&quot;
-
-# web_server的日志
-10.10.10.1 - - [25/Jun/2019:20:59:10 -0400] &quot;GET / HTTP/1.0&quot; 200 15 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;192.168.1.1, 10.10.10.1, 10.10.10.16&quot;
-</code></pre>
-
-<p>可以看到用户自己配置的XFF头并没有被识别为真实的IP。</p>
-<h3 id="x-forwarded-for">使用X-Forwarded-For + 安全设置</h3>
-<p>在第一个代理处处理用户传递的XFF，达到忽略用户传递的XFF值的效果。</p>
-<p>配置nginx</p>
-<pre><code class="conf"># proxy_server_1的nginx配置
-location / {
-    proxy_pass http://10.10.10.17;
-    proxy_set_header X-Forwarded-For $remote_addr;
-}
-
-# proxy_server_2的nginx配置
-location / {
-    proxy_pass http://10.10.10.18;
-}
-
-# web_server不做任何配置
-</code></pre>
-
-<p>使用浏览器正常访问，默认不改变日志格式的情况下，我们来看3台server的日志情况</p>
-<pre><code># proxy_server_1的日志
-10.10.10.1 - - [25/Jun/2019:21:17:42 -0400] &quot;GET / HTTP/1.1&quot; 304 0 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;-&quot;
-
-# proxy_server_2的日志
-10.10.10.16 - - [25/Jun/2019:21:17:42 -0400] &quot;GET / HTTP/1.0&quot; 304 0 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;10.10.10.1&quot;
-
-# web_server的日志
-10.10.10.17 - - [25/Jun/2019:21:17:42 -0400] &quot;GET / HTTP/1.0&quot; 304 0 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;10.10.10.1&quot;
-</code></pre>
-
-<p>这个时候http_x_forwarded_for就是代表用户真实IP，添加XFF头访问，我们来看3台server的日志情况。</p>
-<pre><code># proxy_server_1的日志
-10.10.10.1 - - [25/Jun/2019:21:19:51 -0400] &quot;GET / HTTP/1.1&quot; 200 15 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;192.168.1.1&quot;
-
-# proxy_server_2的日志
-10.10.10.16 - - [25/Jun/2019:21:19:51 -0400] &quot;GET / HTTP/1.0&quot; 200 15 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;10.10.10.1&quot;
-
-# web_server的日志
-10.10.10.17 - - [25/Jun/2019:21:19:51 -0400] &quot;GET / HTTP/1.0&quot; 200 15 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;10.10.10.1&quot;
-</code></pre>
-
-<h3 id="x-real-ip">使用X-Real-IP</h3>
-<p>配置nginx</p>
-<pre><code class="conf"># proxy_server_1的nginx配置
-location / {
-    proxy_pass http://10.10.10.17;
-    proxy_set_header X-Real-IP $remote_addr;
-}
-
-# proxy_server_2的nginx配置
-location / {
-    proxy_pass http://10.10.10.18;
-}
-
-# 两台proxy_server与web_server的日志第一个字段由$http_x_real_ip 替换 $remote_addr 
-log_format  main  '$http_x_real_ip - $remote_user
-</code></pre>
-
-<p>使用浏览器正常访问，我们来看3台server的日志情况</p>
-<pre><code># proxy_server_1的日志
-- - - [25/Jun/2019:21:33:47 -0400] &quot;GET / HTTP/1.1&quot; 304 0 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;-&quot;
-
-# proxy_server_2的日志
-10.10.10.1 - - [25/Jun/2019:21:41:59 -0400] &quot;GET / HTTP/1.0&quot; 304 0 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;-&quot;
-
-# web_server的日志
-10.10.10.1 - - [25/Jun/2019:21:33:47 -0400] &quot;GET / HTTP/1.0&quot; 304 0 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;-&quot;
-</code></pre>
-
-<p>这个时候web_server的http_x_real_ip就是代表用户真实IP，添加XFF头访问，我们来看3台server的日志情况。</p>
-<pre><code># proxy_server_1的日志
-- - - [25/Jun/2019:21:34:24 -0400] &quot;GET / HTTP/1.1&quot; 200 15 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;192.168.1.1&quot;
-
-# proxy_server_2的日志
-10.10.10.1 - - [25/Jun/2019:21:42:26 -0400] &quot;GET / HTTP/1.0&quot; 200 15 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;192.168.1.1&quot;
-
-# web_server的日志
-10.10.10.1 - - [25/Jun/2019:21:34:24 -0400] &quot;GET / HTTP/1.0&quot; 200 15 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36&quot; &quot;192.168.1.1&quot;
-</code></pre>
-
-<p>与不添加一致</p>
-<h2 id="nginxrequest_body-response_body">nginx打印request_body 与 response_body</h2>
-<h3 id="request_body">打印request_body</h3>
-<pre><code class="conf"># web_server配置
-# The variable’s value is made available in locations processed by the proxy_pass, fastcgi_pass, uwsgi_pass, and scgi_pass directives when the request body was read to a memory buffer.
-# 意味着：只有location中用到proxy_pass、fastcgi_pass、scgi_pass命令时，request_body才有值。
-
-log_format main $request_body # 我这里是简写
-
-location ~ \.php$ {
-    root           /usr/share/nginx/html;
-    fastcgi_pass   127.0.0.1:9000;
-    fastcgi_index  index.php;
-    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-    include        fastcgi_params;
-}
-</code></pre>
-
-<p>此时的日志样例：（我这里配置为json格式了）</p>
-<pre><code>{ &quot;@timestamp&quot;: &quot;26/Jun/2019:22:27:54 -0400&quot;, &quot;remote_addr&quot;: &quot;10.10.10.1&quot;,&quot;remote_port&quot;: &quot;51925&quot;,&quot;scheme&quot;: &quot;http&quot;,&quot;request_uri&quot;: &quot;/login.php&quot;,&quot;request_method&quot;: &quot;POST&quot;,&quot;request_time&quot;: &quot;0.004&quot;,&quot;request_length&quot;: &quot;767&quot;,&quot;response_status&quot;: &quot;302&quot;,&quot;body_bytes_sent&quot;: &quot;5&quot;,&quot;http_referer&quot;: &quot;http://10.10.10.14/login.php&quot;,&quot;http_user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36&quot;,&quot;http_x_forwarded_for&quot;: &quot;&quot;,&quot;upstream_addr&quot;: &quot;127.0.0.1:9000&quot;,&quot;upstream_response_time&quot;: &quot;0.003&quot;,&quot;request_body&quot;: &quot;username=admin&amp;password=password&amp;Login=Login&amp;user_token=b3a8157fff35591d2bf6f616f8221355&quot;, }
-</code></pre>
-
-<h3 id="response_body">打印response_body</h3>
-<p>需要配置lua模块，参考：nginx标签下的文章</p>
-<pre><code class="conf"># web_server配置
-    log_format main $response_body # 我这里是简写
-    server {
-        listen       80;
-        server_name  localhost;
-        lua_need_request_body on;
-        set $response_body &quot;&quot;;
-        body_filter_by_lua '
-            local response_body = string.sub(ngx.arg[1],1,1000)
-            ngx.ctx.buffered = (ngx.ctx.buffered or &quot;&quot;) ..  response_body
-            if ngx.arg[2] then
-                ngx.var.response_body = ngx.ctx.buffered
-            end
-        ';
-        location ~ \.php$ {
-            root           /usr/local/nginx/html;
-            fastcgi_pass   127.0.0.1:9000;
-            fastcgi_index  index.php;
-            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-            include        fastcgi_params;
-        }
-    }
-</code></pre>
-
-<p>此时的日志样例</p>
-<pre><code>{ &quot;@timestamp&quot;: &quot;27/Jun/2019:01:18:05 -0400&quot;, &quot;remote_addr&quot;: &quot;10.10.10.1&quot;,&quot;remote_port&quot;: &quot;54794&quot;,&quot;scheme&quot;: &quot;http&quot;,&quot;request_uri&quot;: &quot;/robots.txt&quot;,&quot;request_method&quot;: &quot;GET&quot;,&quot;request_time&quot;: &quot;0.000&quot;,&quot;request_length&quot;: &quot;510&quot;,&quot;response_status&quot;: &quot;200&quot;,&quot;body_bytes_sent&quot;: &quot;26&quot;,&quot;http_referer&quot;: &quot;&quot;,&quot;http_user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36&quot;,&quot;http_x_forwarded_for&quot;: &quot;&quot;,&quot;upstream_addr&quot;: &quot;&quot;,&quot;upstream_response_time&quot;: &quot;&quot;,&quot;request_body&quot;: &quot;&quot;, &quot;response_body&quot;: &quot;User-agent: *\r\nDisallow: /&quot; }
-</code></pre>
-
-<h2 id="nginx_1">完整的nginx日志配置</h2>
-<pre><code>    log_format  main escape=json  '{ &quot;@timestamp&quot;: &quot;$time_local&quot;, '
-                        '&quot;remote_addr&quot;: &quot;$remote_addr&quot;,'
-                        '&quot;remote_port&quot;: &quot;$remote_port&quot;,'
-                        '&quot;scheme&quot;: &quot;$scheme&quot;,'
-                        '&quot;request_uri&quot;: &quot;$request_uri&quot;,'
-                        '&quot;request_method&quot;: &quot;$request_method&quot;,'
-                        '&quot;request_time&quot;: &quot;$request_time&quot;,'
-                        '&quot;request_length&quot;: &quot;$request_length&quot;,'
-                        '&quot;response_status&quot;: &quot;$status&quot;,'
-                        '&quot;body_bytes_sent&quot;: &quot;$body_bytes_sent&quot;,'
-                        '&quot;http_referer&quot;: &quot;$http_referer&quot;,'
-                        '&quot;http_user_agent&quot;: &quot;$http_user_agent&quot;,'
-                        '&quot;http_x_forwarded_for&quot;: &quot;$http_x_forwarded_for&quot;,'
-                        '&quot;upstream_addr&quot;: &quot;$upstream_addr&quot;,'
-                        '&quot;upstream_response_time&quot;: &quot;$upstream_response_time&quot;,'
-                        '&quot;request_body&quot;: &quot;$request_body&quot;, '
-                        '&quot;response_body&quot;: &quot;$response_body&quot; }';
-</code></pre>
-
-<p>完整日志样例</p>
-<pre><code>{ &quot;@timestamp&quot;: &quot;26/Jun/2019:22:39:07 -0400&quot;, &quot;remote_addr&quot;: &quot;10.10.10.1&quot;,&quot;remote_port&quot;: &quot;52235&quot;,&quot;scheme&quot;: &quot;http&quot;,&quot;request_uri&quot;: &quot;/login.php&quot;,&quot;request_method&quot;: &quot;POST&quot;,&quot;request_time&quot;: &quot;0.003&quot;,&quot;request_length&quot;: &quot;767&quot;,&quot;response_status&quot;: &quot;302&quot;,&quot;body_bytes_sent&quot;: &quot;5&quot;,&quot;http_referer&quot;: &quot;http://10.10.10.14/login.php&quot;,&quot;http_user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36&quot;,&quot;http_x_forwarded_for&quot;: &quot;&quot;,&quot;upstream_addr&quot;: &quot;127.0.0.1:9000&quot;,&quot;upstream_response_time&quot;: &quot;0.004&quot;,&quot;request_body&quot;: &quot;username=admin&amp;password=password&amp;Login=Login&amp;user_token=29ebbb65a40421194fd12d0fc9a98d77&quot; }
-</code></pre>
-
-<h3 id="_3">注意事项</h3>
+<h3 id="elasticsearch">配置ElasticSearch</h3>
 <ul>
-<li>request_body 与 response_body 如果在上传文件或者下载文件时，body内容会很大，需要考虑对性能和存储的影响。</li>
-<li>对于timestamp参数，可以不实用time_local而使用time_iso8601。</li>
-<li>如果运维对于网络的性能有要求，可以考虑使用$tcpinfo_rtt, $tcpinfo_rttvar, $tcpinfo_snd_cwnd, $tcpinfo_rcv_space。</li>
+<li>vim /etc/elasticsearch/elasticsearch.yml</li>
 </ul>
-<h2 id="_4">参考资料</h2>
-<p><a href="https://www.cnblogs.com/tea-melon/p/10977516.html">Nginx多级反向代理下的IP透传</a></p>
-<p><a href="https://juejin.im/entry/5bbb6e90f265da0a89304a43">Nginx 之 X-Forwarded-For 中首个IP一定真实吗？</a></p>
+<pre><code class="yaml"># 基础的配置选项
+cluster.name: bloodzer0 # 集群名字
+node.name: node-1 # 节点名字
+node.attr.rack: r1 # 节点属性
+
+path.data: /var/lib/elasticsearch # 数据路径
+path.logs: /var/log/elasticsearch # 日志路径
+
+bootstrap.memory_lock: true # 内存锁定，禁用虚拟内存
+
+network.host: 0.0.0.0 # 绑定主机
+http.port: 9200 # 绑定端口
+
+discovery.seed_hosts: [&quot;elk-server&quot;] # 发现主机
+cluster.initial_master_nodes: [&quot;node-1&quot;] # 主节点
+
+gateway.recover_after_nodes: 3 # 直到N个节点启动恢复集群
+action.destructive_requires_name: true # 删除索引需要显示名称
+</code></pre>
+
+<ul>
+<li>vim /etc/elasticsearch/jvm.options</li>
+</ul>
+<pre><code class="conf"># 设置堆大小，一般不超过物理存储的50%
+-Xms1g
+-Xmx1g
+
+# 堆转储路径
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:HeapDumpPath=/var/lib/elasticsearch
+
+# jdk * GC logging
+
+# JVM错误日志
+-XX:ErrorFile=/var/log/elasticsearch/hs_err_pid%p.log
+</code></pre>
+
+<h3 id="elasticsearch_1">查看ElasticSearch集群</h3>
+<ul>
+<li>集群概述：http://10.10.10.15:9200/</li>
+<li>集群健康性：http://10.10.10.15:9200/_cat/health?v</li>
+</ul>
+<pre><code class="bash"># green: 所有主分片和从分片都可用
+# yellow: 所有主分片可用，但存在不可用的从分片
+# red: 某些数据由于某种原因不可用
+</code></pre>
+
+<ul>
+<li>查看索引：http://10.10.10.15:9200/_cat/indices?v</li>
+</ul>
+<h3 id="elasticsearch-template">配置ElasticSearch Template</h3>
+<p>参考：https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-templates.html</p>
+<ul>
+<li>创建Template</li>
+</ul>
+<pre><code class="bash">curl -X PUT &quot;10.10.10.15:9200/_template/template_name&quot; -H 'Content-Type: application/json' -d'
+{
+  &quot;index_patterns&quot;: [&quot;te*&quot;, &quot;bar*&quot;],
+  &quot;settings&quot;: {
+    &quot;number_of_shards&quot;: 1
+  },
+  &quot;mappings&quot;: {
+    &quot;_source&quot;: {
+      &quot;enabled&quot;: false
+    },
+    &quot;properties&quot;: {
+      &quot;host_name&quot;: {
+        &quot;type&quot;: &quot;keyword&quot;
+      },
+      &quot;created_at&quot;: {
+        &quot;type&quot;: &quot;date&quot;,
+        &quot;format&quot;: &quot;EEE MMM dd HH:mm:ss Z yyyy&quot;
+      }
+    }
+  }
+}
+'
+</code></pre>
+
+<ul>
+<li>修改Template：与创建template一致。</li>
+<li>删除Template</li>
+</ul>
+<pre><code class="bash">curl -X DELETE &quot;10.10.10.15:9200/_template/template_name&quot;
+</code></pre>
+
+<h3 id="elasticsearch-mapping">配置ElasticSearch Mapping</h3>
+<p>参考：https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-put-mapping.html</p>
+<h3 id="elasticsearch_2">配置ElasticSearch索引</h3>
+<p>参考：https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html</p>
+<ul>
+<li>关闭/开启索引</li>
+</ul>
+<pre><code class="bash">curl -X POST &quot;10.10.10.15:9200/my_index/_close&quot;
+
+curl -X POST &quot;10.10.10.15:9200/my_index/_open&quot;
+</code></pre>
+
+<ul>
+<li>定期清理索引</li>
+</ul>
+<pre><code class="python">import os
+import datetime
+
+day_ago = (datetime.datetime.now() - datetime.timedelta(days=3)).strftime(&quot;%Y.%m.%d&quot;)
+command = 'curl -XDELETE &quot;http://10.10.10.15/index_name-%s&quot;' % day_ago
+os.system(command)
+</code></pre>
+
+<h3 id="elasticsearch_3">ElasticSearch常用插件</h3>
+<ul>
+<li>Head</li>
+</ul>
+<h3 id="kibana">配置Kibana</h3>
+<p>vim /etc/kibana/kibana.yml</p>
+<pre><code class="yaml">server.port: 5601 # 绑定端口
+server.host: &quot;0.0.0.0&quot; # 绑定主机
+elasticsearch.hosts: [&quot;http://10.10.10.15:9200&quot;] # ElasticSearch地址
+</code></pre>
+
+<h3 id="kibana_1">配置Kibana图表</h3>
+<p>参考：https://www.elastic.co/cn/products/kibana/features</p>
+<h4 id="timelion">Timelion</h4>
+<p>以下案例在wazuh入侵检测系统的日志中进行</p>
+<pre><code class="conf">.es(index=wazuh-alerts-3.x*,q='rule.description: &quot;PAM: Login session opened.&quot;').label(登录),.es(index=wazuh-alerts-3.x*,q='rule.description: &quot;PAM: Login session closed.&quot;').label(退出)
+</code></pre>
+
+<p><img alt="kibana_timelion_1" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/log_analysis/kibana_timelion_1.png" /></p>
+<h3 id="kibanagrok-debugger">Kibana中的Grok Debugger</h3>
+<p>在Dev Tools中：http://10.10.10.15:5601/app/kibana#/dev_tools/grokdebugger</p>
+<h3 id="logstash">配置Logstash</h3>
+<pre><code class="yaml">node.name: test # 节点名称
+
+path.data: /var/lib/logstash # 数据存储目录
+pipeline.id: main # pipeline ID
+pipeline.workers: 2 # 输出通道的worker数量，默认为CPU核数
+
+pipeline.batch.size: 125 # 批处理数据的大小
+pipeline.batch.delay: 50 # 批处理数据的延迟
+
+config.reload.automatic: false # 是否自动重新加载被修改的配置文件
+config.reload.interval: 3s # 配置文件检查间隔时间
+</code></pre>
+
+<h3 id="logstash_1">测试Logstash</h3>
+<pre><code class="bash">/usr/share/logstash/bin/logstash -e 'input { stdin {} } output { stdout {} }'
+</code></pre>
+
+<h3 id="logstash-filter">Logstash Filter</h3>
+<h4 id="logstash-patterns">配置Logstash Patterns</h4>
+<p>Logstash Patterns目录：/usr/share/logstash/vendor/bundle/jruby/2.5.0/gems/logstash-patterns-core-4.1.2/patterns/</p>
+<ul>
+<li>Logstash在配置文件中使用自定义的Pattern</li>
+</ul>
+<pre><code class="conf">filter {
+    grok {
+        patterns_dir =&gt; [&quot;patterns_dir&quot;]
+    }
+}
+</code></pre>
+
+<h4 id="geoipip">使用geoip解析IP地址</h4>
+<pre><code class="conf">filter {
+    geoip {
+        source =&gt; &quot;remote_addr&quot; # 指定用来解析的原IP字段
+    }
+}
+</code></pre>
+
+<h4 id="codecmultiline">使用codec/multiline合并多行数据</h4>
+<pre><code class="conf">filter {
+    multiline {
+        pattern =&gt; &quot;^%{TIMESTAMP_ISO8601}&quot;
+        negate =&gt; ture
+        what =&gt; previous # 如果不是以时间开头的行合并到上一行
+    }
+}
+
+# 还有另外一种写法
+filter {
+    multiline {
+        pattern =&gt; &quot;%{TIMESTAMP_ISO8601}&quot;
+        what =&gt; next # 如果是以时间开头的行，则开始新的一行
+    }
+}
+</code></pre>
+
+<h2 id="elk_1">ELK认证体系</h2>
+<h3 id="nginx-http-auth-basic">Nginx HTTP Auth Basic</h3>
+<ul>
+<li>系统安装Nginx</li>
+</ul>
+<pre><code class="bash"># 安装nginx与nginx认证模块
+yum install epel-release -y
+yum install nginx.x86_64 httpd-tools.x86_64 -y
+
+</code></pre>
+
+<ul>
+<li>Nginx配置文件如下：vim /etc/nginx/nginx.conf</li>
+</ul>
+<pre><code class="conf">server {
+    listen 8080;
+    server_name kibana;
+    auth_basic &quot;Restricted Access&quot;;
+    auth_basic_user_file /etc/nginx/kibana-user;
+
+    location / {
+        proxy_pass http://10.10.10.15:5601;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+</code></pre>
+
+<ul>
+<li>配置账号密码</li>
+</ul>
+<pre><code class="bash"># 设置账号密码
+htpasswd -cm /etc/nginx/kibana-user username
+
+# 重启nginx服务
+systemctl restart nginx.service
+</code></pre>
+
+<h3 id="nginx-lua">Nginx Lua</h3>
+<h3 id="searchguard">SearchGuard</h3>
+<p><a href="http://docs.search-guard.com/latest/index">官方文档</a></p>
+<h3 id="shield">Shield</h3>
+<p><a href="https://www.elastic.co/guide/en/shield/current/index.html">官方文档</a></p>
+<h3 id="xpack">XPack</h3>
+<h2 id="beats">Beats系列</h2>
+<h3 id="centos7filebeat">Centos7安装与配置Filebeat</h3>
+<pre><code class="bash">rpm -ivh filebeat-7.2.0-x86_64.rpm
+</code></pre>
+
+<h3 id="filebeat">配置Filebeat</h3>
+<ul>
+<li>删除不必要的字段：在Filebeat7.X的版本中，默认的@timestamp、type、host、agent、ecs这些字段是不能删除的。</li>
+</ul>
+<pre><code class="yaml">processors:
+- drop_fields:
+  fields: [&quot;field&quot;]
+</code></pre>
+
+<h4 id="filebeat_1">Filebeat实现多行合并</h4>
+<pre><code class="yaml">- document_type: tomcat
+  paths:
+    - /var/log/java/log #日志文件地址
+  input_type: log #从文件中读取
+  tail_files: true #以文件末尾开始读取数据
+  multiline:
+    pattern: ^\d{4}
+    match: after
+    negate: true
+</code></pre>
+
+<h2 id="elk_2">解决ELK常见问题</h2>
+<h3 id="elasticsearch_4">ElasticSearch脑裂</h3>
+<h2 id="_1">参考资料</h2>
+<p><a href="https://mp.weixin.qq.com/s/s2ema4tIXKcqTNUUhjGt1w">Elasticsearch史上最全最常用工具清单</a></p>
+<p><a href="https://my.oschina.net/liyurong/blog/1841902">Elasticsearch学习（1）—— 简介</a></p>
+<p><a href="https://blog.csdn.net/kakaluoteyy/article/details/81068387">ES脑裂问题分析及优化</a></p>
+<p><a href="https://doc.yonyoucloud.com/doc/logstash-best-practice-cn/index.html">Logstash最佳实践</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/1116059">如何在ELK中解析各类日志文件</a></p>
+<p><a href="https://www.cnblogs.com/JetpropelledSnake/p/10550778.html">ELK学习笔记之F5利用ELK进行应用数据挖掘系列(1)-HTTP</a></p>
+<p><a href="https://www.cnblogs.com/JetpropelledSnake/p/10550912.html">ELK学习笔记之F5利用EELK进行应用数据挖掘系列(2)-DNS</a></p>
                 
                   
                 
@@ -2893,7 +3093,7 @@ location ~ \.php$ {
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../log_analysis/" title="日志分析架构" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../elastic-example/" title="Elastic日志分析案例" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2902,19 +3102,19 @@ location ~ \.php$ {
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                日志分析架构
+                Elastic日志分析案例
               </span>
             </div>
           </a>
         
         
-          <a href="../../miscellaneous/jsrc-1/" title="白帽子转型甲方杂绪" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../grokdebugger/" title="本地搭建GrokDebug" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                白帽子转型甲方杂绪
+                本地搭建GrokDebug
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
