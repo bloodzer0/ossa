@@ -967,6 +967,19 @@
     Wazuh API安装
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wazuh-api_1" title="配置Wazuh API用户" class="md-nav__link">
+    配置Wazuh API用户
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2364,6 +2377,19 @@
     Wazuh API安装
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wazuh-api_1" title="配置Wazuh API用户" class="md-nav__link">
+    配置Wazuh API用户
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2477,9 +2503,18 @@ rpm -ivh wazuh-api-3.9.2-1.x86_64.rpm
 systemctl status wazuh-api.service
 </code></pre>
 
+<h4 id="wazuh-api_1">配置Wazuh API用户</h4>
+<pre><code class="bash"># 配置端口账户等信息
+cd /var/ossec/api/scripts
+./configure_api.sh
+
+# 查看用户信息
+cat /var/ossec/api/configuration/auth/user
+</code></pre>
+
 <h3 id="elkfilebeat">ELK+Filebeat安装</h3>
-<p>超链接</p>
 <h3 id="kibanawazuh">Kibana安装Wazuh插件</h3>
+<p><a href="https://github.com/wazuh/wazuh-kibana-app">官网地址</a></p>
 <pre><code class="bash"># 这里是使用的root，真实环境最好不用，截止2019年06月28日，wazuh还不支持kibana7.2所以，我们要使用kibana7.1
 /usr/share/kibana/bin/kibana-plugin install https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.2_7.1.1.zip
 
@@ -2528,7 +2563,7 @@ rpm -ivh wazuh-agent-3.9.2-1.x86_64.rpm
 </code></pre>
 
 <ul>
-<li>首先在服务端生成密钥</li>
+<li>首先在服务端生成密钥：</li>
 </ul>
 <p><img alt="wazuh-add-agent-1" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh_add_agent_1.png" /></p>
 <p><img alt="wazuh-add-agent-2" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/ids_ips/wazuh_add_agent_2.png" /></p>
