@@ -42,7 +42,7 @@
     
     
       
-        <title>FreeIPA开源身份认证 - Open-Source Security Architecture</title>
+        <title>Freeipa - Open-Source Security Architecture</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#freeipa" tabindex="1" class="md-skip">
+      <a href="#centos7freeipa" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                FreeIPA开源身份认证
+                Freeipa
               </span>
             
           
@@ -2150,22 +2150,18 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        FreeIPA开源身份认证
+        Freeipa
       </label>
     
-    <a href="./" title="FreeIPA开源身份认证" class="md-nav__link md-nav__link--active">
-      FreeIPA开源身份认证
+    <a href="./" title="Freeipa" class="md-nav__link md-nav__link--active">
+      Freeipa
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
@@ -2199,7 +2195,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#freeipa_1" title="使用FreeIPA" class="md-nav__link">
+  <a href="#freeipa" title="使用FreeIPA" class="md-nav__link">
     使用FreeIPA
   </a>
   
@@ -2388,8 +2384,6 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -2422,7 +2416,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#freeipa_1" title="使用FreeIPA" class="md-nav__link">
+  <a href="#freeipa" title="使用FreeIPA" class="md-nav__link">
     使用FreeIPA
   </a>
   
@@ -2478,8 +2472,10 @@
               
                 
                 
-                <h1 id="freeipa">FreeIPA开源身份认证</h1>
-<p><a href="https://www.freeipa.org/">官网地址</a></p>
+                  <h1>Freeipa</h1>
+                
+                <p>FreeIPA开源身份认证
+<a href="https://www.freeipa.org/">官网地址</a></p>
 <h2 id="centos7freeipa">Centos7安装与配置FreeIPA</h2>
 <pre><code class="bash"># 配置dns解析记录
 echo 10.10.10.14 ipa.bloodzer0.com ipa &gt;&gt; /etc/hosts
@@ -2506,17 +2502,17 @@ yum install ipa-server.x86_64 ipa-server-dns.noarch -y
 # 配置域
 </code></pre>
 
-<p><img alt="freeipa_1" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/study_notes/freeipa_1.png" /></p>
-<p><img alt="freeipa_2" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/study_notes/freeipa_2.png" /></p>
-<p><img alt="freeipa_3" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/study_notes/freeipa_3.png" /></p>
+<p><img alt="freeipa_1.png" src="https://note.youdao.com/src/WEBRESOURCEe2acfdc28a923343e7f77526480611c7" /></p>
+<p><img alt="freeipa_2.png" src="https://note.youdao.com/src/WEBRESOURCE4e433841f3a655c6150b9a835e9e370e" /></p>
+<p><img alt="freeipa_3.png" src="http://note.youdao.com/yws/res/6513/WEBRESOURCE38811cb5475f99e7bf62ba722dc40e7c" /></p>
 <h3 id="ipa-server_1">访问测试ipa-server</h3>
 <pre><code class="bash"># 访问https://ipa.bloodzer0.com
 # 外部访问，需要添加hosts文件解析
 # 账号：admin 密码：password2
 </code></pre>
 
-<p><img alt="freeipa_4" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/study_notes/freeipa_4.png" /></p>
-<h2 id="freeipa_1">使用FreeIPA</h2>
+<p><img alt="freeipa_4.png" src="https://note.youdao.com/src/WEBRESOURCE84f8a783a778a30642e479ece03a9475" /></p>
+<h2 id="freeipa">使用FreeIPA</h2>
 <h3 id="_1">常用命令</h3>
 <table>
 <thead>
@@ -2532,7 +2528,7 @@ yum install ipa-server.x86_64 ipa-server-dns.noarch -y
 </tr>
 </tbody>
 </table>
-<p><img alt="freeipa_5" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/study_notes/freeipa_5.png" /></p>
+<p><img alt="freeipa_5.png" src="http://note.youdao.com/yws/res/6519/WEBRESOURCE16348abfb68a0c42be5f8b43e391afd2" /></p>
 <h2 id="_2">踩坑记录</h2>
 <h3 id="_3">安装过程中的报错</h3>
 <ul>
