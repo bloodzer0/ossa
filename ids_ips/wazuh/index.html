@@ -1042,6 +1042,19 @@
     规则文件解读
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh" title="SSH相关规则文件" class="md-nav__link">
+    SSH相关规则文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2524,6 +2537,19 @@
     规则文件解读
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh" title="SSH相关规则文件" class="md-nav__link">
+    SSH相关规则文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2565,7 +2591,7 @@ systemctl status wazuh-manager.service
 <pre><code class="bash"># Server IP：10.10.10.24
 
 # 安装nodejs10
-wget -qO- https://rpm.nodesource.com/setup_10.x | bash
+curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 yum install nodejs.x86_64 nodejs-devel.x86_64 -y
 
 # 安装wazuh api
@@ -2666,10 +2692,30 @@ rpm -ivh wazuh-agent-3.9.2-1.x86_64.rpm
 <p><a href="https://documentation.wazuh.com/current/user-manual/api/reference.html#agents">官网地址</a></p>
 <p><a href="https://raw.githubusercontent.com/wazuh/wazuh-api/3.9/examples/api-register-agent.sh">官方脚本实现</a></p>
 <p>在系统初始化的时候把wazuh的脚本串到系统初始化的脚本中。</p>
+<pre><code class="bash">
+# 在开头添加如下信息
+# 安装客户端
+rpm -qa|grep wazuh-agent-3.9.3-1.x86_64
+if [ $? -eq 0 ];then
+        echo &quot;file exists&quot;
+        exit
+fi
+
+wget https://packages.wazuh.com/3.x/yum/wazuh-agent-3.9.3-1.x86_64.rpm
+rpm -ivh wazuh-agent-3.9.3-1.x86_64.rpm
+sed -i '10c &lt;address&gt;server_ip&lt;/address&gt;' /var/ossec/etc/ossec.conf
+</code></pre>
+
 <h2 id="wazuh_1">wazuh规则学习</h2>
 <h3 id="_3">规则文件解读</h3>
-<p>更新时间待定</p>
-<pre><code class="shell">vim /var/ossec/etc/ossec.conf 
+<h4 id="ssh">SSH相关规则文件</h4>
+<pre><code class="shell">ls /var/ossec/ruleset/rules | grep ssh
+# 0095-sshd_rules.xml
+# sshd: Possible attack on the ssh server
+# sshd: insecure connection attempt (scan). 如果是阿里云的主机，会有很多此类型的日志，是阿里云自己的扫描
+
+ls /var/ossec/ruleset/rules | grep pam
+# 0085-pam_rules.xml
 </code></pre>
                 
                   
