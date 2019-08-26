@@ -311,12 +311,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/log_analysis/elastic-example/</loc>
+     <loc>https://bloodzer0.github.io/ossa/log_analysis/elastalert/</loc>
      <lastmod>2019-08-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/log_analysis/elastic/</loc>
+     <lastmod>2019-08-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/log_analysis/elastic_example/</loc>
      <lastmod>2019-08-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
