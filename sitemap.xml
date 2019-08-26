@@ -196,6 +196,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/honeypot/kippo/</loc>
+     <lastmod>2019-08-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/ids_ips/aide/</loc>
      <lastmod>2019-08-26</lastmod>
      <changefreq>daily</changefreq>
@@ -376,6 +381,16 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/network_security/cc/</loc>
+     <lastmod>2019-08-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/network_security/dos_ddos/</loc>
+     <lastmod>2019-08-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/other-security-branch/asset-management/</loc>
      <lastmod>2019-08-26</lastmod>
      <changefreq>daily</changefreq>
@@ -446,7 +461,27 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/red_vs_blue/information_collect/</loc>
+     <lastmod>2019-08-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/red_vs_blue/mac_flood/</loc>
+     <lastmod>2019-08-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/security_notes/zh-en/</loc>
+     <lastmod>2019-08-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/security_tools/cc_tools/</loc>
+     <lastmod>2019-08-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/security_tools/ddos_tools/</loc>
      <lastmod>2019-08-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
