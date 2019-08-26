@@ -6,16 +6,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://bloodzer0.github.io/ossa/account_security/20190731/</loc>
-     <lastmod>2019-08-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://bloodzer0.github.io/ossa/account_security/capthca/</loc>
-     <lastmod>2019-08-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://bloodzer0.github.io/ossa/account_security/protection_account/</loc>
      <lastmod>2019-08-26</lastmod>
      <changefreq>daily</changefreq>
@@ -172,6 +162,11 @@
     </url>
     <url>
      <loc>https://bloodzer0.github.io/ossa/application-security/web-security-scan/</loc>
+     <lastmod>2019-08-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/big_data/flume/</loc>
      <lastmod>2019-08-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
