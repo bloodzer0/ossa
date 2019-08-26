@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/application-security/code-audit/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/study_notes/mysql/">
       
       
         <meta name="author" content="bloodzer0">
@@ -42,7 +42,7 @@
     
     
       
-        <title>代码审计 - Open-Source Security Architecture</title>
+        <title>MySQL知识体系 - Open-Source Security Architecture</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#mysql" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                代码审计
+                MySQL知识体系
               </span>
             
           
@@ -286,12 +286,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Application security
@@ -309,7 +307,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="应用安全" class="md-nav__link">
+    <a href="../../application-security/" title="应用安全" class="md-nav__link">
       应用安全
     </a>
   </li>
@@ -319,12 +317,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
     
     <label class="md-nav__link" for="nav-3-2">
       Code audit
@@ -340,104 +336,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        代码审计
-      </label>
-    
-    <a href="./" title="代码审计" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../application-security/code-audit/" title="代码审计" class="md-nav__link">
       代码审计
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="代码审计的几个问题" class="md-nav__link">
-    代码审计的几个问题
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="开源&amp;免费代码审计" class="md-nav__link">
-    开源&amp;免费代码审计
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cobra" title="cobra" class="md-nav__link">
-    cobra
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rats" title="rats" class="md-nav__link">
-    rats
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#findbugs" title="findbugs" class="md-nav__link">
-    findbugs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rips" title="rips" class="md-nav__link">
-    rips
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vcg" title="vcg" class="md-nav__link">
-    vcg
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="代码审计商业软件对比" class="md-nav__link">
-    代码审计商业软件对比
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -447,7 +350,7 @@
 
 
   <li class="md-nav__item">
-    <a href="cobra/" title="Cobra安装与使用" class="md-nav__link">
+    <a href="../../application-security/code-audit/cobra/" title="Cobra安装与使用" class="md-nav__link">
       Cobra安装与使用
     </a>
   </li>
@@ -459,7 +362,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ethereum-smart-contracts-code-audit/" title="智能合约代码审计" class="md-nav__link">
+    <a href="../../application-security/code-audit/ethereum-smart-contracts-code-audit/" title="智能合约代码审计" class="md-nav__link">
       智能合约代码审计
     </a>
   </li>
@@ -471,7 +374,7 @@
 
 
   <li class="md-nav__item">
-    <a href="findsecbugs/" title="FindSecBugs安装与使用" class="md-nav__link">
+    <a href="../../application-security/code-audit/findsecbugs/" title="FindSecBugs安装与使用" class="md-nav__link">
       FindSecBugs安装与使用
     </a>
   </li>
@@ -483,7 +386,7 @@
 
 
   <li class="md-nav__item">
-    <a href="sonarqube-error/" title="SonarQube踩坑记" class="md-nav__link">
+    <a href="../../application-security/code-audit/sonarqube-error/" title="SonarQube踩坑记" class="md-nav__link">
       SonarQube踩坑记
     </a>
   </li>
@@ -495,7 +398,7 @@
 
 
   <li class="md-nav__item">
-    <a href="sonarqube/" title="SonarQube安装与使用" class="md-nav__link">
+    <a href="../../application-security/code-audit/sonarqube/" title="SonarQube安装与使用" class="md-nav__link">
       SonarQube安装与使用
     </a>
   </li>
@@ -531,7 +434,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../mobile-security/" title="移动安全" class="md-nav__link">
+    <a href="../../application-security/mobile-security/" title="移动安全" class="md-nav__link">
       移动安全
     </a>
   </li>
@@ -543,7 +446,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
+    <a href="../../application-security/mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
       移动安全扫描
     </a>
   </li>
@@ -555,7 +458,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../mobile-security/mobile-tools/" title="移动安全工具" class="md-nav__link">
+    <a href="../../application-security/mobile-security/mobile-tools/" title="移动安全工具" class="md-nav__link">
       移动安全工具
     </a>
   </li>
@@ -591,7 +494,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../sdl/api-gateway/" title="API网关" class="md-nav__link">
+    <a href="../../application-security/sdl/api-gateway/" title="API网关" class="md-nav__link">
       API网关
     </a>
   </li>
@@ -603,7 +506,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../sdl/api-security-design/" title="API网关设计" class="md-nav__link">
+    <a href="../../application-security/sdl/api-security-design/" title="API网关设计" class="md-nav__link">
       API网关设计
     </a>
   </li>
@@ -615,7 +518,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../sdl/go-scp/" title="Go语言安全编码规范-翻译" class="md-nav__link">
+    <a href="../../application-security/sdl/go-scp/" title="Go语言安全编码规范-翻译" class="md-nav__link">
       Go语言安全编码规范-翻译
     </a>
   </li>
@@ -651,7 +554,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-defense/https/" title="全站https" class="md-nav__link">
+    <a href="../../application-security/security-defense/https/" title="全站https" class="md-nav__link">
       全站https
     </a>
   </li>
@@ -663,7 +566,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-defense/iptables-waf/" title="iptables-waf" class="md-nav__link">
+    <a href="../../application-security/security-defense/iptables-waf/" title="iptables-waf" class="md-nav__link">
       iptables-waf
     </a>
   </li>
@@ -675,7 +578,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-defense/modsecurity-waf/" title="modsecurity-waf" class="md-nav__link">
+    <a href="../../application-security/security-defense/modsecurity-waf/" title="modsecurity-waf" class="md-nav__link">
       modsecurity-waf
     </a>
   </li>
@@ -687,7 +590,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-defense/openresty-waf/" title="openresty-waf" class="md-nav__link">
+    <a href="../../application-security/security-defense/openresty-waf/" title="openresty-waf" class="md-nav__link">
       openresty-waf
     </a>
   </li>
@@ -699,7 +602,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
+    <a href="../../application-security/security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
       Web应用防火墙
     </a>
   </li>
@@ -735,7 +638,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/" title="安全测试" class="md-nav__link">
+    <a href="../../application-security/security-testing/" title="安全测试" class="md-nav__link">
       安全测试
     </a>
   </li>
@@ -747,7 +650,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
+    <a href="../../application-security/security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
       API安全测试
     </a>
   </li>
@@ -759,7 +662,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/app-security-testing/" title="APP安全测试" class="md-nav__link">
+    <a href="../../application-security/security-testing/app-security-testing/" title="APP安全测试" class="md-nav__link">
       APP安全测试
     </a>
   </li>
@@ -771,7 +674,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/checklist/" title="安全测试checklist" class="md-nav__link">
+    <a href="../../application-security/security-testing/checklist/" title="安全测试checklist" class="md-nav__link">
       安全测试checklist
     </a>
   </li>
@@ -783,7 +686,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/dast-iast-sast/" title="DAST&SAST&IAST" class="md-nav__link">
+    <a href="../../application-security/security-testing/dast-iast-sast/" title="DAST&SAST&IAST" class="md-nav__link">
       DAST&SAST&IAST
     </a>
   </li>
@@ -814,7 +717,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/tools-skills/app/" title="APP脱壳技巧" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/app/" title="APP脱壳技巧" class="md-nav__link">
       APP脱壳技巧
     </a>
   </li>
@@ -826,7 +729,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
       https抓包
     </a>
   </li>
@@ -838,7 +741,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/tools-skills/capture-skills/" title="抓包技巧" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/capture-skills/" title="抓包技巧" class="md-nav__link">
       抓包技巧
     </a>
   </li>
@@ -850,7 +753,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/tools-skills/information-leakage/" title="信息泄漏漏洞利用" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/information-leakage/" title="信息泄漏漏洞利用" class="md-nav__link">
       信息泄漏漏洞利用
     </a>
   </li>
@@ -862,7 +765,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../security-testing/tools-skills/web-tools/" title="Web安全工具" class="md-nav__link">
+    <a href="../../application-security/security-testing/tools-skills/web-tools/" title="Web安全工具" class="md-nav__link">
       Web安全工具
     </a>
   </li>
@@ -903,7 +806,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../vulnerability-management/" title="漏洞管理" class="md-nav__link">
+    <a href="../../application-security/vulnerability-management/" title="漏洞管理" class="md-nav__link">
       漏洞管理
     </a>
   </li>
@@ -915,7 +818,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
+    <a href="../../application-security/vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
       defectdojo
     </a>
   </li>
@@ -951,7 +854,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../web-security-scan/" title="Web安全扫描" class="md-nav__link">
+    <a href="../../application-security/web-security-scan/" title="Web安全扫描" class="md-nav__link">
       Web安全扫描
     </a>
   </li>
@@ -2375,10 +2278,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14" checked>
     
     <label class="md-nav__link" for="nav-14">
       Study notes
@@ -2396,7 +2301,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../study_notes/books/" title="书单推荐(不光安全)" class="md-nav__link">
+    <a href="../books/" title="书单推荐(不光安全)" class="md-nav__link">
       书单推荐(不光安全)
     </a>
   </li>
@@ -2408,7 +2313,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../study_notes/docker/" title="Docker知识体系" class="md-nav__link">
+    <a href="../docker/" title="Docker知识体系" class="md-nav__link">
       Docker知识体系
     </a>
   </li>
@@ -2420,7 +2325,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../study_notes/freeipa/" title="FreeIPA开源身份认证" class="md-nav__link">
+    <a href="../freeipa/" title="FreeIPA开源身份认证" class="md-nav__link">
       FreeIPA开源身份认证
     </a>
   </li>
@@ -2432,7 +2337,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../study_notes/gitlab/" title="Gitlab仓库管理工具" class="md-nav__link">
+    <a href="../gitlab/" title="Gitlab仓库管理工具" class="md-nav__link">
       Gitlab仓库管理工具
     </a>
   </li>
@@ -2444,7 +2349,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../study_notes/jenkins/" title="Jenkins持续集成工具" class="md-nav__link">
+    <a href="../jenkins/" title="Jenkins持续集成工具" class="md-nav__link">
       Jenkins持续集成工具
     </a>
   </li>
@@ -2456,7 +2361,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../study_notes/kafka/" title="Kafka知识体系" class="md-nav__link">
+    <a href="../kafka/" title="Kafka知识体系" class="md-nav__link">
       Kafka知识体系
     </a>
   </li>
@@ -2468,7 +2373,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../study_notes/ldap/" title="LDAP轻量目录访问协议" class="md-nav__link">
+    <a href="../ldap/" title="LDAP轻量目录访问协议" class="md-nav__link">
       LDAP轻量目录访问协议
     </a>
   </li>
@@ -2480,7 +2385,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../study_notes/mkdocs/" title="MKDocs文档管理工具" class="md-nav__link">
+    <a href="../mkdocs/" title="MKDocs文档管理工具" class="md-nav__link">
       MKDocs文档管理工具
     </a>
   </li>
@@ -2490,11 +2395,69 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../study_notes/mysql/" title="MySQL知识体系" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        MySQL知识体系
+      </label>
+    
+    <a href="./" title="MySQL知识体系" class="md-nav__link md-nav__link--active">
       MySQL知识体系
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#centos7mysql" title="Centos7安装与配置MySQL" class="md-nav__link">
+    Centos7安装与配置MySQL
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mariadb" title="MariaDB的安装与配置" class="md-nav__link">
+    MariaDB的安装与配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mysql_1" title="MySQL的安装与配置" class="md-nav__link">
+    MySQL的安装与配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2504,7 +2467,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../study_notes/postgresql/" title="PostgreSQL知识体系" class="md-nav__link">
+    <a href="../postgresql/" title="PostgreSQL知识体系" class="md-nav__link">
       PostgreSQL知识体系
     </a>
   </li>
@@ -2516,7 +2479,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../study_notes/sql/" title="SQL语句知识体系" class="md-nav__link">
+    <a href="../sql/" title="SQL语句知识体系" class="md-nav__link">
       SQL语句知识体系
     </a>
   </li>
@@ -2528,7 +2491,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../study_notes/zookeeper/" title="Zookeeper知识体系" class="md-nav__link">
+    <a href="../zookeeper/" title="Zookeeper知识体系" class="md-nav__link">
       Zookeeper知识体系
     </a>
   </li>
@@ -2632,64 +2595,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="代码审计的几个问题" class="md-nav__link">
-    代码审计的几个问题
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="开源&amp;免费代码审计" class="md-nav__link">
-    开源&amp;免费代码审计
+  <a href="#centos7mysql" title="Centos7安装与配置MySQL" class="md-nav__link">
+    Centos7安装与配置MySQL
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cobra" title="cobra" class="md-nav__link">
-    cobra
+  <a href="#mariadb" title="MariaDB的安装与配置" class="md-nav__link">
+    MariaDB的安装与配置
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#rats" title="rats" class="md-nav__link">
-    rats
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#findbugs" title="findbugs" class="md-nav__link">
-    findbugs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rips" title="rips" class="md-nav__link">
-    rips
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vcg" title="vcg" class="md-nav__link">
-    vcg
+  <a href="#mysql_1" title="MySQL的安装与配置" class="md-nav__link">
+    MySQL的安装与配置
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="代码审计商业软件对比" class="md-nav__link">
-    代码审计商业软件对比
-  </a>
   
 </li>
       
@@ -2710,82 +2638,39 @@
               
                 
                 
-                <h1 id="_1">代码审计</h1>
-<h3 id="_2">代码审计的几个问题</h3>
-<ul>
-<li>为什么要进行代码审计</li>
-<li>如何把代码审计融入整体的DevOps流程中</li>
-<li>覆盖率、漏报率、误报率、处理率如来平衡</li>
-<li>如何处理代理审计中的误报、漏报</li>
-<li>谁来看代码审计报告、审计的问题如何推动修复</li>
-</ul>
-<h2 id="_3">开源&amp;免费代码审计</h2>
-<h3 id="cobra">cobra</h3>
-<p>cobra：静态代码分析工具。</p>
-<p><a href="https://github.com/WhaleShark-Team/cobra">github地址</a></p>
-<p><a href="http://cobra.feei.cn/installation">安装文档</a></p>
-<ul>
-<li><strong>cobra安装</strong></li>
-</ul>
-<pre><code># 解决依赖
-yum install flex bison phantomjs -y
+                <h1 id="mysql">MySQL知识体系</h1>
+<h2 id="centos7mysql">Centos7安装与配置MySQL</h2>
+<h3 id="mariadb">MariaDB的安装与配置</h3>
+<pre><code class="bash">yum install mariadb.x86_64 mariadb-server.x86_64 mariadb-devel.x86_64 -y
+systemctl enable mariadb.service
+systemctl start mariadb.service
 
-# 安装
-git clone https://github.com/WhaleShark-Team/cobra.git &amp;&amp; cd cobra
-pip install -r requirements.txt
-python cobra.py --help
+# 初始化配置
+mysql_secure_installation
 </code></pre>
 
-<ul>
-<li><strong>cobra规则</strong></li>
-</ul>
-<pre><code>cobra/rules  # 默认自带规则
+<h3 id="mysql_1">MySQL的安装与配置</h3>
+<pre><code class="bash"># 下载源
+wget https://repo.mysql.com//mysql80-community-release-el7-3.noarch.rpm
+
+# 如果太慢就用中科大的源
+wget http://mirrors.ustc.edu.cn/mysql-repo/mysql80-community-release-el7.rpm
+
+# 安装源
+rpm -ivh mysql80-community-release-el7-3.noarch.rpm 
+
+# 安装数据库
+yum install mysql-community-server.x86_64 -y
+
+# 启动服务
+systemctl start mysqld.service
+
+# 查看数据库初始密码
+grep &quot;password&quot; /var/log/mysqld.log
+
+# 修改数据库密码
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'BloodZero@0';
 </code></pre>
-
-<h3 id="rats">rats</h3>
-<p><a href="https://code.google.com/p/rough-auditing-tool-for-security/">官网地址</a></p>
-<h3 id="findbugs">findbugs</h3>
-<p>findbugs：插件式静态分析工具。</p>
-<p><a href="http://findbugs.sourceforge.net/">官网地址</a></p>
-<p><a href="http://findbugs.sourceforge.net/downloads.html">下载地址</a></p>
-<ul>
-<li><strong>findbugs安装</strong></li>
-</ul>
-<p>直接在开发工具的插件中进行安装，或者下载以后导入。</p>
-<h3 id="rips">rips</h3>
-<p>rips：静态深度分析源代码漏洞的工具，能自动化挖掘PHP代码漏洞。</p>
-<p><a href="https://sourceforge.net/projects/rips-scanner/files/">下载地址</a></p>
-<ul>
-<li><strong>安装与使用</strong></li>
-</ul>
-<pre><code>yum install php httpd.x86_64 -y
-systemctl start httpd.service
-
-wget https://nchc.dl.sourceforge.net/project/rips-scanner/rips-0.55.zip
-
-unzip rips-0.55.zip
-
-# 填写源代码路径就可以开始扫描了
-</code></pre>
-
-<ul>
-<li><strong>心得</strong></li>
-</ul>
-<pre><code>对PHP项目支持比较友好，其它语言审计效果一般；
-与seay法师的审计工具很类似；
-</code></pre>
-
-<ul>
-<li><strong>参考资料</strong></li>
-</ul>
-<p><a href="https://xz.aliyun.com/t/2502">RIPS源码精读：逻辑流程及lib文件夹大致说明</a></p>
-<p><a href="https://xz.aliyun.com/t/2605">RIPS源码精读：扫描对象的实例化及token信息的生成</a></p>
-<h3 id="vcg">vcg</h3>
-<p>VCG：简洁的风险函数扫描定位工具，基于字典实现扫描功能。</p>
-<p><a href="https://sourceforge.net/projects/visualcodegrepp/files/">下载地址</a></p>
-<h2 id="_4">代码审计商业软件对比</h2>
-<p><img alt="代码审计商业软件对比" src="https://github.com/bloodzer0/ossa/raw/master/application-security/code-audit/img/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%95%86%E4%B8%9A%E8%BD%AF%E4%BB%B6%E5%AF%B9%E6%AF%94.png" /></p>
-<p>备注：如果图片有侵权行为，请联系我！</p>
                 
                   
                 
@@ -2806,7 +2691,7 @@ unzip rips-0.55.zip
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../" title="应用安全" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../mkdocs/" title="MKDocs文档管理工具" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2815,19 +2700,19 @@ unzip rips-0.55.zip
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                应用安全
+                MKDocs文档管理工具
               </span>
             </div>
           </a>
         
         
-          <a href="cobra/" title="Cobra安装与使用" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../postgresql/" title="PostgreSQL知识体系" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Cobra安装与使用
+                PostgreSQL知识体系
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

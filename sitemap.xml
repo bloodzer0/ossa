@@ -491,6 +491,16 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/study_notes/mysql/</loc>
+     <lastmod>2019-08-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bloodzer0.github.io/ossa/study_notes/postgresql/</loc>
+     <lastmod>2019-08-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/study_notes/sql/</loc>
      <lastmod>2019-08-26</lastmod>
      <changefreq>daily</changefreq>
