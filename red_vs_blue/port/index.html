@@ -13,7 +13,7 @@
         <meta name="description" content="开源安全架构">
       
       
-        <link rel="canonical" href="https://bloodzer0.github.io/ossa/vulnerability/account/">
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/red_vs_blue/port/">
       
       
         <meta name="author" content="bloodzer0">
@@ -42,7 +42,7 @@
     
     
       
-        <title>账户逻辑漏洞 - Open-Source Security Architecture</title>
+        <title>端口渗透 - Open-Source Security Architecture</title>
       
     
     
@@ -123,7 +123,7 @@
                 Open-Source Security Architecture
               </span>
               <span class="md-header-nav__topic">
-                账户逻辑漏洞
+                端口渗透
               </span>
             
           
@@ -2290,10 +2290,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14" checked>
     
     <label class="md-nav__link" for="nav-14">
       Red vs blue
@@ -2311,7 +2313,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../red_vs_blue/hijack_https/" title="HTTPS劫持" class="md-nav__link">
+    <a href="../hijack_https/" title="HTTPS劫持" class="md-nav__link">
       HTTPS劫持
     </a>
   </li>
@@ -2323,7 +2325,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../red_vs_blue/information_collect/" title="渗透的本质是信息收集" class="md-nav__link">
+    <a href="../information_collect/" title="渗透的本质是信息收集" class="md-nav__link">
       渗透的本质是信息收集
     </a>
   </li>
@@ -2335,7 +2337,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../red_vs_blue/mac_flood/" title="Mac地址泛洪攻击" class="md-nav__link">
+    <a href="../mac_flood/" title="Mac地址泛洪攻击" class="md-nav__link">
       Mac地址泛洪攻击
     </a>
   </li>
@@ -2345,11 +2347,953 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../red_vs_blue/port/" title="端口渗透" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        端口渗透
+      </label>
+    
+    <a href="./" title="端口渗透" class="md-nav__link md-nav__link--active">
       端口渗透
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web" title="Web服务端口渗透" class="md-nav__link">
+    Web服务端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apacheaxis2" title="Apache/Axis2端口渗透" class="md-nav__link">
+    Apache/Axis2端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confluence" title="Confluence端口渗透" class="md-nav__link">
+    Confluence端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glassfish" title="GlassFish端口渗透" class="md-nav__link">
+    GlassFish端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iis" title="IIS端口渗透" class="md-nav__link">
+    IIS端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jboss" title="JBoss端口渗透" class="md-nav__link">
+    JBoss端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jenkins" title="Jenkins端口渗透" class="md-nav__link">
+    Jenkins端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jetty" title="Jetty端口渗透" class="md-nav__link">
+    Jetty端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lotus" title="Lotus端口渗透" class="md-nav__link">
+    Lotus端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resin" title="Resin端口渗透" class="md-nav__link">
+    Resin端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weblogic" title="WebLogic端口渗透" class="md-nav__link">
+    WebLogic端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websphere" title="WebSphere端口渗透" class="md-nav__link">
+    WebSphere端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zabbix" title="Zabbix端口渗透" class="md-nav__link">
+    Zabbix端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="常见端口渗透" class="md-nav__link">
+    常见端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dhcp" title="DHCP：端口渗透" class="md-nav__link">
+    DHCP：端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns" title="DNS端口渗透" class="md-nav__link">
+    DNS端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-r" title="Linux R端口渗透" class="md-nav__link">
+    Linux R端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsync" title="Rsync端口渗透" class="md-nav__link">
+    Rsync端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snmp" title="SNMP端口渗透" class="md-nav__link">
+    SNMP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="其它端口" class="md-nav__link">
+    其它端口
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="大数据服务端口渗透" class="md-nav__link">
+    大数据服务端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cdh" title="CDH端口渗透" class="md-nav__link">
+    CDH端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch" title="ElasticSearch端口渗透" class="md-nav__link">
+    ElasticSearch端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop" title="Hadoop端口渗透" class="md-nav__link">
+    Hadoop端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hbase" title="HBase端口渗透" class="md-nav__link">
+    HBase端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="漏洞案例" class="md-nav__link">
+    漏洞案例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="修复意见" class="md-nav__link">
+    修复意见
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hive" title="Hive端口渗透" class="md-nav__link">
+    Hive端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="漏洞案例" class="md-nav__link">
+    漏洞案例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" title="修复意见" class="md-nav__link">
+    修复意见
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hue" title="Hue端口渗透" class="md-nav__link">
+    Hue端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="漏洞案例" class="md-nav__link">
+    漏洞案例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="修复意见" class="md-nav__link">
+    修复意见
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kafka" title="Kafka端口渗透" class="md-nav__link">
+    Kafka端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" title="漏洞案例" class="md-nav__link">
+    漏洞案例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" title="修复意见" class="md-nav__link">
+    修复意见
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibana" title="Kibana" class="md-nav__link">
+    Kibana
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memcache" title="Memcache端口渗透" class="md-nav__link">
+    Memcache端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spark" title="Spark端口渗透" class="md-nav__link">
+    Spark端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zookeeper" title="Zookeeper端口渗透" class="md-nav__link">
+    Zookeeper端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" title="数据库服务端口渗透" class="md-nav__link">
+    数据库服务端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#db2" title="DB2端口渗透" class="md-nav__link">
+    DB2端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mongodb" title="MongoDB数据库" class="md-nav__link">
+    MongoDB数据库
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mssql" title="MSSQL端口渗透" class="md-nav__link">
+    MSSQL端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mysql" title="MySQL端口渗透" class="md-nav__link">
+    MySQL端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oracle" title="Oracle端口渗透" class="md-nav__link">
+    Oracle端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql" title="PostgreSQL端口渗透" class="md-nav__link">
+    PostgreSQL端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis" title="Redis端口渗透" class="md-nav__link">
+    Redis端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sysbase" title="SysBase端口渗透" class="md-nav__link">
+    SysBase端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" title="文件服务端口渗透" class="md-nav__link">
+    文件服务端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ftp" title="FTP端口渗透" class="md-nav__link">
+    FTP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap" title="LDAP端口渗透" class="md-nav__link">
+    LDAP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nfs" title="NFS端口渗透" class="md-nav__link">
+    NFS端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_35" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samba" title="Samba端口渗透" class="md-nav__link">
+    Samba端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_37" title="邮件服务端口渗透" class="md-nav__link">
+    邮件服务端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iamp" title="IAMP端口渗透" class="md-nav__link">
+    IAMP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pop" title="POP端口渗透" class="md-nav__link">
+    POP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smtp" title="SMTP端口渗透" class="md-nav__link">
+    SMTP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_40" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_41" title="远程访问服务端口渗透" class="md-nav__link">
+    远程访问服务端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-rdp" title="Microsoft RDP端口渗透" class="md-nav__link">
+    Microsoft RDP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_42" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcanywhere" title="pcAnywhere端口渗透" class="md-nav__link">
+    pcAnywhere端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_43" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" title="SSH端口渗透" class="md-nav__link">
+    SSH端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_44" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telnet" title="Telnet端口渗透" class="md-nav__link">
+    Telnet端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_45" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vnc" title="VNC端口渗透" class="md-nav__link">
+    VNC端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_46" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_47" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2614,12 +3558,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18">
     
     <label class="md-nav__link" for="nav-18">
       Vulnerability
@@ -2635,248 +3577,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        账户逻辑漏洞
-      </label>
-    
-    <a href="./" title="账户逻辑漏洞" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../vulnerability/account/" title="账户逻辑漏洞" class="md-nav__link">
       账户逻辑漏洞
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="账户通用漏洞" class="md-nav__link">
-    账户通用漏洞
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="洗号" class="md-nav__link">
-    洗号
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" title="炸弹攻击" class="md-nav__link">
-    炸弹攻击
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#https" title="传递用户信息请求未使用https" class="md-nav__link">
-    传递用户信息请求未使用https
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" title="注册场景漏洞" class="md-nav__link">
-    注册场景漏洞
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" title="垃圾/批量注册" class="md-nav__link">
-    垃圾/批量注册
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" title="任意账号注册" class="md-nav__link">
-    任意账号注册
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" title="注册覆盖原有用户" class="md-nav__link">
-    注册覆盖原有用户
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" title="登录场景漏洞" class="md-nav__link">
-    登录场景漏洞
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_10" title="登录文案漏洞" class="md-nav__link">
-    登录文案漏洞
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" title="登录前端校验" class="md-nav__link">
-    登录前端校验
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" title="暴力破解" class="md-nav__link">
-    暴力破解
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" title="恶意锁定" class="md-nav__link">
-    恶意锁定
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sessioncookie" title="session与cookie问题" class="md-nav__link">
-    session与cookie问题
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" title="垂直越权访问后台页面" class="md-nav__link">
-    垂直越权访问后台页面
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_15" title="找回密码逻辑错误" class="md-nav__link">
-    找回密码逻辑错误
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_16" title="前端校验凭证" class="md-nav__link">
-    前端校验凭证
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" title="找回密码凭证暴力破解" class="md-nav__link">
-    找回密码凭证暴力破解
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_18" title="凭证返回错误" class="md-nav__link">
-    凭证返回错误
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_19" title="凭证信息与用户信息不绑定" class="md-nav__link">
-    凭证信息与用户信息不绑定
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#token" title="邮箱重置密码容易出现弱token" class="md-nav__link">
-    邮箱重置密码容易出现弱token
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cookie" title="Cookie覆盖" class="md-nav__link">
-    Cookie覆盖
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_20" title="找回步骤上下文越权" class="md-nav__link">
-    找回步骤上下文越权
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_21" title="万能校验码" class="md-nav__link">
-    万能校验码
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_22" title="越权修改、查看、删除用户信息漏洞" class="md-nav__link">
-    越权修改、查看、删除用户信息漏洞
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_23" title="实名认证漏洞" class="md-nav__link">
-    实名认证漏洞
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2886,7 +3591,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../jboss/" title="JBoss漏洞总结" class="md-nav__link">
+    <a href="../../vulnerability/jboss/" title="JBoss漏洞总结" class="md-nav__link">
       JBoss漏洞总结
     </a>
   </li>
@@ -2898,7 +3603,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../unauthorized/" title="未授权访问漏洞" class="md-nav__link">
+    <a href="../../vulnerability/unauthorized/" title="未授权访问漏洞" class="md-nav__link">
       未授权访问漏洞
     </a>
   </li>
@@ -2966,30 +3671,226 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="账户通用漏洞" class="md-nav__link">
-    账户通用漏洞
+  <a href="#web" title="Web服务端口渗透" class="md-nav__link">
+    Web服务端口渗透
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="洗号" class="md-nav__link">
-    洗号
+  <a href="#apacheaxis2" title="Apache/Axis2端口渗透" class="md-nav__link">
+    Apache/Axis2端口渗透
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="炸弹攻击" class="md-nav__link">
-    炸弹攻击
+  <a href="#confluence" title="Confluence端口渗透" class="md-nav__link">
+    Confluence端口渗透
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#https" title="传递用户信息请求未使用https" class="md-nav__link">
-    传递用户信息请求未使用https
+  <a href="#glassfish" title="GlassFish端口渗透" class="md-nav__link">
+    GlassFish端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iis" title="IIS端口渗透" class="md-nav__link">
+    IIS端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jboss" title="JBoss端口渗透" class="md-nav__link">
+    JBoss端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jenkins" title="Jenkins端口渗透" class="md-nav__link">
+    Jenkins端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jetty" title="Jetty端口渗透" class="md-nav__link">
+    Jetty端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lotus" title="Lotus端口渗透" class="md-nav__link">
+    Lotus端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resin" title="Resin端口渗透" class="md-nav__link">
+    Resin端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weblogic" title="WebLogic端口渗透" class="md-nav__link">
+    WebLogic端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websphere" title="WebSphere端口渗透" class="md-nav__link">
+    WebSphere端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zabbix" title="Zabbix端口渗透" class="md-nav__link">
+    Zabbix端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="常见端口渗透" class="md-nav__link">
+    常见端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dhcp" title="DHCP：端口渗透" class="md-nav__link">
+    DHCP：端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns" title="DNS端口渗透" class="md-nav__link">
+    DNS端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-r" title="Linux R端口渗透" class="md-nav__link">
+    Linux R端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsync" title="Rsync端口渗透" class="md-nav__link">
+    Rsync端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snmp" title="SNMP端口渗透" class="md-nav__link">
+    SNMP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="其它端口" class="md-nav__link">
+    其它端口
   </a>
   
 </li>
@@ -3000,31 +3901,219 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="注册场景漏洞" class="md-nav__link">
-    注册场景漏洞
+  <a href="#_10" title="大数据服务端口渗透" class="md-nav__link">
+    大数据服务端口渗透
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" title="垃圾/批量注册" class="md-nav__link">
-    垃圾/批量注册
+  <a href="#cdh" title="CDH端口渗透" class="md-nav__link">
+    CDH端口渗透
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" title="任意账号注册" class="md-nav__link">
-    任意账号注册
+  <a href="#elasticsearch" title="ElasticSearch端口渗透" class="md-nav__link">
+    ElasticSearch端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop" title="Hadoop端口渗透" class="md-nav__link">
+    Hadoop端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hbase" title="HBase端口渗透" class="md-nav__link">
+    HBase端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="漏洞案例" class="md-nav__link">
+    漏洞案例
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" title="注册覆盖原有用户" class="md-nav__link">
-    注册覆盖原有用户
+  <a href="#_14" title="修复意见" class="md-nav__link">
+    修复意见
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hive" title="Hive端口渗透" class="md-nav__link">
+    Hive端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="漏洞案例" class="md-nav__link">
+    漏洞案例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" title="修复意见" class="md-nav__link">
+    修复意见
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hue" title="Hue端口渗透" class="md-nav__link">
+    Hue端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="漏洞案例" class="md-nav__link">
+    漏洞案例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="修复意见" class="md-nav__link">
+    修复意见
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kafka" title="Kafka端口渗透" class="md-nav__link">
+    Kafka端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" title="漏洞案例" class="md-nav__link">
+    漏洞案例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" title="修复意见" class="md-nav__link">
+    修复意见
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibana" title="Kibana" class="md-nav__link">
+    Kibana
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memcache" title="Memcache端口渗透" class="md-nav__link">
+    Memcache端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spark" title="Spark端口渗透" class="md-nav__link">
+    Spark端口渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zookeeper" title="Zookeeper端口渗透" class="md-nav__link">
+    Zookeeper端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3034,52 +4123,170 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" title="登录场景漏洞" class="md-nav__link">
-    登录场景漏洞
+  <a href="#_23" title="数据库服务端口渗透" class="md-nav__link">
+    数据库服务端口渗透
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_10" title="登录文案漏洞" class="md-nav__link">
-    登录文案漏洞
+  <a href="#db2" title="DB2端口渗透" class="md-nav__link">
+    DB2端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" title="常见漏洞" class="md-nav__link">
+    常见漏洞
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_11" title="登录前端校验" class="md-nav__link">
-    登录前端校验
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" title="暴力破解" class="md-nav__link">
-    暴力破解
+  <a href="#mongodb" title="MongoDB数据库" class="md-nav__link">
+    MongoDB数据库
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" title="常见漏洞" class="md-nav__link">
+    常见漏洞
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_13" title="恶意锁定" class="md-nav__link">
-    恶意锁定
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sessioncookie" title="session与cookie问题" class="md-nav__link">
-    session与cookie问题
+  <a href="#mssql" title="MSSQL端口渗透" class="md-nav__link">
+    MSSQL端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" title="常见漏洞" class="md-nav__link">
+    常见漏洞
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#_14" title="垂直越权访问后台页面" class="md-nav__link">
-    垂直越权访问后台页面
+  <a href="#mysql" title="MySQL端口渗透" class="md-nav__link">
+    MySQL端口渗透
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oracle" title="Oracle端口渗透" class="md-nav__link">
+    Oracle端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql" title="PostgreSQL端口渗透" class="md-nav__link">
+    PostgreSQL端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis" title="Redis端口渗透" class="md-nav__link">
+    Redis端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sysbase" title="SysBase端口渗透" class="md-nav__link">
+    SysBase端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3089,66 +4296,90 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" title="找回密码逻辑错误" class="md-nav__link">
-    找回密码逻辑错误
+  <a href="#_32" title="文件服务端口渗透" class="md-nav__link">
+    文件服务端口渗透
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_16" title="前端校验凭证" class="md-nav__link">
-    前端校验凭证
+  <a href="#ftp" title="FTP端口渗透" class="md-nav__link">
+    FTP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" title="常见漏洞" class="md-nav__link">
+    常见漏洞
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_17" title="找回密码凭证暴力破解" class="md-nav__link">
-    找回密码凭证暴力破解
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_18" title="凭证返回错误" class="md-nav__link">
-    凭证返回错误
+  <a href="#ldap" title="LDAP端口渗透" class="md-nav__link">
+    LDAP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" title="常见漏洞" class="md-nav__link">
+    常见漏洞
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_19" title="凭证信息与用户信息不绑定" class="md-nav__link">
-    凭证信息与用户信息不绑定
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#token" title="邮箱重置密码容易出现弱token" class="md-nav__link">
-    邮箱重置密码容易出现弱token
+  <a href="#nfs" title="NFS端口渗透" class="md-nav__link">
+    NFS端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_35" title="常见漏洞" class="md-nav__link">
+    常见漏洞
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#cookie" title="Cookie覆盖" class="md-nav__link">
-    Cookie覆盖
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_20" title="找回步骤上下文越权" class="md-nav__link">
-    找回步骤上下文越权
+  <a href="#samba" title="Samba端口渗透" class="md-nav__link">
+    Samba端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" title="常见漏洞" class="md-nav__link">
+    常见漏洞
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_21" title="万能校验码" class="md-nav__link">
-    万能校验码
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -3158,15 +4389,194 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_22" title="越权修改、查看、删除用户信息漏洞" class="md-nav__link">
-    越权修改、查看、删除用户信息漏洞
+  <a href="#_37" title="邮件服务端口渗透" class="md-nav__link">
+    邮件服务端口渗透
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iamp" title="IAMP端口渗透" class="md-nav__link">
+    IAMP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pop" title="POP端口渗透" class="md-nav__link">
+    POP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smtp" title="SMTP端口渗透" class="md-nav__link">
+    SMTP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_40" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_23" title="实名认证漏洞" class="md-nav__link">
-    实名认证漏洞
+  <a href="#_41" title="远程访问服务端口渗透" class="md-nav__link">
+    远程访问服务端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-rdp" title="Microsoft RDP端口渗透" class="md-nav__link">
+    Microsoft RDP端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_42" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcanywhere" title="pcAnywhere端口渗透" class="md-nav__link">
+    pcAnywhere端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_43" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" title="SSH端口渗透" class="md-nav__link">
+    SSH端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_44" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telnet" title="Telnet端口渗透" class="md-nav__link">
+    Telnet端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_45" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vnc" title="VNC端口渗透" class="md-nav__link">
+    VNC端口渗透
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_46" title="常见漏洞" class="md-nav__link">
+    常见漏洞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_47" title="参考资料" class="md-nav__link">
+    参考资料
   </a>
   
 </li>
@@ -3188,98 +4598,479 @@
               
                 
                 
-                <h1 id="_1">账户逻辑漏洞</h1>
-<h2 id="_2">账户通用漏洞</h2>
-<h3 id="_3">洗号</h3>
-<p>利用"判断用户是否存在接口"，通过市面上的泄漏信息或通过用户名规则构造获取系统真实用户信息。获取到用户信息后可以进行暴力破解或者进行钓鱼攻击。</p>
-<h3 id="_4">炸弹攻击</h3>
+                <h1 id="_1">端口渗透</h1>
+<p>update_time：2019/08/28</p>
+<h2 id="web">Web服务端口渗透</h2>
+<h3 id="apacheaxis2">Apache/Axis2端口渗透</h3>
+<p>端口号：80/8080</p>
 <ul>
-<li>短信炸弹：短信成本；用户投诉后对企业信誉的影响。</li>
-<li>邮件炸弹：降低发件邮箱的信誉度（很难上涨）。</li>
+<li>Apache Manager后台弱口令：</li>
+<li>Apache 解析漏洞：</li>
+<li>Apache 慢速攻击：</li>
+<li><a href="https://mp.weixin.qq.com/s/3Um9NJ3nzOIu_H_qMBsSmA">CVE-2019-0211：Apache HTTP Server 组件提权</a></li>
 </ul>
-<h3 id="https">传递用户信息请求未使用https</h3>
-<h2 id="_5">注册场景漏洞</h2>
-<h3 id="_6">垃圾/批量注册</h3>
-<p>通过程序或人力注册大量的非活跃用户，这些用户不能给企业带来收益，却在一定程度上增加了企业的运营成本。除此之外，这些用户可能给用户带来部分收益，比如：活动优惠、刷单等等。</p>
+<h3 id="confluence">Confluence端口渗透</h3>
+<p>端口号：8080</p>
 <ul>
-<li>手机墙真人操作：</li>
-<li>脚本批量注册：</li>
-<li>模拟器注册：</li>
+<li><a href="https://mp.weixin.qq.com/s/ku3aqE4TAaThAVrng08DbA">CVE-2019-3398：远程代码执行</a></li>
 </ul>
-<h3 id="_7">任意账号注册</h3>
+<h3 id="glassfish">GlassFish端口渗透</h3>
+<p>端口号：3700（IIOP端口）、4848（GlassFish控制台端口）、8080（GlassFiash HTTP端口）</p>
 <ul>
-<li>不校验用户信息（只需要用户输入手机号或邮箱即可注册成功）；</li>
-<li>用户信息与校验凭证未绑定；</li>
+<li>GlassFish 任意文件读取</li>
+<li>GlassFish 认证绕过：<a href="https://www.tuicool.com/articles/ZRJriy">Oracle GlassFish Server认证绕过</a></li>
+<li>GlassFish 弱口令</li>
 </ul>
-<h3 id="_8">注册覆盖原有用户</h3>
-<p><strong>低版本的MySQL可以复现</strong></p>
-<p>账户：zhangsan 与 zhangsan   (zhangsan后面有N个空格) 两个账户在数据库中表现为同一个账户。</p>
-<h2 id="_9">登录场景漏洞</h2>
-<h3 id="_10">登录文案漏洞</h3>
-<p>登录错误提示过于清晰，导致攻击者更方便攻击用户。</p>
-<h3 id="_11">登录前端校验</h3>
-<p>校验结果可控。</p>
-<h3 id="_12">暴力破解</h3>
-<p>通过洗号获取用户信息，采用字典的形式对用户的密码进行暴力猜解。</p>
+<h3 id="iis">IIS端口渗透</h3>
+<p>端口号：80/443</p>
 <ul>
-<li>不存在任何其它的安全防护措施；</li>
-<li>存在验证码：验证码的逻辑漏洞导致的暴力破解；</li>
+<li>IIS PUT写文件：</li>
+<li>IIS 短文件名泄漏：<a href="https://github.com/lijiejie/IIS_shortname_Scanner">IIS_shortname_Scanner GitHub地址</a></li>
+<li>IIS 解析漏洞：</li>
 </ul>
-<h3 id="_13">恶意锁定</h3>
-<p>密码错误多次后锁定账户，需要通过人工手段解锁。</p>
-<h3 id="sessioncookie">session与cookie问题</h3>
+<h3 id="jboss">JBoss端口渗透</h3>
+<p>端口号：1098/1099/4444/4445/8009/8080/8083/8093</p>
 <ul>
-<li>用户每次登录的session或cookie是唯一的一个值；</li>
-<li>用户退出登录，但是session或cookie不失效；</li>
-<li>session会话存活时间过长；</li>
-<li>session或cookie结构太简单，容易被伪造；</li>
+<li>JBoss 反序列化：<code>/invoker/JMXInvokerServlet</code></li>
+<li>JBoss 后台GetShell：<a href="https://bloodzer0.github.io/ossa/vulnerability/jboss/">后台部署war包GetShell</a></li>
+<li>JBoss 弱口令：jmx-console弱口令、admin-console弱口令</li>
+<li>JBoss 远程代码执行：CVE-2013-4810</li>
 </ul>
-<h3 id="_14">垂直越权访问后台页面</h3>
-<p>后台部分页面不需要经过鉴权即可登录。</p>
-<h2 id="_15">找回密码逻辑错误</h2>
-<ol>
-<li>输入用户信息</li>
-<li>获取用户凭证，并且校验用户凭证</li>
-<li>重置密码</li>
-<li>重置成功登录</li>
-</ol>
-<h3 id="_16">前端校验凭证</h3>
-<p>校验结果可控从而导致任意账号密码重置。</p>
-<h3 id="_17">找回密码凭证暴力破解</h3>
-<p>攻击者在校验用户凭证时，由于凭证过于简单或者失效时间过长甚至不失效的问题从而对凭证进行暴力破解。</p>
-<h3 id="_18">凭证返回错误</h3>
-<p>凭证信息返回在response的数据包中，或者直接以URL的形式返回。</p>
-<h3 id="_19">凭证信息与用户信息不绑定</h3>
-<p>由于凭证未与用户信息绑定，导致可以用B用户的凭证信息来校验A用户，从而导致B重置了A用户的密码。</p>
-<h3 id="token">邮箱重置密码容易出现弱token</h3>
+<h3 id="jenkins">Jenkins端口渗透</h3>
+<p>端口号：8080/8089</p>
 <ul>
-<li>unix时间戳token；</li>
-<li>用户名或者用户名+其它信息生成的token；</li>
-<li>使用md5或者base64编码生成的token；</li>
+<li><a href="https://mp.weixin.qq.com/s/T6s2yB92wTPiQnQ9FpJ3MQ">CVE-2018-1999002：Jenkins任意文件读取漏洞分析</a></li>
+<li><a href="http://sec.sangfor.com.cn/events/200.html">CVE-2019-1003000：Jenkins远程代码执行</a></li>
+<li>Jenkins 反序列化</li>
+<li>Jenkins 弱口令</li>
+<li>Jenkins 未授权访问</li>
 </ul>
-<h3 id="cookie">Cookie覆盖</h3>
-<ol>
-<li>在A用户重置密码进行到第三步时，不关闭页面；</li>
-<li>新建一个tab页面，重置B用户的密码，进行到第二步，也不要关闭页面；</li>
-<li>刷新第一个页面，这个时候页面上显示重置的就是B用户的密码，从而达到A用户重置了B用户的密码；</li>
-</ol>
-<h3 id="_20">找回步骤上下文越权</h3>
-<p>直接跳过第二步校验用户与凭证的过程。</p>
-<h3 id="_21">万能校验码</h3>
+<h3 id="jetty">Jetty端口渗透</h3>
+<p>端口号：8080</p>
 <ul>
-<li>000000</li>
-<li>111111</li>
-<li>666666</li>
-<li>888888</li>
+<li>远程共享缓冲区溢出</li>
+<li>敏感信息泄漏：<a href="https://www.anquanke.com/vul/id/1211598">CVE-2018-12536</a></li>
 </ul>
-<h2 id="_22">越权修改、查看、删除用户信息漏洞</h2>
-<h2 id="_23">实名认证漏洞</h2>
+<h3 id="lotus">Lotus端口渗透</h3>
+<p>端口号：1352</p>
 <ul>
-<li>仅进行姓名域身份证号核对：最基础的认证手段，由于大量的身份信息泄漏，此种验证已经不具备什么意义了。</li>
-<li>身份证图片上次核对：单一上次身份证照片没有什么大用，反而容易造成图片信息泄漏。需要通过其它辅助手段来验证图片的真实性。</li>
-<li>银行卡绑定核对：相对而言安全等级较高，但是目前黑市上有成套的用户信息出售，包括：身份证、银行卡、照片等信息。</li>
-<li>人脸识别核对：人脸识别精度较低；利用修图技术绕过人脸识别；相像的人可以绕过人脸识别。</li>
+<li>Lotus 跨站脚本攻击：</li>
+<li>Lotus 弱口令：admin/password</li>
+<li>Lotus 信息泄漏：</li>
 </ul>
+<h3 id="resin">Resin端口渗透</h3>
+<p>端口号：8080</p>
+<ul>
+<li>Resin 目录遍历</li>
+<li>Resin 远程文件读取</li>
+</ul>
+<h3 id="weblogic">WebLogic端口渗透</h3>
+<p>端口号：7001</p>
+<ul>
+<li>WebLogic Console后台弱口令：system/system、weblogic/weblogic、weblogic/weblogic123、portaladmin/portaladmin、guest/guest</li>
+<li>WebLogic Console后台部署WebShell：</li>
+<li>WebLogic SSRF：</li>
+<li>WebLogic 反序列化：</li>
+<li>WebLogic 泄漏源代码与目录遍历：</li>
+</ul>
+<h3 id="websphere">WebSphere端口渗透</h3>
+<p>端口号：908N，N是1-9的正整数，代表第几个应用</p>
+<ul>
+<li>WebSpere 反序列化</li>
+<li>WebSpere 任意文件泄漏：CVE-2014-0823</li>
+<li>WebSpere 弱口令</li>
+</ul>
+<h3 id="zabbix">Zabbix端口渗透</h3>
+<p>端口号：8069</p>
+<h4 id="_2">常见漏洞</h4>
+<ul>
+<li>远程命令执行</li>
+<li>注入漏洞：<a href="https://www.secpulse.com/archives/2089.html">Zabbix的前台SQL注射漏洞利用</a></li>
+</ul>
+<h2 id="_3">常见端口渗透</h2>
+<h3 id="dhcp">DHCP：端口渗透</h3>
+<ul>
+<li>67：dhcp/bootp（Dynamic Host Configuration Protocol 动态主机设置协议）</li>
+<li>68：dhcp/bootp（动态主机设置协议）</li>
+<li>546：dhcpv6</li>
+<li>547：dhcpv6</li>
+</ul>
+<h4 id="_4">常见漏洞</h4>
+<ul>
+<li>DHCP欺骗：<a href="https://www.freebuf.com/articles/network/74995.html">流氓DHCP服务器内网攻击测试</a></li>
+</ul>
+<h3 id="dns">DNS端口渗透</h3>
+<ul>
+<li>53：dns（Domain Name System域名服务）</li>
+</ul>
+<h4 id="_5">常见漏洞</h4>
+<ul>
+<li>DNS缓冲区溢出</li>
+<li>DNS欺骗：DNS缓存污染、DNS劫持、DNS重定向</li>
+<li>DNS信息泄漏</li>
+<li>利用DNS隧道技术穿透防火墙；</li>
+<li>区域传输漏洞；</li>
+<li>邮件未配置SPF导致发件人信息伪造；</li>
+</ul>
+<h3 id="linux-r">Linux R端口渗透</h3>
+<ul>
+<li>512/tcp：rexec</li>
+<li>513/login：rlogin</li>
+</ul>
+<h4 id="_6">常见漏洞</h4>
+<ul>
+<li>直接登录：<a href="https://www.freebuf.com/articles/system/34571.html">Metasploitable2使用指南</a></li>
+</ul>
+<h3 id="rsync">Rsync端口渗透</h3>
+<ul>
+<li>873：rsync（文件同步协议）</li>
+</ul>
+<h4 id="_7">常见漏洞</h4>
+<ul>
+<li>未授权访问</li>
+</ul>
+<h3 id="snmp">SNMP端口渗透</h3>
+<ul>
+<li>161：snmp（Simple Network Managerment Protocol简单网络管理协议）</li>
+<li>162：snmp（SNMP协议的TRAP操作）</li>
+</ul>
+<h4 id="_8">常见漏洞</h4>
+<ul>
+<li>暴力破解</li>
+</ul>
+<h3 id="_9">其它端口</h3>
+<ul>
+<li>43：whois（）</li>
+<li>49：TACACS（）</li>
+<li>70：Gopher（）</li>
+<li>79：Finger（）</li>
+<li>88/464：Kerberos（）</li>
+<li>123：ntp（Network Time Protocol网络时间协议）</li>
+<li>135：Microsoft RPC</li>
+<li>153：SGMP（Simple Gateway Monitoring Protocol 简单网关监控协议）</li>
+<li>179：BGP（Border Gateway Protocol 边界网关协议）</li>
+<li>445：Microsoft DS</li>
+<li>264：BGMP（Border Gateway Multicast Protocol 边界网关组播协议）</li>
+<li>514：syslog（日志服务）</li>
+<li>631：internet printing（互联网打印服务）</li>
+<li>691：MS Exchange</li>
+<li>1025：Microsoft RPC</li>
+<li>1080：SOCKS Proxy</li>
+<li>1194：OpenVPN</li>
+<li>1812/1813：RADIUS</li>
+</ul>
+<h2 id="_10">大数据服务端口渗透</h2>
+<h3 id="cdh">CDH端口渗透</h3>
+<ul>
+<li>7180：Cloudera Manager WebUI端口</li>
+<li>7182：Cloudera Manager Server与Agent通信端口</li>
+</ul>
+<h3 id="elasticsearch">ElasticSearch端口渗透</h3>
+<ul>
+<li>9200：客户端使用http连接es的端口</li>
+<li>9300：客户端使用tcp连接es的端口</li>
+</ul>
+<h4 id="_11">常见漏洞</h4>
+<ul>
+<li>WebShell植入：</li>
+<li>任意文件读取：</li>
+<li>未授权访问：9200端口默认无认证信息，可以直接读取ES的集群信息；</li>
+<li>远程命令执行：CVE-2014-3120、<a href="https://www.secpulse.com/archives/5401.html">CVE-2015-1427：ElasticSearch Groovy远程代码执行</a></li>
+</ul>
+<h3 id="hadoop">Hadoop端口渗透</h3>
+<ul>
+<li>50070：HDFS的WebUI端口</li>
+<li>8020：高可用的HDFS RPC端口</li>
+<li>9000：非高可用的HDFS RPC端口</li>
+<li>8088：Yarn的WebUI端口</li>
+<li>8485：JournalNode的RPC端口</li>
+<li>8019：ZKFC端口</li>
+</ul>
+<h4 id="_12">常见漏洞</h4>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/-zPuCt2Eewf220W2pbByIw">CVE-2018-8029：Apache Hadoop 权限提升漏洞</a></li>
+<li><a href="https://mp.weixin.qq.com/s/fF6a5Yhl5y6eSVskYtYSvw">Hadoop Yarn REST API未授权漏洞利用挖矿分析</a></li>
+<li>远程命令执行</li>
+<li>未授权访问：</li>
+</ul>
+<h3 id="hbase">HBase端口渗透</h3>
+<ul>
+<li>60010：HBase Master的WebUI端口</li>
+<li>60030：HBase RegionServer的WebUI端口</li>
+</ul>
+<h4 id="_13">漏洞案例</h4>
+<h4 id="_14">修复意见</h4>
+<h3 id="hive">Hive端口渗透</h3>
+<ul>
+<li>9083：Hive Metastore服务默认监听端口</li>
+<li>10000：Hive的JDBC端口</li>
+</ul>
+<h4 id="_15">漏洞案例</h4>
+<h4 id="_16">修复意见</h4>
+<h3 id="hue">Hue端口渗透</h3>
+<ul>
+<li>8888：Hue WebUI端口</li>
+</ul>
+<h4 id="_17">漏洞案例</h4>
+<h4 id="_18">修复意见</h4>
+<h3 id="kafka">Kafka端口渗透</h3>
+<ul>
+<li>9092：Kafka集群节点之间通信的RPC端口</li>
+</ul>
+<h4 id="_19">漏洞案例</h4>
+<h4 id="_20">修复意见</h4>
+<h3 id="kibana">Kibana</h3>
+<ul>
+<li>5601：Kibana</li>
+</ul>
+<h3 id="memcache">Memcache端口渗透</h3>
+<ul>
+<li>11211：Memcache（分布式的高速缓存系统）</li>
+</ul>
+<h4 id="_21">常见漏洞</h4>
+<ul>
+<li>未授权访问：<a href="https://help.aliyun.com/knowledge_detail/37553.html">Memcached服务安全加固</a></li>
+</ul>
+<h3 id="spark">Spark端口渗透</h3>
+<ul>
+<li>7077：Spark的Master与Worker进行通信的端口；Standalone集群提交Application的端口</li>
+<li>8080：Spark Master的WebUI端口</li>
+<li>8081：Spark Worker的WebUI端口</li>
+<li>4040：Spark Driver的WebUI端口</li>
+<li>18080：Spark History Server的WebUI端口</li>
+</ul>
+<h3 id="zookeeper">Zookeeper端口渗透</h3>
+<ul>
+<li>2181：客户端链接Zookeeper的端口</li>
+<li>2888：Zookeeper集群内通信端口，Leader监听此端口</li>
+<li>3888：Zookeeper选举Leader端口</li>
+</ul>
+<h4 id="_22">常见漏洞</h4>
+<ul>
+<li>未授权访问</li>
+</ul>
+<h2 id="_23">数据库服务端口渗透</h2>
+<h3 id="db2">DB2端口渗透</h3>
+<ul>
+<li>5000：</li>
+</ul>
+<h4 id="_24">常见漏洞</h4>
+<ul>
+<li>安全限制绕过后未授权访问：CVE-2015-1922</li>
+</ul>
+<h3 id="mongodb">MongoDB数据库</h3>
+<ul>
+<li>27017</li>
+</ul>
+<h4 id="_25">常见漏洞</h4>
+<ul>
+<li>暴力破解：</li>
+<li>未授权访问：<a href="https://github.com/yangbh/Hammer/blob/master/plugins/System/mongodb_unauth_access.py">mongodb_unauth_access</a></li>
+<li>远程代码执行：<a href="http://bobao.360.cn/learning/detail/274.html">MongoDB phpMoAdmin远程代码执行漏洞分析</a></li>
+</ul>
+<h3 id="mssql">MSSQL端口渗透</h3>
+<ul>
+<li>1433/tcp：Microsoft SQL（MSSQL数据库）</li>
+<li>1434/tcp：Microsoft SQL（MSSQL活动监视器）</li>
+</ul>
+<h4 id="_26">常见漏洞</h4>
+<ul>
+<li>暴力破解：</li>
+<li>权限提升：<a href="https://www.freebuf.com/articles/database/22997.html">从攻击MSSQL Server到获得系统访问权限</a></li>
+</ul>
+<h3 id="mysql">MySQL端口渗透</h3>
+<ul>
+<li>3306：MySQL</li>
+</ul>
+<h4 id="_27">常见漏洞</h4>
+<ul>
+<li>phpmyadmin万能密码：'localhost'@'@"/密码任意</li>
+<li>暴力破解</li>
+<li>拒绝服务攻击</li>
+<li>权限提升：<a href="https://www.waitalone.cn/mysql-tiquan-summary.html">MYSQL提权总结</a></li>
+<li>身份认证漏洞：<a href="https://www.freebuf.com/vuls/3815.html">CVE-2012-2122</a></li>
+</ul>
+<h3 id="oracle">Oracle端口渗透</h3>
+<ul>
+<li>1521：Oracle数据库端口</li>
+<li>1158</li>
+<li>8080</li>
+<li>2100：Oracle XDB</li>
+<li>2483/2484：Oralce DB</li>
+</ul>
+<h4 id="_28">常见漏洞</h4>
+<ul>
+<li>暴力破解：</li>
+<li>漏洞攻击</li>
+</ul>
+<h3 id="postgresql">PostgreSQL端口渗透</h3>
+<ul>
+<li>5432：PostgreSQL</li>
+</ul>
+<h4 id="_29">常见漏洞</h4>
+<ul>
+<li>暴力破解：</li>
+<li>缓冲区溢出：CVE-2014-2669</li>
+</ul>
+<h3 id="redis">Redis端口渗透</h3>
+<ul>
+<li>6379：Redis</li>
+</ul>
+<h4 id="_30">常见漏洞</h4>
+<ul>
+<li>暴力破解：</li>
+<li>未授权访问：<a href="https://mp.weixin.qq.com/s/guCgsp3rgnL-KpPYBof7ZQ">一起攻击者利用Redis未授权访问漏洞进行新型入侵挖矿事件</a></li>
+</ul>
+<h3 id="sysbase">SysBase端口渗透</h3>
+<ul>
+<li>5000</li>
+<li>4100</li>
+<li>4200</li>
+</ul>
+<h4 id="_31">常见漏洞</h4>
+<ul>
+<li>暴力破解：</li>
+<li>命令注入：</li>
+</ul>
+<h2 id="_32">文件服务端口渗透</h2>
+<h3 id="ftp">FTP端口渗透</h3>
+<ul>
+<li>20：ftp（文件传输协议默认数据）</li>
+<li>21：ftp（文件传输协议控制）</li>
+<li>69：tftp（小文件传输协议）</li>
+<li>115：sftp（安全文件传输协议）</li>
+<li>989：ftp over ssl</li>
+<li>990：ftp over ssl</li>
+</ul>
+<h4 id="_33">常见漏洞</h4>
+<ul>
+<li>FTP 后门：<a href="https://www.freebuf.com/articles/system/34571.html">Metasploitable2使用指南</a></li>
+<li>暴力破解：hydra；</li>
+<li>局域网嗅探ftp密码；</li>
+<li>匿名访问：anonymous/（为空或任意邮箱）；</li>
+<li>跳转攻击(Bounce Attacks)：攻击者发送一个FTP"PORT"命令给目标FTP服务器，其中包含该主机的网络地址和被攻击的服务的端口号。这样，客户端就能命令FTP服务器发一个文件给被攻击的服务。这个文件可能包括根被攻击的服务有关的命令（如SMTP,NNTP等）。由于是命令第三方去连接到一种服务，而不是直接连接，就使得跟踪攻击者变得困难，并且还避开了基于网络地址的访问限制。</li>
+<li>未授权访问：不需要账号与密码；</li>
+<li>远程溢出：6.10.1 IIS FTP，在IIS FTP服务器中NLST命令存在一个缓冲区溢出漏洞，这个漏洞可能是攻击者在服务器运行一条非法命令。</li>
+</ul>
+<h3 id="ldap">LDAP端口渗透</h3>
+<ul>
+<li>389：ldap（Lightweight Directory Access Protocol 轻量目录访问协议）</li>
+<li>636：ldap over ssl</li>
+</ul>
+<h4 id="_34">常见漏洞</h4>
+<ul>
+<li>LDAP 注入：</li>
+<li>暴力破解：</li>
+<li>未授权访问：</li>
+</ul>
+<h3 id="nfs">NFS端口渗透</h3>
+<ul>
+<li>2049：nfs（network file system 网络文件系统）</li>
+</ul>
+<h4 id="_35">常见漏洞</h4>
+<ul>
+<li>未授权访问：<a href="https://bloodzer0.github.io/ossa/vulnerability/unauthorized/#nfs">NFS未授权访问漏洞</a></li>
+</ul>
+<h3 id="samba">Samba端口渗透</h3>
+<ul>
+<li>137：NetBIOS Name Service，NetBIOS名称服务端口</li>
+<li>138：NetBIOS数据报文服务端口</li>
+<li>139：NetBIOS Session Service，NetBIOS会话服务端口</li>
+</ul>
+<h4 id="_36">常见漏洞</h4>
+<ul>
+<li>暴力破解：hydra -l username -P pass_file attack_ip smb</li>
+<li>未授权访问：赋予public用户过高的权限；</li>
+<li>远程代码执行：CVE-2015-0240；</li>
+</ul>
+<h2 id="_37">邮件服务端口渗透</h2>
+<h3 id="iamp">IAMP端口渗透</h3>
+<ul>
+<li>143：iamp4（因特网信息访问协议）</li>
+<li>993：iamp4 over ssl</li>
+</ul>
+<h4 id="_38">常见漏洞</h4>
+<ul>
+<li>暴力破解</li>
+<li>配置不当</li>
+</ul>
+<h3 id="pop">POP端口渗透</h3>
+<ul>
+<li>109：pop2（邮局协议v2）</li>
+<li>110：pop3（邮局协议v3）</li>
+<li>995：pop3 over ssl</li>
+</ul>
+<h4 id="_39">常见漏洞</h4>
+<ul>
+<li>暴力破解</li>
+<li>未授权访问</li>
+</ul>
+<h3 id="smtp">SMTP端口渗透</h3>
+<ul>
+<li>25：smtp（Simple Mail Transfer Protocol 简单邮件传输协议）</li>
+<li>465：smtps（smtp over ssl）</li>
+<li>587：smtp（Simple Mail Transfer Protocol 简单邮件传输协议）</li>
+</ul>
+<h4 id="_40">常见漏洞</h4>
+<ul>
+<li>暴力破解</li>
+<li>未授权访问</li>
+</ul>
+<h2 id="_41">远程访问服务端口渗透</h2>
+<h3 id="microsoft-rdp">Microsoft RDP端口渗透</h3>
+<ul>
+<li>3389：Microsoft Terminal Server</li>
+</ul>
+<h4 id="_42">常见漏洞</h4>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/yUoslIuPXjlJ0JS-un4fhg">CVE-2019-0708：远程代码执行</a></li>
+<li>MS12-020：</li>
+<li>Shift粘滞键后门，5次Shift；</li>
+<li>暴力破解</li>
+</ul>
+<h3 id="pcanywhere">pcAnywhere端口渗透</h3>
+<ul>
+<li>5631/5632：pcAnywhere</li>
+</ul>
+<h4 id="_43">常见漏洞</h4>
+<ul>
+<li>代码执行漏洞</li>
+<li>拒绝服务攻击</li>
+<li>权限提升</li>
+</ul>
+<h3 id="ssh">SSH端口渗透</h3>
+<ul>
+<li>22：ssh（远程登录协议）</li>
+</ul>
+<h4 id="_44">常见漏洞</h4>
+<ul>
+<li>28退格漏洞：</li>
+<li>暴力破解：</li>
+<li>心脏滴血漏洞：</li>
+</ul>
+<h3 id="telnet">Telnet端口渗透</h3>
+<ul>
+<li>23：telnet（终端仿真协议）</li>
+</ul>
+<h4 id="_45">常见漏洞</h4>
+<ul>
+<li>暴力破解：</li>
+<li>局域网嗅探：</li>
+</ul>
+<h3 id="vnc">VNC端口渗透</h3>
+<ul>
+<li>5500：VNC Server</li>
+<li>590N：N是从1到9的整数，代表不同到桌面ID</li>
+</ul>
+<h4 id="_46">常见漏洞</h4>
+<ul>
+<li>暴力破解</li>
+<li>拒绝服务攻击：CVE-2015-5239</li>
+<li>权限提升：CVE-2013-6886</li>
+<li>认证口令绕过</li>
+</ul>
+<h2 id="_47">参考资料</h2>
+<p><a href="http://www.91ri.org/15441.html">bloodzer0-端口渗透总结</a></p>
                 
                   
                 
@@ -3300,7 +5091,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../study_notes/zookeeper/" title="Zookeeper知识体系" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../mac_flood/" title="Mac地址泛洪攻击" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -3309,19 +5100,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Zookeeper知识体系
+                Mac地址泛洪攻击
               </span>
             </div>
           </a>
         
         
-          <a href="../jboss/" title="JBoss漏洞总结" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../security_notes/zh-en/" title="安全中英文对应" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                JBoss漏洞总结
+                安全中英文对应
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
