@@ -581,6 +581,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/vulnerability/weixin_appsecret/</loc>
+     <lastmod>2019-08-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/waf/iptables_waf/</loc>
      <lastmod>2019-08-29</lastmod>
      <changefreq>daily</changefreq>
