@@ -566,6 +566,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://bloodzer0.github.io/ossa/vulnerability/information_leakage/</loc>
+     <lastmod>2019-08-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://bloodzer0.github.io/ossa/vulnerability/jboss/</loc>
      <lastmod>2019-08-29</lastmod>
      <changefreq>daily</changefreq>
