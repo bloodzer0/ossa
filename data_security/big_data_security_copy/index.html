@@ -1,0 +1,4342 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="开源安全架构">
+      
+      
+        <link rel="canonical" href="https://bloodzer0.github.io/ossa/data_security/big_data_security_copy/">
+      
+      
+        <meta name="author" content="bloodzer0">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>大数据安全核心技术（摘自CSDN） - Open-Source Security Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#csdn" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://bloodzer0.github.io/ossa/" title="Open-Source Security Architecture" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Open-Source Security Architecture
+              </span>
+              <span class="md-header-nav__topic">
+                大数据安全核心技术（摘自CSDN）
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/bloodzer0/ossa" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      bloodzer0/ossa
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://bloodzer0.github.io/ossa/" title="Open-Source Security Architecture" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Open-Source Security Architecture
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/bloodzer0/ossa" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      bloodzer0/ossa
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="ossa" class="md-nav__link">
+      ossa
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Account security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Account security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../account_security/protection_account/" title="保障账户体系的安全" class="md-nav__link">
+      保障账户体系的安全
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Application security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Application security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/" title="应用安全" class="md-nav__link">
+      应用安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Code audit
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Code audit
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/code-audit/" title="代码审计" class="md-nav__link">
+      代码审计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/code-audit/cobra/" title="Cobra安装与使用" class="md-nav__link">
+      Cobra安装与使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/code-audit/ethereum-smart-contracts-code-audit/" title="智能合约代码审计" class="md-nav__link">
+      智能合约代码审计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/code-audit/findsecbugs/" title="FindSecBugs安装与使用" class="md-nav__link">
+      FindSecBugs安装与使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/code-audit/sonarqube-error/" title="SonarQube踩坑记" class="md-nav__link">
+      SonarQube踩坑记
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/code-audit/sonarqube/" title="SonarQube安装与使用" class="md-nav__link">
+      SonarQube安装与使用
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Mobile security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Mobile security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/mobile-security/" title="移动安全" class="md-nav__link">
+      移动安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/mobile-security/mobile-security-scanner/" title="移动安全扫描" class="md-nav__link">
+      移动安全扫描
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/mobile-security/mobile-tools/" title="移动安全工具" class="md-nav__link">
+      移动安全工具
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Sdl
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Sdl
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/sdl/api-gateway/" title="API网关" class="md-nav__link">
+      API网关
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/sdl/api-security-design/" title="API网关设计" class="md-nav__link">
+      API网关设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/sdl/go-scp/" title="Go语言安全编码规范-翻译" class="md-nav__link">
+      Go语言安全编码规范-翻译
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Security defense
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        Security defense
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-defense/https/" title="全站https" class="md-nav__link">
+      全站https
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-defense/iptables-waf/" title="iptables-waf" class="md-nav__link">
+      iptables-waf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-defense/modsecurity-waf/" title="modsecurity-waf" class="md-nav__link">
+      modsecurity-waf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-defense/openresty-waf/" title="openresty-waf" class="md-nav__link">
+      openresty-waf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-defense/waf/" title="Web应用防火墙" class="md-nav__link">
+      Web应用防火墙
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6">
+    
+    <label class="md-nav__link" for="nav-3-6">
+      Security testing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-6">
+        Security testing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-testing/" title="安全测试" class="md-nav__link">
+      安全测试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-testing/api-security-testing/" title="API安全测试" class="md-nav__link">
+      API安全测试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-testing/app-security-testing/" title="APP安全测试" class="md-nav__link">
+      APP安全测试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-testing/checklist/" title="安全测试checklist" class="md-nav__link">
+      安全测试checklist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-testing/dast-iast-sast/" title="DAST&SAST&IAST" class="md-nav__link">
+      DAST&SAST&IAST
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-6-6" type="checkbox" id="nav-3-6-6">
+    
+    <label class="md-nav__link" for="nav-3-6-6">
+      Tools skills
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-6-6">
+        Tools skills
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-testing/tools-skills/app/" title="APP脱壳技巧" class="md-nav__link">
+      APP脱壳技巧
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-testing/tools-skills/capture-https/" title="https抓包" class="md-nav__link">
+      https抓包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-testing/tools-skills/capture-skills/" title="抓包技巧" class="md-nav__link">
+      抓包技巧
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-testing/tools-skills/information-leakage/" title="信息泄漏漏洞利用" class="md-nav__link">
+      信息泄漏漏洞利用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/security-testing/tools-skills/web-tools/" title="Web安全工具" class="md-nav__link">
+      Web安全工具
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
+    
+    <label class="md-nav__link" for="nav-3-7">
+      Vulnerability management
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-7">
+        Vulnerability management
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/vulnerability-management/" title="漏洞管理" class="md-nav__link">
+      漏洞管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/vulnerability-management/vm-tools-defectdojo/" title="defectdojo" class="md-nav__link">
+      defectdojo
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-8" type="checkbox" id="nav-3-8">
+    
+    <label class="md-nav__link" for="nav-3-8">
+      Web security scan
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-8">
+        Web security scan
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../application-security/web-security-scan/" title="Web安全扫描" class="md-nav__link">
+      Web安全扫描
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Big data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Big data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../big_data/flume/" title="Flume日志收集" class="md-nav__link">
+      Flume日志收集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../big_data/kafka/" title="Kafka知识体系" class="md-nav__link">
+      Kafka知识体系
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../big_data/zookeeper/" title="Zookeeper知识体系" class="md-nav__link">
+      Zookeeper知识体系
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Captcha security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Captcha security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../captcha_security/captcha/" title="验证码安全总结" class="md-nav__link">
+      验证码安全总结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Code audit
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Code audit
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../code_audit/cobra/" title="Cobra代码审计工具" class="md-nav__link">
+      Cobra代码审计工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../code_audit/solitity/" title="智能合约代码审计" class="md-nav__link">
+      智能合约代码审计
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      Data security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Data security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        大数据安全核心技术（摘自CSDN）
+      </label>
+    
+    <a href="./" title="大数据安全核心技术（摘自CSDN）" class="md-nav__link md-nav__link--active">
+      大数据安全核心技术（摘自CSDN）
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#01" title="01 数据采集安全技术" class="md-nav__link">
+    01 数据采集安全技术
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0101" title="01.01 传输安全" class="md-nav__link">
+    01.01 传输安全
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0102-ssl-vpn" title="01.02 SSL VPN" class="md-nav__link">
+    01.02 SSL VPN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02" title="02 数据存储安全技术" class="md-nav__link">
+    02 数据存储安全技术
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0201" title="02.01 隐私保护" class="md-nav__link">
+    02.01 隐私保护
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#020101" title="02.01.01 基于数据交换的隐私保护技术" class="md-nav__link">
+    02.01.01 基于数据交换的隐私保护技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#020102" title="02.01.02 基于数据加密的隐私保护技术" class="md-nav__link">
+    02.01.02 基于数据加密的隐私保护技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#020103" title="02.01.03 基于匿名化的隐私保护技术" class="md-nav__link">
+    02.01.03 基于匿名化的隐私保护技术
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0202" title="02.02 数据加密" class="md-nav__link">
+    02.02 数据加密
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#020201" title="02.02.01 静态数据加密机制" class="md-nav__link">
+    02.02.01 静态数据加密机制
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#02020101" title="02.02.01.01 数据加密算法" class="md-nav__link">
+    02.02.01.01 数据加密算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02020102" title="02.02.01.02 加密范围" class="md-nav__link">
+    02.02.01.02 加密范围
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02020103" title="02.02.01.03 密钥管理方案" class="md-nav__link">
+    02.02.01.03 密钥管理方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#020202" title="02.02.02 动态数据加密机制" class="md-nav__link">
+    02.02.02 动态数据加密机制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0203" title="02.03 备份与恢复" class="md-nav__link">
+    02.03 备份与恢复
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#020301" title="02.03.01 异地备份" class="md-nav__link">
+    02.03.01 异地备份
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#020302-raid" title="02.03.02 RAID" class="md-nav__link">
+    02.03.02 RAID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#020303" title="02.03.03 数据镜像" class="md-nav__link">
+    02.03.03 数据镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#020304" title="02.03.04 快照" class="md-nav__link">
+    02.03.04 快照
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03" title="03 数据挖掘安全技术" class="md-nav__link">
+    03 数据挖掘安全技术
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0301" title="03.01 身份认证" class="md-nav__link">
+    03.01 身份认证
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#030101" title="03.01.01 基于动态口令的认证机制" class="md-nav__link">
+    03.01.01 基于动态口令的认证机制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0302" title="03.02 访问控制" class="md-nav__link">
+    03.02 访问控制
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#030201" title="03.02.01 自主访问控制" class="md-nav__link">
+    03.02.01 自主访问控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#030202" title="03.02.02 强制访问控制" class="md-nav__link">
+    03.02.02 强制访问控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#030203" title="03.02.03 基于角色的访问控制" class="md-nav__link">
+    03.02.03 基于角色的访问控制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0303" title="03.03 关系型数据库安全策略" class="md-nav__link">
+    03.03 关系型数据库安全策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0304" title="03.04 非关系型数据块安全策略" class="md-nav__link">
+    03.04 非关系型数据块安全策略
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#030401-acl" title="03.04.01 基于ACL的权限控制" class="md-nav__link">
+    03.04.01 基于ACL的权限控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#030402" title="03.04.02 基于令牌的认证机制" class="md-nav__link">
+    03.04.02 基于令牌的认证机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#030403" title="03.04.03 数据完整性与一致性" class="md-nav__link">
+    03.04.03 数据完整性与一致性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04" title="04 数据发布安全技术" class="md-nav__link">
+    04 数据发布安全技术
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0401" title="04.01 安全审计" class="md-nav__link">
+    04.01 安全审计
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#040101" title="04.01.01 基于日志的审计技术" class="md-nav__link">
+    04.01.01 基于日志的审计技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#040102" title="04.01.02 基于网络监听的审计技术" class="md-nav__link">
+    04.01.02 基于网络监听的审计技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#040103" title="04.01.03 基于网关的审计技术" class="md-nav__link">
+    04.01.03 基于网关的审计技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#040104" title="04.01.04 基于代理的审计技术" class="md-nav__link">
+    04.01.04 基于代理的审计技术
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0402" title="04.02 数据溯源" class="md-nav__link">
+    04.02 数据溯源
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#040201" title="04.02.01 将信息安全领域的数字水印技术用于溯源" class="md-nav__link">
+    04.02.01 将信息安全领域的数字水印技术用于溯源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-apt" title="05 防范APT攻击" class="md-nav__link">
+    05 防范APT攻击
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0501-apt" title="05.01 APT攻击的概念" class="md-nav__link">
+    05.01 APT攻击的概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0502-apt" title="05.02 APT攻击特征" class="md-nav__link">
+    05.02 APT攻击特征
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#050201" title="05.02.01 极强的隐蔽性" class="md-nav__link">
+    05.02.01 极强的隐蔽性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050202" title="05.02.02 潜伏期长、持续性强" class="md-nav__link">
+    05.02.02 潜伏期长、持续性强
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050203" title="05.02.03 目标性强" class="md-nav__link">
+    05.02.03 目标性强
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050204" title="05.02.04 技术高级" class="md-nav__link">
+    05.02.04 技术高级
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050205" title="05.02.05 威胁性大" class="md-nav__link">
+    05.02.05 威胁性大
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0503-apt" title="05.03 APT攻击的一般流程" class="md-nav__link">
+    05.03 APT攻击的一般流程
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#050301" title="05.03.01 信息侦查" class="md-nav__link">
+    05.03.01 信息侦查
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050302" title="05.03.02 持续渗透" class="md-nav__link">
+    05.03.02 持续渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050303" title="05.03.03 长期潜伏" class="md-nav__link">
+    05.03.03 长期潜伏
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050304" title="05.03.04 窃取信息" class="md-nav__link">
+    05.03.04 窃取信息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0504-apt" title="05.04 APT攻击检测" class="md-nav__link">
+    05.04 APT攻击检测
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#050401" title="05.04.01 沙箱方案" class="md-nav__link">
+    05.04.01 沙箱方案
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050402" title="05.04.02 异常检测" class="md-nav__link">
+    05.04.02 异常检测
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050403" title="05.04.03 全流量审计" class="md-nav__link">
+    05.04.03 全流量审计
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050404" title="05.04.04 基于深层协议解析的异常识别" class="md-nav__link">
+    05.04.04 基于深层协议解析的异常识别
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050405-root-cause-explorer" title="05.04.05 攻击溯源（root cause explorer）" class="md-nav__link">
+    05.04.05 攻击溯源（root cause explorer）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0505-apt" title="05.05 APT攻击的防范策略" class="md-nav__link">
+    05.05 APT攻击的防范策略
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#050501" title="05.05.01 防社会工程" class="md-nav__link">
+    05.05.01 防社会工程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050502" title="05.05.02 全面采集行为记录，避免内部监控盲点" class="md-nav__link">
+    05.05.02 全面采集行为记录，避免内部监控盲点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050503-it" title="05.05.03 IT系统异常行为检测" class="md-nav__link">
+    05.05.03 IT系统异常行为检测
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Honeypot
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Honeypot
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../honeypot/kippo/" title="Kippo SSH蜜罐" class="md-nav__link">
+      Kippo SSH蜜罐
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Ids ips
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Ids ips
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ids_ips/aide/" title="Aide基于文件入侵检测系统" class="md-nav__link">
+      Aide基于文件入侵检测系统
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ids_ips/wazuh/" title="Wazuh主机入侵检测系统" class="md-nav__link">
+      Wazuh主机入侵检测系统
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Infrastructure security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Infrastructure security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/" title="基础设施安全" class="md-nav__link">
+      基础设施安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-2" type="checkbox" id="nav-10-2">
+    
+    <label class="md-nav__link" for="nav-10-2">
+      Container
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-2">
+        Container
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/container/" title="容器安全建设" class="md-nav__link">
+      容器安全建设
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/container/tools/" title="容器安全工具" class="md-nav__link">
+      容器安全工具
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-3" type="checkbox" id="nav-10-3">
+    
+    <label class="md-nav__link" for="nav-10-3">
+      Host security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-3">
+        Host security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/" title="主机安全" class="md-nav__link">
+      主机安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-3-2" type="checkbox" id="nav-10-3-2">
+    
+    <label class="md-nav__link" for="nav-10-3-2">
+      Fortress machine
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-10-3-2">
+        Fortress machine
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/fortress-machine/jumpserver/" title="jumpserver 开源堡垒机" class="md-nav__link">
+      jumpserver 开源堡垒机
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-3-3" type="checkbox" id="nav-10-3-3">
+    
+    <label class="md-nav__link" for="nav-10-3-3">
+      Honeypot
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-10-3-3">
+        Honeypot
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/honeypot/" title="蜜罐技术" class="md-nav__link">
+      蜜罐技术
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/honeypot/mhn-honeypot/" title="MHN蜜罐" class="md-nav__link">
+      MHN蜜罐
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-3-4" type="checkbox" id="nav-10-3-4">
+    
+    <label class="md-nav__link" for="nav-10-3-4">
+      Host security scan
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-10-3-4">
+        Host security scan
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/host-security-scan/" title="主机安全扫描" class="md-nav__link">
+      主机安全扫描
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/host-security-scan/open-source-scanner/" title="开源扫描器" class="md-nav__link">
+      开源扫描器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/host-security-scan/port/" title="端口安全" class="md-nav__link">
+      端口安全
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-3-5" type="checkbox" id="nav-10-3-5">
+    
+    <label class="md-nav__link" for="nav-10-3-5">
+      Ids ips
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-10-3-5">
+        Ids ips
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/ids-ips/" title="主机入侵检测&防御系统" class="md-nav__link">
+      主机入侵检测&防御系统
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/ids-ips/aide/" title="aide 文件和目录完整性入群检测" class="md-nav__link">
+      aide 文件和目录完整性入群检测
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/ids-ips/osquery/" title="osquery 操作系统检测与分析" class="md-nav__link">
+      osquery 操作系统检测与分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/ids-ips/wazuh/" title="wazuh 主机入侵检测系统" class="md-nav__link">
+      wazuh 主机入侵检测系统
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-3-6" type="checkbox" id="nav-10-3-6">
+    
+    <label class="md-nav__link" for="nav-10-3-6">
+      Log analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-10-3-6">
+        Log analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/log-analysis/" title="日志分析" class="md-nav__link">
+      日志分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/log-analysis/elk5-elastalert/" title="ELK监控报警系统-elastalert" class="md-nav__link">
+      ELK监控报警系统-elastalert
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/log-analysis/graylog1/" title="Graylog日志管理系统" class="md-nav__link">
+      Graylog日志管理系统
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/host-security/log-analysis/graylog2-advanced/" title="Graylog高级使用" class="md-nav__link">
+      Graylog高级使用
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-4" type="checkbox" id="nav-10-4">
+    
+    <label class="md-nav__link" for="nav-10-4">
+      Network security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-4">
+        Network security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/network-security/" title="网络安全" class="md-nav__link">
+      网络安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-4-2" type="checkbox" id="nav-10-4-2">
+    
+    <label class="md-nav__link" for="nav-10-4-2">
+      Cc dos ddos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-10-4-2">
+        Cc dos ddos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/network-security/cc-dos-ddos/cc/" title="应用层拒绝服务攻击" class="md-nav__link">
+      应用层拒绝服务攻击
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/network-security/cc-dos-ddos/dos-ddos/" title="拒绝服务攻击" class="md-nav__link">
+      拒绝服务攻击
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-4-3" type="checkbox" id="nav-10-4-3">
+    
+    <label class="md-nav__link" for="nav-10-4-3">
+      Ids ips
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-10-4-3">
+        Ids ips
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/network-security/ids-ips/bro/" title="bro 网络安全监控" class="md-nav__link">
+      bro 网络安全监控
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-4-4" type="checkbox" id="nav-10-4-4">
+    
+    <label class="md-nav__link" for="nav-10-4-4">
+      Network security monitor
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-10-4-4">
+        Network security monitor
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/network-security/network-security-monitor/github-monitor/" title="GitHub信息泄漏监控" class="md-nav__link">
+      GitHub信息泄漏监控
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-4-5" type="checkbox" id="nav-10-4-5">
+    
+    <label class="md-nav__link" for="nav-10-4-5">
+      Office network security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-10-4-5">
+        Office network security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/network-security/office-network-security/" title="办公网网络安全" class="md-nav__link">
+      办公网网络安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/network-security/office-network-security/email-security/" title="邮件安全" class="md-nav__link">
+      邮件安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure-security/network-security/office-network-security/gophish/" title="gophish 开源钓鱼工具" class="md-nav__link">
+      gophish 开源钓鱼工具
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Log analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Log analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../log_analysis/elastalert/" title="ElastAlert ES报警工具" class="md-nav__link">
+      ElastAlert ES报警工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../log_analysis/elastic/" title="Elastic知识体系" class="md-nav__link">
+      Elastic知识体系
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../log_analysis/elastic_example/" title="Elastic日志分析案例" class="md-nav__link">
+      Elastic日志分析案例
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../log_analysis/grokdebugger/" title="本地搭建GrokDebug" class="md-nav__link">
+      本地搭建GrokDebug
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../log_analysis/log_analysis/" title="日志分析架构" class="md-nav__link">
+      日志分析架构
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../log_analysis/nginx_log/" title="Nginx配置日志格式" class="md-nav__link">
+      Nginx配置日志格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../log_analysis/nginx_realip/" title="Nginx如果透过代理获取真实IP地址" class="md-nav__link">
+      Nginx如果透过代理获取真实IP地址
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Miscellaneous
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Miscellaneous
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellaneous/jsrc-1/" title="白帽子转型甲方杂绪" class="md-nav__link">
+      白帽子转型甲方杂绪
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Network security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Network security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../network_security/cc/" title="CC应用层拒绝服务攻击" class="md-nav__link">
+      CC应用层拒绝服务攻击
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../network_security/dos_ddos/" title="DoS与DDoS拒绝服务攻击" class="md-nav__link">
+      DoS与DDoS拒绝服务攻击
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Other security branch
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Other security branch
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14-1" type="checkbox" id="nav-14-1">
+    
+    <label class="md-nav__link" for="nav-14-1">
+      Asset management
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-14-1">
+        Asset management
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-security-branch/asset-management/" title="资产管理" class="md-nav__link">
+      资产管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-security-branch/asset-management/asset-acquisition/" title="资产管理平台" class="md-nav__link">
+      资产管理平台
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14-2" type="checkbox" id="nav-14-2">
+    
+    <label class="md-nav__link" for="nav-14-2">
+      Data security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-14-2">
+        Data security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-security-branch/data-security/" title="数据安全" class="md-nav__link">
+      数据安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14-2-2" type="checkbox" id="nav-14-2-2">
+    
+    <label class="md-nav__link" for="nav-14-2-2">
+      Big data security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-14-2-2">
+        Big data security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-security-branch/data-security/big-data-security/" title="大数据安全" class="md-nav__link">
+      大数据安全
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14-3" type="checkbox" id="nav-14-3">
+    
+    <label class="md-nav__link" for="nav-14-3">
+      Devsecops
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-14-3">
+        Devsecops
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-security-branch/devsecops/gjs/" title="Gitlab+Jenkins+SonarQube 实现代码审计指南" class="md-nav__link">
+      Gitlab+Jenkins+SonarQube 实现代码审计指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-security-branch/devsecops/sdc/" title="SonarQube集成DependencyCheck" class="md-nav__link">
+      SonarQube集成DependencyCheck
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14-4" type="checkbox" id="nav-14-4">
+    
+    <label class="md-nav__link" for="nav-14-4">
+      Emergency response
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-14-4">
+        Emergency response
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-security-branch/emergency-response/chkrootkit/" title="chkrootkit Linux入侵检测" class="md-nav__link">
+      chkrootkit Linux入侵检测
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-security-branch/emergency-response/lynis/" title="lynis Linux安全审计工具" class="md-nav__link">
+      lynis Linux安全审计工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-security-branch/emergency-response/rkhunter/" title="rkhunter Linux入侵检测" class="md-nav__link">
+      rkhunter Linux入侵检测
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14-5" type="checkbox" id="nav-14-5">
+    
+    <label class="md-nav__link" for="nav-14-5">
+      Identity and access security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-14-5">
+        Identity and access security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-security-branch/identity-and-access-security/freeipa/" title="基于Linux开源身份认证体系FreeIPA" class="md-nav__link">
+      基于Linux开源身份认证体系FreeIPA
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14-6" type="checkbox" id="nav-14-6">
+    
+    <label class="md-nav__link" for="nav-14-6">
+      Security operation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-14-6">
+        Security operation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-security-branch/security-operation/pst/" title="产品安全设计Checklist" class="md-nav__link">
+      产品安全设计Checklist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-security-branch/security-operation/security-platform/" title="中小型企业自建安全平台" class="md-nav__link">
+      中小型企业自建安全平台
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14-7" type="checkbox" id="nav-14-7">
+    
+    <label class="md-nav__link" for="nav-14-7">
+      Virtualization security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-14-7">
+        Virtualization security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-security-branch/virtualization-security/docker-security/" title="Docker安全总结" class="md-nav__link">
+      Docker安全总结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      Red vs blue
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        Red vs blue
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../red_vs_blue/dns_tunnel/" title="DNS隧道技术" class="md-nav__link">
+      DNS隧道技术
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../red_vs_blue/hijack_https/" title="HTTPS劫持" class="md-nav__link">
+      HTTPS劫持
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../red_vs_blue/information_collect/" title="渗透的本质是信息收集" class="md-nav__link">
+      渗透的本质是信息收集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../red_vs_blue/mac_flood/" title="Mac地址泛洪攻击" class="md-nav__link">
+      Mac地址泛洪攻击
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../red_vs_blue/port/" title="端口渗透" class="md-nav__link">
+      端口渗透
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-16" type="checkbox" id="nav-16">
+    
+    <label class="md-nav__link" for="nav-16">
+      Security notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-16">
+        Security notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security_notes/zh-en/" title="安全中英文对应" class="md-nav__link">
+      安全中英文对应
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17">
+    
+    <label class="md-nav__link" for="nav-17">
+      Security tools
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-17">
+        Security tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security_tools/cc_tools/" title="CC漏洞利用工具" class="md-nav__link">
+      CC漏洞利用工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security_tools/ddos_tools/" title="DoS与DDoS利用工具" class="md-nav__link">
+      DoS与DDoS利用工具
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18">
+    
+    <label class="md-nav__link" for="nav-18">
+      Study notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-18">
+        Study notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../study_notes/books/" title="书单推荐(不光安全)" class="md-nav__link">
+      书单推荐(不光安全)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../study_notes/docker/" title="Docker知识体系" class="md-nav__link">
+      Docker知识体系
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../study_notes/freeipa/" title="FreeIPA开源身份认证" class="md-nav__link">
+      FreeIPA开源身份认证
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../study_notes/gitlab/" title="Gitlab仓库管理工具" class="md-nav__link">
+      Gitlab仓库管理工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../study_notes/jenkins/" title="Jenkins持续集成工具" class="md-nav__link">
+      Jenkins持续集成工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../study_notes/kafka/" title="Kafka知识体系" class="md-nav__link">
+      Kafka知识体系
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../study_notes/ldap/" title="LDAP轻量目录访问协议" class="md-nav__link">
+      LDAP轻量目录访问协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../study_notes/mkdocs/" title="MKDocs文档管理工具" class="md-nav__link">
+      MKDocs文档管理工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../study_notes/mysql/" title="MySQL知识体系" class="md-nav__link">
+      MySQL知识体系
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../study_notes/postgresql/" title="PostgreSQL知识体系" class="md-nav__link">
+      PostgreSQL知识体系
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../study_notes/sql/" title="SQL语句知识体系" class="md-nav__link">
+      SQL语句知识体系
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../study_notes/zookeeper/" title="Zookeeper知识体系" class="md-nav__link">
+      Zookeeper知识体系
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-19" type="checkbox" id="nav-19">
+    
+    <label class="md-nav__link" for="nav-19">
+      Vulnerability
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-19">
+        Vulnerability
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vulnerability/account/" title="账户逻辑漏洞" class="md-nav__link">
+      账户逻辑漏洞
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vulnerability/app_vul/" title="APP安全漏洞" class="md-nav__link">
+      APP安全漏洞
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vulnerability/information_leakage/" title="信息泄漏" class="md-nav__link">
+      信息泄漏
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vulnerability/jboss/" title="JBoss漏洞总结" class="md-nav__link">
+      JBoss漏洞总结
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vulnerability/sql_injection/" title="SQL注入" class="md-nav__link">
+      SQL注入
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vulnerability/unauthorized/" title="未授权访问漏洞" class="md-nav__link">
+      未授权访问漏洞
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vulnerability/weixin_appsecret/" title="微信APPId与APPSecret泄漏" class="md-nav__link">
+      微信APPId与APPSecret泄漏
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+      Waf
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-20">
+        Waf
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../waf/iptables_waf/" title="基于iptables实现waf" class="md-nav__link">
+      基于iptables实现waf
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#01" title="01 数据采集安全技术" class="md-nav__link">
+    01 数据采集安全技术
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0101" title="01.01 传输安全" class="md-nav__link">
+    01.01 传输安全
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0102-ssl-vpn" title="01.02 SSL VPN" class="md-nav__link">
+    01.02 SSL VPN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02" title="02 数据存储安全技术" class="md-nav__link">
+    02 数据存储安全技术
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0201" title="02.01 隐私保护" class="md-nav__link">
+    02.01 隐私保护
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#020101" title="02.01.01 基于数据交换的隐私保护技术" class="md-nav__link">
+    02.01.01 基于数据交换的隐私保护技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#020102" title="02.01.02 基于数据加密的隐私保护技术" class="md-nav__link">
+    02.01.02 基于数据加密的隐私保护技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#020103" title="02.01.03 基于匿名化的隐私保护技术" class="md-nav__link">
+    02.01.03 基于匿名化的隐私保护技术
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0202" title="02.02 数据加密" class="md-nav__link">
+    02.02 数据加密
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#020201" title="02.02.01 静态数据加密机制" class="md-nav__link">
+    02.02.01 静态数据加密机制
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#02020101" title="02.02.01.01 数据加密算法" class="md-nav__link">
+    02.02.01.01 数据加密算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02020102" title="02.02.01.02 加密范围" class="md-nav__link">
+    02.02.01.02 加密范围
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02020103" title="02.02.01.03 密钥管理方案" class="md-nav__link">
+    02.02.01.03 密钥管理方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#020202" title="02.02.02 动态数据加密机制" class="md-nav__link">
+    02.02.02 动态数据加密机制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0203" title="02.03 备份与恢复" class="md-nav__link">
+    02.03 备份与恢复
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#020301" title="02.03.01 异地备份" class="md-nav__link">
+    02.03.01 异地备份
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#020302-raid" title="02.03.02 RAID" class="md-nav__link">
+    02.03.02 RAID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#020303" title="02.03.03 数据镜像" class="md-nav__link">
+    02.03.03 数据镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#020304" title="02.03.04 快照" class="md-nav__link">
+    02.03.04 快照
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03" title="03 数据挖掘安全技术" class="md-nav__link">
+    03 数据挖掘安全技术
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0301" title="03.01 身份认证" class="md-nav__link">
+    03.01 身份认证
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#030101" title="03.01.01 基于动态口令的认证机制" class="md-nav__link">
+    03.01.01 基于动态口令的认证机制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0302" title="03.02 访问控制" class="md-nav__link">
+    03.02 访问控制
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#030201" title="03.02.01 自主访问控制" class="md-nav__link">
+    03.02.01 自主访问控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#030202" title="03.02.02 强制访问控制" class="md-nav__link">
+    03.02.02 强制访问控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#030203" title="03.02.03 基于角色的访问控制" class="md-nav__link">
+    03.02.03 基于角色的访问控制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0303" title="03.03 关系型数据库安全策略" class="md-nav__link">
+    03.03 关系型数据库安全策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0304" title="03.04 非关系型数据块安全策略" class="md-nav__link">
+    03.04 非关系型数据块安全策略
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#030401-acl" title="03.04.01 基于ACL的权限控制" class="md-nav__link">
+    03.04.01 基于ACL的权限控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#030402" title="03.04.02 基于令牌的认证机制" class="md-nav__link">
+    03.04.02 基于令牌的认证机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#030403" title="03.04.03 数据完整性与一致性" class="md-nav__link">
+    03.04.03 数据完整性与一致性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04" title="04 数据发布安全技术" class="md-nav__link">
+    04 数据发布安全技术
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0401" title="04.01 安全审计" class="md-nav__link">
+    04.01 安全审计
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#040101" title="04.01.01 基于日志的审计技术" class="md-nav__link">
+    04.01.01 基于日志的审计技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#040102" title="04.01.02 基于网络监听的审计技术" class="md-nav__link">
+    04.01.02 基于网络监听的审计技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#040103" title="04.01.03 基于网关的审计技术" class="md-nav__link">
+    04.01.03 基于网关的审计技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#040104" title="04.01.04 基于代理的审计技术" class="md-nav__link">
+    04.01.04 基于代理的审计技术
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0402" title="04.02 数据溯源" class="md-nav__link">
+    04.02 数据溯源
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#040201" title="04.02.01 将信息安全领域的数字水印技术用于溯源" class="md-nav__link">
+    04.02.01 将信息安全领域的数字水印技术用于溯源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-apt" title="05 防范APT攻击" class="md-nav__link">
+    05 防范APT攻击
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0501-apt" title="05.01 APT攻击的概念" class="md-nav__link">
+    05.01 APT攻击的概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0502-apt" title="05.02 APT攻击特征" class="md-nav__link">
+    05.02 APT攻击特征
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#050201" title="05.02.01 极强的隐蔽性" class="md-nav__link">
+    05.02.01 极强的隐蔽性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050202" title="05.02.02 潜伏期长、持续性强" class="md-nav__link">
+    05.02.02 潜伏期长、持续性强
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050203" title="05.02.03 目标性强" class="md-nav__link">
+    05.02.03 目标性强
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050204" title="05.02.04 技术高级" class="md-nav__link">
+    05.02.04 技术高级
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050205" title="05.02.05 威胁性大" class="md-nav__link">
+    05.02.05 威胁性大
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0503-apt" title="05.03 APT攻击的一般流程" class="md-nav__link">
+    05.03 APT攻击的一般流程
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#050301" title="05.03.01 信息侦查" class="md-nav__link">
+    05.03.01 信息侦查
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050302" title="05.03.02 持续渗透" class="md-nav__link">
+    05.03.02 持续渗透
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050303" title="05.03.03 长期潜伏" class="md-nav__link">
+    05.03.03 长期潜伏
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050304" title="05.03.04 窃取信息" class="md-nav__link">
+    05.03.04 窃取信息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0504-apt" title="05.04 APT攻击检测" class="md-nav__link">
+    05.04 APT攻击检测
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#050401" title="05.04.01 沙箱方案" class="md-nav__link">
+    05.04.01 沙箱方案
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050402" title="05.04.02 异常检测" class="md-nav__link">
+    05.04.02 异常检测
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050403" title="05.04.03 全流量审计" class="md-nav__link">
+    05.04.03 全流量审计
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050404" title="05.04.04 基于深层协议解析的异常识别" class="md-nav__link">
+    05.04.04 基于深层协议解析的异常识别
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050405-root-cause-explorer" title="05.04.05 攻击溯源（root cause explorer）" class="md-nav__link">
+    05.04.05 攻击溯源（root cause explorer）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0505-apt" title="05.05 APT攻击的防范策略" class="md-nav__link">
+    05.05 APT攻击的防范策略
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#050501" title="05.05.01 防社会工程" class="md-nav__link">
+    05.05.01 防社会工程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050502" title="05.05.02 全面采集行为记录，避免内部监控盲点" class="md-nav__link">
+    05.05.02 全面采集行为记录，避免内部监控盲点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#050503-it" title="05.05.03 IT系统异常行为检测" class="md-nav__link">
+    05.05.03 IT系统异常行为检测
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="csdn">大数据安全核心技术（摘自CSDN）</h1>
+<p>原文链接：</p>
+<ul>
+<li><a href="https://blog.csdn.net/ZYZMZM_/article/details/83480285">大数据安全核心技术分析：数据采集存储安全技术</a></li>
+<li><a href="https://blog.csdn.net/ZYZMZM_/article/details/83480293">大数据安全核心技术分析：数据挖掘安全技术</a></li>
+<li><a href="https://blog.csdn.net/ZYZMZM_/article/details/83480389">大数据安全核心技术分析：数据发布安全技术</a></li>
+<li><a href="https://blog.csdn.net/ZYZMZM_/article/details/83480400">大数据安全核心技术分析：防范APT攻击</a></li>
+</ul>
+<hr />
+<h2 id="01">01 数据采集安全技术</h2>
+<h3 id="0101">01.01 传输安全</h3>
+<p>虚拟专用网络将隧道技术、协议封装技术、密码技术和配置管理技术结合在一起，采用安全通道技术在源端和目的端建立安全的数据通道，通过将待传输的原始数据进行加密和协议封装处理后再嵌套装入另一种协议的数据报文中，像普通数据报文一样在网络中进行传输。经过这样的处理，只有源端和目的端的用户对通道中的嵌套信息能够进行解释和处理，而对于其他用户而言只是无意义的信息。因此，采用VPN技术可以通过在数据节点以及管理节点之间布设VPN的方式满足安全传输的需求。</p>
+<p>多年来IPSec协议一直被认为是构建VPN最好的选择，从理论上来讲IPSec协议提供了网络层之上所有协议的安全。然而因为IPSec协议的复杂性，使其很难满足构建VPN要求的灵活性和可扩展属性。SSL VPN凭借其简单、灵活、安全的特点，得到了迅速的发展，尤其在大数据环境下的远程接入访问应用方面，SSL VPN具有很明显的优势。</p>
+<h3 id="0102-ssl-vpn">01.02 SSL VPN</h3>
+<p>SSL VPN采用标准的安全套接层协议，基于X.509证书，支持多种加密算法。可以提供基于应用层的访问控制，具有数据加密、完整性检测和认证机制，而且客户端无需特定软件的安装，更加容易配置和管理，从而降低用户的总成本并增加远程用户的工作效率。</p>
+<p>SSL协议是Nctscape公司1995年推出的一种安全通信协议。SSL协议建立在可靠的TCP传输协议之上，并且与上层协议无关，各种应用层协议（如：HTTP/FTP/TELNET等）能通过SSL协议进行透明传输。</p>
+<p>SSL协议提供的安全连接具有以下3个基本特点：</p>
+<ol>
+<li>连接是保密的：对于每个连接都有一个唯一的会话密钥，采用对称密码体质（如：DES、RC4等）来加密数据。</li>
+<li>连接是可靠的：消息的传输采用MAC算法（如：MD5、SHA等）进行完整性校验。</li>
+<li>对端实体的鉴别采用非对称秘密体制（如：RSA、DSS等）进行认证。</li>
+</ol>
+<p>SSL VPN系统的组成按功能可分为SSL VPN服务器和SSL VPN客户端。SSL VPN服务器是公共网络访问私有局域网的桥梁，它保护了局域网内的拓扑结构信息。SSL VPN客户端是运行在远程计算机上的程序，它为远程计算机通过公共网络访问私有局域网提供一个安全通道，使得远程计算机可以安全地访问私有局域网内的资源。SSL VPN服务器的作用相当于一个网关，它拥有两种IP地址：一种IP地址的网段和私有局域网在同一个网段，并且相应的网卡直接连在局域网上；另一种IP地址是合法申请的互联网地址，并且相应的网卡连接到公共网络上。</p>
+<p>在SSL VPN客户端，需要针对其他应用实现SSL VPN客户端程序，这种程序需要在远程计算机安装和配置。SSL VPN客户端程序的角色相当于一个代理客户端，当应用程序需要访问局域网内的资源时，它就向SSL VPN客户端程序发出请求，SSL VPN客户端再与SSL VPN服务器建立安全通道，然后转发应用程序并在局域网内进行通信。</p>
+<hr />
+<h2 id="02">02 数据存储安全技术</h2>
+<h3 id="0201">02.01 隐私保护</h3>
+<p>一般来说，从隐私所有者的角度而言，隐私可以分为两类：</p>
+<ol>
+<li>个人隐私：任何可以确认特定个人或可确认的个人相关、但个人不愿被暴露的信息，都叫个人隐私，如：身份证号、就诊记录等。</li>
+<li>共同隐私：共同隐私不仅包含个人的隐私，还包含所有个人共同表现出但不愿被暴露的信息，如：公司员工的平均薪资、薪资分布等信息。</li>
+</ol>
+<p>隐私保护技术主要保护以下两个方面的内容：</p>
+<ol>
+<li>如何保证数据应用过程中不泄露隐私；</li>
+<li>如何更有利于数据的应用；</li>
+</ol>
+<p>隐私保护技术可以分为以下3类：</p>
+<h4 id="020101">02.01.01 基于数据交换的隐私保护技术</h4>
+<p>所谓数据变换，简单的讲就是对敏感属性进行转换，使原始数据部分失真，但是同时保持某些数据或数据属性不变的保护方法，数据失真技术通过干扰原始数据来实现隐私保护。</p>
+<h4 id="020102">02.01.02 基于数据加密的隐私保护技术</h4>
+<p>采用对称或非对称加密技术在数据挖掘过程中隐藏敏感数据，多用于分布式应用环境中，如分布式数据挖掘、分布式安全查询、几何计算、科学计算等。分布式应用一般采用两种模式存储数据：垂直划分和水平划分的数据模式。垂直划分数据是指分布式环境中每个站点只存储部分属性的数据，所有站点存储的数据不重复。水平划分数据是将数据记录存储到分布式环境中的多个站点，所有站点存储的数据不重复。</p>
+<h4 id="020103">02.01.03 基于匿名化的隐私保护技术</h4>
+<p>匿名化是指根据具体情况有条件地发布数据。如不发布数据的某些域值、数据泛化等。限制发布即有选择的发布原始数据、不发布或者发布精度较低的敏感数据，以实现隐私保护。数据匿名化一般采用两种基本操作：</p>
+<ul>
+<li>抑制：抑制某数据项，即不发布该数据项。</li>
+<li>泛化：泛化是对数据进行概况、抽象的描述。譬如，对整数5的一种泛化形式是[3,6]，W为5在区间[3,6]内。</li>
+</ul>
+<h3 id="0202">02.02 数据加密</h3>
+<p>大数据环境下，数据可以分为两类：静态数据和动态数据。</p>
+<p>静态数据是指：文档、报表、资料等不参与计算的数据；</p>
+<p>动态数据是指需要检索或参与计算的数据。</p>
+<p>使用SSL VPN可以保证数据传输的安全，但存储系统要先解密数据，然后进行存储，当数据以明文的方式存储在系统中时，面对未被授权入侵者的破坏、修改和重放攻击显得很脆弱，对重要数据的存储加密是必须采取的技术手段。</p>
+<h4 id="020201">02.02.01 静态数据加密机制</h4>
+<h5 id="02020101">02.02.01.01 数据加密算法</h5>
+<p>数据加密算法分为两类，对称加密和非对称加密算法。实际工程中常用的解决办法是对称和非对称加密算法结合起来，利用对称密钥体系进行密钥分配，利用非对称密钥加密算法进行数据的加密，尤其是在大数据环境下，加密大量的数据时，这种结合尤其重要。</p>
+<h5 id="02020102">02.02.01.02 加密范围</h5>
+<p>根据数据敏感性，对数据进行有选择的加密，仅对敏感数据进行按需加密存储，而免除对不敏感数据的加密，可以减小加密存储对系统性能造成的损失，对维持系统的高性能有着积极的意义。</p>
+<h5 id="02020103">02.02.01.03 密钥管理方案</h5>
+<p>密钥管理方案主要包括：密钥粒度的选择、密钥管理体系以及密钥分发机制。密钥是数据加密不可或缺的部分，密钥数据的多少与密钥的粒度直接相关。密钥粒度较大时，方便用户管理，但不适合于细粒度的访问控制。密钥粒度小时，可实现细粒度的控制，安全性更高，但产生的密钥数量大难于管理。</p>
+<p>适合大数据存储的密钥管理办法主要是分层密钥管理，即"金字塔"式密钥管理体系。这种密钥管理体系就是将密钥以金字塔的方式存放，上层密钥用来加/解密下层密钥，只需将顶层密钥分发给数据节点，其他层密钥均可直接存放于系统中。考虑到安全性，大数据存储系统需要采用中等或细粒度的密钥，因此密钥数量多，而采用分层密钥管理时，数据节点只需保管少数密钥就可对大量密钥加以管理，效率更高。</p>
+<p>可以使用基于PKI体系的密钥分发方式对顶层密钥进行分发，用每个数据节点的公钥加密对称密钥，发送给相应的数据节点，数据节点接收到密文的密钥后，使用私钥解密获得密钥明文。</p>
+<h4 id="020202">02.02.02 动态数据加密机制</h4>
+<p>同态加密是基于数学难题的计算复杂性理论的密码学技术。对经过同态加密的数据进行处理的得到一个输出，将这一输出进行解密，其结果与用统一方法处理未加密的原始数据得到的输出结果是一样的。记录加密操作为E，明文为m，加密得e，即e=E(m)，m=E'(e)。已知针对明文有操作f，针对E可以构造F，使得F(e)=E(f(m))，这样E就是一个针对f的同态加密算法。</p>
+<p>同态加密技术是密码学领域的一个重要课题，目前尚没有真正可用于实际的全同态加密算法，同态技术使得在加密的数据中进行诸如检索、比较等操作，得出正确的结果，而在整个处理过程中无需对数据进行解密。其意义在于，真正从根本上解决将大数据机器操作的保密问题。</p>
+<h3 id="0203">02.03 备份与恢复</h3>
+<p>数据存储系统应提供完备的数据备份和恢复机制来保障数据的可用性和完整性，一旦发生数据丢失或破坏，可以利用备份来恢复数据，从而保证在故障发生后数据不丢失。</p>
+<p>下面是几种常见的备份与恢复机制：</p>
+<h4 id="020301">02.03.01 异地备份</h4>
+<p>异地备份是保护数据最安全的方式。在发生火灾、地震等重大灾难的情况，在其他保护数据的手段都不起作用时，异地容灾的优势就体现出来了。困扰异地容灾的问题在于速度和成本，这要求拥有足够带宽的网络连接和优秀的数据复制管理软件。</p>
+<h4 id="020302-raid">02.03.02 RAID</h4>
+<p>RAID（独立磁盘冗余阵列）可以减少磁盘部件的损坏；RAID系统使用许多小容量磁盘驱动器来存储大量数据，并且使可靠性和冗余性得到增强；所有的RAID系统共同的特点是"热交换"能力，即用户可以取出一个存在缺陷的驱动器，并插入一个新的予以更换。对大多数类型的RAID来说，不必中断服务器或系统，就可以自动重建某个出现故障磁盘上的数据。</p>
+<h4 id="020303">02.03.03 数据镜像</h4>
+<p>数据镜像就是保留两个或两个以上在线数据的拷贝。以两个镜像磁盘为例，所有写操作在两个独立的磁盘上同时进行；当两个磁盘都正常工作时，数据可以从任一磁盘读取；如果一个磁盘失效，则数据还可以从另外一个正常工作的磁盘读出。远程镜像根据采用的写协议不同可划分为两种方式，即同步镜像和异步镜像。本地社保遇到不可恢复的硬件损坏时，仍可以启动异地与此相同环境和内容的镜像设备，以保障服务不间断。</p>
+<h4 id="020304">02.03.04 快照</h4>
+<p>快照可以是其所表示数据的一个副本，也可以是数据的一个复制品。快照可以迅速恢复遭破坏的数据。快照的作用主要是能够进行在线数据备份与恢复。当存储设备发生应用故障或者文件损坏时可以进行快速的数据恢复，将数据恢复某个可用时间点的状态。</p>
+<p>数据量比较小的时候，备份和恢复数据比较简单，随着数据量达到PB级别，备份和恢复如此庞大的数据成为棘手的问题。目前Hadoop是应用最广泛的大数据软件架构，Hadoop分布式文件系统HDFS可以利用其自身的数据备份和恢复机制来实现数据可靠保护。</p>
+<p>大数据环境下，数据的存储一般都使用HDFS自身的备份与恢复机制，但对于核心的数据，远程的容灾备份仍然是必须的。其他额外的数据备份和恢复策略需要根据实际需求来制定。</p>
+<hr />
+<h2 id="03">03 数据挖掘安全技术</h2>
+<h3 id="0301">03.01 身份认证</h3>
+<p>身份认证：计算机及网络系统确认操作者身份等过程。也就是证实用户等真实身份与其所声称的身份是否符合等过程。</p>
+<p>身份认证技术分为：</p>
+<ol>
+<li>基于秘密信息等身份认证技术</li>
+<li>基于信物的身份认证技术</li>
+<li>基于生物特征的身份认证技术</li>
+</ol>
+<p>常见等认证机制有如下：</p>
+<ol>
+<li>Kerberos认证</li>
+<li>基于公钥的认证机制（PKI）</li>
+<li>基于动态口令的认证机制</li>
+<li>
+<p>基于生物识别技术等认证技术</p>
+</li>
+<li>
+<p>Kerberos认证是基于对称密码机制的，运算效率高，因此对于只要求数据机密性，不需要完整性和不可否认性需求的场合，可使用Kerberos认证。</p>
+</li>
+<li>基于PKI的身份认证机制相对完善复杂，因此，对于既要求数据机密性，又要求完整性和不可否认性的场合，需要采用基于PKI体系的认证机制来进行用户身份认证。</li>
+<li>随着身份管理技术的发展，融合生物识别技术的强用户认证和基于Web应用的单点登录技术被广泛的应用。基于用户的生物特征身份认证比传统输入用户名和密码的方式更安全。用户可以利用终端配备中的生物特征采集设备（如：摄像头、MIC、指纹扫描器等）输入自身具有唯一性的生物特征（如：人脸图像、掌纹图像、指纹和声纹等）进行用户登录。多因素认证则将生物认证与密码技术相结合，提供给用户更高安全性的用户登录服务。</li>
+</ol>
+<h4 id="030101">03.01.01 基于动态口令的认证机制</h4>
+<p>动态口令机制是为了解决静态口令等不安全问题而提出的，基本思想是用动态口令代替静态口令，其基本原理是：在客户端登录过程中，基于用户等秘密通行短语（SPP，Secure Pass Phrase）加入不确定因素，SSP和不确定因素进行交换（如：使用md5消息摘要），所得的结果作为认证数据（即动态口令）提交给认证服务器。由于客户端每次认证数据都采用不同的不确定因素值，保证了客户端每次提交的认证数据都不相同，因此动态口令机制有效地提高了身份认证的安全性。</p>
+<h3 id="0302">03.02 访问控制</h3>
+<p>访问控制是指主体根据某些控制策略或权限对客体或其资源进行的不同授权访问，限制对关键资源的访问，防止非法用户进入系统及合法用户对资源的非法使用。访问控制是进行数据安全保护的核心策略，为有效控制用户访问数据存储系统，保证数据资源的安全，可授予每个系统访问者不同的访问级别，并设置相应的策略保证合法用户获得数据的访问权。访问控制一般可以是自主或者非自主的，最常见的访问控制模式有如下3种：</p>
+<h4 id="030201">03.02.01 自主访问控制</h4>
+<p>自主访问控制是指对某个客体具有拥有权（或控制权）的主体能够将对该客体的一种访问权或多种访问权自主地授予其它主体，并在随后的任何时刻将这些权限回收。这种控制是自主的，也就是指具有授予某种访问权力的主体（用户）能够自己决定是否将访问控制权限等某个子集授予其他的主体或从其他主体那里收回他所授予的访问权限。自主访问控制中，用户可以针对被保护对象制定自己的保护策略。</p>
+<h4 id="030202">03.02.02 强制访问控制</h4>
+<p>强制访问控制是指计算机系统根据使用系统的机构事先确定的安全策略，对用户的访问权限进行强制性的控制。也就是说，系统独立于用户行为强制执行访问控制，用户不能改变他们的安全级别或对象的安全属性。强制访问控制进行了很强的等级划分，所以经常用于军事用途。强制访问控制在自主访问控制的基础上，增加了对网络资源的属性划分，规定不同属性下的访问权限。这种机制的优点是安全性比自主访问控制的安全性有了提高，缺点是灵活性要差一些。</p>
+<h4 id="030203">03.02.03 基于角色的访问控制</h4>
+<p>数据库系统可以采用基于角色的访问控制策略，建立角色、权限与账号管理机制。基于角色的访问控制方法的基本思想在用户和访问权限之间引入角色的概念，将用户和角色联系起来，通过对角色的授权来控制用户对系统资源的访问。这种方法可根据用户的工作职责设置若干角色，不同的用户可以具有相同的角色，在系统中享受相同的权利，同一个用户又可以具有多个不同的角色，在系统中行使多个角色的权利。</p>
+<p>RBAC（Role-Based Access Control）的基本概念包括：</p>
+<ul>
+<li>许可也叫权限，就是允许对一个或多个客体执行操作；</li>
+<li>角色，就是许可的集合；</li>
+<li>会话，一次会话是用户的一个活跃进程，它代表用户与系统交互。标准上说，每个session是一个映射，一个用户到多role的映射。当一个用户激活他所有所有角色的一个子集的时候，建立一个session；</li>
+<li>活跃角色（active role），一个会话构成一个用户到多个角色的映射，即会话激活了用户授权角色的某个子集，这个子集成为活跃角色集。</li>
+</ul>
+<p>RBAC的基本模型如下图：</p>
+<p><img alt="big_data_security_1" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/data_security/big_data_security_1.png" /></p>
+<h3 id="0303">03.03 关系型数据库安全策略</h3>
+<p>关系型数据库都设置了相对完备的安全机制，在这种情况下，大数据存储可以依赖于数据库的安全机制，安全风险大大降低。例如SQL Server安全机制如下：</p>
+<ul>
+<li>身份验证（Windows NT认证模式，混合认证模式）</li>
+<li>访问控制（对每个用户定义存取权限）</li>
+<li>审计功能</li>
+<li>数据库加密（通过将数据用密文形式存储或传输的手段保证高敏感数据的安全）</li>
+<li>完整性机制（实体完整性、参照完整性、用户自定义完整性）</li>
+<li>触发器机制</li>
+<li>视图和存储过程机制</li>
+<li>备份、恢复和并发控制机制</li>
+</ul>
+<h3 id="0304">03.04 非关系型数据块安全策略</h3>
+<p>越来越多的企业采用非关系型数据库存储大数据，非关系型数据库存储的安全问题的探讨十分必要。关系型数据库主要通过事务支持来实现数据存取的原子性、一致性、隔离性和持久性，保证数据的完整性和正确性，同时对数据库表、行、字段等提供基于用户级别的权限访问控制及加密机制。</p>
+<p>NoSQL数据库为大数据处理提供了高可用、高可扩展的大规模数据存储方案，但缺乏足够的安全保证。如：NoSQL数据库缺少Schema，因此不能对数据库进行较好的完整性验证。同时，多数NoSQL数据库为了提高处理效率，采用最终同步而并非每次交易同步，影响了数据的正确性。目前多数的NoSQL数据库没有提供内建的安全机制，这在一定程度上限制了应用的领域及范围，但随着NoSQL的发展，越来越多的人开始意识到安全的重要性，部分NoSQL产品逐渐开始提供一些安全方面的支持，下面以Hadoop为例，介绍其安全机制。Hadoop的安全机制主要包括4个内容：基于ACL的服务级权限控制、基于令牌的认证机制、HDFS数据存储的完整性一致性保证与数据传输的完整性验证。</p>
+<h4 id="030401-acl">03.04.01 基于ACL的权限控制</h4>
+<p>Hadoop支持的权限控制分为两级：服务级授权（service level authorization）以及上层的HDFS文件权限控制和MapReduce队列权限控制，服务级授权为系统级，用于控制Hadoop服务的访问，是最基础的访问控制，优先于HDFS文件权限和MapReduce队列权限验证。</p>
+<p>Hadoop通过访问控制列表来管理服务级的访问权限，类似于UNIX系统中的用户权限管理，Hadoop通过用户名和组来管理权限，每个服务可以配置为被所有用户访问，也可以被限制为仅被某些组的某些用户访问。Hadoop有9个可配置的ACL属性，每个属性可指定拥有相应访问权限的用户或者用户组。</p>
+<table>
+<thead>
+<tr>
+<th>ACL属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Security.client.protocol.acl</td>
+<td>ACL for ClientProtocol，用户HDFS客户端对KDFS访问的权限控制</td>
+</tr>
+<tr>
+<td>Security.client.datanode.prtocol.acl</td>
+<td>ACL for ClientDataNodeProtocol，client到DataNode的访问权限控制，用于block恢复</td>
+</tr>
+<tr>
+<td>Security.datanode.protocol.acl</td>
+<td>ACL for DataNodeProtocol，用于DataNode与NameNode之间通信的访问控制</td>
+</tr>
+<tr>
+<td>Security.inter.datanode.protocol.acl</td>
+<td>ACL for InterDataNodeProtocol，用于DataNode之间更新timestamp</td>
+</tr>
+<tr>
+<td>Security.namenode.protocol.acl</td>
+<td>ACL for NameNodeProtocol，用于SecondNameNode与NameNode间通信的访问控制</td>
+</tr>
+<tr>
+<td>Security.inter.tracker.protocol.acl</td>
+<td>ACL for InterTrackerProtocol，用于tasktracker与jobtracker之间通信的访问控制</td>
+</tr>
+<tr>
+<td>Security.job.submission.protocol.acl</td>
+<td>ACL for JobSubmissionProtocol，用于job客户端提交作业与查询作业的访问控制</td>
+</tr>
+<tr>
+<td>Security.task.unbilical.protocol.acl</td>
+<td>ACL for TaskUmbilicalProtocol，用于task与其tasktracker的访问控制</td>
+</tr>
+<tr>
+<td>Security.refresh.policy.protocol.acl</td>
+<td>ACL for RefreshAuthorizationPolicyProtocol，用于dfsadmin和mradmin更新其安全配置的访问控制</td>
+</tr>
+</tbody>
+</table>
+<p>通过ACL权限控制，Hadoop能保证数据库底层HDFS文件系统的服务级安全访问，通过用户和组的限制，防止非法用户对数据进行操作。文件的权限主要由NameNode管理。</p>
+<h4 id="030402">03.04.02 基于令牌的认证机制</h4>
+<p>HDFS的服务间交互基本都是通过远程调用协议（RPC，remote procedurecall protocol）交互，但是HDFS客户端获取数据时却不完全依靠RPC机制。当HDFS客户端访问数据时，主要包括2个过程：</p>
+<ol>
+<li>客户端访问NameNode，获取数据的数据块信息，此过程通过RPC交互；</li>
+<li>客户端获取到数据位置后，直接访问DataNode，根据数据块位置信息直接通过SOCKET读取数据。Hadoop的RPC消息机制在SASL（Simple Authentication and Security Layer）的基础上实现了两种认证机制：基于GSSAPI的Kerberos认证机制和基于DIGEST-MD5de令牌认证机制，令牌认证包括HDFS中的授权令牌（delegation token）、块访问令牌（block access token），以及MapReduce框架中的任务令牌（job token）。令牌机制的本质就是客户端和服务端节点共享密钥，服务端与客户端可以相互认证，服务端将响应客户端的访问。令牌由NameNode管理，DataNode不参与令牌的管理。</li>
+</ol>
+<p>NameNode端保存了一个随机产生的masterKey，用来产生和识别令牌，所有的令牌都保存在内存中，并且每个令牌都有一个过期时间，过期的令牌将被删除。初始状态时，客户端必须与NameNode建立个经过Kerberos认证的连接，从而获得一个授权令牌，而后就可以通过令牌与NameNode进行交互。已经获得令牌的客户端访问NameNode时，将TokenID发送到NameNode，NameNode通过TokenID可以在内存中找到对应的令牌，并且根据masterKey与TokenID可以计算出共享密钥TokenAuthenticator和Delegation Token。在授权令牌能被认证的基础上，令牌还需要周期性地从NameNode更新，以保证私密性，NameNode也会周期性的更新masterKey以产生新的授权令牌。</p>
+<p>对于块访问令牌来说，如何在NameNode产生并且能被DataNode识别是一个问题，HDFS中，这个问题通过NameNode与所有的DataNode之间共享新的一套密钥来解决。当HDFS集群启动时，经过Kerberos认证的DataNode向NameNode注册，并且从NameNode中获取密钥key。当客户端访问NameNode时，返回DataNode中数据的block ID和块访问令牌，然后客户端将令牌发送到DataNode，DataNode根据TokenID中的key ID确定需要用哪个密钥key，并通过Key和TokenID重新计算TokenAuthenticator，并且和块访问令牌中的TokenAuthenticator进行比较就可以确定是否能够通过认证，客户端会将所有的DataNode令牌都保存在缓存中重复使用，直到过期才会从新从NameNode获取。由于块访问令牌都是轻量级的和临时的，因此DataNode中的令牌不需要周期性地更新，只需要保存在缓存中，一过期才进行更新。</p>
+<h4 id="030403">03.04.03 数据完整性与一致性</h4>
+<p>HDFS的数据完整性分为两个部分：数据访问的完整性和数据传输的完整性。</p>
+<ol>
+<li>数据访问的完整性：HDFS主要实现了CRC32校验。HDFS客户端在访问DataNode数据块时，是通过socket的方式获取数据流，Hadoop在FSInputStream和FSoutputStream的基础上，实现两个支持校验和的类和文件系统，FSInputStream和FSoutputStream使用数据流支持校验和。在客户端写入一个新的HDFS文件时，会计算这个文件中包括的所有数据块的校验和，并将校验和作为一个单独的.crc文件格式的隐藏文件，与数据文件保存在同一命名空间。</li>
+<li>数据传输的完整性：HDFS数据块的存储支持完整性验证，主要通过核心类DataBlockScanner类实现，它通过在DataNode的后台执行一个独立的扫描线程的方式，周期性地对DataNode所管理的数据块进行CRC校验和检查。当它扫描发现数据块的校验和和原先不一致，将对数据块进行其他辅助操作，例如：删除失效的数据块等。</li>
+</ol>
+<h2 id="04">04 数据发布安全技术</h2>
+<h3 id="0401">04.01 安全审计</h3>
+<p>安全审计是指在记录一切（或部分）与系统安全有关活动的基础上，对其进行分析处理、评估审查，查找安全隐患，对系统安全进行审核、稽查和计算，追查事故的原因，并作出进一步的处理。</p>
+<h4 id="040101">04.01.01 基于日志的审计技术</h4>
+<p>SQL数据库和NoSQL数据库均具有日志审计的功能，通过配置数据库的自审计功能，即可实现对大数据的审计，其部署方式如下图所示：</p>
+<p><img alt="big_data_security_2" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/data_security/big_data_security_2.png" /></p>
+<p>日志审计能够对网络操作及本地操作数据的行为进行审计，由于依托于现有的数据存储系统，兼容性很好。但这种审计技术的缺点也比较明显，首先在数据存储系统上开启自身日志审计对数据存储系统的性能有影响，特别是在大流量情况下损耗较大；其次日志审计在记录的细粒度上较差，缺少一些关键信息，如：源IP、SQL语句等，审计溯源效果不好；最后就是日志审计需要到每一台被审计主机上进行配置和查看，较难进行统一的审计策略配置和日志分析。</p>
+<h4 id="040102">04.01.02 基于网络监听的审计技术</h4>
+<p>基于网络监听的审计技术是通过将对数据存储系统的访问流量镜像到交换机某一个端口，然后通过专用硬件设备对该端口流量进行分析和还原，从而实现对数据访问的审计。其典型部署示意图如下：</p>
+<p><img alt="big_data_security_3" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/data_security/big_data_security_3.png" /></p>
+<p>基于网络监听的审计技术最大的优点就是与现有数据存储系统无关，部署过程不会给数据库系统带来性能上的负担，即使是出现故障也不会影响数据库系统的正常运行，具备易部署、无风险的特点；但是，其部署的实现原理决定了网络监听技术在针对加密协议时，只能实现到会话级别审计，即可以审计到时间、源IP、源端口、目的IP、目的端口等信息，而无法对内容进行审计。</p>
+<h4 id="040103">04.01.03 基于网关的审计技术</h4>
+<p>基于网关的审计技术通过在数据存储系统在部署网关设备，在线截获并转发到数据存储系统的流量而实现审计，其典型部署示意如下图所示：</p>
+<p><img alt="big_data_security_4" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/data_security/big_data_security_4.png" /></p>
+<h4 id="040104">04.01.04 基于代理的审计技术</h4>
+<p>基于代理的审计技术是通过在数据存储系统中安装相应的审计Agent（代理），在Agent上实现审计策略的配置和日志的采集，该技术与日志审计技术比较类似，最大的不同就是需要在被审计主机上安装代理程序。代理审计技术从审计粒度上要优于日志审计技术。在大数据环境下，数据存储于多种数据库系统中，需要同时审计多种存储架构的数据，原存储系统的稳定性、可靠性、性能或多或少都会有一些影响，因此基于代理的审计技术实际的应用面较窄。</p>
+<p>通过对比以上4种技术的分析，在进行大数据输出安全审计技术方案的选择时，需要从稳定性、可靠性、可用性等多方面进行考虑，特别是技术方案的选择不应对现有系统造成影响，可以优先选用网络监听审计技术来实现对大数据输出的安全审计。</p>
+<h3 id="0402">04.02 数据溯源</h3>
+<p>数据溯源是一个新兴的研究领域，起源于20世纪90年代，普遍理解为追踪数据的起源和重现数据的历史状态，目前还没有公认的定义。在大数据应用领域，数据溯源就是对大数据应用周期的各个环节的操作进行标记和定位，在发生数据安全问题时，可以及时准确地定位到出现问题的环节和责任者，以便于对数据安全问题的解决。</p>
+<p>目前学术界对数据溯源的理论研究主要基于数据集溯源的模型和方法展开，主要的方法有标注法和反向查询法，这些防范都是基于对数据操作记录的，对于恶意窃取、非法访问者来说，很容易破坏数据溯源信息，在应用方面，包括数据库应用、工作流应用和其他方面的应用，目前都处在研究节点，没有成熟的应用模式。大多数溯源系统都是在一个独立的系统内部实现溯源管理，数据如何在多个分布式系统之间转换或传播，没有统一的业界标准，随着云计算和大数据环境的不断发展，数据溯源问题变得越来越重要，逐渐成为研究的热点。</p>
+<h4 id="040201">04.02.01 将信息安全领域的数字水印技术用于溯源</h4>
+<p>数字水印是将一些标识信息（即数字水印）直接嵌入数字载体（包括：多媒体、文档、软件）中，但不影响原载体的使用价值，也不容易被人的知觉系统（如：视觉或听觉系统）觉察或注意到。通过这些隐藏在载体中的信息，可以达到确认内容创建者、购买者、传送隐秘信息或者判断载体是否被篡改的目的。数字水印的主要特征有如下几个方面：</p>
+<ul>
+<li>不可感知性：也包括视觉上的不可见性和水印算法的不可推断性。</li>
+<li>强壮性：嵌入水印难以被一般算法清除，抵抗各种对数据的破坏。</li>
+<li>可证明性：对嵌入水印信息的图像，可以通过水印检测器证明嵌入水印的存在。</li>
+<li>自恢复性：含有水印的图像在经受一系列攻击后，水印信息也经过了各种操作或变换，但可以通过一定的算法从剩余的图像片段中恢复出水印信息，而不需要整改原始图像的特征。</li>
+<li>安全保密性：睡姿水印系统使用一个或多个密钥以确保安全，防止修改和擦除。</li>
+</ul>
+<p>数字水印利用数据隐藏原理使水印标志不可见，既不损害原数据，又达到了对数据进行标记的目的。利用这种隐藏标识的方法，标识信息在原始数据上是看不到，只有通过特殊的阅读程序才可以读取，基于数字水印的篡改提示是解决数据篡改问题的理想技术途径。</p>
+<p>基于数字水印技术的以上性质，可以将数字水印引入大数据应用领域，解决数据溯源问题。在数据发布出口，可以建立数字水印加载机制，在进行数据发布时，针对重要数据，为每个访问者获得的数据加载唯一的数字水印。当发生机密泄露或隐私问题时，可以通过水印提取的方式，检查发生问题的数据是发布给哪个数据访问者的，从而确定数据泄露的源头，及时进行处理。</p>
+<hr />
+<h2 id="05-apt">05 防范APT攻击</h2>
+<h3 id="0501-apt">05.01 APT攻击的概念</h3>
+<p>美国国家标准技术研究所（NIST）对APT的定义为：攻击装掌握先进的专业知识和有效的资源，通过多种攻击途径（如：网络、物理设施和欺骗等），在特定组织的信息技术基础设施建立并转移立足点，以窃取机密信息，破坏或阻碍任务、程序或组织的关键系统，或者驻留在组织内部网络，进行后续攻击。</p>
+<p>APT攻击的原理相对其他攻击形式更为高级和先进，其高级性主要体现在APT在发动攻击之前需要对攻击对象的业务流程和目标系统进行精确的收集，在收集的过程中，此攻击会主动挖掘被攻击对象受信系统和应用程序漏洞，在这些漏洞的基础上形成攻击者所需的命令与攻击（C&amp;C）网络，此种行为没有采取任何可能触发警报或者引起怀疑的行动，因此更接近于融入被攻击者的系统。</p>
+<p>大数据应用环境下，APT攻击的安全威胁更加凸显。首先，大数据应用对数据进行了逻辑或物理上的集中，相对于从分散的系统中收集有用的信息，集中的数据系统为APT攻击收集信息提供了"便利"；其次，数据挖掘过程中可能会有多方合作的业务模式，外部系统对数据的访问增加了防止机密、隐私出现泄漏的途径。因此，大数据环境下，对APT攻击的检测与防范，是必须要考虑的问题。接下来在分析APT攻击特征与流程的基础上，研究APT攻击检测方法和防范策略。</p>
+<h3 id="0502-apt">05.02 APT攻击特征</h3>
+<p>APT攻击特征如下：</p>
+<h4 id="050201">05.02.01 极强的隐蔽性</h4>
+<p>APT攻击与被攻击对象的可信程序漏洞与业务系统漏洞进行了融合，在组织内部，这样的融合很难被发现。</p>
+<h4 id="050202">05.02.02 潜伏期长、持续性强</h4>
+<p>APT攻击是一种很有耐心的攻击形式，攻击和威胁可能在用户环境存在了一年以上，他们不断收集用户信息，直到收集到重要情报。他们往往不是为了在短时间内获利，而是把"被控主机"当成跳板，持续搜索，直到充分掌握了目标对象的使用行为。所以这种攻击模式，本质上是一种"恶意商业间谍威胁"；因此具有很长的潜伏期和持续性。</p>
+<h4 id="050203">05.02.03 目标性强</h4>
+<p>不同于以往的常规病毒，APT制作者掌握高级漏洞发掘和超强的网络攻击技术。发起APT攻击所需的技术壁垒和资源壁垒，要远高于普通攻击行为。其针对的攻击目标也不是普通个人用户，而是拥有高价值敏感数据的高级用户，特别是可能影响到国家和地区政治、外交、金融稳定的高级别敏感数据持有者。</p>
+<h4 id="050204">05.02.04 技术高级</h4>
+<p>攻击者掌握先进的攻击技术，使用多种攻击途径，包括购买或自己开发的0day漏洞，而一般攻击者却不能使用这些资源。而且攻击过程复杂，攻击持续过程在攻击者能够动态调整攻击方式，从整体上掌握攻击进程。</p>
+<h4 id="050205">05.02.05 威胁性大</h4>
+<p>APT攻击通常拥有雄厚的资金支持，由经验丰富的黑客团队发起，一般以破坏国家或大型企业的关键基础设施为目标，窃取内部核心机密信息，危及国家安全和社会稳定。</p>
+<p><img alt="big_data_security_5" src="https://bloodzer0.oss-cn-beijing.aliyuncs.com/data_security/big_data_security_5.png" /></p>
+<h3 id="0503-apt">05.03 APT攻击的一般流程</h3>
+<p>APT攻击的流程一般包括如下步骤：</p>
+<h4 id="050301">05.03.01 信息侦查</h4>
+<p>在入侵之前，攻击者首先会使用技术和社会工程学手段对特定目标进行侦查。侦查内容主要包括两个方面：一是对目标网络用户的信息收集，例如：高层领导、系统管理员或者普通职员等员工资料、系统管理制度、系统业务流程和使用情况等信息；二是对目标网络脆弱点的信息收集，例如：软件版本、开放端口等。随后，攻击者针对目标系统的脆弱点，研究0day漏洞、定制木马程序、制定攻击计划，用于在下一阶段实施精确攻击。</p>
+<h4 id="050302">05.03.02 持续渗透</h4>
+<p>利用目标人员的疏忽、不执行安全规范，以及利用系统应用程序、网络服务或主机的漏洞，攻击者使用定制木马等手段，不断渗透以潜伏在目标系统，进一步地在避免用户觉察的条件下取得网络核心设备的控制权。例如：通过SQL注入等攻击手段突破面向外网的Web服务器，或通过钓鱼攻击，发送欺诈邮件获取内网用户通信记录，并进一步入侵高管主机，采用发送带漏洞的Office文件诱骗用户将正常网址请求重定向恶意站点。</p>
+<h4 id="050303">05.03.03 长期潜伏</h4>
+<p>为了获取有价值信息，攻击者一般会在目标网络长期潜伏，有的达数年之久。潜伏期间，攻击者还会在已控制的主机上安装各种木马、后门，不断提高恶意软件的复杂度。以增加攻击能力并避开安全检测。</p>
+<h4 id="050304">05.03.04 窃取信息</h4>
+<p>目前绝大部分APT攻击的目标都是窃取目标组织的机密信息。攻击者一般采用SSL VPN连接的方式控制内网主机，对于窃取到的机密信息，攻击者通过将其加密存放在特定主机上，再选择合适的时间将其通过隐秘信道传输到攻击者控制的服务器。由于数据以密文方式存在，APT程序在获取重要数据后向外部发送时，利用了合法数据的传输通道和加密、压缩方式，难以辨别出其与正常流量的差别。</p>
+<h3 id="0504-apt">05.04 APT攻击检测</h3>
+<p>从APT攻击的过程可以看出，整个攻击循环包括了多个步骤，这就为检测和防护提供了多个契机。当前APT检测方案主要有以下几种：</p>
+<h4 id="050401">05.04.01 沙箱方案</h4>
+<p>针对APT攻击，攻击者往往使用了0day的方法，导致特征匹配不能成功，因此需要采用非特征匹配的方式来识别，智能沙箱技术就可以用来识别0day攻击与异常行为。智能沙箱技术最大的难点在于客户端的多样性，智能沙箱技术对操作系统类型、浏览的版本、浏览器安装的插件版本都有关系，在某种环境当中检测不到恶意代码，或许另外一个就能检测到。</p>
+<h4 id="050402">05.04.02 异常检测</h4>
+<p>异常检测的核心思想是流量建模识别异常。异常检测的核心技术是元数据提取技术、基于连接特征的恶意代码检测规则，以及基于行为模式的异常检测算法。其中，元数据提取技术是指利用少了的元数据信息，检测整体网络流量的异常。基于连接特征的恶意代码检测规则是检测已知僵尸网络、木马通信的行为。而基于行为模式的异常检测算法包括检测隧道通信、可疑加密文件传输等。</p>
+<h4 id="050403">05.04.03 全流量审计</h4>
+<p>全流量审计的核心思想是通过对全流量进行应用识别和还原，检测异常行为。核心技术包括大数据存储及处理、应用识别、文件还原等。如果做全流量分析，面临的问题是数据处理量非常大。全流量审计与现有的检测产品和平台相辅相成，互为补充，构成完整防护体系。在整体防护体系中，传统检测设备的作用类似于"触发器"，检测到APT行为的蛛丝马迹，再利用全流量信息进行回溯和深度分析，可用一个简单的公司说明，全流量审计+传统检测技术=基于记忆的检测系统。</p>
+<h4 id="050404">05.04.04 基于深层协议解析的异常识别</h4>
+<p>基于深层协议解析的异常识别，可以细细查看并一步步发现是哪个协议，如：一个数据查询，有什么地方出现了异常，直到发现异常点为止。</p>
+<h4 id="050405-root-cause-explorer">05.04.05 攻击溯源（root cause explorer）</h4>
+<p>通过已经提取出来的网络对象，可以重建一个时间区间内可疑的Web Session、Email、对话信息。通过将这些事件自动排列，可以帮助分析人员凯苏发现攻击源。</p>
+<p>在APT攻击检测中，存在的问题包括：</p>
+<ul>
+<li>攻击过程包括路径和时序；</li>
+<li>攻击过程的大部分貌似正常操作；</li>
+<li>不是所有的异常操作都能立即被检测；</li>
+<li>不能保证被检测到的异常在APT过程中的开始或早期。</li>
+</ul>
+<p>基于记录的检测可以有效缓解上述问题。现在对抗APT的思路是以时间对抗时间。既然APT是在很长时间发生的，我们的对抗也要在一个时间窗来进行对抗，对长时间、全流量数据进行深度分析。针对A问题，可以采用沙箱方式、异常检测模式来解决特征匹配的不足；针对P问题，可将传统基于实时时间点的检测，转变为基于历史时间窗的检测，通过流量的回溯和关联分析发现APT模式。而流量存储与现有的检测技术相结合，构成了新一代基于记忆的智能检测系统。此外，还需要利用大数据分析的关键技术。</p>
+<h3 id="0505-apt">05.05 APT攻击的防范策略</h3>
+<p>目前的防御技术、防御体系很难有效应对APT攻击，导致很多攻击直到很长时间后才被发现，甚至可能还有很多APT攻击未被发现。通过前面APT攻击背景以及攻击特点、攻击流程的分析，现阶段需要一种新的安全思维，即放弃保护所有数据的观念，转而重点保护关键数据资产，同时在传统的纵深防御的网络安全防护基础上，在各个可能的环节上部署检测和防护手段，建立一种新的安全防御体系。</p>
+<h4 id="050501">05.05.01 防社会工程</h4>
+<p>木马入侵、社会工程是APT攻击的第一个步骤，防范社会工程需要一套综合性措施，既要根据实际情况，完善信息安全管理策略，如：禁止员工在个人微博上公布于工作相关信息，禁止在社交网站上公布私人身份和联络信息等；又要采用新型的检测技术，提高识别恶意程序的准确性。社会工程是利用人性的弱点针对人员进行的渗透过程。因此提高人员的信息安全意识，是防止社会攻击的最基本的方法。传统的办法是通过宣讲培训的方式来提高安全意识，但是往往效果不好，不容易对听众产生触动；而比较好的方法是社会工程测试，这种方法已经是被业界普遍接受的方式，有些大型企业都会授权专业公司定期在内部进行测试。</p>
+<p>绝大部分社工攻击是通过电子邮件或即时消息进行的。上网行为管理设备应该做到阻止内部主机对恶意URL的访问。垃圾邮件的彻底检查，对可疑邮件中URL链接和附件应该做到细致认真的检测。有些附件表面上看起来就是一个普通的数据文件，如PDF或Excel格式的文档等，恶意程序嵌入在文件中，且利用的漏洞都是未经公开的。通常仅通过特征扫描的方式，往往不能准确识别出来的。比较有效的方法是沙箱模拟真实环境访问邮件中的URL或打开附件，观察沙箱主机的行为变化，可以有效检测出恶意程序。</p>
+<h4 id="050502">05.05.02 全面采集行为记录，避免内部监控盲点</h4>
+<p>对IT系统行为记录的收集是异常行为检测的基础和前提，大部分IT系统行为可以分为主机行为和网络行为两个方面，更全面的行为采集还包括物理访问行为记录采集。</p>
+<ol>
+<li>主机行为采集：主机行为采集一般是通过允许在主机上的行为监控程序完成。有些行为记录可以通过操作系统自带的日志功能实现输出。为了实现对进程行为的监控，行为监控程序通常工作在操作系统的驱动层，如果在实现上有错误，很容易引起底层崩溃。为了避免被恶意程序探测到监控程序的存在，行为监控程序应尽量工作在驱动层的底部，但是越靠近底部，稳定性风险就越高。</li>
+<li>网络行为采集：网络行为采集一般是通过镜像网络流量，将流量数据转换成流量日志。以Netflow记录为代表的早期流量日志只包含网络层的信息。近年来的异常行为大都几种在应用层，仅凭网络层的信息难以分析出有价值的信息。应用层流量日志的输出，关键在于应用的分类和建模。</li>
+</ol>
+<h4 id="050503-it">05.05.03 IT系统异常行为检测</h4>
+<p>从前述APT攻击过程可以看出，异常行为包括对内部网络的扫描探测、内部的非授权访问、非法外联。非法外联，即目标主机与外网的通信行为，可分为以下3类：</p>
+<ol>
+<li>下载恶意程序到目标主机，这些下载行为不仅在感染初期发生，在后续恶意程序升级时还会出现。</li>
+<li>目标主机与外网的C&amp;C服务器进行联络。</li>
+<li>内部主机向C&amp;C服务器传送数据，其中外传数据的行为是最多样、最隐蔽也是最终实质性危害的行为。</li>
+</ol>
+<p>（远程命令和控制服务器，目标机器可以接收来自服务器的命令，从而达到服务器控制目标机器的目的。该方法常用于病毒木马控制被感染的机器。）</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../code_audit/solitity/" title="智能合约代码审计" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                智能合约代码审计
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../honeypot/kippo/" title="Kippo SSH蜜罐" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Kippo SSH蜜罐
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright 2018-2099
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
